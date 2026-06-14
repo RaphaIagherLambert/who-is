@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.env
+*.local
+.DS_Store
+
+# Never commit secrets or local notes
+.env.*
+!.env.example
+*Notas*.txt
+*.pem
+*.key
+credentials*

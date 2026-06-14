@@ -1,0 +1,682 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#000000" />
+    <title>Who is? — UI Preview</title>
+    <style>
+      *, *::before, *::after { box-sizing: border-box; }
+      :root {
+        color-scheme: dark;
+        font-family: "Segoe UI", system-ui, sans-serif;
+        color: #e2e8f0;
+        background: #000;
+        --lens-x: 50%;
+        --lens-y: 45%;
+        --lens-r-idle: min(30vw, 120px);
+        --lens-r-active: min(40vw, 168px);
+        --vignette-idle: radial-gradient(
+          circle farthest-corner at var(--lens-x) var(--lens-y),
+          transparent 0%,
+          rgba(200, 200, 200, 0.06) 9%,
+          rgba(188, 188, 188, 0.12) 10.5%,
+          rgba(172, 172, 172, 0.18) 12%,
+          rgba(152, 152, 152, 0.24) 13.5%,
+          rgba(132, 132, 132, 0.3) 15%,
+          rgba(112, 112, 112, 0.36) 16.8%,
+          rgba(94, 94, 94, 0.42) 18.8%,
+          rgba(78, 78, 78, 0.48) 21%,
+          rgba(64, 64, 64, 0.54) 23.5%,
+          rgba(52, 52, 52, 0.58) 26.2%,
+          rgba(42, 42, 42, 0.62) 29.2%,
+          rgba(34, 34, 34, 0.66) 32.5%,
+          rgba(28, 28, 28, 0.7) 36%,
+          rgba(22, 22, 22, 0.74) 39.8%,
+          rgba(18, 18, 18, 0.78) 43.8%,
+          rgba(14, 14, 14, 0.82) 48%,
+          rgba(11, 11, 11, 0.86) 52.5%,
+          rgba(8, 8, 8, 0.9) 57.2%,
+          rgba(6, 6, 6, 0.93) 62.2%,
+          rgba(4, 4, 4, 0.96) 67.5%,
+          rgba(2, 2, 2, 0.98) 73.5%,
+          rgba(1, 1, 1, 0.99) 80%,
+          #000 100%
+        );
+        --vignette-active: radial-gradient(
+          circle farthest-corner at var(--lens-x) var(--lens-y),
+          transparent 0%,
+          rgba(200, 200, 200, 0.06) 14%,
+          rgba(188, 188, 188, 0.12) 15.5%,
+          rgba(172, 172, 172, 0.18) 17%,
+          rgba(152, 152, 152, 0.24) 18.5%,
+          rgba(132, 132, 132, 0.3) 20%,
+          rgba(112, 112, 112, 0.36) 21.8%,
+          rgba(94, 94, 94, 0.42) 23.8%,
+          rgba(78, 78, 78, 0.48) 26%,
+          rgba(64, 64, 64, 0.54) 28.5%,
+          rgba(52, 52, 52, 0.58) 31.2%,
+          rgba(42, 42, 42, 0.62) 34.2%,
+          rgba(34, 34, 34, 0.66) 37.5%,
+          rgba(28, 28, 28, 0.7) 41%,
+          rgba(22, 22, 22, 0.74) 44.8%,
+          rgba(18, 18, 18, 0.78) 48.8%,
+          rgba(14, 14, 14, 0.82) 53%,
+          rgba(11, 11, 11, 0.86) 57.5%,
+          rgba(8, 8, 8, 0.9) 62.2%,
+          rgba(6, 6, 6, 0.93) 67.2%,
+          rgba(4, 4, 4, 0.96) 72.5%,
+          rgba(2, 2, 2, 0.98) 78.5%,
+          rgba(1, 1, 1, 0.99) 85%,
+          #000 100%
+        );
+        --lens-mask-idle: radial-gradient(
+          circle var(--lens-r-idle) at var(--lens-x) var(--lens-y),
+          #000 0%,
+          #000 72%,
+          rgba(0, 0, 0, 0.85) 82%,
+          rgba(0, 0, 0, 0.45) 92%,
+          transparent 100%
+        );
+        --lens-mask-active: radial-gradient(
+          circle var(--lens-r-active) at var(--lens-x) var(--lens-y),
+          #000 0%,
+          #000 72%,
+          rgba(0, 0, 0, 0.85) 82%,
+          rgba(0, 0, 0, 0.45) 92%,
+          transparent 100%
+        );
+      }
+      body { margin: 0; min-height: 100dvh; background: #000; }
+
+      .preview-shell {
+        min-height: 100dvh;
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+      @media (min-width: 960px) {
+        .preview-shell { grid-template-columns: 300px 1fr; }
+      }
+
+      .preview-panel {
+        padding: 1.25rem;
+        background: #0a0a0a;
+        border-bottom: 1px solid #262626;
+      }
+      @media (min-width: 960px) {
+        .preview-panel {
+          border-bottom: none;
+          border-right: 1px solid #262626;
+          min-height: 100dvh;
+        }
+      }
+      .preview-panel h2 {
+        margin: 0 0 0.25rem;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #525252;
+      }
+      .preview-panel h1 { margin: 0 0 0.5rem; font-size: 1.05rem; }
+      .preview-panel p { margin: 0 0 1.25rem; font-size: 0.8rem; color: #737373; line-height: 1.45; }
+
+      .state-buttons { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.25rem; }
+      .state-buttons button {
+        padding: 0.65rem 0.8rem;
+        border-radius: 0.5rem;
+        border: 1px solid #262626;
+        background: #171717;
+        color: #e5e5e5;
+        text-align: left;
+        cursor: pointer;
+        font-size: 0.82rem;
+      }
+      .state-buttons button.active {
+        background: #fff;
+        color: #000;
+        border-color: #fff;
+      }
+
+      .note {
+        font-size: 0.75rem;
+        color: #525252;
+        line-height: 1.45;
+        padding: 0.75rem;
+        border: 1px solid #262626;
+        border-radius: 0.5rem;
+        background: #111;
+      }
+
+      .phone-frame {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 1.25rem 0.75rem 2rem;
+        background: #000;
+        min-height: 100dvh;
+      }
+
+      .phone {
+        width: 100%;
+        max-width: 390px;
+        background: #000;
+        border-radius: 2rem;
+        border: 1px solid #262626;
+        box-shadow: 0 40px 80px rgba(0, 0, 0, 0.65);
+        overflow: hidden;
+      }
+
+      .app {
+        display: flex;
+        flex-direction: column;
+        min-height: 780px;
+        background: #000;
+      }
+
+      .header { padding: 0.85rem 1.25rem 0.5rem; }
+      .header-top { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+      .header h1 {
+        margin: 0;
+        font-size: 1.65rem;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+        color: #fff;
+      }
+      .header p { margin: 0.35rem 0 0; color: #737373; font-size: 0.8rem; line-height: 1.4; }
+
+      .lang-switch {
+        display: flex;
+        border: 1px solid #262626;
+        border-radius: 999px;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+      .lang-switch button {
+        padding: 0.35rem 0.75rem;
+        border: none;
+        background: transparent;
+        color: #737373;
+        font-size: 0.75rem;
+        font-weight: 600;
+      }
+      .lang-switch button.active { background: #262626; color: #fff; }
+
+      .target-stage {
+        position: relative;
+        flex: 1;
+        min-height: 420px;
+        overflow: hidden;
+        background: #000;
+      }
+
+      .target-video,
+      .freeze-frame {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        clip-path: none;
+        -webkit-mask-image: var(--lens-mask-idle);
+        mask-image: var(--lens-mask-idle);
+        transition: mask-image 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+          -webkit-mask-image 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .target-stage.active .target-video,
+      .target-stage.shutter .target-video,
+      .target-stage.processing .target-video,
+      .target-stage.shutter .freeze-frame,
+      .target-stage.processing .freeze-frame {
+        -webkit-mask-image: var(--lens-mask-active);
+        mask-image: var(--lens-mask-active);
+      }
+
+      .freeze-frame { z-index: 2; opacity: 0; pointer-events: none; }
+      .target-stage.shutter .freeze-frame { opacity: 1; }
+
+      .target-vignette {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 1;
+        background: var(--vignette-idle);
+        transition: background 0.9s ease;
+      }
+
+      .target-stage.active .target-vignette,
+      .target-stage.shutter .target-vignette,
+      .target-stage.processing .target-vignette {
+        background: var(--vignette-active);
+      }
+
+      .lens-ring,
+      .target-crosshair {
+        position: absolute;
+        left: var(--lens-x);
+        top: var(--lens-y);
+        width: calc(var(--lens-r-idle) * 2);
+        height: calc(var(--lens-r-idle) * 2);
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        z-index: 2;
+        opacity: 1;
+        transition: opacity 0.5s ease;
+      }
+
+      .target-stage.active .lens-ring,
+      .target-stage.active .target-crosshair,
+      .target-stage.shutter .lens-ring,
+      .target-stage.shutter .target-crosshair,
+      .target-stage.processing .lens-ring,
+      .target-stage.processing .target-crosshair {
+        opacity: 0;
+      }
+
+      .lens-ring {
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 50%;
+      }
+
+      .target-crosshair span { position: absolute; background: rgba(255, 255, 255, 0.18); }
+      .target-crosshair span:first-child { left: 50%; top: 0; width: 1px; height: 100%; transform: translateX(-50%); }
+      .target-crosshair span:last-child { top: 50%; left: 0; width: 100%; height: 1px; transform: translateY(-50%); }
+
+      .viewfinder-hud {
+        position: absolute;
+        inset: 0;
+        z-index: 3;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.4s ease 0.2s;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 0.65rem;
+        letter-spacing: 0.06em;
+        color: rgba(255,255,255,0.85);
+        text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+      }
+
+      .target-stage.active .viewfinder-hud,
+      .target-stage.shutter .viewfinder-hud,
+      .target-stage.processing .viewfinder-hud { opacity: 1; }
+
+      .hud-top, .hud-bottom {
+        position: absolute;
+        left: 0; right: 0;
+        display: flex;
+        justify-content: space-between;
+        padding: 0.75rem 1rem;
+      }
+      .hud-top { top: 0; }
+      .hud-bottom { bottom: 0; }
+
+      .hud-rec {
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+        color: #ff4444;
+        font-weight: 700;
+      }
+      .rec-dot {
+        width: 7px; height: 7px;
+        border-radius: 50%;
+        background: #ff4444;
+        animation: rec-blink 1s step-end infinite;
+      }
+      @keyframes rec-blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+      .hud-meta, .hud-focal, .hud-iso { color: rgba(255,255,255,0.55); }
+      .hud-af { color: #4ade80; font-weight: 700; animation: af-pulse 0.9s ease-in-out infinite; }
+      @keyframes af-pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
+
+      .viewfinder-frame {
+        position: absolute;
+        left: var(--lens-x);
+        top: var(--lens-y);
+        width: calc(var(--lens-r-active) * 2);
+        height: calc(var(--lens-r-active) * 2);
+        transform: translate(-50%, -50%) scale(0.92);
+        border-radius: 50%;
+        z-index: 3;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.35s ease, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .target-stage.active .viewfinder-frame,
+      .target-stage.shutter .viewfinder-frame,
+      .target-stage.processing .viewfinder-frame {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      .viewfinder-ring {
+        position: absolute;
+        inset: 0;
+        border: 1.5px solid rgba(255,255,255,0.55);
+        border-radius: 50%;
+      }
+
+      .corner {
+        position: absolute;
+        width: 22px; height: 22px;
+        border-color: rgba(255,255,255,0.85);
+        border-style: solid;
+        border-width: 0;
+      }
+      .corner.tl { top: 6%; left: 18%; border-top-width: 2px; border-left-width: 2px; }
+      .corner.tr { top: 6%; right: 18%; border-top-width: 2px; border-right-width: 2px; }
+      .corner.bl { bottom: 6%; left: 18%; border-bottom-width: 2px; border-left-width: 2px; }
+      .corner.br { bottom: 6%; right: 18%; border-bottom-width: 2px; border-right-width: 2px; }
+
+      .focus-ring {
+        position: absolute;
+        inset: 28%;
+        border: 1.5px solid rgba(74,222,128,0.75);
+        border-radius: 50%;
+        animation: focus-contract 0.9s ease-out forwards;
+      }
+      @keyframes focus-contract {
+        0% { inset: 14%; opacity: 0.35; }
+        60% { inset: 24%; opacity: 1; }
+        100% { inset: 28%; opacity: 0.9; }
+      }
+
+      .grid-lines span { position: absolute; background: rgba(255,255,255,0.06); }
+      .grid-lines span:nth-child(1) { left: 33.33%; top: 0; width: 1px; height: 100%; }
+      .grid-lines span:nth-child(2) { left: 66.66%; top: 0; width: 1px; height: 100%; }
+      .grid-lines span:nth-child(3) { top: 33.33%; left: 0; height: 1px; width: 100%; }
+      .grid-lines span:nth-child(4) { top: 66.66%; left: 0; height: 1px; width: 100%; }
+
+      .shutter-flash {
+        position: absolute;
+        inset: 0;
+        z-index: 5;
+        background: #fff;
+        opacity: 0;
+        pointer-events: none;
+      }
+      .target-stage.shutter .shutter-flash {
+        animation: flash 0.28s ease-out forwards;
+      }
+      @keyframes flash {
+        0% { opacity: 0.95; }
+        100% { opacity: 0; }
+      }
+
+      .status-bar {
+        padding: 0.75rem 1.25rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .status-dot {
+        width: 0.5rem; height: 0.5rem;
+        border-radius: 50%;
+        background: #404040;
+        flex-shrink: 0;
+      }
+      .status-dot.scanning { background: #a3a3a3; animation: pulse 1s infinite; }
+      .status-dot.found { background: #fff; }
+      @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.35} }
+      .status-text { font-size: 0.8rem; color: #737373; }
+
+      .result-card {
+        margin: 0 1.25rem 0.5rem;
+        padding: 0.85rem;
+        background: #0a0a0a;
+        border: 1px solid #262626;
+        border-radius: 0.85rem;
+        display: flex;
+        gap: 0.85rem;
+        align-items: center;
+        text-decoration: none;
+        color: inherit;
+        animation: result-in 0.4s ease-out;
+      }
+      @keyframes result-in {
+        from { opacity: 0; transform: translateY(8px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .result-card img {
+        width: 56px; height: 56px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      .result-card h2 { margin: 0; font-size: 1rem; font-weight: 600; color: #fff; }
+      .result-link { display: block; margin-top: 0.2rem; font-size: 0.8rem; color: #a3a3a3; }
+
+      .controls {
+        padding: 0.25rem 1.25rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.65rem;
+      }
+      .shutter-btn {
+        width: 72px; height: 72px;
+        border-radius: 50%;
+        border: 3px solid #fff;
+        background: transparent;
+        padding: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .shutter-btn.busy .shutter-inner {
+        border-radius: 8px;
+        transform: scale(0.55);
+        background: #ff4444;
+      }
+      .shutter-inner {
+        width: 100%; height: 100%;
+        border-radius: 50%;
+        background: #fff;
+        transition: border-radius 0.2s ease, transform 0.2s ease, background 0.2s ease;
+      }
+      .shutter-label { font-size: 0.75rem; color: #525252; font-weight: 500; }
+
+      .hidden { display: none !important; }
+    </style>
+  </head>
+  <body>
+    <div class="preview-shell">
+      <aside class="preview-panel">
+        <h2>Design preview</h2>
+        <h1>Who is?</h1>
+        <p>
+          Prévia mobile — aponte para qualquer tela e toque no botão de obturador.
+          Use os estados abaixo para revisar cada fase da experiência.
+        </p>
+
+        <div class="state-buttons">
+          <button type="button" class="active" data-state="idle">1 · Aguardando</button>
+          <button type="button" data-state="viewfinder">2 · Visor profissional (enfoque)</button>
+          <button type="button" data-state="shutter">3 · Disparo (flash + congelamento)</button>
+          <button type="button" data-state="processing">4 · Analisando</button>
+          <button type="button" data-state="identified">5 · Identificado</button>
+        </div>
+
+        <p class="note">
+          No app real, os estados 2→4 acontecem automaticamente ao tocar no obturador.
+          Câmera traseira no mobile; aponta para TV, celular, computador, etc.
+        </p>
+      </aside>
+
+      <main class="phone-frame">
+        <div class="phone">
+          <div class="app">
+            <header class="header">
+              <div class="header-top">
+                <h1>Who is?</h1>
+                <div class="lang-switch">
+                  <button type="button" class="active">PT</button>
+                  <button type="button">EN</button>
+                </div>
+              </div>
+              <p>Aponte e descubra</p>
+            </header>
+
+            <div id="stage" class="target-stage">
+              <img
+                class="target-video"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/President_Barack_Obama.jpg/440px-President_Barack_Obama.jpg"
+                alt=""
+              />
+              <img
+                id="freeze"
+                class="freeze-frame"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/President_Barack_Obama.jpg/440px-President_Barack_Obama.jpg"
+                alt=""
+              />
+
+              <div class="target-vignette"></div>
+
+              <div class="viewfinder-hud">
+                <div class="hud-top">
+                  <span class="hud-rec"><span class="rec-dot"></span> REC</span>
+                  <span class="hud-meta">4K · 24fps</span>
+                </div>
+                <div class="hud-bottom">
+                  <span class="hud-af">AF</span>
+                  <span class="hud-focal">85mm · f/1.8</span>
+                  <span class="hud-iso">ISO 400</span>
+                </div>
+              </div>
+
+              <div class="viewfinder-frame">
+                <div class="viewfinder-ring"></div>
+                <span class="corner tl"></span>
+                <span class="corner tr"></span>
+                <span class="corner bl"></span>
+                <span class="corner br"></span>
+                <div class="focus-ring"></div>
+                <div class="grid-lines"><span></span><span></span><span></span><span></span></div>
+              </div>
+
+              <div class="lens-ring"></div>
+              <div class="target-crosshair"><span></span><span></span></div>
+              <div class="shutter-flash"></div>
+            </div>
+
+            <div class="status-bar">
+              <span id="dot" class="status-dot"></span>
+              <span id="text" class="status-text">Aponte e toque em Identificar</span>
+            </div>
+
+            <a id="result" class="result-card hidden" href="#">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/President_Barack_Obama.jpg/440px-President_Barack_Obama.jpg"
+                alt="Barack Obama"
+              />
+              <div>
+                <h2>Barack Obama</h2>
+                <span class="result-link">Ver na Wikipedia →</span>
+              </div>
+            </a>
+
+            <div class="controls">
+              <button id="shutter" type="button" class="shutter-btn" aria-label="Identificar">
+                <span class="shutter-inner"></span>
+              </button>
+              <span id="shutter-label" class="shutter-label">Identificar</span>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      const IMG =
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/President_Barack_Obama.jpg/440px-President_Barack_Obama.jpg";
+
+      const states = {
+        idle: {
+          stageClass: "",
+          text: "Aponte e toque em Identificar",
+          dot: "",
+          result: false,
+          busy: false,
+          label: "Identificar",
+        },
+        viewfinder: {
+          stageClass: "active",
+          text: "Enfocando…",
+          dot: "scanning",
+          result: false,
+          busy: true,
+          label: "Analisando…",
+        },
+        shutter: {
+          stageClass: "active shutter",
+          text: "Enfocando…",
+          dot: "scanning",
+          result: false,
+          busy: true,
+          label: "Analisando…",
+        },
+        processing: {
+          stageClass: "active processing",
+          text: "Analisando…",
+          dot: "scanning",
+          result: false,
+          busy: true,
+          label: "Analisando…",
+        },
+        identified: {
+          stageClass: "",
+          text: "Identificado: Barack Obama (94%)",
+          dot: "found",
+          result: true,
+          busy: false,
+          label: "Identificar",
+        },
+      };
+
+      const stage = document.getElementById("stage");
+      const dot = document.getElementById("dot");
+      const text = document.getElementById("text");
+      const result = document.getElementById("result");
+      const shutter = document.getElementById("shutter");
+      const shutterLabel = document.getElementById("shutter-label");
+      const freeze = document.getElementById("freeze");
+
+      function setState(name) {
+        const s = states[name];
+        stage.className = "target-stage" + (s.stageClass ? " " + s.stageClass : "");
+        dot.className = "status-dot" + (s.dot ? " " + s.dot : "");
+        text.textContent = s.text;
+        result.classList.toggle("hidden", !s.result);
+        shutter.classList.toggle("busy", s.busy);
+        shutterLabel.textContent = s.label;
+        freeze.src = IMG;
+
+        document.querySelectorAll(".state-buttons button").forEach((btn) => {
+          btn.classList.toggle("active", btn.dataset.state === name);
+        });
+
+        if (name === "shutter") {
+          stage.classList.remove("shutter");
+          void stage.offsetWidth;
+          stage.classList.add("active", "shutter");
+        }
+      }
+
+      document.querySelectorAll(".state-buttons button").forEach((btn) => {
+        btn.addEventListener("click", () => setState(btn.dataset.state));
+      });
+
+      shutter.addEventListener("click", async () => {
+        setState("viewfinder");
+        await new Promise((r) => setTimeout(r, 700));
+        setState("shutter");
+        await new Promise((r) => setTimeout(r, 400));
+        setState("processing");
+        await new Promise((r) => setTimeout(r, 800));
+        setState("identified");
+      });
+    </script>
+  </body>
+</html>

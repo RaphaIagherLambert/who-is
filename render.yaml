@@ -1,0 +1,24 @@
+# Render.com — deploy Who is? (app + API together)
+# Docs: https://render.com/docs/blueprint-spec
+
+services:
+  - type: web
+    name: who-is
+    runtime: node
+    plan: free
+    buildCommand: npm run install:all && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: RECOGNITION_PROVIDER
+        value: aws
+      - key: AWS_REGION
+        value: us-east-1
+      - key: MIN_CONFIDENCE
+        value: "85"
+      - key: AWS_ACCESS_KEY_ID
+        sync: false
+      - key: AWS_SECRET_ACCESS_KEY
+        sync: false
