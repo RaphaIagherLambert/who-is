@@ -36,6 +36,7 @@ export default function App() {
     starting,
     active,
     startCamera,
+    stopCamera,
     captureFrame,
   } = useCamera();
 
@@ -98,17 +99,17 @@ export default function App() {
       setSnapshot(null);
       setPhase("idle");
       busyRef.current = false;
-      if (ready) {
-        setStatus(t.aimAndTap);
-      }
+      stopCamera();
     }
-  }, [captureFrame, lang, ready, t]);
+  }, [captureFrame, lang, ready, stopCamera, t]);
 
   const handleForesightClick = useCallback(async () => {
     if (busyRef.current || starting) return;
 
     if (!active) {
       setError(null);
+      setMatch(null);
+      setWiki(null);
       setStatus(t.openingCamera);
       const ok = await startCamera();
       setStatus(ok ? t.aimAndTap : t.cameraError);

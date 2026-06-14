@@ -29,9 +29,15 @@ export function useCamera() {
   const [starting, setStarting] = useState(false);
   const [active, setActive] = useState(false);
 
-  const stopStream = useCallback(() => {
+  const stopCamera = useCallback(() => {
     streamRef.current?.getTracks().forEach((t) => t.stop());
     streamRef.current = null;
+
+    const video = videoRef.current;
+    if (video) {
+      video.srcObject = null;
+    }
+
     setReady(false);
     setActive(false);
   }, []);
@@ -87,7 +93,7 @@ export function useCamera() {
     }
   }, [ready, starting]);
 
-  useEffect(() => () => stopStream(), [stopStream]);
+  useEffect(() => () => stopCamera(), [stopCamera]);
 
   const captureFrame = useCallback((): string | null => {
     const video = videoRef.current;
@@ -111,6 +117,7 @@ export function useCamera() {
     starting,
     active,
     startCamera,
+    stopCamera,
     captureFrame,
   };
 }
