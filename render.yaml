@@ -6,7 +6,7 @@ services:
     name: who-is
     runtime: node
     plan: free
-    buildCommand: npm run install:all && npm run build
+    buildCommand: NPM_CONFIG_PRODUCTION=false npm run install:all && npm run build
     startCommand: npm start
     healthCheckPath: /api/health
     envVars:
