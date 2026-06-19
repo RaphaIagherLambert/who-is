@@ -11,3 +11,4 @@ dist/
 *.pem
 *.key
 credentials*
+server/data/

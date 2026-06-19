@@ -20,6 +20,14 @@ services:
         value: "97"
       - key: MIN_MATCH_MARGIN
         value: "12"
+      - key: REKOGNITION_COLLECTION_ID
+        value: who-is-faces
+      - key: MIN_FACE_SIMILARITY
+        value: "95"
+      - key: CUSTOM_TEACH_ENABLED
+        value: "true"
+      - key: ADMIN_SECRET
+        sync: false
       - key: AWS_ACCESS_KEY_ID
         sync: false
       - key: AWS_SECRET_ACCESS_KEY

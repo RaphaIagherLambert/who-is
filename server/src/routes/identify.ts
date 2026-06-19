@@ -1,10 +1,11 @@
 import { Router } from "express";
+import { searchTeachingFace } from "../services/customCollection.js";
 import {
   loadMatchFilterConfig,
   pickConfidentMatch,
-  type RejectReason,
 } from "../services/matchFilter.js";
 import { createRecognitionProvider } from "../services/providerFactory.js";
+import { getTeachingById } from "../services/teachingsStore.js";
 import { findWikipediaPage } from "../services/wikipedia.js";
 import { parseImagePayload } from "../utils/imagePayload.js";
 
@@ -20,7 +21,7 @@ function getProvider() {
 }
 
 /**
- * Single call: recognize celebrities in an image and resolve Wikipedia pages.
+ * Single call: search learned faces, then celebrities, then Wikipedia.
  * Returns at most one result — prefers no answer over a wrong guess.
  */
 identifyRouter.post("/", async (req, res) => {
@@ -33,6 +34,30 @@ identifyRouter.post("/", async (req, res) => {
 
     const lang = typeof req.body?.lang === "string" ? req.body.lang : "en";
     const filterConfig = loadMatchFilterConfig();
+    const providerName = process.env.RECOGNITION_PROVIDER ?? "mock";
+
+    const customMatch = await searchTeachingFace(parsed.base64);
+    if (customMatch) {
+      const teaching = await getTeachingById(customMatch.externalId);
+      if (teaching) {
+        res.json({
+          results: [
+            {
+              name: teaching.name,
+              confidence: customMatch.similarity,
+              wikipedia: teaching.wikipedia,
+              source: "learned",
+            },
+          ],
+          rejectReason: null,
+          allMatches: [],
+          minConfidence: filterConfig.minConfidence,
+          lang,
+          provider: providerName,
+        });
+        return;
+      }
+    }
 
     const matches = await getProvider().recognize(parsed.base64);
     const { match, reason } = pickConfidentMatch(matches, filterConfig);
@@ -44,7 +69,7 @@ identifyRouter.post("/", async (req, res) => {
         allMatches: matches,
         minConfidence: filterConfig.minConfidence,
         lang,
-        provider: process.env.RECOGNITION_PROVIDER ?? "mock",
+        provider: providerName,
       });
       return;
     }
@@ -57,18 +82,18 @@ identifyRouter.post("/", async (req, res) => {
         allMatches: matches,
         minConfidence: filterConfig.minConfidence,
         lang,
-        provider: process.env.RECOGNITION_PROVIDER ?? "mock",
+        provider: providerName,
       });
       return;
     }
 
     res.json({
-      results: [{ ...match, wikipedia: wiki }],
+      results: [{ ...match, wikipedia: wiki, source: "celebrity" }],
       rejectReason: null,
       allMatches: matches,
       minConfidence: filterConfig.minConfidence,
       lang,
-      provider: process.env.RECOGNITION_PROVIDER ?? "mock",
+      provider: providerName,
     });
   } catch (err) {
     console.error("Identify error:", err);
