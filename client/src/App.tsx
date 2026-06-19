@@ -2,7 +2,6 @@ import { useCallback, useRef, useState } from "react";
 import {
   CelebrityMatch,
   identifyImage,
-  pickBestResult,
   WikipediaPage,
 } from "./api";
 import {
@@ -77,22 +76,24 @@ export default function App() {
       setPhase("processing");
       setStatus(t.scanning);
 
-      const { results } = await identifyImage(frame, toApiLanguage(lang));
-      const best = pickBestResult(results);
+      const { results, rejectReason } = await identifyImage(
+        frame,
+        toApiLanguage(lang)
+      );
+      const best = results[0] ?? null;
 
       if (!best) {
-        setStatus(t.notFound);
+        setStatus(
+          rejectReason && rejectReason !== "no_faces"
+            ? t.notConfident
+            : t.notFound
+        );
         return;
       }
 
       setMatch(best);
       setStatus(t.identified(best.name, best.confidence));
-
-      if (best.wikipedia) {
-        setWiki(best.wikipedia);
-      } else {
-        setStatus(t.noWiki(best.name));
-      }
+      setWiki(best.wikipedia);
     } catch (err) {
       setError(err instanceof Error ? err.message : t.errorGeneric);
     } finally {

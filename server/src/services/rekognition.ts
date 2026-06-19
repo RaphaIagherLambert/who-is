@@ -38,6 +38,16 @@ export class AwsRekognitionProvider implements RecognitionProvider {
             }
           : undefined,
         urls: face.Urls?.map(String),
+        faceConfidence: face.Face?.Confidence,
+        sharpness: face.Face?.Quality?.Sharpness,
+        brightness: face.Face?.Quality?.Brightness,
+        pose: face.Face?.Pose
+          ? {
+              yaw: face.Face.Pose.Yaw ?? 0,
+              pitch: face.Face.Pose.Pitch ?? 0,
+              roll: face.Face.Pose.Roll ?? 0,
+            }
+          : undefined,
       }))
       .sort((a, b) => b.confidence - a.confidence);
   }

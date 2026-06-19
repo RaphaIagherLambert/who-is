@@ -9,6 +9,14 @@ export interface CelebrityMatch {
   };
   /** Optional reference URLs returned by AWS Rekognition */
   urls?: string[];
+  faceConfidence?: number;
+  sharpness?: number;
+  brightness?: number;
+  pose?: {
+    yaw: number;
+    pitch: number;
+    roll: number;
+  };
 }
 
 export interface RecognitionProvider {

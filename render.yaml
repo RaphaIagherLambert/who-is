@@ -17,7 +17,9 @@ services:
       - key: AWS_REGION
         value: us-east-1
       - key: MIN_CONFIDENCE
-        value: "85"
+        value: "97"
+      - key: MIN_MATCH_MARGIN
+        value: "12"
       - key: AWS_ACCESS_KEY_ID
         sync: false
       - key: AWS_SECRET_ACCESS_KEY

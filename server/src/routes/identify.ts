@@ -1,4 +1,9 @@
 import { Router } from "express";
+import {
+  loadMatchFilterConfig,
+  pickConfidentMatch,
+  type RejectReason,
+} from "../services/matchFilter.js";
 import { createRecognitionProvider } from "../services/providerFactory.js";
 import { findWikipediaPage } from "../services/wikipedia.js";
 import { parseImagePayload } from "../utils/imagePayload.js";
@@ -16,6 +21,7 @@ function getProvider() {
 
 /**
  * Single call: recognize celebrities in an image and resolve Wikipedia pages.
+ * Returns at most one result — prefers no answer over a wrong guess.
  */
 identifyRouter.post("/", async (req, res) => {
   try {
@@ -26,22 +32,41 @@ identifyRouter.post("/", async (req, res) => {
     }
 
     const lang = typeof req.body?.lang === "string" ? req.body.lang : "en";
-    const minConfidence = Number(process.env.MIN_CONFIDENCE) || 85;
+    const filterConfig = loadMatchFilterConfig();
 
     const matches = await getProvider().recognize(parsed.base64);
-    const confident = matches.filter((m) => m.confidence >= minConfidence);
+    const { match, reason } = pickConfidentMatch(matches, filterConfig);
 
-    const results = await Promise.all(
-      confident.map(async (match) => {
-        const wiki = await findWikipediaPage(match.name, lang);
-        return { ...match, wikipedia: wiki };
-      })
-    );
+    if (!match) {
+      res.json({
+        results: [],
+        rejectReason: reason,
+        allMatches: matches,
+        minConfidence: filterConfig.minConfidence,
+        lang,
+        provider: process.env.RECOGNITION_PROVIDER ?? "mock",
+      });
+      return;
+    }
+
+    const wiki = await findWikipediaPage(match.name, lang);
+    if (!wiki) {
+      res.json({
+        results: [],
+        rejectReason: "no_wiki",
+        allMatches: matches,
+        minConfidence: filterConfig.minConfidence,
+        lang,
+        provider: process.env.RECOGNITION_PROVIDER ?? "mock",
+      });
+      return;
+    }
 
     res.json({
-      results,
+      results: [{ ...match, wikipedia: wiki }],
+      rejectReason: null,
       allMatches: matches,
-      minConfidence,
+      minConfidence: filterConfig.minConfidence,
       lang,
       provider: process.env.RECOGNITION_PROVIDER ?? "mock",
     });

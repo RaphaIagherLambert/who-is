@@ -24,6 +24,13 @@ export interface IdentifyResult extends CelebrityMatch {
 
 export interface IdentifyResponse {
   results: IdentifyResult[];
+  rejectReason:
+    | "no_faces"
+    | "low_confidence"
+    | "ambiguous"
+    | "poor_quality"
+    | "no_wiki"
+    | null;
   allMatches: CelebrityMatch[];
   minConfidence: number;
   lang: string;

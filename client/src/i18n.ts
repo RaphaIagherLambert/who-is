@@ -12,6 +12,8 @@ export const translations = {
     openingCamera: "Abrindo câmera…",
     aimAndTap: "Aponte e toque na mira para identificar",
     notFound: "Nenhuma figura pública detectada",
+    notConfident:
+      "Não foi possível identificar com segurança. Aponte de frente, com boa luz, e tente de novo.",
     identified: (name: string, confidence: number) =>
       `Identificado: ${name} (${confidence.toFixed(0)}%)`,
     noWiki: (name: string) =>
@@ -32,6 +34,8 @@ export const translations = {
     openingCamera: "Opening camera…",
     aimAndTap: "Point and tap the sight to identify",
     notFound: "No public figure detected",
+    notConfident:
+      "Could not identify with confidence. Face the camera with good lighting and try again.",
     identified: (name: string, confidence: number) =>
       `Identified: ${name} (${confidence.toFixed(0)}%)`,
     noWiki: (name: string) =>
