@@ -7,9 +7,28 @@ import {
 } from "./adminAuth.js";
 
 export function useAdminMode() {
-  const [isAdmin, setIsAdmin] = useState(() => Boolean(getAdminSecret()));
+  const [isAdmin, setIsAdmin] = useState(false);
   const [unlockOpen, setUnlockOpen] = useState(false);
   const [tapCount, setTapCount] = useState(0);
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    const stored = getAdminSecret();
+    if (!stored) {
+      setReady(true);
+      return;
+    }
+
+    verifyAdminSecret(stored).then((ok) => {
+      if (ok) {
+        setAdminSecret(stored);
+        setIsAdmin(true);
+      } else {
+        clearAdminSecret();
+      }
+      setReady(true);
+    });
+  }, []);
 
   useEffect(() => {
     if (tapCount === 0) return;
@@ -44,6 +63,7 @@ export function useAdminMode() {
 
   return {
     isAdmin,
+    ready,
     unlockOpen,
     setUnlockOpen,
     onTitleTap,

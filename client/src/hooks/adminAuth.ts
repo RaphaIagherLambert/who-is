@@ -1,14 +1,20 @@
 const ADMIN_KEY = "whois-admin-secret";
 
+function readStoredSecret(): string | null {
+  return localStorage.getItem(ADMIN_KEY) ?? sessionStorage.getItem(ADMIN_KEY);
+}
+
 export function getAdminSecret(): string | null {
-  return sessionStorage.getItem(ADMIN_KEY);
+  return readStoredSecret();
 }
 
 export function setAdminSecret(secret: string): void {
-  sessionStorage.setItem(ADMIN_KEY, secret);
+  localStorage.setItem(ADMIN_KEY, secret);
+  sessionStorage.removeItem(ADMIN_KEY);
 }
 
 export function clearAdminSecret(): void {
+  localStorage.removeItem(ADMIN_KEY);
   sessionStorage.removeItem(ADMIN_KEY);
 }
 
