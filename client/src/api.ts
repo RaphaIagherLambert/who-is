@@ -20,7 +20,7 @@ export interface WikipediaPage {
 
 export interface IdentifyResult extends CelebrityMatch {
   wikipedia: WikipediaPage | null;
-  source?: "celebrity" | "learned";
+  source?: "celebrity" | "learned" | "wikidata";
 }
 
 export interface IdentifyResponse {

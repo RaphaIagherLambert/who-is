@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "build": "tsc",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "import:actors": "tsx scripts/import-us-actors.ts"
   },
   "dependencies": {
     "@aws-sdk/client-rekognition": "^3.787.0",

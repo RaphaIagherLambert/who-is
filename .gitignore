@@ -12,3 +12,4 @@ dist/
 *.key
 credentials*
 server/data/
+data/

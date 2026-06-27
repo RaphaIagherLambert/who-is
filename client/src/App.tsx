@@ -48,7 +48,9 @@ export default function App() {
 
   const [wiki, setWiki] = useState<WikipediaPage | null>(null);
 
-  const [resultSource, setResultSource] = useState<"celebrity" | "learned" | null>(null);
+  const [resultSource, setResultSource] = useState<
+    "celebrity" | "learned" | "wikidata" | null
+  >(null);
 
   const [error, setError] = useState<string | null>(null);
 
@@ -607,6 +609,12 @@ export default function App() {
             {resultSource === "learned" && (
 
               <span className="learned-badge">{t.learnedBadge}</span>
+
+            )}
+
+            {resultSource === "wikidata" && (
+
+              <span className="learned-badge">{t.wikidataBadge}</span>
 
             )}
 

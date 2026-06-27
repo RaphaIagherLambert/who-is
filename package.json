@@ -9,7 +9,9 @@
     "dev:client": "npm run dev --prefix client",
     "dev:server": "npm run dev --prefix server",
     "build": "npm run build --prefix client && npm run build --prefix server",
-    "start": "npm run start --prefix server"
+    "start": "npm run start --prefix server",
+    "import:actors": "npm run import:actors --prefix server",
+    "import:actors:dry-run": "npm run import:actors --prefix server -- --dry-run --limit 20"
   },
   "engines": {
     "node": ">=20"

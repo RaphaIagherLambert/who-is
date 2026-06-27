@@ -1,10 +1,12 @@
 import { Router } from "express";
-import { searchTeachingFace } from "../services/customCollection.js";
+import { searchFaceCollection } from "../services/faceCollection.js";
 import {
   loadMatchFilterConfig,
   pickConfidentMatch,
 } from "../services/matchFilter.js";
 import { createRecognitionProvider } from "../services/providerFactory.js";
+import { fetchWikidataEntityMetadata } from "../services/wikidataImport.js";
+import { getWikidataPersonById } from "../services/wikidataStore.js";
 import { getTeachingById } from "../services/teachingsStore.js";
 import { findWikipediaPage } from "../services/wikipedia.js";
 import { parseImagePayload } from "../utils/imagePayload.js";
@@ -20,9 +22,45 @@ function getProvider() {
   return provider;
 }
 
+async function resolveCollectionMatch(externalId: string, lang: string) {
+  const wikidata = await getWikidataPersonById(externalId);
+  if (wikidata) {
+    return {
+      name: wikidata.name,
+      wikipedia: wikidata.wikipedia,
+      source: "wikidata" as const,
+    };
+  }
+
+  if (/^Q\d+$/.test(externalId)) {
+    const live = await fetchWikidataEntityMetadata(externalId);
+    if (live) {
+      const localized =
+        lang.startsWith("pt") && live.wikipedia.lang === "en"
+          ? (await findWikipediaPage(live.name, "pt")) ?? live.wikipedia
+          : live.wikipedia;
+      return {
+        name: live.name,
+        wikipedia: localized,
+        source: "wikidata" as const,
+      };
+    }
+  }
+
+  const teaching = await getTeachingById(externalId);
+  if (teaching) {
+    return {
+      name: teaching.name,
+      wikipedia: teaching.wikipedia,
+      source: "learned" as const,
+    };
+  }
+
+  return null;
+}
+
 /**
- * Single call: search learned faces, then celebrities, then Wikipedia.
- * Returns at most one result — prefers no answer over a wrong guess.
+ * Search indexed faces (Wikidata + admin teach), then AWS celebrities.
  */
 identifyRouter.post("/", async (req, res) => {
   try {
@@ -36,17 +74,20 @@ identifyRouter.post("/", async (req, res) => {
     const filterConfig = loadMatchFilterConfig();
     const providerName = process.env.RECOGNITION_PROVIDER ?? "mock";
 
-    const customMatch = await searchTeachingFace(parsed.base64);
-    if (customMatch) {
-      const teaching = await getTeachingById(customMatch.externalId);
-      if (teaching) {
+    const collectionMatch = await searchFaceCollection(parsed.base64);
+    if (collectionMatch) {
+      const person = await resolveCollectionMatch(
+        collectionMatch.externalId,
+        lang
+      );
+      if (person) {
         res.json({
           results: [
             {
-              name: teaching.name,
-              confidence: customMatch.similarity,
-              wikipedia: teaching.wikipedia,
-              source: "learned",
+              name: person.name,
+              confidence: collectionMatch.similarity,
+              wikipedia: person.wikipedia,
+              source: person.source,
             },
           ],
           rejectReason: null,
