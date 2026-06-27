@@ -1,7 +1,25 @@
 import { Router } from "express";
-import { findWikipediaPage } from "../services/wikipedia.js";
+import {
+  findWikipediaPage,
+  searchWikipediaSuggestions,
+} from "../services/wikipedia.js";
 
 export const wikipediaRouter = Router();
+
+wikipediaRouter.get("/search/suggestions", async (req, res) => {
+  try {
+    const query = typeof req.query.q === "string" ? req.query.q : "";
+    const lang = (req.query.lang as string) || "en";
+
+    const suggestions = await searchWikipediaSuggestions(query, lang);
+    res.json({ suggestions });
+  } catch (err) {
+    console.error("Wikipedia suggestions error:", err);
+    res.status(500).json({
+      error: err instanceof Error ? err.message : "Wikipedia search failed",
+    });
+  }
+});
 
 wikipediaRouter.get("/:name", async (req, res) => {
   try {

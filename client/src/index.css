@@ -683,6 +683,60 @@ a {
   color: #a3a3a3;
 }
 
+.teach-search-wrap {
+  position: relative;
+}
+
+.teach-suggestions {
+  list-style: none;
+  margin: 0.35rem 0 0;
+  padding: 0;
+  max-height: 220px;
+  overflow-y: auto;
+  border: 1px solid #262626;
+  border-radius: 0.65rem;
+  background: #111;
+}
+
+.teach-suggestion {
+  display: block;
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border: none;
+  border-bottom: 1px solid #1f1f1f;
+  background: transparent;
+  color: #e5e5e5;
+  text-align: left;
+  cursor: pointer;
+}
+
+.teach-suggestion:last-child {
+  border-bottom: none;
+}
+
+.teach-suggestion strong {
+  display: block;
+  font-size: 0.85rem;
+}
+
+.teach-suggestion span {
+  display: block;
+  margin-top: 0.15rem;
+  color: #737373;
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
+.teach-suggestion:not(.muted):hover {
+  background: #1a1a1a;
+}
+
+.teach-suggestion.muted {
+  color: #737373;
+  font-size: 0.8rem;
+  padding: 0.65rem 0.75rem;
+}
+
 .teach-row {
   display: flex;
   gap: 0.5rem;

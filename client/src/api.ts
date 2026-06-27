@@ -61,6 +61,13 @@ export function pickBestResult(results: IdentifyResult[]): IdentifyResult | null
   return results.reduce((a, b) => (a.confidence >= b.confidence ? a : b));
 }
 
+export interface WikipediaSuggestion {
+  title: string;
+  snippet: string;
+  url: string;
+  lang: string;
+}
+
 export async function lookupWikipedia(
   name: string,
   lang: string
@@ -73,6 +80,20 @@ export async function lookupWikipedia(
     throw new Error(err.error ?? "Wikipedia lookup failed");
   }
   return res.json();
+}
+
+export async function searchWikipediaSuggestions(
+  query: string,
+  lang: string
+): Promise<WikipediaSuggestion[]> {
+  const res = await fetch(
+    `/api/wikipedia/search/suggestions?q=${encodeURIComponent(query)}&lang=${encodeURIComponent(lang)}`
+  );
+  if (!res.ok) {
+    return [];
+  }
+  const data = (await res.json()) as { suggestions: WikipediaSuggestion[] };
+  return data.suggestions ?? [];
 }
 
 export async function teachPerson(

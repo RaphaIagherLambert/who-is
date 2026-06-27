@@ -1,5 +1,11 @@
-import { useState } from "react";
-import { lookupWikipedia, teachPerson, WikipediaPage } from "../api";
+import { useEffect, useRef, useState } from "react";
+import {
+  lookupWikipedia,
+  searchWikipediaSuggestions,
+  teachPerson,
+  WikipediaPage,
+  WikipediaSuggestion,
+} from "../api";
 import { AppLanguage, translations } from "../i18n";
 import { getAdminSecret } from "../hooks/adminAuth";
 
@@ -12,24 +18,67 @@ interface TeachPanelProps {
 
 export function TeachPanel({ lang, frame, onClose, onSuccess }: TeachPanelProps) {
   const t = translations[lang];
+  const apiLang = lang === "pt" ? "pt" : "en";
   const [name, setName] = useState("");
   const [preview, setPreview] = useState<WikipediaPage | null>(null);
+  const [suggestions, setSuggestions] = useState<WikipediaSuggestion[]>([]);
+  const [suggestLoading, setSuggestLoading] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const skipSuggestRef = useRef(false);
 
-  const searchWiki = async () => {
-    if (name.trim().length < 2) return;
+  useEffect(() => {
+    const trimmed = name.trim();
+    if (skipSuggestRef.current) {
+      skipSuggestRef.current = false;
+      return;
+    }
+
+    if (trimmed.length < 2) {
+      setSuggestions([]);
+      return;
+    }
+
+    const timer = window.setTimeout(async () => {
+      setSuggestLoading(true);
+      try {
+        const results = await searchWikipediaSuggestions(trimmed, apiLang);
+        setSuggestions(results);
+      } catch {
+        setSuggestions([]);
+      } finally {
+        setSuggestLoading(false);
+      }
+    }, 350);
+
+    return () => window.clearTimeout(timer);
+  }, [name, apiLang]);
+
+  const loadPreview = async (title: string) => {
     setBusy(true);
     setError(null);
     setPreview(null);
     try {
-      const page = await lookupWikipedia(name.trim(), lang === "pt" ? "pt" : "en");
+      const page = await lookupWikipedia(title, apiLang);
       setPreview(page);
     } catch (err) {
       setError(err instanceof Error ? err.message : t.teachError);
     } finally {
       setBusy(false);
     }
+  };
+
+  const searchWiki = async () => {
+    if (name.trim().length < 2) return;
+    setSuggestions([]);
+    await loadPreview(name.trim());
+  };
+
+  const selectSuggestion = async (suggestion: WikipediaSuggestion) => {
+    skipSuggestRef.current = true;
+    setName(suggestion.title);
+    setSuggestions([]);
+    await loadPreview(suggestion.title);
   };
 
   const saveTeaching = async () => {
@@ -39,7 +88,7 @@ export function TeachPanel({ lang, frame, onClose, onSuccess }: TeachPanelProps)
     setBusy(true);
     setError(null);
     try {
-      await teachPerson(frame, preview.title, lang === "pt" ? "pt" : "en", secret, preview.url);
+      await teachPerson(frame, preview.title, apiLang, secret, preview.url);
       onSuccess(preview.title, preview);
     } catch (err) {
       setError(err instanceof Error ? err.message : t.teachError);
@@ -63,25 +112,51 @@ export function TeachPanel({ lang, frame, onClose, onSuccess }: TeachPanelProps)
         <label className="teach-label" htmlFor="teach-name">
           {t.teachNameLabel}
         </label>
-        <div className="teach-row">
-          <input
-            id="teach-name"
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            placeholder={t.teachNamePlaceholder}
-            disabled={busy}
-          />
-          <button type="button" onClick={searchWiki} disabled={busy || name.trim().length < 2}>
-            {t.teachSearchWiki}
-          </button>
+        <div className="teach-search-wrap">
+          <div className="teach-row">
+            <input
+              id="teach-name"
+              type="text"
+              value={name}
+              onChange={(e) => {
+                setPreview(null);
+                setError(null);
+                setName(e.target.value);
+              }}
+              placeholder={t.teachNamePlaceholder}
+              disabled={busy}
+              autoComplete="off"
+            />
+            <button type="button" onClick={searchWiki} disabled={busy || name.trim().length < 2}>
+              {t.teachSearchWiki}
+            </button>
+          </div>
+
+          {(suggestLoading || suggestions.length > 0) && (
+            <ul className="teach-suggestions" role="listbox" aria-label={t.teachSuggestionsLabel}>
+              {suggestLoading && suggestions.length === 0 && (
+                <li className="teach-suggestion muted">{t.teachSuggestionsLoading}</li>
+              )}
+              {suggestions.map((suggestion) => (
+                <li key={suggestion.title}>
+                  <button
+                    type="button"
+                    className="teach-suggestion"
+                    onClick={() => selectSuggestion(suggestion)}
+                    disabled={busy}
+                  >
+                    <strong>{suggestion.title}</strong>
+                    {suggestion.snippet && <span>{suggestion.snippet}</span>}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
 
         {preview && (
           <div className="teach-preview">
-            {preview.thumbnail && (
-              <img src={preview.thumbnail} alt="" />
-            )}
+            {preview.thumbnail && <img src={preview.thumbnail} alt="" />}
             <div>
               <strong>{preview.title}</strong>
               {preview.description && <p>{preview.description}</p>}
