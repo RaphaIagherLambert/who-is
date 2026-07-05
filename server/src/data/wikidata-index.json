@@ -1,0 +1,4240 @@
+[
+  {
+    "id": "Q1001203",
+    "name": "Buddy Greco",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Buddy Greco",
+      "url": "https://en.wikipedia.org/wiki/Buddy_Greco",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Buddy%20Greco%201962.JPG?width=800",
+    "faceId": "1472f712-40de-4c4b-9c79-d177e487a83e",
+    "indexedAt": "2026-06-27T14:29:02.520Z"
+  },
+  {
+    "id": "Q1001214",
+    "name": "Buddy Ebsen",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Buddy Ebsen",
+      "url": "https://en.wikipedia.org/wiki/Buddy_Ebsen",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Buddy%20Ebsen%20-%20USCG.jpg?width=800",
+    "faceId": "1c585e57-3d20-40b7-844b-92b180c81b5a",
+    "indexedAt": "2026-06-27T14:29:04.972Z"
+  },
+  {
+    "id": "Q100149241",
+    "name": "Constance Ejuma",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Constance Ejuma",
+      "url": "https://en.wikipedia.org/wiki/Constance_Ejuma",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Meet%20and%20Greet%20Constance%20Ejuma%20of%20Black%20Panther%20%2852888409697%29.jpg?width=800",
+    "faceId": "6e2d8a78-2ba6-4765-920a-795055c325f3",
+    "indexedAt": "2026-06-27T14:29:33.357Z"
+  },
+  {
+    "id": "Q1001910",
+    "name": "Buff Bagwell",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Buff Bagwell",
+      "url": "https://en.wikipedia.org/wiki/Buff_Bagwell",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/BuffBagwellAugust2006.png?width=800",
+    "faceId": "f2252f21-78f5-400e-8c2f-8105099ba197",
+    "indexedAt": "2026-06-27T14:29:37.202Z"
+  },
+  {
+    "id": "Q100493495",
+    "name": "Nina Makino",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Nina Makino",
+      "url": "https://en.wikipedia.org/wiki/Nina_Makino",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Nina%20Hillman%20at%20KCON%205.08.2022%20%283%29.jpg?width=800",
+    "faceId": "a4876158-0caf-4955-b41f-0c661ac88da0",
+    "indexedAt": "2026-06-27T14:30:31.560Z"
+  },
+  {
+    "id": "Q100551566",
+    "name": "Maliq Johnson",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Maliq Johnson",
+      "url": "https://en.wikipedia.org/wiki/Maliq_Johnson",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/2025%2001%2024%20Sundance%20Film%20Festival-21%20Full.jpg?width=800",
+    "faceId": "745abd0c-5f32-4962-8c83-fb9012991d18",
+    "indexedAt": "2026-06-27T14:30:33.450Z"
+  },
+  {
+    "id": "Q100710645",
+    "name": "Omar Maskati",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Omar Maskati",
+      "url": "https://en.wikipedia.org/wiki/Omar_Maskati",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Omar%20Maskati%20photo.jpg?width=800",
+    "faceId": "a3eb56f3-cde1-4546-8594-dc8606d8b088",
+    "indexedAt": "2026-06-27T14:31:35.931Z"
+  },
+  {
+    "id": "Q100711776",
+    "name": "Jaden Michael",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Jaden Michael",
+      "url": "https://en.wikipedia.org/wiki/Jaden_Michael",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Jaden%20Michael%20Cannes%202017%20%28cropped%29.jpg?width=800",
+    "faceId": "6bec4014-bc4a-4d1b-afc9-f005e10050d0",
+    "indexedAt": "2026-06-27T14:31:37.331Z"
+  },
+  {
+    "id": "Q100740596",
+    "name": "Gus Rogers",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Gus Rogers",
+      "url": "https://en.wikipedia.org/wiki/Gus_Rogers",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Gus%20Rogers%2C%20stage%20actor.%20Hall%2C%20New%20York.jpg?width=800",
+    "faceId": "64c14bd6-3999-4094-b53f-8f3db71edae0",
+    "indexedAt": "2026-06-27T14:32:17.149Z"
+  },
+  {
+    "id": "Q100744270",
+    "name": "John Craig",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "John Craig (actor)",
+      "url": "https://en.wikipedia.org/wiki/John_Craig_(actor)",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/John%20Craig%2C%20stage%20actor.jpg?width=800",
+    "faceId": "c16941b6-ebb5-4163-983e-841d9e94652f",
+    "indexedAt": "2026-06-27T14:32:19.671Z"
+  },
+  {
+    "id": "Q100919234",
+    "name": "Ethel Barrymore Colt",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Ethel Barrymore Colt",
+      "url": "https://en.wikipedia.org/wiki/Ethel_Barrymore_Colt",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Stage%20actress%20Ethel%20Barrymore%20Colt%20%28SAYRE%2021032%29.jpg?width=800",
+    "faceId": "b7df1f0c-e1d7-4d1a-a58c-187611c08ba6",
+    "indexedAt": "2026-06-27T14:34:33.272Z"
+  },
+  {
+    "id": "Q100937",
+    "name": "Fred Astaire",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Fred Astaire",
+      "url": "https://en.wikipedia.org/wiki/Fred_Astaire",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Astaire%20singing%20in%20Second%20Chorus.jpg?width=800",
+    "faceId": "3a4a0cb6-6bfc-4c97-8ef7-b152dbd17cce",
+    "indexedAt": "2026-06-27T14:34:35.923Z"
+  },
+  {
+    "id": "Q100977342",
+    "name": "Gabriel Sloyer",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Gabriel Sloyer",
+      "url": "https://en.wikipedia.org/wiki/Gabriel_Sloyer",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Gabriel%20Sloyer%20-%20Great%20Philadelphia%20Comic%20Con.jpg?width=800",
+    "faceId": "7dfc716a-9605-4103-821a-ec5ec960e132",
+    "indexedAt": "2026-06-27T14:34:38.320Z"
+  },
+  {
+    "id": "Q101030913",
+    "name": "Samia Finnerty",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Samia (musician)",
+      "url": "https://en.wikipedia.org/wiki/Samia_(musician)",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Samia%2003%2029%202019%20-5%20%2846596567865%29.jpg?width=800",
+    "faceId": "75469256-1af0-45bd-bc59-61e7cb7e986b",
+    "indexedAt": "2026-06-27T14:35:06.133Z"
+  },
+  {
+    "id": "Q101068112",
+    "name": "Vernona Jarbeau",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Vernona Jarbeau",
+      "url": "https://en.wikipedia.org/wiki/Vernona_Jarbeau",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Vernona%20Jarbeau.jpg?width=800",
+    "faceId": "33384312-dd9d-412c-bc64-e72faca6ffae",
+    "indexedAt": "2026-06-27T14:35:08.155Z"
+  },
+  {
+    "id": "Q101242902",
+    "name": "William H. MacDonald",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "William H. MacDonald",
+      "url": "https://en.wikipedia.org/wiki/William_H._MacDonald",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/William%20H%20Macdonald%2C%20stage%20actor%20%28SAYRE%205201%29.jpg?width=800",
+    "faceId": "92e12a95-1a36-4f9f-8bc8-aba459396c8e",
+    "indexedAt": "2026-06-27T14:36:46.320Z"
+  },
+  {
+    "id": "Q101245742",
+    "name": "Mykal Kilgore",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Mykal Kilgore",
+      "url": "https://en.wikipedia.org/wiki/Mykal_Kilgore",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Mykal%20Kilgore.jpg?width=800",
+    "faceId": "440845a5-5f2d-4c46-94b8-a3500f442ef1",
+    "indexedAt": "2026-06-27T14:36:48.208Z"
+  },
+  {
+    "id": "Q101664589",
+    "name": "Louis Harrison",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Louis Harrison",
+      "url": "https://en.wikipedia.org/wiki/Louis_Harrison",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Louis%20Harrison%2C%20stage%20actor.jpg?width=800",
+    "faceId": "47338d98-702c-42b6-9a28-a6d44241b152",
+    "indexedAt": "2026-06-27T14:37:30.920Z"
+  },
+  {
+    "id": "Q1016897",
+    "name": "Burr Steers",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Burr Steers",
+      "url": "https://en.wikipedia.org/wiki/Burr_Steers",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Burr%20Steers%20%28cropped%29.jpg?width=800",
+    "faceId": "65df360a-5ae9-46c8-9e43-9e10c46aa1bf",
+    "indexedAt": "2026-06-27T14:37:33.502Z"
+  },
+  {
+    "id": "Q101797",
+    "name": "Winona Ryder",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Winona Ryder",
+      "url": "https://en.wikipedia.org/wiki/Winona_Ryder",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Winona%20Ryder-63849.jpg?width=800",
+    "faceId": "1e654f36-28c7-4016-b5cd-fed1a7293368",
+    "indexedAt": "2026-06-27T14:39:19.120Z"
+  },
+  {
+    "id": "Q100122",
+    "name": "Kurt Kreuger",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Kurt Kreuger",
+      "url": "https://en.wikipedia.org/wiki/Kurt_Kreuger",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Kurt%20Kreuger%20in%20The%20Dark%20Corner%20trailer.jpg?width=800",
+    "faceId": "006f0535-0b14-4e08-934e-799ab7a59e8c",
+    "indexedAt": "2026-06-30T01:13:37.750Z"
+  },
+  {
+    "id": "Q1001240",
+    "name": "Buddy Lester",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Buddy Lester",
+      "url": "https://en.wikipedia.org/wiki/Buddy_Lester",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Buddy%20Lester.jpg?width=800",
+    "faceId": "3930cffc-c863-47b8-9e2b-72085b81d8c5",
+    "indexedAt": "2026-06-30T01:13:39.665Z"
+  },
+  {
+    "id": "Q100220",
+    "name": "Susan Cummings",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Susan Cummings (actress)",
+      "url": "https://en.wikipedia.org/wiki/Susan_Cummings_(actress)",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Craig%20Stevens%20Susan%20Cummings%20Peter%20Gunn.JPG?width=800",
+    "faceId": "8e437d91-180e-4ff6-8387-9313f157253d",
+    "indexedAt": "2026-06-30T01:14:29.130Z"
+  },
+  {
+    "id": "Q100307848",
+    "name": "Daisuke Tsuji",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Daisuke Tsuji",
+      "url": "https://en.wikipedia.org/wiki/Daisuke_Tsuji",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Daisuke%20Tsuji%2C%202009%20%283092911%29.jpg?width=800",
+    "faceId": "5b298e4c-a296-453f-972c-298d6431ba4a",
+    "indexedAt": "2026-06-30T01:14:30.381Z"
+  },
+  {
+    "id": "Q100700181",
+    "name": "Michael Kovach",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Michael Kovach",
+      "url": "https://en.wikipedia.org/wiki/Michael_Kovach",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Michael%20Kovach%202025.png?width=800",
+    "faceId": "fbdfdd63-c518-43fe-a888-4b4a2b0f0d08",
+    "indexedAt": "2026-06-30T01:15:03.984Z"
+  },
+  {
+    "id": "Q100701301",
+    "name": "Flora Walsh",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Flora Walsh",
+      "url": "https://en.wikipedia.org/wiki/Flora_Walsh",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Marie%20Burroughs%20Art%20Portfolio%20100%20-%20Flora%20Walsh%20Hoyt%20%28cropped%29.jpg?width=800",
+    "faceId": "f16eb7ef-de7d-4b95-aed5-92a647913397",
+    "indexedAt": "2026-06-30T01:15:06.197Z"
+  },
+  {
+    "id": "Q100740589",
+    "name": "Max Rogers",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Max Rogers (comedian)",
+      "url": "https://en.wikipedia.org/wiki/Max_Rogers_(comedian)",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Max%20Rogers%2C%20stage%20actor.%20Hall%2C%20New%20York.jpg?width=800",
+    "faceId": "8619a933-dc0e-456c-b57a-6c46466d4a0c",
+    "indexedAt": "2026-06-30T01:16:05.586Z"
+  },
+  {
+    "id": "Q100804425",
+    "name": "Ida Vernon",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Ida Vernon",
+      "url": "https://en.wikipedia.org/wiki/Ida_Vernon",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Ida%20Vernon%2C%20stage%20actress%20%28SAYRE%2010479%29.jpg?width=800",
+    "faceId": "0ee71448-16cc-4fa9-97a4-1d3570e386c9",
+    "indexedAt": "2026-06-30T01:17:53.156Z"
+  },
+  {
+    "id": "Q100806418",
+    "name": "Solomon Hughes",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Solomon Hughes (actor)",
+      "url": "https://en.wikipedia.org/wiki/Solomon_Hughes_(actor)",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Solomon%20Hughes%20next%20to%20Four%20Tops%20exhibit%20%28cropped%29.jpg?width=800",
+    "faceId": "c1d56312-a6e2-47bf-aad2-4540619711f7",
+    "indexedAt": "2026-06-30T01:17:56.487Z"
+  },
+  {
+    "id": "Q1009495",
+    "name": "George O'Brien",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "George O'Brien (actor)",
+      "url": "https://en.wikipedia.org/wiki/George_O'Brien_(actor)",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/George%20O%27Brien%2C%20silent%20film%20actor%20%28SAYRE%207091%29.jpg?width=800",
+    "faceId": "1248a827-7f7e-42f5-8fae-2c90f18605a1",
+    "indexedAt": "2026-06-30T01:18:20.652Z"
+  },
+  {
+    "id": "Q101137091",
+    "name": "Laci Mosley",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Laci Mosley",
+      "url": "https://en.wikipedia.org/wiki/Laci_Mosley",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Laci%20Mosley%202021.png?width=800",
+    "faceId": "473f5206-6789-4016-9234-866cd05aafa8",
+    "indexedAt": "2026-06-30T01:19:03.661Z"
+  },
+  {
+    "id": "Q101137132",
+    "name": "Lina Bradford",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Lina Bradford",
+      "url": "https://en.wikipedia.org/wiki/Lina_Bradford",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Lina%20Bradford%20for%20Chromat%20SS20.jpg?width=800",
+    "faceId": "76172f36-d1e9-4b8b-ae91-5281c97e720a",
+    "indexedAt": "2026-06-30T01:19:05.386Z"
+  },
+  {
+    "id": "Q101246310",
+    "name": "Fay Courteney",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Fay Courteney",
+      "url": "https://en.wikipedia.org/wiki/Fay_Courteney",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/FayCourteney1917.jpg?width=800",
+    "faceId": "463e3488-deb4-478f-8736-474bfbd020cd",
+    "indexedAt": "2026-06-30T01:20:06.910Z"
+  },
+  {
+    "id": "Q101528973",
+    "name": "Moses Ingram",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Moses Ingram",
+      "url": "https://en.wikipedia.org/wiki/Moses_Ingram",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Moses%20Ingram%20A%20House%20of%20Dynamite-39.jpg?width=800",
+    "faceId": "14a1629b-76d4-4c9b-9d1c-076719e35c72",
+    "indexedAt": "2026-06-30T01:20:09.095Z"
+  },
+  {
+    "id": "Q1017860",
+    "name": "Butch Patrick",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Butch Patrick",
+      "url": "https://en.wikipedia.org/wiki/Butch_Patrick",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Headmaster%20Butch%20Patrick%201970%20No%202.jpg?width=800",
+    "faceId": "27a0dfc7-1e02-4bf9-8d43-2f26920b1a3d",
+    "indexedAt": "2026-06-30T01:20:49.582Z"
+  },
+  {
+    "id": "Q1018606",
+    "name": "Byron Howard",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Byron Howard",
+      "url": "https://en.wikipedia.org/wiki/Byron_Howard",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Byron%20Howard.jpg?width=800",
+    "faceId": "77b4ed7a-c97d-4603-852a-4edc6f620e7d",
+    "indexedAt": "2026-06-30T01:20:51.488Z"
+  },
+  {
+    "id": "Q1018624",
+    "name": "Byron Morrow",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Byron Morrow",
+      "url": "https://en.wikipedia.org/wiki/Byron_Morrow",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Byron%20Morrow%20in%20Lock%20Up%20%28Fugitive%20from%20Fear%29.jpg?width=800",
+    "faceId": "3855cadb-1631-4120-a149-29d756594486",
+    "indexedAt": "2026-06-30T01:21:49.690Z"
+  },
+  {
+    "id": "Q102046606",
+    "name": "Shay Rudolph",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Shay Rudolph",
+      "url": "https://en.wikipedia.org/wiki/Shay_Rudolph",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Shay%20Rudolph%20at%20the%202026%20Tribeca%20Festival%20for%20She%20Keeps%20Me%20Young%2001%20%28cropped%29.jpg?width=800",
+    "faceId": "f3cad85d-d82f-4d8e-8282-e5026b20d786",
+    "indexedAt": "2026-06-30T01:21:53.078Z"
+  },
+  {
+    "id": "Q102186376",
+    "name": "Lady Tsen Mei",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Lady Tsen Mei",
+      "url": "https://en.wikipedia.org/wiki/Lady_Tsen_Mei",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Lady%20Tsen%20Mei%20in%20costume%20as%20a%20mandarin%27s%20daughter.jpg?width=800",
+    "faceId": "c6060609-779e-4239-9df9-955a943c07d9",
+    "indexedAt": "2026-06-30T01:23:43.317Z"
+  },
+  {
+    "id": "Q102223472",
+    "name": "Spanky McFarlane",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Spanky McFarlane",
+      "url": "https://en.wikipedia.org/wiki/Spanky_McFarlane",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/SpankyMcFarlane2015.jpg?width=800",
+    "faceId": "530b2454-3acc-4d58-987b-35ec80bfb4ea",
+    "indexedAt": "2026-06-30T01:23:46.492Z"
+  },
+  {
+    "id": "Q100146532",
+    "name": "Eddie Lee",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Eddie Lee",
+      "url": "https://en.wikipedia.org/wiki/Eddie_Lee",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Eddie%20Lee%20in%20Sunset%20Range%20%281935%29.jpg?width=800",
+    "faceId": "adbcb518-f99f-4188-ad7d-a2bd4a003a37",
+    "indexedAt": "2026-06-30T01:26:37.733Z"
+  },
+  {
+    "id": "Q100440",
+    "name": "Larry Hagman",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Larry Hagman",
+      "url": "https://en.wikipedia.org/wiki/Larry_Hagman",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Larry%20Hagman%202010.jpg?width=800",
+    "faceId": "7df36885-25a9-41f5-bc2c-4f34cfab907d",
+    "indexedAt": "2026-06-30T01:28:26.044Z"
+  },
+  {
+    "id": "Q100702045",
+    "name": "Celia Rose Gooding",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Celia Rose Gooding",
+      "url": "https://en.wikipedia.org/wiki/Celia_Rose_Gooding",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/CeliaRoseGooding-byPhilipRomano.jpg?width=800",
+    "faceId": "34f09c7e-0c4a-4177-ba49-8a4df6a18688",
+    "indexedAt": "2026-06-30T01:30:38.651Z"
+  },
+  {
+    "id": "Q101541312",
+    "name": "Mai Wells",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Mai Wells",
+      "url": "https://en.wikipedia.org/wiki/Mai_Wells",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Mai%20Wells%20Arbuckle%201915.jpg?width=800",
+    "faceId": "719db095-5867-48f5-b3f4-3c3235104eca",
+    "indexedAt": "2026-06-30T01:33:15.050Z"
+  },
+  {
+    "id": "Q102077477",
+    "name": "Evelyn Daw",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Evelyn Daw",
+      "url": "https://en.wikipedia.org/wiki/Evelyn_Daw",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Evelyn%20Daw%20Something%20to%20Sing%20About%201937.jpg?width=800",
+    "faceId": "33fc7358-7cd8-45fd-bdaa-f418be21e7ba",
+    "indexedAt": "2026-06-30T01:34:15.297Z"
+  },
+  {
+    "id": "Q102124",
+    "name": "Sigourney Weaver",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Sigourney Weaver",
+      "url": "https://en.wikipedia.org/wiki/Sigourney_Weaver",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Sigourney%20Weaver%20at%20the%202025%20Toronto%20International%20Film%20Festival%20%28cropped%29.jpg?width=800",
+    "faceId": "1f836e4e-a3dd-4f5a-a092-d30655c59088",
+    "indexedAt": "2026-06-30T01:34:18.300Z"
+  },
+  {
+    "id": "Q102227434",
+    "name": "Nellie McCoy",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Nellie McCoy",
+      "url": "https://en.wikipedia.org/wiki/Nellie_McCoy",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Nellie%20McCoy.jpg?width=800",
+    "faceId": "1e2c3129-f79f-4bcc-abc2-1e963aa022f8",
+    "indexedAt": "2026-06-30T01:34:50.043Z"
+  },
+  {
+    "id": "Q1022537",
+    "name": "Warren Vanders",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Warren Vanders",
+      "url": "https://en.wikipedia.org/wiki/Warren_Vanders",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Warren%20Vanders%201963.jpg?width=800",
+    "faceId": "4e276e9e-d5cf-4a06-9bd0-20207aadfc17",
+    "indexedAt": "2026-06-30T01:34:51.682Z"
+  },
+  {
+    "id": "Q102301",
+    "name": "Joe Frazier",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Joe Frazier",
+      "url": "https://en.wikipedia.org/wiki/Joe_Frazier",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Joe%20Frazier%20color%20portrait.png?width=800",
+    "faceId": "c1fa10f6-455c-447d-91a5-67c10594b00d",
+    "indexedAt": "2026-06-30T01:35:36.639Z"
+  },
+  {
+    "id": "Q102336966",
+    "name": "Mary McVicker Booth",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Mary McVicker Booth",
+      "url": "https://en.wikipedia.org/wiki/Mary_McVicker_Booth",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Mary%20McVicker%20Booth.jpg?width=800",
+    "faceId": "66f1ed94-1ff7-401b-9601-009e24d4e2ef",
+    "indexedAt": "2026-06-30T01:35:39.810Z"
+  },
+  {
+    "id": "Q102338984",
+    "name": "Matt Rogers",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Matt Rogers (comedian)",
+      "url": "https://en.wikipedia.org/wiki/Matt_Rogers_(comedian)",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/MattRogers-byPhilipRomano.jpg?width=800",
+    "faceId": "31edafb4-0a0a-4c57-9e45-d1de6e60f7f6",
+    "indexedAt": "2026-06-30T01:35:42.399Z"
+  },
+  {
+    "id": "Q102406331",
+    "name": "Blanche Dayne",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Blanche Dayne",
+      "url": "https://en.wikipedia.org/wiki/Blanche_Dayne",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Vaudeville%20actress%20Blanche%20Dayne%20%28SAYRE%2022002%29.jpg?width=800",
+    "faceId": "10b0cb90-0aac-4662-800a-2f59fe2ba137",
+    "indexedAt": "2026-06-30T01:36:19.746Z"
+  },
+  {
+    "id": "Q102427314",
+    "name": "Xochitl Gomez",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Xochitl Gomez",
+      "url": "https://en.wikipedia.org/wiki/Xochitl_Gomez",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Xochitl%20Gomez%20-%202024%20%28cropped%29.jpg?width=800",
+    "faceId": "69d44497-6a91-44bf-a54a-c85846db55d6",
+    "indexedAt": "2026-06-30T01:36:21.467Z"
+  },
+  {
+    "id": "Q102429318",
+    "name": "Elfie Fay",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Elfie Fay",
+      "url": "https://en.wikipedia.org/wiki/Elfie_Fay",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Elfie%20V.%20Fay%20%28NYPL%201256272%29.jpg?width=800",
+    "faceId": "1ea533d5-6a11-46a2-bbb1-116901486309",
+    "indexedAt": "2026-06-30T01:36:25.582Z"
+  },
+  {
+    "id": "Q102462",
+    "name": "James Stewart",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "James Stewart",
+      "url": "https://en.wikipedia.org/wiki/James_Stewart",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Annex%20-%20Stewart%2C%20James%20%28Call%20Northside%20777%29%2001.jpg?width=800",
+    "faceId": "f1ab31b3-4137-4a32-8f55-500c92ffb378",
+    "indexedAt": "2026-06-30T01:37:16.720Z"
+  },
+  {
+    "id": "Q102551",
+    "name": "Ernest Borgnine",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Ernest Borgnine",
+      "url": "https://en.wikipedia.org/wiki/Ernest_Borgnine",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Ernest%20Borgnine%20McHale%20McHale%27s%20Navy%201962.JPG?width=800",
+    "faceId": "342d4fcc-773a-4d74-a0ae-6cf41665ca65",
+    "indexedAt": "2026-06-30T01:37:20.060Z"
+  },
+  {
+    "id": "Q10263921",
+    "name": "Daniel Browning Smith",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Daniel Browning Smith",
+      "url": "https://en.wikipedia.org/wiki/Daniel_Browning_Smith",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Rubberboy%20at%20QuakeCon%202006%20-%2001.jpg?width=800",
+    "faceId": "b47187d3-9171-4eae-9955-1bb5a672984d",
+    "indexedAt": "2026-06-30T01:38:05.085Z"
+  },
+  {
+    "id": "Q102711",
+    "name": "Dennis Hopper",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Dennis Hopper",
+      "url": "https://en.wikipedia.org/wiki/Dennis_Hopper",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Dennis%20Hopper%20Cannes%202008%20%28cropped%29.jpg?width=800",
+    "faceId": "5829052c-eeeb-4dd0-8538-3ea007d933c5",
+    "indexedAt": "2026-06-30T01:38:07.143Z"
+  },
+  {
+    "id": "Q102813",
+    "name": "Yul Brynner",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Yul Brynner",
+      "url": "https://en.wikipedia.org/wiki/Yul_Brynner",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Yul%20Brynner%20Anna%20and%20the%20King%20television%201972.JPG?width=800",
+    "faceId": "3a65d503-dff8-4031-8b74-78957b75365d",
+    "indexedAt": "2026-06-30T01:38:09.109Z"
+  },
+  {
+    "id": "Q1028724",
+    "name": "Cameron Douglas",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Cameron Douglas",
+      "url": "https://en.wikipedia.org/wiki/Cameron_Douglas",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Cameron%20Douglas%20at%20the%20SBIFF%202019.jpg?width=800",
+    "faceId": "301e6b3f-8b10-4042-84a1-f96816f465ff",
+    "indexedAt": "2026-06-30T01:42:36.372Z"
+  },
+  {
+    "id": "Q1029022",
+    "name": "Guy Siner",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Guy Siner",
+      "url": "https://en.wikipedia.org/wiki/Guy_Siner",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Guy%20Siner.JPG?width=800",
+    "faceId": "75f80e8b-0cc0-482a-9add-a70a14eb64bd",
+    "indexedAt": "2026-06-30T01:42:38.730Z"
+  },
+  {
+    "id": "Q10294979",
+    "name": "Herbert Berghof",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Herbert Berghof",
+      "url": "https://en.wikipedia.org/wiki/Herbert_Berghof",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Herbert%20Berghof%20in%20Five%20Fingers%20trailer.jpg?width=800",
+    "faceId": "75318552-5bd2-4833-82f9-f9a1b8a2ca25",
+    "indexedAt": "2026-06-30T01:43:21.607Z"
+  },
+  {
+    "id": "Q102981809",
+    "name": "Calahan Skogman",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Calahan Skogman",
+      "url": "https://en.wikipedia.org/wiki/Calahan_Skogman",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Calahan%20skogman%202021%201.jpg?width=800",
+    "faceId": "484711f8-2ae2-4198-94d9-56366e1d48ea",
+    "indexedAt": "2026-06-30T01:43:23.540Z"
+  },
+  {
+    "id": "Q10307042",
+    "name": "Joanna Cameron",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Joanna Cameron",
+      "url": "https://en.wikipedia.org/wiki/Joanna_Cameron",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/JoAnna%20Cameron%201972.jpg?width=800",
+    "faceId": "cc4f3518-8b66-4563-9701-180d1296a1ec",
+    "indexedAt": "2026-06-30T01:44:00.750Z"
+  },
+  {
+    "id": "Q10307574",
+    "name": "Joe Hursley",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Joe Hursley",
+      "url": "https://en.wikipedia.org/wiki/Joe_Hursley",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Joehursley.jpg?width=800",
+    "faceId": "b6c14484-80f5-4326-8b37-32ab18e30060",
+    "indexedAt": "2026-06-30T01:44:01.927Z"
+  },
+  {
+    "id": "Q10314171",
+    "name": "Ken Scott",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Ken Scott (actor)",
+      "url": "https://en.wikipedia.org/wiki/Ken_Scott_(actor)",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Ken%20Scott%201930s.jpg?width=800",
+    "faceId": "83e28512-b7d2-41ee-8f5f-b057cab57bb5",
+    "indexedAt": "2026-06-30T01:44:49.800Z"
+  },
+  {
+    "id": "Q103157",
+    "name": "Kurt Russell",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Kurt Russell",
+      "url": "https://en.wikipedia.org/wiki/Kurt_Russell",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Kurt%20Russell%20by%20Gage%20Skidmore%202.jpg?width=800",
+    "faceId": "9111e6d5-75e7-4f43-9ed3-0aecba217ef6",
+    "indexedAt": "2026-06-30T01:44:52.564Z"
+  },
+  {
+    "id": "Q10319679",
+    "name": "Lonny Ross",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Lonny Ross",
+      "url": "https://en.wikipedia.org/wiki/Lonny_Ross",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Lonny%20Ross%20by%20David%20Shankbone.jpg?width=800",
+    "faceId": "b95fee10-ec72-44a1-a6be-15c72587c5b7",
+    "indexedAt": "2026-06-30T01:44:54.511Z"
+  },
+  {
+    "id": "Q10329473",
+    "name": "Michael Whalen",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Michael Whalen (actor)",
+      "url": "https://en.wikipedia.org/wiki/Michael_Whalen_(actor)",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Michael%20Whalen%20in%20The%20Man%20I%20Marry.jpg?width=800",
+    "faceId": "105908e6-7978-40da-9172-09d1b1f7026e",
+    "indexedAt": "2026-06-30T01:44:57.570Z"
+  },
+  {
+    "id": "Q1033016",
+    "name": "Halle Berry",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Halle Berry",
+      "url": "https://en.wikipedia.org/wiki/Halle_Berry",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Halle%20Berry-1910.jpg?width=800",
+    "faceId": "60b39d83-2fbb-4071-b1dc-85f0fc05d4ba",
+    "indexedAt": "2026-06-30T01:46:53.851Z"
+  },
+  {
+    "id": "Q1033084",
+    "name": "Candy Candido",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Candy Candido",
+      "url": "https://en.wikipedia.org/wiki/Candy_Candido",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Candy%20Candido.jpg?width=800",
+    "faceId": "4f38e59d-a96f-402f-aa0b-73456b910bdb",
+    "indexedAt": "2026-06-30T01:46:55.437Z"
+  },
+  {
+    "id": "Q1033188",
+    "name": "Earl Sweatshirt",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Earl Sweatshirt",
+      "url": "https://en.wikipedia.org/wiki/Earl_Sweatshirt",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Earl%20Sweatshirt%20Day%20N%20Night%20Festival.png?width=800",
+    "faceId": "54a820ec-dce3-47cd-a7b6-39f7de42155b",
+    "indexedAt": "2026-06-30T01:46:58.211Z"
+  },
+  {
+    "id": "Q103343",
+    "name": "Jennifer Connelly",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Jennifer Connelly",
+      "url": "https://en.wikipedia.org/wiki/Jennifer_Connelly",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Jennifer%20Connelly%202010%20TIFF.jpg?width=800",
+    "faceId": "18332e90-a3a4-4759-8616-19bc797d2732",
+    "indexedAt": "2026-06-30T01:47:00.070Z"
+  },
+  {
+    "id": "Q10337389",
+    "name": "Norma Phillips",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Norma Phillips",
+      "url": "https://en.wikipedia.org/wiki/Norma_Phillips",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Norma%20Phillips.jpg?width=800",
+    "faceId": "3c7a7f84-0dc5-4b48-8f48-5fd73bdff16b",
+    "indexedAt": "2026-06-30T01:47:01.792Z"
+  },
+  {
+    "id": "Q1034128",
+    "name": "Harry Guardino",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Harry Guardino",
+      "url": "https://en.wikipedia.org/wiki/Harry_Guardino",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Harry%20Guardino%20Bettye%20Ackerman%20Ben%20Casey%201964.JPG?width=800",
+    "faceId": "c3836e01-d965-486e-95b2-4b90b6d28bcf",
+    "indexedAt": "2026-06-30T01:47:39.331Z"
+  },
+  {
+    "id": "Q10346344",
+    "name": "Paula Pell",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Paula Pell",
+      "url": "https://en.wikipedia.org/wiki/Paula_Pell",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Paula%20Pell%20on%20Employee%20of%20the%20Month.jpg?width=800",
+    "faceId": "83dc6fc5-e3bf-4b5b-885c-55c757d0f020",
+    "indexedAt": "2026-06-30T01:47:40.911Z"
+  },
+  {
+    "id": "Q103578",
+    "name": "Macaulay Culkin",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Macaulay Culkin",
+      "url": "https://en.wikipedia.org/wiki/Macaulay_Culkin",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Macaulay%20Culkin%20-%20Home%20Alone%2035th.jpg?width=800",
+    "faceId": "ecffb773-2ae3-4047-8f80-beabb144b243",
+    "indexedAt": "2026-06-30T01:47:42.547Z"
+  },
+  {
+    "id": "Q103646",
+    "name": "Ron Howard",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Ron Howard",
+      "url": "https://en.wikipedia.org/wiki/Ron_Howard",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Ron%20Howard%20at%20the%202024%20Toronto%20International%20Film%20Festival%2005%20%28cropped%29.jpg?width=800",
+    "faceId": "85a3f8c7-e969-4abe-821f-7388a7401356",
+    "indexedAt": "2026-06-30T01:49:31.614Z"
+  },
+  {
+    "id": "Q1037071",
+    "name": "Carl Betz",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Carl Betz",
+      "url": "https://en.wikipedia.org/wiki/Carl_Betz",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Carl%20Betz%20Judd%20for%20the%20Defense%201967.JPG?width=800",
+    "faceId": "a9af484b-7d5a-4b5a-ab9d-3614dccf2a02",
+    "indexedAt": "2026-06-30T01:49:33.864Z"
+  },
+  {
+    "id": "Q10375173",
+    "name": "Susan Bay",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Susan Bay",
+      "url": "https://en.wikipedia.org/wiki/Susan_Bay",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Adam%20Schiff%20with%20Leonard%20Nimoy%20and%20Susan%20Bay%20Nimoy.jpg?width=800",
+    "faceId": "3cba7d4f-5694-406e-9bb1-eed8a06a3402",
+    "indexedAt": "2026-06-30T01:49:36.508Z"
+  },
+  {
+    "id": "Q1038375",
+    "name": "Carl Gottlieb",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Carl Gottlieb",
+      "url": "https://en.wikipedia.org/wiki/Carl_Gottlieb",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/CarlGottliebJI1.jpg?width=800",
+    "faceId": "230f6715-06d0-4686-95cb-7243da6d53bc",
+    "indexedAt": "2026-06-30T01:50:37.140Z"
+  },
+  {
+    "id": "Q103917",
+    "name": "Steven Soderbergh",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Steven Soderbergh",
+      "url": "https://en.wikipedia.org/wiki/Steven_Soderbergh",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/58th%20Karlovy%20Vary%20International%20Film%20Festival%2C%20Steven%20Soderbergh%2007.jpg?width=800",
+    "faceId": "6a262eca-efbe-4d8f-9586-e135d4313dfd",
+    "indexedAt": "2026-06-30T01:50:40.928Z"
+  },
+  {
+    "id": "Q104000",
+    "name": "Lauren Bacall",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Lauren Bacall",
+      "url": "https://en.wikipedia.org/wiki/Lauren_Bacall",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Lauren%20Bacall%201945%20press%20photo.jpg?width=800",
+    "faceId": "f4f14a7c-9217-4226-b1a9-418f1c149af3",
+    "indexedAt": "2026-06-30T01:51:23.834Z"
+  },
+  {
+    "id": "Q104027",
+    "name": "Kirk Douglas",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Kirk Douglas",
+      "url": "https://en.wikipedia.org/wiki/Kirk_Douglas",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Kirk%20douglas%20photo%20signed.JPG?width=800",
+    "faceId": "4a9907d8-1f80-4504-8543-c92569809b81",
+    "indexedAt": "2026-06-30T01:51:26.599Z"
+  },
+  {
+    "id": "Q104049",
+    "name": "Sidney Poitier",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Sidney Poitier",
+      "url": "https://en.wikipedia.org/wiki/Sidney_Poitier",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Sidney%20Poitier%201968.jpg?width=800",
+    "faceId": "ced64c2b-6931-4be0-93e0-1cdbfb748832",
+    "indexedAt": "2026-06-30T01:51:28.236Z"
+  },
+  {
+    "id": "Q104061",
+    "name": "Steve Buscemi",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Steve Buscemi",
+      "url": "https://en.wikipedia.org/wiki/Steve_Buscemi",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Steve%20Buscemi%20at%20the%20Sundance%20Film%20Festival.jpg?width=800",
+    "faceId": "884d1444-25cf-485c-b8ce-a2881968bf41",
+    "indexedAt": "2026-06-30T01:51:30.898Z"
+  },
+  {
+    "id": "Q1040783",
+    "name": "Carl Switzer",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Carl \"Alfalfa\" Switzer",
+      "url": "https://en.wikipedia.org/wiki/Carl_%22Alfalfa%22_Switzer",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Alfalfa%20gip.jpg?width=800",
+    "faceId": "9c773977-008f-4e80-8c8c-d678e31bc731",
+    "indexedAt": "2026-06-30T01:53:08.483Z"
+  },
+  {
+    "id": "Q104081",
+    "name": "Mickey Rooney",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Mickey Rooney",
+      "url": "https://en.wikipedia.org/wiki/Mickey_Rooney",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Mickey%20Rooney%20still.jpg?width=800",
+    "faceId": "8ab15bd2-8588-452c-881b-ab223fd9f84b",
+    "indexedAt": "2026-06-30T01:53:11.525Z"
+  },
+  {
+    "id": "Q104127",
+    "name": "Douglas Fairbanks",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Douglas Fairbanks",
+      "url": "https://en.wikipedia.org/wiki/Douglas_Fairbanks",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Douglas%20Fairbanks%20cropped.jpg?width=800",
+    "faceId": "88e258a3-98cb-4365-9299-dbedc33be763",
+    "indexedAt": "2026-06-30T01:54:01.535Z"
+  },
+  {
+    "id": "Q104183",
+    "name": "Lillian Gish",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Lillian Gish",
+      "url": "https://en.wikipedia.org/wiki/Lillian_Gish",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Lillian%20Gish-edit1.jpg?width=800",
+    "faceId": "98eb96a7-4459-40dd-8256-b53dcb9bb358",
+    "indexedAt": "2026-06-30T01:56:35.538Z"
+  },
+  {
+    "id": "Q2263",
+    "name": "Tom Hanks",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Tom Hanks",
+      "url": "https://en.wikipedia.org/wiki/Tom_Hanks",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Tom%20Hanks%20at%20the%20Elvis%20Premiere%202022.jpg?width=800",
+    "faceId": "137349dc-4627-40c0-9ad7-a40b509de5d4",
+    "indexedAt": "2026-07-03T00:23:00.096Z"
+  },
+  {
+    "id": "Q873",
+    "name": "Meryl Streep",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Meryl Streep",
+      "url": "https://en.wikipedia.org/wiki/Meryl_Streep",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Meryl%20Streep-%20Press%20conference%20for%20the%20film%20%22The%20Devil%20Wears%20Prada%202%22%20-%2055194765350%20(cropped1).jpg?width=800",
+    "faceId": "4e9abf1f-0198-4e91-86b2-2e533a10dbb8",
+    "indexedAt": "2026-07-03T00:23:04.481Z"
+  },
+  {
+    "id": "Q38111",
+    "name": "Leonardo DiCaprio",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Leonardo DiCaprio",
+      "url": "https://en.wikipedia.org/wiki/Leonardo_DiCaprio",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Leonardo%20DiCaprio%20-%20BFI%20Southbank%203%20(crop).jpg?width=800",
+    "faceId": "40f266d3-54aa-4e6d-843c-0c4e8c0d7e85",
+    "indexedAt": "2026-07-03T00:23:08.408Z"
+  },
+  {
+    "id": "Q41421",
+    "name": "Michael Jordan",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Michael Jordan",
+      "url": "https://en.wikipedia.org/wiki/Michael_Jordan",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Michael%20Jordan.jpg?width=800",
+    "faceId": "6059bb3c-5680-452e-ac4d-b673e8d25fe1",
+    "indexedAt": "2026-07-03T00:23:12.886Z"
+  },
+  {
+    "id": "Q17714",
+    "name": "Stephen Hawking",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Stephen Hawking",
+      "url": "https://en.wikipedia.org/wiki/Stephen_Hawking",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Stephen%20Hawking.StarChild.jpg?width=800",
+    "faceId": "3d4f5b4e-5a04-46ac-8776-e20708ffc0a8",
+    "indexedAt": "2026-07-03T00:23:17.038Z"
+  },
+  {
+    "id": "Q40523",
+    "name": "Julia Roberts",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Julia Roberts",
+      "url": "https://en.wikipedia.org/wiki/Julia_Roberts",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Julia%20Roberts%202025%20(cropped).jpg?width=800",
+    "faceId": "cd969aa3-f69b-4c97-b6fd-7b631516c3ec",
+    "indexedAt": "2026-07-03T00:23:20.390Z"
+  },
+  {
+    "id": "Q34086",
+    "name": "Justin Bieber",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Justin Bieber",
+      "url": "https://en.wikipedia.org/wiki/Justin_Bieber",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Justin%20Bieber%20in%202015.jpg?width=800",
+    "faceId": "f1effe80-02f9-402d-b56c-f321d0c7cc57",
+    "indexedAt": "2026-07-03T00:23:23.462Z"
+  },
+  {
+    "id": "Q41464",
+    "name": "Filip David",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Filip David",
+      "url": "https://en.wikipedia.org/wiki/Filip_David",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Filip-David-Udruzenje-Crnogoraca-Kosova-04.jpg?width=800",
+    "faceId": "9f84e66e-62a8-43b4-abd6-8217c56a5ee9",
+    "indexedAt": "2026-07-03T00:23:33.087Z"
+  },
+  {
+    "id": "Q188375",
+    "name": "Lucy Liu",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Lucy Liu",
+      "url": "https://en.wikipedia.org/wiki/Lucy_Liu",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lucy%20Liu%20HS%20Yearbook.jpeg?width=800",
+    "faceId": "ad1fa753-e143-4baa-9085-ca222928b78b",
+    "indexedAt": "2026-07-03T00:23:59.941Z"
+  },
+  {
+    "id": "Q483325",
+    "name": "Ellen DeGeneres",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Ellen DeGeneres",
+      "url": "https://en.wikipedia.org/wiki/Ellen_DeGeneres",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ellen%20DeGeneres%202011.jpg?width=800",
+    "faceId": "53bd2a15-1208-442b-9bfd-948bb6f5cb28",
+    "indexedAt": "2026-07-03T00:24:06.341Z"
+  },
+  {
+    "id": "Q37459",
+    "name": "Nicole Kidman",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Nicole Kidman",
+      "url": "https://en.wikipedia.org/wiki/Nicole_Kidman",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicole%20Kidman-66060%20(cropped).jpg?width=800",
+    "faceId": "2dc15763-5649-47cf-a98e-cc66dca00fec",
+    "indexedAt": "2026-07-03T00:28:50.382Z"
+  },
+  {
+    "id": "Q232874",
+    "name": "Linda Hunt",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Linda Hunt",
+      "url": "https://en.wikipedia.org/wiki/Linda_Hunt",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Linda%20Hunt.jpg?width=800",
+    "faceId": "6b270226-322d-431e-8446-4359a71e172e",
+    "indexedAt": "2026-07-03T00:28:53.492Z"
+  },
+  {
+    "id": "Q40096",
+    "name": "Will Smith",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Will Smith",
+      "url": "https://en.wikipedia.org/wiki/Will_Smith",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Will%20Smith%20by%20Gage%20Skidmore%202.jpg?width=800",
+    "faceId": "19b1c565-3d63-4cf0-9ac8-80b8ba5efcdf",
+    "indexedAt": "2026-07-03T00:29:01.487Z"
+  },
+  {
+    "id": "Q184572",
+    "name": "Martin Sheen",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Martin Sheen",
+      "url": "https://en.wikipedia.org/wiki/Martin_Sheen",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Sheen%2C%20Martin%20(2008).jpg?width=800",
+    "faceId": "ab65ba99-9ee8-44e8-9568-486620bca22a",
+    "indexedAt": "2026-07-03T00:29:06.502Z"
+  },
+  {
+    "id": "Q36159",
+    "name": "LeBron James",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "LeBron James",
+      "url": "https://en.wikipedia.org/wiki/LeBron_James",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/LeBron%20James%20(51959977144)%20(cropped2).jpg?width=800",
+    "faceId": "04744387-f6f9-4f10-a0b5-f31804e3f209",
+    "indexedAt": "2026-07-03T00:29:14.084Z"
+  },
+  {
+    "id": "Q44648",
+    "name": "Eric Burdon",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Eric Burdon",
+      "url": "https://en.wikipedia.org/wiki/Eric_Burdon",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Eric%20Burdon.jpg?width=800",
+    "faceId": "b5fd69a5-00d8-4f9a-b623-a48b9aa4b07d",
+    "indexedAt": "2026-07-03T00:29:20.941Z"
+  },
+  {
+    "id": "Q37175",
+    "name": "Johnny Depp",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Johnny Depp",
+      "url": "https://en.wikipedia.org/wiki/Johnny_Depp",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Johnny%20Depp%202020.jpg?width=800",
+    "faceId": "076b6676-e61e-4b60-b5e0-76bfa9f0b5d5",
+    "indexedAt": "2026-07-03T00:29:28.077Z"
+  },
+  {
+    "id": "Q230141",
+    "name": "Chimamanda Ngozi Adichie",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Chimamanda Ngozi Adichie",
+      "url": "https://en.wikipedia.org/wiki/Chimamanda_Ngozi_Adichie",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2025-06-16%20Chimamanda%20Ngozi%20Adichie%20no%20Fronteiras%20do%20Pensamento%202025%20em%20S%C3%A3o%20Paulo%2C%20013%20(cropped).jpg?width=800",
+    "faceId": "655478e7-b333-4dee-9777-eb5a6fecb486",
+    "indexedAt": "2026-07-03T00:29:31.865Z"
+  },
+  {
+    "id": "Q43252",
+    "name": "Sophia Loren",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Sophia Loren",
+      "url": "https://en.wikipedia.org/wiki/Sophia_Loren",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Sophia%20Loren%201962.jpg?width=800",
+    "faceId": "e65d84f0-5e7d-4af8-893d-4d1a2d65c5a3",
+    "indexedAt": "2026-07-03T00:29:35.778Z"
+  },
+  {
+    "id": "Q312386",
+    "name": "Widukind of Corvey",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Widukind of Corvey",
+      "url": "https://en.wikipedia.org/wiki/Widukind_of_Corvey",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/WIDUKIND.jpg?width=800",
+    "faceId": "6b81fb96-56f3-4511-a4fa-9fb6ebe3c156",
+    "indexedAt": "2026-07-03T00:29:43.522Z"
+  },
+  {
+    "id": "Q192682",
+    "name": "Ryan Reynolds",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Ryan Reynolds",
+      "url": "https://en.wikipedia.org/wiki/Ryan_Reynolds",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Deadpool%202%20Japan%20Premiere%20Red%20Carpet%20Ryan%20Reynolds%20(cropped).jpg?width=800",
+    "faceId": "d96f0dce-d8a1-4612-9ddc-95c750305669",
+    "indexedAt": "2026-07-03T00:29:52.522Z"
+  },
+  {
+    "id": "Q313048",
+    "name": "Bob Kane",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Bob Kane",
+      "url": "https://en.wikipedia.org/wiki/Bob_Kane",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Bob%20Kane%201966%20photo.jpg?width=800",
+    "faceId": "08eb4e01-d3ae-4f53-a89c-e52ed576cc66",
+    "indexedAt": "2026-07-03T00:29:54.725Z"
+  },
+  {
+    "id": "Q190162",
+    "name": "Zoe Saldaña",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Zoe Saldaña",
+      "url": "https://en.wikipedia.org/wiki/Zoe_Salda%C3%B1a",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Zoe%20Salda%C3%B1a%20at%20the%202024%20Toronto%20International%20Film%20Festival%20(cropped).jpg?width=800",
+    "faceId": "b15fc471-6d2e-4df8-9487-88a3670cd07c",
+    "indexedAt": "2026-07-03T00:30:00.984Z"
+  },
+  {
+    "id": "Q361297",
+    "name": "Joe Jackson",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Joe Jackson (talent manager)",
+      "url": "https://en.wikipedia.org/wiki/Joe_Jackson_(talent_manager)",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/JosephJackson2007(cropped).jpg?width=800",
+    "faceId": "4879de4f-750e-42ee-92bb-4d749454cdf5",
+    "indexedAt": "2026-07-03T00:30:09.091Z"
+  },
+  {
+    "id": "Q41173",
+    "name": "Demi Lovato",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Demi Lovato",
+      "url": "https://en.wikipedia.org/wiki/Demi_Lovato",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Demi%20Lovato%20Interview%20Feb%202020.png?width=800",
+    "faceId": "9d4b8f63-31ff-4556-99a1-39582b97789e",
+    "indexedAt": "2026-07-03T00:30:20.133Z"
+  },
+  {
+    "id": "Q188648",
+    "name": "Raven-Symoné",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Raven-Symoné",
+      "url": "https://en.wikipedia.org/wiki/Raven-Symon%C3%A9",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Raven-Symone%202019.jpg?width=800",
+    "faceId": "788b576d-bcf0-4f7b-92d0-48db3445e605",
+    "indexedAt": "2026-07-03T00:30:27.042Z"
+  },
+  {
+    "id": "Q80938",
+    "name": "John Travolta",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "John Travolta",
+      "url": "https://en.wikipedia.org/wiki/John_Travolta",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/John%20Travolta%2C%202014%20(cropped).jpg?width=800",
+    "faceId": "9bc01606-2d75-444a-92a7-03c480412ea0",
+    "indexedAt": "2026-07-03T00:30:43.575Z"
+  },
+  {
+    "id": "Q191084",
+    "name": "Val Kilmer",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Val Kilmer",
+      "url": "https://en.wikipedia.org/wiki/Val_Kilmer",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Val%20Kilmer%20Cannes.jpg?width=800",
+    "faceId": "18ec1600-9607-4c2f-9da5-bd69f27330b6",
+    "indexedAt": "2026-07-03T00:30:52.123Z"
+  },
+  {
+    "id": "Q296028",
+    "name": "Alfred Molina",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Alfred Molina",
+      "url": "https://en.wikipedia.org/wiki/Alfred_Molina",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/AlfredMolinaByJustinHoch2009.jpg?width=800",
+    "faceId": "89474484-a5c0-4955-bfc1-83c85356f374",
+    "indexedAt": "2026-07-03T00:30:55.457Z"
+  },
+  {
+    "id": "Q5443",
+    "name": "Greta Garbo",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Greta Garbo",
+      "url": "https://en.wikipedia.org/wiki/Greta_Garbo",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Garbo%20in%20Inspiration.jpg?width=800",
+    "faceId": "b14b370f-aba0-41e2-b0a5-0180589d2937",
+    "indexedAt": "2026-07-03T00:31:02.093Z"
+  },
+  {
+    "id": "Q40599",
+    "name": "Édouard Manet",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Édouard Manet",
+      "url": "https://en.wikipedia.org/wiki/%C3%89douard_Manet",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89douard%20Manet%2C%20en%20buste%2C%20de%20face%20-%20Nadar.jpg?width=800",
+    "faceId": "09191cdb-5736-4d0d-a4e9-5d9c3d6a11f2",
+    "indexedAt": "2026-07-03T00:31:06.811Z"
+  },
+  {
+    "id": "Q165219",
+    "name": "Robert Downey Jr.",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Robert Downey Jr.",
+      "url": "https://en.wikipedia.org/wiki/Robert_Downey_Jr.",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Robert%20Downey%20Jr%202014%20Comic%20Con%20(cropped).jpg?width=800",
+    "faceId": "19cced07-c020-4368-b42a-77cc3b993447",
+    "indexedAt": "2026-07-03T00:31:10.614Z"
+  },
+  {
+    "id": "Q23359",
+    "name": "Taylor Lautner",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Taylor Lautner",
+      "url": "https://en.wikipedia.org/wiki/Taylor_Lautner",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Taylor%20Lautner%20Comic-Con%202012.jpg?width=800",
+    "faceId": "997efb66-58cd-446c-869e-b3502e3b27d4",
+    "indexedAt": "2026-07-03T00:32:42.969Z"
+  },
+  {
+    "id": "Q107730",
+    "name": "Vince Vaughn",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Vince Vaughn",
+      "url": "https://en.wikipedia.org/wiki/Vince_Vaughn",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Vince%20Vaughn%20in%20Los%20Angeles%2C%20California%20(2015)%20-%201.jpg?width=800",
+    "faceId": "94fc4640-7a37-4c51-b69d-adfec994b7ca",
+    "indexedAt": "2026-07-03T00:32:46.355Z"
+  },
+  {
+    "id": "Q230993",
+    "name": "Jenny McCarthy",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Jenny McCarthy",
+      "url": "https://en.wikipedia.org/wiki/Jenny_McCarthy",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Jenny%20McCarthy%20at%20E3%202006.jpg?width=800",
+    "faceId": "0dd0a3cb-0961-483a-87b8-323c2940b57a",
+    "indexedAt": "2026-07-03T00:32:53.893Z"
+  },
+  {
+    "id": "Q185832",
+    "name": "Emmanuel Swedenborg",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Emanuel Swedenborg",
+      "url": "https://en.wikipedia.org/wiki/Emanuel_Swedenborg",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Emanuel%20Swedenborg%2C%201688-1772%2C%20%C3%A4mbetsman%20(Per%20Krafft%20d.%C3%A4.)%20-%20Nationalmuseum%20-%2015710.tif?width=800",
+    "faceId": "aff2cc45-8d99-4aad-a26e-57f13abfe5c3",
+    "indexedAt": "2026-07-03T00:33:00.076Z"
+  },
+  {
+    "id": "Q185724",
+    "name": "Mike Myers",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Mike Myers",
+      "url": "https://en.wikipedia.org/wiki/Mike_Myers",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mike%20Myers%202017%20(37220071326)%20(cropped).jpg?width=800",
+    "faceId": "2c4a2027-3de1-4d4f-8294-de9cd2970865",
+    "indexedAt": "2026-07-03T00:33:08.068Z"
+  },
+  {
+    "id": "Q104082",
+    "name": "Ulrich Parzany",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Ulrich Parzany",
+      "url": "https://en.wikipedia.org/wiki/Ulrich_Parzany",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/UP%20ProChrist%2BVIII.jpg?width=800",
+    "faceId": "595a996a-6016-457e-97fb-b155e6ee6ac9",
+    "indexedAt": "2026-07-03T00:33:15.099Z"
+  },
+  {
+    "id": "Q237833",
+    "name": "George Santayana",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "George Santayana",
+      "url": "https://en.wikipedia.org/wiki/George_Santayana",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/George%20Santayana.jpg?width=800",
+    "faceId": "1179db77-b38d-40d8-8e8b-eda24e2e34c9",
+    "indexedAt": "2026-07-03T00:33:23.685Z"
+  },
+  {
+    "id": "Q312674",
+    "name": "Giorgio Moroder",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Giorgio Moroder",
+      "url": "https://en.wikipedia.org/wiki/Giorgio_Moroder",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Giorgio%20Moroder%20-%20First%20Avenue%20Minneapolis%20-%20The%20Current%20(44776142702).jpg?width=800",
+    "faceId": "460223a2-dc04-485d-bba7-98bdeaa064f0",
+    "indexedAt": "2026-07-03T00:40:56.336Z"
+  },
+  {
+    "id": "Q313755",
+    "name": "Harry Connick Jr.",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Harry Connick Jr.",
+      "url": "https://en.wikipedia.org/wiki/Harry_Connick_Jr.",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Harry%20Connick%2C%20Jr.%202014.jpg?width=800",
+    "faceId": "04779b12-83df-489f-a0a6-78fdff15fa9a",
+    "indexedAt": "2026-07-03T00:40:59.916Z"
+  },
+  {
+    "id": "Q172678",
+    "name": "Samuel L. Jackson",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Samuel L. Jackson",
+      "url": "https://en.wikipedia.org/wiki/Samuel_L._Jackson",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/SamuelLJackson.jpg?width=800",
+    "faceId": "0741f063-ba17-4035-81ee-b4aa9d751400",
+    "indexedAt": "2026-07-03T00:41:06.982Z"
+  },
+  {
+    "id": "Q131814",
+    "name": "Tina Turner",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Tina Turner",
+      "url": "https://en.wikipedia.org/wiki/Tina_Turner",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Tina%20Turner%2050th%20Anniversary%20Tour.jpg?width=800",
+    "faceId": "451b8228-6301-4055-8b0e-7d1b8417b3fb",
+    "indexedAt": "2026-07-03T00:41:11.998Z"
+  },
+  {
+    "id": "Q35332",
+    "name": "Brad Pitt",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Brad Pitt",
+      "url": "https://en.wikipedia.org/wiki/Brad_Pitt",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Brad%20Pitt%202019%20by%20Glenn%20Francis.jpg?width=800",
+    "faceId": "3d046c1b-8ab7-48f7-8a44-74d558b7060c",
+    "indexedAt": "2026-07-03T00:41:20.806Z"
+  },
+  {
+    "id": "Q244674",
+    "name": "Benedict Cumberbatch",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Benedict Cumberbatch",
+      "url": "https://en.wikipedia.org/wiki/Benedict_Cumberbatch",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/BCumberbatch%20Comic-Con%202019.jpg?width=800",
+    "faceId": "fbd84c0e-e9fc-45b4-9cbb-6cd78bed3b7a",
+    "indexedAt": "2026-07-03T00:41:26.746Z"
+  },
+  {
+    "id": "Q215359",
+    "name": "Dean Martin",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Dean Martin",
+      "url": "https://en.wikipedia.org/wiki/Dean_Martin",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Dean%20Martin%20-%20publicity.JPG?width=800",
+    "faceId": "900a6343-b627-43d3-a6d5-d9ef17048ce7",
+    "indexedAt": "2026-07-03T00:42:02.793Z"
+  },
+  {
+    "id": "Q23728",
+    "name": "Larry David",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Larry David",
+      "url": "https://en.wikipedia.org/wiki/Larry_David",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Larry%20David%20at%20the%202009%20Tribeca%20Film%20Festival%202.jpg?width=800",
+    "faceId": "ec7c2722-427d-4201-89e2-060f6330f7b4",
+    "indexedAt": "2026-07-03T00:42:05.769Z"
+  },
+  {
+    "id": "Q218503",
+    "name": "Will Ferrell",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Will Ferrell",
+      "url": "https://en.wikipedia.org/wiki/Will_Ferrell",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Will%20Ferrell%202012.jpg?width=800",
+    "faceId": "4ce74d2d-0cfa-42b3-b18e-5491b6e10b38",
+    "indexedAt": "2026-07-03T00:42:46.174Z"
+  },
+  {
+    "id": "Q43203",
+    "name": "Clint Eastwood",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Clint Eastwood",
+      "url": "https://en.wikipedia.org/wiki/Clint_Eastwood",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Clint%20Eastwood%20at%202010%20New%20York%20Film%20Festival.jpg?width=800",
+    "faceId": "77eded0a-1bdb-4cb0-ae3c-a66c9460e3ec",
+    "indexedAt": "2026-07-03T00:43:31.786Z"
+  },
+  {
+    "id": "Q95008",
+    "name": "John Carpenter",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "John Carpenter",
+      "url": "https://en.wikipedia.org/wiki/John_Carpenter",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20John%20Carpenter.jpg?width=800",
+    "faceId": "2d22a53b-aed5-4072-b0a9-1d669652676d",
+    "indexedAt": "2026-07-03T00:43:35.368Z"
+  },
+  {
+    "id": "Q4279",
+    "name": "Richard Barbieri",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Richard Barbieri",
+      "url": "https://en.wikipedia.org/wiki/Richard_Barbieri",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/RBarbieri.jpg?width=800",
+    "faceId": "6b5f8e0f-3aa1-4484-8bc9-4fec74f63645",
+    "indexedAt": "2026-07-03T00:45:16.889Z"
+  },
+  {
+    "id": "Q223117",
+    "name": "Stanley Tucci",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Stanley Tucci",
+      "url": "https://en.wikipedia.org/wiki/Stanley_Tucci",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/ConclaveBFILFF101024%20(9%20of%2044)%20(54062519935)%20(cropped).jpg?width=800",
+    "faceId": "758c288e-a373-4795-85e2-c4b4e45461e2",
+    "indexedAt": "2026-07-03T00:52:22.809Z"
+  },
+  {
+    "id": "Q312276",
+    "name": "Randy Rhoads",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Randy Rhoads",
+      "url": "https://en.wikipedia.org/wiki/Randy_Rhoads",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/RandyRhoads1980.jpg?width=800",
+    "faceId": "e11dc9ca-b18f-4ba2-bb94-28d47c6ec615",
+    "indexedAt": "2026-07-03T00:52:25.803Z"
+  },
+  {
+    "id": "Q44977",
+    "name": "Pierre-Emerick Aubameyang",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Pierre-Emerick Aubameyang",
+      "url": "https://en.wikipedia.org/wiki/Pierre-Emerick_Aubameyang",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1%20Pierre-Emerick%20Aubameyang%20(cropped).jpg?width=800",
+    "faceId": "5965b624-39c8-4592-ba4f-de10a8c8ae57",
+    "indexedAt": "2026-07-03T00:52:32.049Z"
+  },
+  {
+    "id": "Q230138",
+    "name": "Tatum O'Neal",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Tatum O'Neal",
+      "url": "https://en.wikipedia.org/wiki/Tatum_O'Neal",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Tatum%20O'Neal%20in%202019.jpg?width=800",
+    "faceId": "33dbf6e0-3bc5-4ce8-a2e9-031565aa2f99",
+    "indexedAt": "2026-07-03T00:52:35.014Z"
+  },
+  {
+    "id": "Q313043",
+    "name": "Richard Jenkins",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Richard Jenkins",
+      "url": "https://en.wikipedia.org/wiki/Richard_Jenkins",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Richard%20Jenkins%202015%20(cropped).jpg?width=800",
+    "faceId": "10a58467-9142-4ef4-aeb5-b85193dc482e",
+    "indexedAt": "2026-07-03T00:52:40.235Z"
+  },
+  {
+    "id": "Q272923",
+    "name": "Ryan O'Neal",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Ryan O'Neal",
+      "url": "https://en.wikipedia.org/wiki/Ryan_O'Neal",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ryan%20Oneal%20-%201968.jpg?width=800",
+    "faceId": "d42729cf-d483-4ae5-97a8-bfba1c046bf3",
+    "indexedAt": "2026-07-03T00:52:45.561Z"
+  },
+  {
+    "id": "Q313561",
+    "name": "Dieric Bouts",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Dieric Bouts",
+      "url": "https://en.wikipedia.org/wiki/Dieric_Bouts",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Portret%20van%20de%20schilder%20Dieric%20Bouts%20Portretten%20van%20schilders%20(serietitel)%20Pictorum%20Aliquot%20Celebrium%20Praecipuae%20Germaniae%20Inferioris%20Effigies%20(serietitel)%2C%20RP-P-OB-67.052.jpg?width=800",
+    "faceId": "8898d47b-bd97-4e6f-9c19-e039100d2652",
+    "indexedAt": "2026-07-03T00:52:49.054Z"
+  },
+  {
+    "id": "Q311816",
+    "name": "Gaston Maspero",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Gaston Maspero",
+      "url": "https://en.wikipedia.org/wiki/Gaston_Maspero",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Gaston%20Maspero.jpg?width=800",
+    "faceId": "74f6c493-3854-4700-a572-1770bad08160",
+    "indexedAt": "2026-07-03T00:52:58.510Z"
+  },
+  {
+    "id": "Q294144",
+    "name": "Lea Salonga",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Lea Salonga",
+      "url": "https://en.wikipedia.org/wiki/Lea_Salonga",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/LeaSalonga-byPhilipRomano%20(cropped).jpg?width=800",
+    "faceId": "01aa1a86-f45c-4bad-8a59-8cc9e96a5f15",
+    "indexedAt": "2026-07-03T00:53:59.495Z"
+  },
+  {
+    "id": "Q363010",
+    "name": "Miroslav Matiaško",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Miroslav Matiaško",
+      "url": "https://en.wikipedia.org/wiki/Miroslav_Matia%C5%A1ko",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2012-12-05%20Biathlon%20Hochfilzen%20TR%20062%20Miroslav%20Matia%C5%A1ko%20(SVK).JPG?width=800",
+    "faceId": "c4821f04-a2c5-4fc9-95a9-5e9eaeb25b83",
+    "indexedAt": "2026-07-03T00:54:02.975Z"
+  },
+  {
+    "id": "Q313045",
+    "name": "Jordan Farmar",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Jordan Farmar",
+      "url": "https://en.wikipedia.org/wiki/Jordan_Farmar",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Jordan%20Farmar%20Maccabi%20Tel-Aviv%20(cropped).JPG?width=800",
+    "faceId": "967422a4-bf9d-4c4f-b14d-ba1e59c18946",
+    "indexedAt": "2026-07-03T00:55:10.050Z"
+  },
+  {
+    "id": "Q234959",
+    "name": "Hayley Atwell",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Hayley Atwell",
+      "url": "https://en.wikipedia.org/wiki/Hayley_Atwell",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/HVFFLondon2017Cap-ALS-29%20(35183142201)%20Cropped.jpg?width=800",
+    "faceId": "2251a2d7-5ad2-4e46-983c-116105cd0f54",
+    "indexedAt": "2026-07-03T00:55:18.217Z"
+  },
+  {
+    "id": "Q231106",
+    "name": "Joan Jett",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Joan Jett",
+      "url": "https://en.wikipedia.org/wiki/Joan_Jett",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Joan%20Jett%20by%20David%20Shankbone.jpg?width=800",
+    "faceId": "700607c2-6724-4bc1-be69-87685f5bafd3",
+    "indexedAt": "2026-07-03T00:56:18.148Z"
+  },
+  {
+    "id": "Q229313",
+    "name": "Jessica Chastain",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Jessica Chastain",
+      "url": "https://en.wikipedia.org/wiki/Jessica_Chastain",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Jessica%20Chastain-64424%20(cropped).jpg?width=800",
+    "faceId": "1b51b53f-b55b-4bd8-b3c3-c183f9348e27",
+    "indexedAt": "2026-07-03T00:56:23.162Z"
+  },
+  {
+    "id": "Q392",
+    "name": "Bob Dylan",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Bob Dylan",
+      "url": "https://en.wikipedia.org/wiki/Bob_Dylan",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/DylanYoungKilkenny140719v2%20%2850%20of%2052%29%20%2852246124397%29%20%28cropped%29.jpg?width=800",
+    "faceId": "9eb86b49-7bf3-4444-b49c-7446dca4507e",
+    "indexedAt": "2026-07-05T10:34:15.888Z"
+  },
+  {
+    "id": "Q400",
+    "name": "Jenna Jameson",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Jenna Jameson",
+      "url": "https://en.wikipedia.org/wiki/Jenna_Jameson",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Jenna%20Jameson%202014.jpg?width=800",
+    "faceId": "5789e643-47a9-4f3d-95e8-a915e3f72ab6",
+    "indexedAt": "2026-07-05T10:34:18.106Z"
+  },
+  {
+    "id": "Q489",
+    "name": "Bill Maher",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Bill Maher",
+      "url": "https://en.wikipedia.org/wiki/Bill_Maher",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/BillMaherSept10.jpg?width=800",
+    "faceId": "60f52803-842f-423d-acb3-8dcae23486f9",
+    "indexedAt": "2026-07-05T10:34:20.422Z"
+  },
+  {
+    "id": "Q7374",
+    "name": "Alfred Hitchcock",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Alfred Hitchcock",
+      "url": "https://en.wikipedia.org/wiki/Alfred_Hitchcock",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Hitchcock%2C%20Alfred%2002.jpg?width=800",
+    "faceId": "089a48c6-09e4-4f95-8a0d-225486a31cfa",
+    "indexedAt": "2026-07-05T10:34:38.135Z"
+  },
+  {
+    "id": "Q7516",
+    "name": "Jonny Lee Miller",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Jonny Lee Miller",
+      "url": "https://en.wikipedia.org/wiki/Jonny_Lee_Miller",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Jonny%20Lee%20Miller%20Comic-Con%202012%20%28cropped%29.jpg?width=800",
+    "faceId": "93f9fcbe-c3b5-4d54-b0bc-b01d0ebae34c",
+    "indexedAt": "2026-07-05T10:34:40.182Z"
+  },
+  {
+    "id": "Q39989",
+    "name": "Ronny Cox",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Ronny Cox",
+      "url": "https://en.wikipedia.org/wiki/Ronny_Cox",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Ronny%20Cox%202019.jpg?width=800",
+    "faceId": "bf114e3c-8f12-4f8d-ab87-5db4002ee7b2",
+    "indexedAt": "2026-07-05T10:35:42.762Z"
+  },
+  {
+    "id": "Q39990",
+    "name": "Michael McMillian",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Michael McMillian",
+      "url": "https://en.wikipedia.org/wiki/Michael_McMillian",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Michael%20McMillian%202010.jpg?width=800",
+    "faceId": "86466298-6875-40e6-8908-4e7da041d701",
+    "indexedAt": "2026-07-05T10:35:44.671Z"
+  },
+  {
+    "id": "Q40035",
+    "name": "Richard Linklater",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Richard Linklater",
+      "url": "https://en.wikipedia.org/wiki/Richard_Linklater",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Richard%20Linklater%20at%20the%202026%20Sundance%20Film%20Festival%20for%20Nouvelle%20Vague%20%282%29%20%28cropped%29.jpg?width=800",
+    "faceId": "56da064a-c023-4b46-8222-afb872fe733a",
+    "indexedAt": "2026-07-05T10:35:58.234Z"
+  },
+  {
+    "id": "Q40046",
+    "name": "Jesse Williams",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Jesse Williams (actor)",
+      "url": "https://en.wikipedia.org/wiki/Jesse_Williams_(actor)",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Jesse%20Williams%20in%202008%20white%20shirt.jpg?width=800",
+    "faceId": "cd9ae428-a9be-4d79-8c05-b6c9ddd093b5",
+    "indexedAt": "2026-07-05T10:35:59.953Z"
+  },
+  {
+    "id": "Q40064",
+    "name": "Blythe Danner",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Blythe Danner",
+      "url": "https://en.wikipedia.org/wiki/Blythe_Danner",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Blythe%20Danner%20-%201980.jpg?width=800",
+    "faceId": "612519e1-00d8-4f97-9f2b-bfa0275985e9",
+    "indexedAt": "2026-07-05T10:36:01.989Z"
+  },
+  {
+    "id": "Q7539",
+    "name": "Peyton Manning",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Peyton Manning",
+      "url": "https://en.wikipedia.org/wiki/Peyton_Manning",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Peyton%20Manning%20%2851665689271%29.jpg?width=800",
+    "faceId": "d464a1be-38ec-4ba4-94d6-81ec757a22a4",
+    "indexedAt": "2026-07-05T10:37:08.757Z"
+  },
+  {
+    "id": "Q814",
+    "name": "Coco Austin",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Coco Austin",
+      "url": "https://en.wikipedia.org/wiki/Coco_Austin",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Nicole%20%22Coco%22%20Austin%20at%20the%20Tribeca%20Film%20Festival%202%20%28cropped%29.jpg?width=800",
+    "faceId": "412a5316-1438-41a4-8f24-25692c20175c",
+    "indexedAt": "2026-07-05T10:37:21.219Z"
+  },
+  {
+    "id": "Q7542",
+    "name": "Prince",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Prince (musician)",
+      "url": "https://en.wikipedia.org/wiki/Prince_(musician)",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Prince%20promo%20picture%20%281988%3B%20cropped%20and%20retouched%29.png?width=800",
+    "faceId": "226f0e5c-aa20-4ca0-89d0-a6d337ecb42b",
+    "indexedAt": "2026-07-05T10:37:23.035Z"
+  },
+  {
+    "id": "Q8160",
+    "name": "Carly Rose Sonenclar",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Carly Rose Sonenclar",
+      "url": "https://en.wikipedia.org/wiki/Carly_Rose_Sonenclar",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Carly%20Rose%20Sonenclar%20X%20Factor%202012%20%282%29.jpg?width=800",
+    "faceId": "02096d3e-05c8-4780-a22e-1bfc12251aa3",
+    "indexedAt": "2026-07-05T10:37:34.644Z"
+  },
+  {
+    "id": "Q8312",
+    "name": "Nicholas Meyer",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Nicholas Meyer",
+      "url": "https://en.wikipedia.org/wiki/Nicholas_Meyer",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Nicholas%20Meyer%20%2828891156353%29%20%28cropped%29.jpg?width=800",
+    "faceId": "589cf0fe-3e15-46c5-bb2e-a67156e8db6f",
+    "indexedAt": "2026-07-05T10:37:53.092Z"
+  },
+  {
+    "id": "Q8349",
+    "name": "\"Weird Al\" Yankovic",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "\"Weird Al\" Yankovic",
+      "url": "https://en.wikipedia.org/wiki/%22Weird_Al%22_Yankovic",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Weird%20Al%20Yankovic%20Photo%20Op%20GalaxyCon%20San%20Jose%202024%20%28cropped%29.jpg?width=800",
+    "faceId": "1f4bcda7-df11-4c32-a584-95194b04df97",
+    "indexedAt": "2026-07-05T10:37:55.242Z"
+  },
+  {
+    "id": "Q8704",
+    "name": "Walt Disney",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Walt Disney",
+      "url": "https://en.wikipedia.org/wiki/Walt_Disney",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Walt%20Disney%201946.JPG?width=800",
+    "faceId": "843fcace-e380-4026-b409-f9ec385724e7",
+    "indexedAt": "2026-07-05T10:38:09.797Z"
+  },
+  {
+    "id": "Q8877",
+    "name": "Steven Spielberg",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Steven Spielberg",
+      "url": "https://en.wikipedia.org/wiki/Steven_Spielberg",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Steven%20Spielberg%202025.jpg?width=800",
+    "faceId": "a7992ad9-8bcb-421e-b292-1e630b4476d0",
+    "indexedAt": "2026-07-05T10:38:12.141Z"
+  },
+  {
+    "id": "Q89559",
+    "name": "Kris Carr",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Kris Carr",
+      "url": "https://en.wikipedia.org/wiki/Kris_Carr",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Kris%20Carr%20Q%2BA.jpg?width=800",
+    "faceId": "20215abf-2e06-4485-9f0e-c424df438b17",
+    "indexedAt": "2026-07-05T10:38:23.692Z"
+  },
+  {
+    "id": "Q92759",
+    "name": "Larry Ellison",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Larry Ellison",
+      "url": "https://en.wikipedia.org/wiki/Larry_Ellison",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Larry%20Ellison%20picture.png?width=800",
+    "faceId": "e76acdad-56d7-4c41-b2d2-455ac700adeb",
+    "indexedAt": "2026-07-05T10:38:25.665Z"
+  },
+  {
+    "id": "Q93187",
+    "name": "Hilary Swank",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Hilary Swank",
+      "url": "https://en.wikipedia.org/wiki/Hilary_Swank",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Hilary%20Swank%20Life%20Ball%202013%20%28cropped%29.jpg?width=800",
+    "faceId": "3dbe928c-8d3c-42b2-b518-d682eaeea7a3",
+    "indexedAt": "2026-07-05T10:38:36.424Z"
+  },
+  {
+    "id": "Q93188",
+    "name": "Errol Flynn",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Errol Flynn",
+      "url": "https://en.wikipedia.org/wiki/Errol_Flynn",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Errol%20Flynn1.jpg?width=800",
+    "faceId": "91e6a0cd-53b4-4ee9-898e-e4def642c2ba",
+    "indexedAt": "2026-07-05T10:38:38.182Z"
+  },
+  {
+    "id": "Q93341",
+    "name": "Miles Davis",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Miles Davis",
+      "url": "https://en.wikipedia.org/wiki/Miles_Davis",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Miles%20Davis%20%28Three%20Deuces%2C%20New%20York%2C%20N.Y.%201947%29.jpg?width=800",
+    "faceId": "97a0b7d8-60ef-4e99-8a4e-aeea6c8bf936",
+    "indexedAt": "2026-07-05T10:38:51.052Z"
+  },
+  {
+    "id": "Q93467",
+    "name": "Paul Henreid",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Paul Henreid",
+      "url": "https://en.wikipedia.org/wiki/Paul_Henreid",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20Paul%20Henreid.jpg?width=800",
+    "faceId": "49c6d79f-effe-450f-b7e4-591e28453d6c",
+    "indexedAt": "2026-07-05T10:38:53.164Z"
+  },
+  {
+    "id": "Q97291",
+    "name": "Kenneth Lee Spencer",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Kenneth Spencer (singer)",
+      "url": "https://en.wikipedia.org/wiki/Kenneth_Spencer_(singer)",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Spencer%2C%20Kenneth%20%28um%201960%29.jpg?width=800",
+    "faceId": "36433ebe-e8d5-4e8d-bcae-2996bd7cc4d1",
+    "indexedAt": "2026-07-05T10:40:17.729Z"
+  },
+  {
+    "id": "Q97507",
+    "name": "Violetta",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Violetta (performer)",
+      "url": "https://en.wikipedia.org/wiki/Violetta_(performer)",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Violetta%20%28Aloisia%20Wagner%29.jpg?width=800",
+    "faceId": "33efc2fb-20df-4c4b-9bb3-e28c432f11fc",
+    "indexedAt": "2026-07-05T10:40:19.193Z"
+  },
+  {
+    "id": "Q975161",
+    "name": "Alex Rocco",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Alex Rocco",
+      "url": "https://en.wikipedia.org/wiki/Alex_Rocco",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Alex%20Rocco%20at%20the%201990%20Annual%20Emmy%20Awards.jpg?width=800",
+    "faceId": "37e6da16-c763-4338-9365-15b141fc8b1d",
+    "indexedAt": "2026-07-05T10:40:40.392Z"
+  },
+  {
+    "id": "Q975203",
+    "name": "Eli Craig",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Eli Craig",
+      "url": "https://en.wikipedia.org/wiki/Eli_Craig",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Eli%20Craig.jpg?width=800",
+    "faceId": "614763d7-d988-4c23-bce0-494a4c4caf69",
+    "indexedAt": "2026-07-05T10:40:42.341Z"
+  },
+  {
+    "id": "Q975547",
+    "name": "Jules Feiffer",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Jules Feiffer",
+      "url": "https://en.wikipedia.org/wiki/Jules_Feiffer",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Jules%20Feiffer.jpg?width=800",
+    "faceId": "2bb15332-f1d9-4b16-982c-12c295a5e7f7",
+    "indexedAt": "2026-07-05T10:40:53.189Z"
+  },
+  {
+    "id": "Q999332",
+    "name": "Buck Henry",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Buck Henry",
+      "url": "https://en.wikipedia.org/wiki/Buck_Henry",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Buck%20Henry%20%284970849739%29%20%28cropped%29.jpg?width=800",
+    "faceId": "ee858c4e-a5ac-47b1-aa18-cef15728c317",
+    "indexedAt": "2026-07-05T10:40:54.884Z"
+  },
+  {
+    "id": "Q99982264",
+    "name": "Malinda Kathleen Reese",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Malinda Kathleen Reese",
+      "url": "https://en.wikipedia.org/wiki/Malinda_Kathleen_Reese",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Malinda%20Kathleen%20Reese.png?width=800",
+    "faceId": "da4be90b-5127-4f42-b8ac-91a073d15e1c",
+    "indexedAt": "2026-07-05T10:41:04.056Z"
+  },
+  {
+    "id": "Q607",
+    "name": "Michael Bloomberg",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Michael Bloomberg",
+      "url": "https://en.wikipedia.org/wiki/Michael_Bloomberg",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Mike%20Bloomberg%20Headshot.jpg?width=800",
+    "faceId": "9b108cea-aa5c-4558-8e41-c359c4a5bd34",
+    "indexedAt": "2026-07-05T10:41:57.917Z"
+  },
+  {
+    "id": "Q633",
+    "name": "Neil Young",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Neil Young",
+      "url": "https://en.wikipedia.org/wiki/Neil_Young",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Neil%20Young%20Stavernfestivalen%202016%20%28220929%29.jpg?width=800",
+    "faceId": "1c2c7844-b868-4e87-89b6-4440487d379d",
+    "indexedAt": "2026-07-05T10:41:59.876Z"
+  },
+  {
+    "id": "Q714",
+    "name": "Stevie Wonder",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Stevie Wonder",
+      "url": "https://en.wikipedia.org/wiki/Stevie_Wonder",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Stevie%20Wonder%201994.jpg?width=800",
+    "faceId": "8dabef01-3af5-4b32-845e-2e7fc9ba6bad",
+    "indexedAt": "2026-07-05T10:42:01.367Z"
+  },
+  {
+    "id": "Q94913",
+    "name": "Mackenzie Foy",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Mackenzie Foy",
+      "url": "https://en.wikipedia.org/wiki/Mackenzie_Foy",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Mackenzie%20Foy%20%28cropped%29.jpg?width=800",
+    "faceId": "62271a52-3bda-4bdc-9b83-6b218174f723",
+    "indexedAt": "2026-07-05T10:43:24.705Z"
+  },
+  {
+    "id": "Q93632",
+    "name": "Joseph Schildkraut",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Joseph Schildkraut",
+      "url": "https://en.wikipedia.org/wiki/Joseph_Schildkraut",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Jos.%20Schildkraut%20LCCN2014715528.jpg?width=800",
+    "faceId": "929189c2-7078-477e-bb99-a26cafa39e76",
+    "indexedAt": "2026-07-05T10:45:45.999Z"
+  },
+  {
+    "id": "Q93694",
+    "name": "Katie Lohmann",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Katie Lohmann",
+      "url": "https://en.wikipedia.org/wiki/Katie_Lohmann",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Katie%20Lohmann%202009.jpg?width=800",
+    "faceId": "ece3a2f2-e971-4a7d-9408-d58185d7aaa7",
+    "indexedAt": "2026-07-05T10:45:47.924Z"
+  },
+  {
+    "id": "Q93957",
+    "name": "Gary Cooper",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Gary Cooper",
+      "url": "https://en.wikipedia.org/wiki/Gary_Cooper",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Gary%20cooper%20promo%20image.jpg?width=800",
+    "faceId": "93237b0f-94cb-486a-b538-3662f3c1a0b4",
+    "indexedAt": "2026-07-05T10:45:59.207Z"
+  },
+  {
+    "id": "Q94002",
+    "name": "Barbara Stanwyck",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Barbara Stanwyck",
+      "url": "https://en.wikipedia.org/wiki/Barbara_Stanwyck",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Barbara%20Stanwyck%20Big%20Valley%201967.jpg?width=800",
+    "faceId": "47787f30-0b5c-4b19-816e-71b0cdb705bb",
+    "indexedAt": "2026-07-05T10:46:01.682Z"
+  },
+  {
+    "id": "Q94041",
+    "name": "James Cagney",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "James Cagney",
+      "url": "https://en.wikipedia.org/wiki/James_Cagney",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/James%20cagney%20promo%20photo%20%28cropped%2C%20centered%29.jpg?width=800",
+    "faceId": "0272b9c9-9784-4b77-a103-aabd3d70f205",
+    "indexedAt": "2026-07-05T10:46:03.598Z"
+  },
+  {
+    "id": "Q94081",
+    "name": "Bob Hope",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Bob Hope",
+      "url": "https://en.wikipedia.org/wiki/Bob_Hope",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Bob%20Hope%201969%20Publicity%20Photo.jpg?width=800",
+    "faceId": "70810b34-f247-4d57-bfea-6e41de40f4d9",
+    "indexedAt": "2026-07-05T10:46:26.815Z"
+  },
+  {
+    "id": "Q94123",
+    "name": "Jack Lemmon",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Jack Lemmon",
+      "url": "https://en.wikipedia.org/wiki/Jack_Lemmon",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Jack%20Lemmon%20-%201968.jpg?width=800",
+    "faceId": "1f99ac8e-aa6f-426e-848c-05a58e9adaaa",
+    "indexedAt": "2026-07-05T10:46:28.467Z"
+  },
+  {
+    "id": "Q94358",
+    "name": "Arleen Sorkin",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Arleen Sorkin",
+      "url": "https://en.wikipedia.org/wiki/Arleen_Sorkin",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Arleensorkin.jpg?width=800",
+    "faceId": "ace6aa3d-28d4-405b-b88b-1984b3ceb0da",
+    "indexedAt": "2026-07-05T10:46:30.438Z"
+  },
+  {
+    "id": "Q94487",
+    "name": "Rose Marie",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Rose Marie",
+      "url": "https://en.wikipedia.org/wiki/Rose_Marie",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Rose%20Marie.jpg?width=800",
+    "faceId": "2de7b48a-67a3-42a8-ba08-2264099234aa",
+    "indexedAt": "2026-07-05T10:46:33.074Z"
+  },
+  {
+    "id": "Q969298",
+    "name": "Sebastian Junger",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Sebastian Junger",
+      "url": "https://en.wikipedia.org/wiki/Sebastian_Junger",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Sebastian%20Junger%2C%20April%202013.jpg?width=800",
+    "faceId": "f007a87b-b51a-42ff-8f5d-5fdad310b75d",
+    "indexedAt": "2026-07-05T10:46:50.084Z"
+  },
+  {
+    "id": "Q969305",
+    "name": "Efren Ramirez",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Efren Ramirez",
+      "url": "https://en.wikipedia.org/wiki/Efren_Ramirez",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Efren%20Ramirez%20by%20Gage%20Skidmore.jpg?width=800",
+    "faceId": "170b0a64-0da9-4794-9a0a-b54eab498142",
+    "indexedAt": "2026-07-05T10:46:51.850Z"
+  },
+  {
+    "id": "Q969866",
+    "name": "Alex Karras",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Alex Karras",
+      "url": "https://en.wikipedia.org/wiki/Alex_Karras",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Alex%20Karras%20MASH%201974.JPG?width=800",
+    "faceId": "9de4b463-35ee-421f-8a42-4dc394e2a330",
+    "indexedAt": "2026-07-05T10:47:03.918Z"
+  },
+  {
+    "id": "Q971059",
+    "name": "Ida May Park",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Ida May Park",
+      "url": "https://en.wikipedia.org/wiki/Ida_May_Park",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Ida-May-Park-1916.jpg?width=800",
+    "faceId": "84c3fc39-747b-4ba1-9e52-47abe764bbb6",
+    "indexedAt": "2026-07-05T10:47:05.776Z"
+  },
+  {
+    "id": "Q971145",
+    "name": "Jay Pharoah",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Jay Pharoah",
+      "url": "https://en.wikipedia.org/wiki/Jay_Pharoah",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Jay%20Pharoah%20at%20TIFF%202014.jpg?width=800",
+    "faceId": "dae3e9e1-79bd-429e-ae87-5d00a226d4de",
+    "indexedAt": "2026-07-05T10:47:16.621Z"
+  },
+  {
+    "id": "Q971174",
+    "name": "Matt Shively",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Matt Shively",
+      "url": "https://en.wikipedia.org/wiki/Matt_Shively",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Matt%20Shively%202012.jpg?width=800",
+    "faceId": "8c2d3168-811a-41f3-b2de-2b70c72e8768",
+    "indexedAt": "2026-07-05T10:47:18.398Z"
+  },
+  {
+    "id": "Q94992",
+    "name": "Karl Malden",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Karl Malden",
+      "url": "https://en.wikipedia.org/wiki/Karl_Malden",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Karl%20Malden%202.jpg?width=800",
+    "faceId": "7a66be70-fe43-416c-b20a-48ec2f44c8d9",
+    "indexedAt": "2026-07-05T10:49:50.040Z"
+  },
+  {
+    "id": "Q976165",
+    "name": "Hugh Beaumont",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Hugh Beaumont",
+      "url": "https://en.wikipedia.org/wiki/Hugh_Beaumont",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Hugh%20Beaumont%201956.JPG?width=800",
+    "faceId": "4900478a-89b2-4e89-a6db-782dbbb14220",
+    "indexedAt": "2026-07-05T10:50:04.474Z"
+  },
+  {
+    "id": "Q976243",
+    "name": "Chic Sale",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Charles \"Chic\" Sale",
+      "url": "https://en.wikipedia.org/wiki/Charles_%22Chic%22_Sale",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Charles%20%22Chic%22%20Sale%20%28cropped%29.jpg?width=800",
+    "faceId": "152907c4-9c1c-44ab-9940-9869fb986800",
+    "indexedAt": "2026-07-05T10:50:15.831Z"
+  },
+  {
+    "id": "Q976467",
+    "name": "Rich Wilkes",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Rich Wilkes",
+      "url": "https://en.wikipedia.org/wiki/Rich_Wilkes",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Rich%20Wilkes%20in%20Airheads.jpg?width=800",
+    "faceId": "c7932232-41c9-4fd6-bf2f-ff7a1e19ccd4",
+    "indexedAt": "2026-07-05T10:50:18.003Z"
+  },
+  {
+    "id": "Q85118",
+    "name": "Vanessa Brown",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Vanessa Brown",
+      "url": "https://en.wikipedia.org/wiki/Vanessa_Brown",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Vanessa%20Brown%201951.JPG?width=800",
+    "faceId": "61b356d7-b565-4520-8150-18eb5078e9d7",
+    "indexedAt": "2026-07-05T10:53:09.661Z"
+  },
+  {
+    "id": "Q956275",
+    "name": "Josh White",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Josh White",
+      "url": "https://en.wikipedia.org/wiki/Josh_White",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Josh%20White%2C%20Caf%C3%A9%20Society%20%28Downtown%29%2C%20New%20York%2C%20N.Y.%2C%20ca.%20June%201946%20%28William%20P.%20Gottlieb%2009091%29.jpg?width=800",
+    "faceId": "16b1f61e-2166-4e35-9c4f-572628d2a0f6",
+    "indexedAt": "2026-07-05T10:54:12.124Z"
+  },
+  {
+    "id": "Q957475",
+    "name": "Herbert Brenon",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Herbert Brenon",
+      "url": "https://en.wikipedia.org/wiki/Herbert_Brenon",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Herbertbrenon.jpg?width=800",
+    "faceId": "62c4500c-64a8-4e54-b452-f616e6b1641a",
+    "indexedAt": "2026-07-05T10:54:16.433Z"
+  },
+  {
+    "id": "Q960526",
+    "name": "Murphy Jensen",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Murphy Jensen",
+      "url": "https://en.wikipedia.org/wiki/Murphy_Jensen",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Murphy%20Jensen.jpg?width=800",
+    "faceId": "f967c210-e94c-4167-a925-a3d1aa34e271",
+    "indexedAt": "2026-07-05T10:54:30.205Z"
+  },
+  {
+    "id": "Q964783",
+    "name": "James Duval",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "James Duval",
+      "url": "https://en.wikipedia.org/wiki/James_Duval",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/James%20Duval%202011.jpg?width=800",
+    "faceId": "6250105a-fcf5-4617-9410-7b90290da5cb",
+    "indexedAt": "2026-07-05T10:54:41.770Z"
+  },
+  {
+    "id": "Q965701",
+    "name": "Harry Langdon",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Harry Langdon",
+      "url": "https://en.wikipedia.org/wiki/Harry_Langdon",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Harry%20Langdon%2C%20silent%20film%20actor%20%28SAYRE%205052%29.jpg?width=800",
+    "faceId": "3ab607d7-4015-4774-b0d4-2b5a882e37f8",
+    "indexedAt": "2026-07-05T10:54:52.535Z"
+  },
+  {
+    "id": "Q965951",
+    "name": "Rick Genest",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Rick Genest",
+      "url": "https://en.wikipedia.org/wiki/Rick_Genest",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Ricogenest02.jpg?width=800",
+    "faceId": "fe7feb33-8d03-423d-85cf-d3c4e54a7d1f",
+    "indexedAt": "2026-07-05T10:55:03.773Z"
+  },
+  {
+    "id": "Q983486",
+    "name": "Christopher Rich",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Christopher Rich (actor)",
+      "url": "https://en.wikipedia.org/wiki/Christopher_Rich_(actor)",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Christopher%20Rich%20by%20Gage%20Skidmore%202.jpg?width=800",
+    "faceId": "7131edc4-69d2-4a26-b275-ca3b35f7250f",
+    "indexedAt": "2026-07-05T10:55:30.680Z"
+  },
+  {
+    "id": "Q983689",
+    "name": "Sam Tsui",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Sam Tsui",
+      "url": "https://en.wikipedia.org/wiki/Sam_Tsui",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Samuel%20Tsui%20at%20YouTube%20FanFest%20Indonesia%202015.jpg?width=800",
+    "faceId": "97dda37d-c318-4424-b7db-1e6b61242dfa",
+    "indexedAt": "2026-07-05T10:55:32.631Z"
+  },
+  {
+    "id": "Q95002",
+    "name": "William Holden",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "William Holden",
+      "url": "https://en.wikipedia.org/wiki/William_Holden",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Holden-portrait.jpg?width=800",
+    "faceId": "8ac61d92-15f8-45b6-8c2d-ae635d92ec52",
+    "indexedAt": "2026-07-05T10:57:35.305Z"
+  },
+  {
+    "id": "Q95019",
+    "name": "Norma Shearer",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Norma Shearer",
+      "url": "https://en.wikipedia.org/wiki/Norma_Shearer",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Norma%20Shearer%20portrait%20%28cropped%29.jpg?width=800",
+    "faceId": "4598bb65-f076-46de-8fad-1169100308fe",
+    "indexedAt": "2026-07-05T10:57:49.334Z"
+  },
+  {
+    "id": "Q95026",
+    "name": "Shirley MacLaine",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Shirley MacLaine",
+      "url": "https://en.wikipedia.org/wiki/Shirley_MacLaine",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Shirley%20MacLaine%20-%201960.jpg?width=800",
+    "faceId": "9c0b5f9e-6d9a-4bee-9ebe-543d08f5ff41",
+    "indexedAt": "2026-07-05T10:57:50.928Z"
+  },
+  {
+    "id": "Q95030",
+    "name": "Warren Beatty",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Warren Beatty",
+      "url": "https://en.wikipedia.org/wiki/Warren_Beatty",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Warren%20Beatty.jpg?width=800",
+    "faceId": "5d79288d-8f9b-462d-8afe-b68315894e7a",
+    "indexedAt": "2026-07-05T10:57:52.763Z"
+  },
+  {
+    "id": "Q95034",
+    "name": "John Barrymore",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "John Barrymore",
+      "url": "https://en.wikipedia.org/wiki/John_Barrymore",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Actor%20John%20Barrymore%20%28SAYRE%202535%29.jpg?width=800",
+    "faceId": "2b0417a9-efbe-453c-8ba0-ad6fed9616b2",
+    "indexedAt": "2026-07-05T10:58:11.747Z"
+  },
+  {
+    "id": "Q95039",
+    "name": "Bob Rafelson",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Bob Rafelson",
+      "url": "https://en.wikipedia.org/wiki/Bob_Rafelson",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Bob%20Rafelson.JPG?width=800",
+    "faceId": "1ab68011-c109-46ec-b189-ec06fad34fc8",
+    "indexedAt": "2026-07-05T10:58:13.149Z"
+  },
+  {
+    "id": "Q95043",
+    "name": "James Caan",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "James Caan",
+      "url": "https://en.wikipedia.org/wiki/James_Caan",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/James%20Caan%20Guillaume%20Canet%20Cannes%202013%20cropped.jpg?width=800",
+    "faceId": "847779b0-2c80-4886-b0d9-78860a9da49c",
+    "indexedAt": "2026-07-05T11:06:53.213Z"
+  },
+  {
+    "id": "Q95048",
+    "name": "Tim Robbins",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Tim Robbins",
+      "url": "https://en.wikipedia.org/wiki/Tim_Robbins",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/TimRobbinsTIFFSept2012.jpg?width=800",
+    "faceId": "19554ce5-f686-44dd-a5d4-1212ede91be6",
+    "indexedAt": "2026-07-05T11:06:55.500Z"
+  },
+  {
+    "id": "Q95050",
+    "name": "Paulette Goddard",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Paulette Goddard",
+      "url": "https://en.wikipedia.org/wiki/Paulette_Goddard",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Paulette%20Goddard%20NY%20Sunday%20News%201936.jpg?width=800",
+    "faceId": "40988ebc-03b7-4fd2-af03-215a35a4ebc8",
+    "indexedAt": "2026-07-05T11:07:09.006Z"
+  },
+  {
+    "id": "Q95055",
+    "name": "Jane Wyman",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Jane Wyman",
+      "url": "https://en.wikipedia.org/wiki/Jane_Wyman",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Eiganotomo-janewyman-dec1953.jpg?width=800",
+    "faceId": "38b70243-45e6-41d9-90ed-7674d4a89655",
+    "indexedAt": "2026-07-05T11:07:10.623Z"
+  },
+  {
+    "id": "Q95089",
+    "name": "Ginger Rogers",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Ginger Rogers",
+      "url": "https://en.wikipedia.org/wiki/Ginger_Rogers",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Ginger%20Rogers%20-%20Tender%20Comrade.jpg?width=800",
+    "faceId": "83ff5e31-a67a-49cc-aa59-83d2a51dfd4d",
+    "indexedAt": "2026-07-05T11:07:23.382Z"
+  },
+  {
+    "id": "Q95111",
+    "name": "Norman Taurog",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Norman Taurog",
+      "url": "https://en.wikipedia.org/wiki/Norman_Taurog",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Norman%20Taurog%20%281899%E2%80%931981%29.png?width=800",
+    "faceId": "5c829d77-9dbe-4ad2-8ad3-eba74f7a59aa",
+    "indexedAt": "2026-07-05T11:07:25.338Z"
+  },
+  {
+    "id": "Q95148",
+    "name": "Joseph Cotten",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Joseph Cotten",
+      "url": "https://en.wikipedia.org/wiki/Joseph_Cotten",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Joseph-Cotten-1942.jpg?width=800",
+    "faceId": "ed94df08-f593-47d5-a3dc-d078b838fdb0",
+    "indexedAt": "2026-07-05T11:07:26.904Z"
+  },
+  {
+    "id": "Q95823",
+    "name": "Kaaren Verne",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Kaaren Verne",
+      "url": "https://en.wikipedia.org/wiki/Kaaren_Verne",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Kaaren%20Verne%201942.jpg?width=800",
+    "faceId": "b17e8227-67d8-4592-8832-cb9590330dcb",
+    "indexedAt": "2026-07-05T11:07:37.635Z"
+  },
+  {
+    "id": "Q953153",
+    "name": "Dennis Miller",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Dennis Miller",
+      "url": "https://en.wikipedia.org/wiki/Dennis_Miller",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Dennis%20Miller%20%28cropped%29.jpg?width=800",
+    "faceId": "6be70d3d-e497-41d1-89a8-e429ce04507d",
+    "indexedAt": "2026-07-05T11:07:40.372Z"
+  },
+  {
+    "id": "Q953336",
+    "name": "George Montgomery",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "George Montgomery (actor)",
+      "url": "https://en.wikipedia.org/wiki/George_Montgomery_(actor)",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/George%20Montgomery%20-%20still.jpg?width=800",
+    "faceId": "4e99789f-1950-4197-9dca-66dd1910b9f9",
+    "indexedAt": "2026-07-05T11:07:55.427Z"
+  },
+  {
+    "id": "Q953486",
+    "name": "Tommy Sands",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Tommy Sands",
+      "url": "https://en.wikipedia.org/wiki/Tommy_Sands",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Tommy%20Sands%201957.JPG?width=800",
+    "faceId": "8eefeb13-494e-4d67-ad0d-11fe95fb2eb8",
+    "indexedAt": "2026-07-05T11:08:09.210Z"
+  },
+  {
+    "id": "Q953500",
+    "name": "Malinda Williams",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Malinda Williams",
+      "url": "https://en.wikipedia.org/wiki/Malinda_Williams",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Malinda%20Williams%20June%202006%20%28cropped%29.jpg?width=800",
+    "faceId": "71b07ea9-ec75-4c0c-a2d7-a03b236f34fa",
+    "indexedAt": "2026-07-05T11:08:21.321Z"
+  },
+  {
+    "id": "Q974824",
+    "name": "Crystal Chappell",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Crystal Chappell",
+      "url": "https://en.wikipedia.org/wiki/Crystal_Chappell",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Crystal%20Chappell%202010%20Daytime%20Emmy%20Awards.jpg?width=800",
+    "faceId": "e1c164e7-aa51-4032-8212-5b2f2778de32",
+    "indexedAt": "2026-07-05T11:08:36.259Z"
+  },
+  {
+    "id": "Q974947",
+    "name": "Kent Smith",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Kent Smith",
+      "url": "https://en.wikipedia.org/wiki/Kent_Smith",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/The%20Curse%20Of%20The%20Cat%20People%20trailer.jpg?width=800",
+    "faceId": "73613fed-981a-4a6e-b994-5f74768eaf12",
+    "indexedAt": "2026-07-05T11:08:37.678Z"
+  },
+  {
+    "id": "Q976575",
+    "name": "Kyle Eastwood",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Kyle Eastwood",
+      "url": "https://en.wikipedia.org/wiki/Kyle_Eastwood",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Kyle%20Eastwood.jpg?width=800",
+    "faceId": "3b658af1-b0ef-479c-a664-ed8d6aa4a9b3",
+    "indexedAt": "2026-07-05T11:08:56.977Z"
+  },
+  {
+    "id": "Q991754",
+    "name": "Bruce Norris",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Bruce Norris (playwright)",
+      "url": "https://en.wikipedia.org/wiki/Bruce_Norris_(playwright)",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Bruce%20Norris%2C%20playwright.jpg?width=800",
+    "faceId": "b749ac2a-17b3-4e7f-be25-64deffd85c5b",
+    "indexedAt": "2026-07-05T11:09:17.524Z"
+  },
+  {
+    "id": "Q941660",
+    "name": "Clifton Powell",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Clifton Powell",
+      "url": "https://en.wikipedia.org/wiki/Clifton_Powell",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Clifton%20Powell.jpg?width=800",
+    "faceId": "a96a29bc-51fc-41f1-8049-ccefaeefa63e",
+    "indexedAt": "2026-07-05T11:11:00.462Z"
+  },
+  {
+    "id": "Q941712",
+    "name": "Timothy Carhart",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Timothy Carhart",
+      "url": "https://en.wikipedia.org/wiki/Timothy_Carhart",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Timothy%20Carhart%20%2842495892900%29%20%28cropped%29.jpg?width=800",
+    "faceId": "7fb49f4f-f445-432e-8ea1-84961800e7c8",
+    "indexedAt": "2026-07-05T11:11:02.926Z"
+  },
+  {
+    "id": "Q969806",
+    "name": "Mark Schwahn",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Mark Schwahn",
+      "url": "https://en.wikipedia.org/wiki/Mark_Schwahn",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Mark%20Schwahn%20%28cropped%29.jpg?width=800",
+    "faceId": "55a87634-6ec1-45fa-901a-7e573278225c",
+    "indexedAt": "2026-07-05T11:17:07.404Z"
+  },
+  {
+    "id": "Q971622",
+    "name": "Freddie Wong",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Freddie Wong",
+      "url": "https://en.wikipedia.org/wiki/Freddie_Wong",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Freddie%20Wong%20WikiPortrait%20at%20SXSW%202024%20Taken%20March%2013%2C%202024.jpg?width=800",
+    "faceId": "77d97f26-418b-465d-8375-dbada292d7aa",
+    "indexedAt": "2026-07-05T11:17:44.520Z"
+  },
+  {
+    "id": "Q99263775",
+    "name": "Sreeleela",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Sreeleela",
+      "url": "https://en.wikipedia.org/wiki/Sreeleela",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Sreeleela2026%20%28cropped%29.jpg?width=800",
+    "faceId": "c57da917-e3ee-48d0-b018-e9a562658845",
+    "indexedAt": "2026-07-05T11:17:54.771Z"
+  },
+  {
+    "id": "Q99365507",
+    "name": "Ayo Edebiri",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Ayo Edebiri",
+      "url": "https://en.wikipedia.org/wiki/Ayo_Edebiri",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Ayo%20Edebiri%20After%20The%20Hunt-43%20%28cropped%29.jpg?width=800",
+    "faceId": "95af5ae2-ce1b-4ea4-a5f5-c0f6ee4959e8",
+    "indexedAt": "2026-07-05T11:17:56.877Z"
+  },
+  {
+    "id": "Q99472110",
+    "name": "Jana Schmieding",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Jana Schmieding",
+      "url": "https://en.wikipedia.org/wiki/Jana_Schmieding",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Jana%20Schmieding%20on%20Native%20Voice%20One.jpg?width=800",
+    "faceId": "db2faf4f-16d3-4f0c-9963-1dc6de128152",
+    "indexedAt": "2026-07-05T11:18:08.492Z"
+  },
+  {
+    "id": "Q99578105",
+    "name": "Jake Stormoen",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Jake Stormoen",
+      "url": "https://en.wikipedia.org/wiki/Jake_Stormoen",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Jake%20Stormoen%20in%202018.png?width=800",
+    "faceId": "2193c972-b135-4a5c-a93b-f3699dee7430",
+    "indexedAt": "2026-07-05T11:18:21.566Z"
+  },
+  {
+    "id": "Q95068",
+    "name": "Olivia de Havilland",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Olivia de Havilland",
+      "url": "https://en.wikipedia.org/wiki/Olivia_de_Havilland",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Olivia%20de%20Havilland%2C%201948%20%28cropped%29.jpg?width=800",
+    "faceId": "704a0deb-c5de-4bd0-a4d9-9037637b5e7d",
+    "indexedAt": "2026-07-05T11:20:55.084Z"
+  },
+  {
+    "id": "Q95076",
+    "name": "Joan Fontaine",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Joan Fontaine",
+      "url": "https://en.wikipedia.org/wiki/Joan_Fontaine",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Joan%20Fontaine%20by%20A.%20L.%20Whitey%20Schafer.jpg?width=800",
+    "faceId": "b9b6ccbc-641f-4563-9fb3-e4f528448104",
+    "indexedAt": "2026-07-05T11:21:07.335Z"
+  },
+  {
+    "id": "Q95314",
+    "name": "Hannes Jaenicke",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Hannes Jaenicke",
+      "url": "https://en.wikipedia.org/wiki/Hannes_Jaenicke",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Hannes%20Jaenicke%202858.jpg?width=800",
+    "faceId": "1fddc7cc-8226-45c9-812f-d2a8216303e5",
+    "indexedAt": "2026-07-05T11:21:17.174Z"
+  },
+  {
+    "id": "Q76819",
+    "name": "Christoph Waltz",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Christoph Waltz",
+      "url": "https://en.wikipedia.org/wiki/Christoph_Waltz",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Christoph%20Waltz%20at%2082nd%20Venice%20International%20Film%20Festival-1%20%28cropped%29.jpg?width=800",
+    "faceId": "d772748a-bbb3-4aaa-9aea-2e9e14248247",
+    "indexedAt": "2026-07-05T11:22:28.547Z"
+  },
+  {
+    "id": "Q76877",
+    "name": "Elizabeth Marvel",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Elizabeth Marvel",
+      "url": "https://en.wikipedia.org/wiki/Elizabeth_Marvel",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Elizabeth%20Marvel.jpg?width=800",
+    "faceId": "20360d41-4951-4bac-8633-3914c594c543",
+    "indexedAt": "2026-07-05T11:22:30.330Z"
+  },
+  {
+    "id": "Q76895",
+    "name": "Lee Marvin",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Lee Marvin",
+      "url": "https://en.wikipedia.org/wiki/Lee_Marvin",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Lee%20marvin%201971.JPG?width=800",
+    "faceId": "83ff980f-2ef0-4d2c-8781-a1889af9fb55",
+    "indexedAt": "2026-07-05T11:22:32.184Z"
+  },
+  {
+    "id": "Q941415",
+    "name": "Duane Jones",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Duane Jones",
+      "url": "https://en.wikipedia.org/wiki/Duane_Jones",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Duane%20Jones%20as%20Ben%20in%20Night%20of%20the%20Living%20Dead%20bw.jpg?width=800",
+    "faceId": "6127eb65-a025-4f12-bc6a-8cc5a8e4e27e",
+    "indexedAt": "2026-07-05T11:22:57.771Z"
+  },
+  {
+    "id": "Q977023",
+    "name": "Victor Rasuk",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Victor Rasuk",
+      "url": "https://en.wikipedia.org/wiki/Victor_Rasuk",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Victor%20Rasuk%202016-09-16%20%28cropped%29.jpg?width=800",
+    "faceId": "169db271-4a6e-4e6f-9393-041a06f55b6e",
+    "indexedAt": "2026-07-05T11:24:30.240Z"
+  },
+  {
+    "id": "Q977086",
+    "name": "Reed Diamond",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Reed Diamond",
+      "url": "https://en.wikipedia.org/wiki/Reed_Diamond",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Reed%20Diamond%20April%202015.jpg?width=800",
+    "faceId": "b06ac7c4-ed47-4695-9336-72947f7b9a32",
+    "indexedAt": "2026-07-05T11:24:40.988Z"
+  },
+  {
+    "id": "Q977095",
+    "name": "Scott Krinsky",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Scott Krinsky",
+      "url": "https://en.wikipedia.org/wiki/Scott_Krinsky",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Scott%20Krinsky%20by%20Gage%20Skidmore%202.jpg?width=800",
+    "faceId": "32d94581-9314-4281-862e-077ad2e2a8de",
+    "indexedAt": "2026-07-05T11:24:42.790Z"
+  },
+  {
+    "id": "Q919492",
+    "name": "Jake Roberts",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Jake Roberts",
+      "url": "https://en.wikipedia.org/wiki/Jake_Roberts",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Jake%20Roberts%202013.jpg?width=800",
+    "faceId": "45493748-b18f-4041-b558-31b8d8b65084",
+    "indexedAt": "2026-07-05T11:26:26.570Z"
+  },
+  {
+    "id": "Q919608",
+    "name": "David Silverman",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "David Silverman (animator)",
+      "url": "https://en.wikipedia.org/wiki/David_Silverman_(animator)",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/David%20Silverman%20in%202007-cropped.JPG?width=800",
+    "faceId": "7f81b2bf-7461-4387-82cb-9b93fb6132c6",
+    "indexedAt": "2026-07-05T11:26:28.500Z"
+  },
+  {
+    "id": "Q919750",
+    "name": "Richard Quine",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Richard Quine",
+      "url": "https://en.wikipedia.org/wiki/Richard_Quine",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Richard%20Quine%20%281942%29.jpg?width=800",
+    "faceId": "ed322097-1196-4fc9-82ef-aac385d44aaa",
+    "indexedAt": "2026-07-05T11:26:29.973Z"
+  },
+  {
+    "id": "Q919870",
+    "name": "Michael Hitchcock",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Michael Hitchcock",
+      "url": "https://en.wikipedia.org/wiki/Michael_Hitchcock",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Hitchcock%20Michael%20publicity.jpg?width=800",
+    "faceId": "d47d0bd1-67a8-489a-bbce-0044c2752aa4",
+    "indexedAt": "2026-07-05T11:26:31.940Z"
+  },
+  {
+    "id": "Q98987413",
+    "name": "Kausar Mohammed",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Kausar Mohammed",
+      "url": "https://en.wikipedia.org/wiki/Kausar_Mohammed",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Kausar%20Mohammed%20at%20SXSW%20on%20March%209%202024.jpg?width=800",
+    "faceId": "fd7a5dfc-caf8-41c9-a476-36210649f05e",
+    "indexedAt": "2026-07-05T11:27:19.308Z"
+  },
+  {
+    "id": "Q979679",
+    "name": "Janet Varney",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Janet Varney",
+      "url": "https://en.wikipedia.org/wiki/Janet_Varney",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Janet%20Varney%20by%20Gage%20Skidmore.jpg?width=800",
+    "faceId": "948c05e1-7daf-4e9c-a1b9-e0e5a9c0dd8e",
+    "indexedAt": "2026-07-05T11:30:22.936Z"
+  },
+  {
+    "id": "Q979700",
+    "name": "Giorgio Tozzi",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Giorgio Tozzi",
+      "url": "https://en.wikipedia.org/wiki/Giorgio_Tozzi",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Giorgio%20Tozzi%20in%20Simon%20Boccanegra%2C%20anni%201950%20foto%202%20-%20collezione%20Tino%20Barindelli.tiff?width=800",
+    "faceId": "7d4947b4-7da3-4178-a904-705066b687bd",
+    "indexedAt": "2026-07-05T11:30:24.825Z"
+  },
+  {
+    "id": "Q980104",
+    "name": "Brad Caleb Kane",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Brad Kane",
+      "url": "https://en.wikipedia.org/wiki/Brad_Kane",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Brad%20Kane%20on%20Dulce%20Osuna.jpg?width=800",
+    "faceId": "6de0844a-2760-48d8-9673-638951d600bd",
+    "indexedAt": "2026-07-05T11:30:26.500Z"
+  },
+  {
+    "id": "Q980144",
+    "name": "Cecilia Loftus",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Cecilia Loftus",
+      "url": "https://en.wikipedia.org/wiki/Cecilia_Loftus",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Cecilia%20Loftus.jpg?width=800",
+    "faceId": "442b6f89-9792-4af0-ac5a-962e369900e6",
+    "indexedAt": "2026-07-05T11:30:45.901Z"
+  },
+  {
+    "id": "Q78505",
+    "name": "Peter Lorre",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Peter Lorre",
+      "url": "https://en.wikipedia.org/wiki/Peter_Lorre",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/PeterLorre.jpg?width=800",
+    "faceId": "970a7366-d7ed-4a6e-afbc-df006a04f93a",
+    "indexedAt": "2026-07-05T11:31:42.722Z"
+  },
+  {
+    "id": "Q78639",
+    "name": "Max Reinhardt",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Max Reinhardt",
+      "url": "https://en.wikipedia.org/wiki/Max_Reinhardt",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Max%20Reinhardt.jpg?width=800",
+    "faceId": "7b41ad25-07e0-433a-b7dd-9cf1febf95cc",
+    "indexedAt": "2026-07-05T11:31:46.295Z"
+  },
+  {
+    "id": "Q83492",
+    "name": "Gary Oldman",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Gary Oldman",
+      "url": "https://en.wikipedia.org/wiki/Gary_Oldman",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Gary%20Oldman%20by%20Gage%20Skidmore.jpg?width=800",
+    "faceId": "0a0e6232-76cc-4454-b3a7-52c6451f8311",
+    "indexedAt": "2026-07-05T11:32:09.945Z"
+  },
+  {
+    "id": "Q83526",
+    "name": "Blanche Whiffen",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Blanche Whiffen",
+      "url": "https://en.wikipedia.org/wiki/Blanche_Whiffen",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Blanche%20Whiffen%20%281845-1936%29%20in%201924.jpg?width=800",
+    "faceId": "f8dde7f2-b87f-4f0a-aab8-fb8ca76f60a9",
+    "indexedAt": "2026-07-05T11:32:21.094Z"
+  },
+  {
+    "id": "Q83677",
+    "name": "Michael Weston",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Michael Weston",
+      "url": "https://en.wikipedia.org/wiki/Michael_Weston",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Michael%20Weston%20by%20Gage%20Skidmore.jpg?width=800",
+    "faceId": "065c9f2a-4677-447d-aa2c-49ec8bbb5600",
+    "indexedAt": "2026-07-05T11:32:32.211Z"
+  },
+  {
+    "id": "Q83694",
+    "name": "Carmen Argenziano",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Carmen Argenziano",
+      "url": "https://en.wikipedia.org/wiki/Carmen_Argenziano",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Carmen%20Argenziano%20-%202012%20Sci-Fi%20Convention%20Toulouse%20271.jpg?width=800",
+    "faceId": "04457f2a-d382-4742-b270-25ed0951458f",
+    "indexedAt": "2026-07-05T11:32:42.770Z"
+  },
+  {
+    "id": "Q83733",
+    "name": "Milo Ventimiglia",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Milo Ventimiglia",
+      "url": "https://en.wikipedia.org/wiki/Milo_Ventimiglia",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Milo%20Ventimiglia%202019%20by%20Glenn%20Francis.jpg?width=800",
+    "faceId": "e911941e-761f-452e-879c-7ff45d9a1db4",
+    "indexedAt": "2026-07-05T11:32:56.413Z"
+  },
+  {
+    "id": "Q83812",
+    "name": "Edward G. Robinson",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Edward G. Robinson",
+      "url": "https://en.wikipedia.org/wiki/Edward_G._Robinson",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Edward%20g%20robinson.jpg?width=800",
+    "faceId": "be8165f1-442a-4add-a2dd-74ef61e0c86c",
+    "indexedAt": "2026-07-05T11:33:07.170Z"
+  },
+  {
+    "id": "Q87145",
+    "name": "Carl Esmond",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Carl Esmond",
+      "url": "https://en.wikipedia.org/wiki/Carl_Esmond",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Carl%20Esmond%20in%20Sundown%20%281941%29.jpg?width=800",
+    "faceId": "2d29f95f-6ec5-42e4-aa22-1dc07b455991",
+    "indexedAt": "2026-07-05T11:35:28.219Z"
+  },
+  {
+    "id": "Q2632",
+    "name": "Ringo Starr",
+    "niche": "us-musician",
+    "wikipedia": {
+      "title": "Ringo Starr",
+      "url": "https://en.wikipedia.org/wiki/Ringo_Starr",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ringo%202024%20(cropped%202x2).jpg?width=800",
+    "faceId": "a1fe7287-3a18-4ee0-8235-f0f4798d624a",
+    "indexedAt": "2026-07-05T11:52:26.018Z"
+  },
+  {
+    "id": "Q5593",
+    "name": "Pablo Picasso",
+    "niche": "us-musician",
+    "wikipedia": {
+      "title": "Pablo Picasso",
+      "url": "https://en.wikipedia.org/wiki/Pablo_Picasso",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Pablo%20picasso%201.jpg?width=800",
+    "faceId": "c8bbd8bc-f6e5-4216-8ef2-f4f7a9f8946e",
+    "indexedAt": "2026-07-05T11:52:32.420Z"
+  },
+  {
+    "id": "Q187019",
+    "name": "Philip Roth",
+    "niche": "us-musician",
+    "wikipedia": {
+      "title": "Philip Roth",
+      "url": "https://en.wikipedia.org/wiki/Philip_Roth",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Philip%20Roth%20-%201973.jpg?width=800",
+    "faceId": "2bcc1f03-bb03-4528-b3b4-d680540a1ca3",
+    "indexedAt": "2026-07-05T11:52:36.065Z"
+  },
+  {
+    "id": "Q36153",
+    "name": "Beyoncé",
+    "niche": "us-musician",
+    "wikipedia": {
+      "title": "Beyoncé",
+      "url": "https://en.wikipedia.org/wiki/Beyonc%C3%A9",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Beyonc%C3%A9%20-%20Tottenham%20Hotspur%20Stadium%20-%201st%20June%202023%20(10%20of%20118)%20(52946364598)%20(best%20crop).jpg?width=800",
+    "faceId": "c9df373d-2298-47fa-bcf5-69bae5ee986e",
+    "indexedAt": "2026-07-05T11:52:39.800Z"
+  },
+  {
+    "id": "Q155700",
+    "name": "Chris Brown",
+    "niche": "us-musician",
+    "wikipedia": {
+      "title": "Chris Brown",
+      "url": "https://en.wikipedia.org/wiki/Chris_Brown",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Chris%20Brown%20in%20Tampa%2C%202015.jpg?width=800",
+    "faceId": "ad26ecd4-6c4b-4152-9c3c-dcd6d94af108",
+    "indexedAt": "2026-07-05T11:52:42.019Z"
+  },
+  {
+    "id": "Q201656",
+    "name": "Nick Jonas",
+    "niche": "us-musician",
+    "wikipedia": {
+      "title": "Nick Jonas",
+      "url": "https://en.wikipedia.org/wiki/Nick_Jonas",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Nick%20Jonas%20Cannes%202019%20(cropped).jpg?width=800",
+    "faceId": "cbe6f227-0018-4fb5-9428-e7c5c0a44a88",
+    "indexedAt": "2026-07-05T11:52:44.785Z"
+  },
+  {
+    "id": "Q296729",
+    "name": "Tony Bennett",
+    "niche": "us-musician",
+    "wikipedia": {
+      "title": "Tony Bennett",
+      "url": "https://en.wikipedia.org/wiki/Tony_Bennett",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Tony%20Bennett%20National%20Italian%20American%20Gala.jpg?width=800",
+    "faceId": "133d31d5-f939-4d18-aa37-65f4a4e0ce52",
+    "indexedAt": "2026-07-05T11:52:47.444Z"
+  },
+  {
+    "id": "Q105875",
+    "name": "Herbie Hancock",
+    "niche": "us-musician",
+    "wikipedia": {
+      "title": "Herbie Hancock",
+      "url": "https://en.wikipedia.org/wiki/Herbie_Hancock",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Herbie%20Hancock.jpg?width=800",
+    "faceId": "ab487f14-9a61-4260-ba05-4370bbfe6424",
+    "indexedAt": "2026-07-05T11:52:52.852Z"
+  },
+  {
+    "id": "Q37150",
+    "name": "Lana Del Rey",
+    "niche": "us-musician",
+    "wikipedia": {
+      "title": "Lana Del Rey",
+      "url": "https://en.wikipedia.org/wiki/Lana_Del_Rey",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lana%20Del%20Rey%20Seattle.jpg?width=800",
+    "faceId": "8895fa2c-ca9e-4537-a8e6-f45451b2d3fd",
+    "indexedAt": "2026-07-05T11:52:55.797Z"
+  },
+  {
+    "id": "Q43347",
+    "name": "Rumi",
+    "niche": "us-musician",
+    "wikipedia": {
+      "title": "Rumi",
+      "url": "https://en.wikipedia.org/wiki/Rumi",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/%D9%85%D9%88%D9%84%D8%A7%D9%86%D8%A7%20%D8%A7%D8%AB%D8%B1%20%D8%AD%D8%B3%DB%8C%D9%86%20%D8%A8%D9%87%D8%B2%D8%A7%D8%AF%20(cropped).jpg?width=800",
+    "faceId": "8b91e9b3-2908-4431-a582-58f9e0fd5f4d",
+    "indexedAt": "2026-07-05T11:52:58.383Z"
+  },
+  {
+    "id": "Q297736",
+    "name": "Yevgeny Yevtushenko",
+    "niche": "us-musician",
+    "wikipedia": {
+      "title": "Yevgeny Yevtushenko",
+      "url": "https://en.wikipedia.org/wiki/Yevgeny_Yevtushenko",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Sobyanin%20meeting%20Evtushenko%2005.jpg?width=800",
+    "faceId": "bf5e53ce-39c1-4385-9edf-669e198257c1",
+    "indexedAt": "2026-07-05T11:53:30.556Z"
+  },
+  {
+    "id": "Q56008",
+    "name": "Tim Burton",
+    "niche": "us-musician",
+    "wikipedia": {
+      "title": "Tim Burton",
+      "url": "https://en.wikipedia.org/wiki/Tim_Burton",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Tim%20Burton-63605.jpg?width=800",
+    "faceId": "16308a9d-74a8-40c3-930e-6b1260c7060d",
+    "indexedAt": "2026-07-05T11:53:33.069Z"
+  },
+  {
+    "id": "Q154662",
+    "name": "Nana Mouskouri",
+    "niche": "us-musician",
+    "wikipedia": {
+      "title": "Nana Mouskouri",
+      "url": "https://en.wikipedia.org/wiki/Nana_Mouskouri",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Nana%20Mouskouri%201966.jpg?width=800",
+    "faceId": "bfaaf419-01be-458e-a234-3c8f3653649c",
+    "indexedAt": "2026-07-05T11:53:43.190Z"
+  },
+  {
+    "id": "Q230501",
+    "name": "Christina Milian",
+    "niche": "us-musician",
+    "wikipedia": {
+      "title": "Christina Milian",
+      "url": "https://en.wikipedia.org/wiki/Christina_Milian",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Christina%20Milian%20(29975025233)%20(cropped).jpg?width=800",
+    "faceId": "8a4c4558-b237-447b-8542-20291fca9d0e",
+    "indexedAt": "2026-07-05T11:53:47.963Z"
+  },
+  {
+    "id": "Q26876",
+    "name": "Taylor Swift",
+    "niche": "us-musician",
+    "wikipedia": {
+      "title": "Taylor Swift",
+      "url": "https://en.wikipedia.org/wiki/Taylor_Swift",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Taylor%20Swift%20at%20the%202023%20MTV%20Video%20Music%20Awards%20(3).png?width=800",
+    "faceId": "9c063599-ba83-449f-a6d1-9432cbe6a9cd",
+    "indexedAt": "2026-07-05T11:54:03.817Z"
+  },
+  {
+    "id": "Q312262",
+    "name": "Jean-Claude Pascal",
+    "niche": "us-musician",
+    "wikipedia": {
+      "title": "Jean-Claude Pascal",
+      "url": "https://en.wikipedia.org/wiki/Jean-Claude_Pascal",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Jean-Claude-Pascal-Gambais.jpg?width=800",
+    "faceId": "26d7e5d4-6010-442c-a9b9-624a405c468f",
+    "indexedAt": "2026-07-05T11:56:46.436Z"
+  },
+  {
+    "id": "Q62766",
+    "name": "Jay-Z",
+    "niche": "us-musician",
+    "wikipedia": {
+      "title": "Jay-Z",
+      "url": "https://en.wikipedia.org/wiki/Jay-Z",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Jay-Z%20%40%20Shawn%20'Jay-Z'%20Carter%20Foundation%20Carnival%20(crop%202).jpg?width=800",
+    "faceId": "e7ad44cc-796e-4ea6-9521-0c696431577c",
+    "indexedAt": "2026-07-05T11:56:54.612Z"
+  },
+  {
+    "id": "Q44414",
+    "name": "Trey Parker",
+    "niche": "us-musician",
+    "wikipedia": {
+      "title": "Trey Parker",
+      "url": "https://en.wikipedia.org/wiki/Trey_Parker",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Trey%20Parker%20by%20Gage%20Skidmore.jpg?width=800",
+    "faceId": "119b8cef-0876-4a5a-8ebd-e81e9a97889a",
+    "indexedAt": "2026-07-05T11:58:24.887Z"
+  },
+  {
+    "id": "Q217557",
+    "name": "Joyce Carol Oates",
+    "niche": "us-musician",
+    "wikipedia": {
+      "title": "Joyce Carol Oates",
+      "url": "https://en.wikipedia.org/wiki/Joyce_Carol_Oates",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Joyce%20Carol%20Oates%2C%20Bokm%C3%A4ssan%202024%2C%20P1270511.jpg?width=800",
+    "faceId": "f7689ad1-0c07-4539-a872-a12d5fa15a2d",
+    "indexedAt": "2026-07-05T11:59:13.984Z"
+  },
+  {
+    "id": "Q557",
+    "name": "Patti Smith",
+    "niche": "us-musician",
+    "wikipedia": {
+      "title": "Patti Smith",
+      "url": "https://en.wikipedia.org/wiki/Patti_Smith",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Patti%20Smith%20at%20the%2081st%20Venice%20International%20Film%20Festival%20in%202024.jpg?width=800",
+    "faceId": "c51545d3-eeca-4abf-8e11-8c3e74e6d56e",
+    "indexedAt": "2026-07-05T12:00:28.491Z"
+  },
+  {
+    "id": "Q8446",
+    "name": "Kurt Cobain",
+    "niche": "us-musician",
+    "wikipedia": {
+      "title": "Kurt Cobain",
+      "url": "https://en.wikipedia.org/wiki/Kurt_Cobain",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Nirvana%20around%201992%20%28cropped%29.jpg?width=800",
+    "faceId": "44e21371-e68d-4894-b234-479a5800b002",
+    "indexedAt": "2026-07-05T12:00:49.667Z"
+  },
+  {
+    "id": "Q82110",
+    "name": "Steven Seagal",
+    "niche": "us-musician",
+    "wikipedia": {
+      "title": "Steven Seagal",
+      "url": "https://en.wikipedia.org/wiki/Steven_Seagal",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Steven%20Seagal%20at%20Russia%20Expo.jpg?width=800",
+    "faceId": "22dc3c3f-8feb-4d3d-998e-3082e395efb9",
+    "indexedAt": "2026-07-05T12:00:51.381Z"
+  },
+  {
+    "id": "Q82311",
+    "name": "Gene Vincent",
+    "niche": "us-musician",
+    "wikipedia": {
+      "title": "Gene Vincent",
+      "url": "https://en.wikipedia.org/wiki/Gene_Vincent",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Genevincent015e.jpg?width=800",
+    "faceId": "74960903-8a11-4a7b-88fe-a491c460f586",
+    "indexedAt": "2026-07-05T12:01:19.007Z"
+  },
+  {
+    "id": "Q999968",
+    "name": "Buckwheat Zydeco",
+    "niche": "us-musician",
+    "wikipedia": {
+      "title": "Buckwheat Zydeco",
+      "url": "https://en.wikipedia.org/wiki/Buckwheat_Zydeco",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Buckwheat%20Zydeco.jpg?width=800",
+    "faceId": "309b14f1-f569-4e8a-bc26-6b10bf7389e5",
+    "indexedAt": "2026-07-05T12:02:35.182Z"
+  },
+  {
+    "id": "Q47087",
+    "name": "Arthur C. Clarke",
+    "niche": "eu-actor",
+    "wikipedia": {
+      "title": "Arthur C. Clarke",
+      "url": "https://en.wikipedia.org/wiki/Arthur_C._Clarke",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Arthur%20C.%20Clarke%201965.jpg?width=800",
+    "faceId": "cee8c0fc-bca6-4dd6-bad7-fcec55c3639b",
+    "indexedAt": "2026-07-05T12:38:30.732Z"
+  },
+  {
+    "id": "Q934027",
+    "name": "Ernest Thompson",
+    "niche": "eu-actor",
+    "wikipedia": {
+      "title": "Ernest Thompson",
+      "url": "https://en.wikipedia.org/wiki/Ernest_Thompson",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Academy%20Award%20Winner%20Ernest%20Thompson.jpg?width=800",
+    "faceId": "a06b88d4-a388-4586-9744-daec1e83c06e",
+    "indexedAt": "2026-07-05T12:38:33.794Z"
+  },
+  {
+    "id": "Q444372",
+    "name": "Marian Harkin",
+    "niche": "eu-actor",
+    "wikipedia": {
+      "title": "Marian Harkin",
+      "url": "https://en.wikipedia.org/wiki/Marian_Harkin",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Marian%20Harkin%202012.jpg?width=800",
+    "faceId": "5e449a97-73b7-4ae3-9b23-08c5bbe86317",
+    "indexedAt": "2026-07-05T12:38:39.718Z"
+  },
+  {
+    "id": "Q191132",
+    "name": "Harvey Keitel",
+    "niche": "eu-actor",
+    "wikipedia": {
+      "title": "Harvey Keitel",
+      "url": "https://en.wikipedia.org/wiki/Harvey_Keitel",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Harvey%20Keitel%20VF%202012%20Shankbone.JPG?width=800",
+    "faceId": "b2f028ff-d96b-4e07-a923-1ee3d4ff03e4",
+    "indexedAt": "2026-07-05T12:39:00.713Z"
+  },
+  {
+    "id": "Q170515",
+    "name": "Omar Sharif",
+    "niche": "eu-actor",
+    "wikipedia": {
+      "title": "Omar Sharif",
+      "url": "https://en.wikipedia.org/wiki/Omar_Sharif",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Omar%20Sharif%201963.JPG?width=800",
+    "faceId": "48cca2c5-6f4a-4ec1-a9c3-7bcac144a332",
+    "indexedAt": "2026-07-05T12:39:07.318Z"
+  },
+  {
+    "id": "Q259327",
+    "name": "lifeguard",
+    "niche": "eu-actor",
+    "wikipedia": {
+      "title": "Lifeguard",
+      "url": "https://en.wikipedia.org/wiki/Lifeguard",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Barcelona's%20lifeguard.jpg?width=800",
+    "faceId": "4def89aa-960c-4510-91f3-f41d27000181",
+    "indexedAt": "2026-07-05T12:39:10.952Z"
+  },
+  {
+    "id": "Q312288",
+    "name": "George Ellery Hale",
+    "niche": "eu-actor",
+    "wikipedia": {
+      "title": "George Ellery Hale",
+      "url": "https://en.wikipedia.org/wiki/George_Ellery_Hale",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20George%20Ellery%20Hale.jpg?width=800",
+    "faceId": "a852c747-15ad-4fb9-86b4-71310ef280e4",
+    "indexedAt": "2026-07-05T12:39:13.407Z"
+  },
+  {
+    "id": "Q310073",
+    "name": "Mark Henry",
+    "niche": "eu-actor",
+    "wikipedia": {
+      "title": "Mark Henry",
+      "url": "https://en.wikipedia.org/wiki/Mark_Henry",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/WHCmarkHenry.jpg?width=800",
+    "faceId": "06a557ec-156a-492d-9f53-3f7ecdd5152f",
+    "indexedAt": "2026-07-05T12:39:22.513Z"
+  },
+  {
+    "id": "Q312379",
+    "name": "Jonas Olsson",
+    "niche": "eu-actor",
+    "wikipedia": {
+      "title": "Jonas Olsson (footballer, born 1983)",
+      "url": "https://en.wikipedia.org/wiki/Jonas_Olsson_(footballer%2C_born_1983)",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Jonas%20Olsson%20Fulham%20v%20WBA%20(cropped).jpg?width=800",
+    "faceId": "f70e0471-8378-4b78-8bb5-7f7cd24616dc",
+    "indexedAt": "2026-07-05T12:40:23.245Z"
+  },
+  {
+    "id": "Q234782",
+    "name": "Sibylla",
+    "niche": "eu-actor",
+    "wikipedia": {
+      "title": "Sibylla, Queen of Jerusalem",
+      "url": "https://en.wikipedia.org/wiki/Sibylla%2C_Queen_of_Jerusalem",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Sibyla.jpg?width=800",
+    "faceId": "cec0df71-1213-4651-a94f-609a9de584a2",
+    "indexedAt": "2026-07-05T12:40:30.011Z"
+  },
+  {
+    "id": "Q131333",
+    "name": "George Eliot",
+    "niche": "eu-actor",
+    "wikipedia": {
+      "title": "George Eliot",
+      "url": "https://en.wikipedia.org/wiki/George_Eliot",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/George%20Eliot%2C%20por%20Fran%C3%A7ois%20D'Albert%20Durade.jpg?width=800",
+    "faceId": "ceb77e97-7d20-43ba-9e27-27cdcf8a2b08",
+    "indexedAt": "2026-07-05T12:41:48.845Z"
+  },
+  {
+    "id": "Q58855",
+    "name": "Jens Voigt",
+    "niche": "eu-actor",
+    "wikipedia": {
+      "title": "Jens Voigt",
+      "url": "https://en.wikipedia.org/wiki/Jens_Voigt",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Jens%20Voigt%2003.jpg?width=800",
+    "faceId": "54af30ca-9088-4e3d-9fd7-3cc69e99bf74",
+    "indexedAt": "2026-07-05T12:42:02.307Z"
+  },
+  {
+    "id": "Q310739",
+    "name": "Hephaestion",
+    "niche": "eu-actor",
+    "wikipedia": {
+      "title": "Hephaestion",
+      "url": "https://en.wikipedia.org/wiki/Hephaestion",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/(Venice)%20Portrait%20of%20Hephaistion%20-%20Correr%20Museum.jpg?width=800",
+    "faceId": "a7b0147a-7ea3-4e97-9fb9-4a5ace7d0546",
+    "indexedAt": "2026-07-05T12:42:06.658Z"
+  },
+  {
+    "id": "Q180224",
+    "name": "Lenny Kravitz",
+    "niche": "eu-musician",
+    "wikipedia": {
+      "title": "Lenny Kravitz",
+      "url": "https://en.wikipedia.org/wiki/Lenny_Kravitz",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Untold%202024%20-%20Lenny%20Kravitz%2014%20(cropped).jpg?width=800",
+    "faceId": "81812b65-21ba-4110-8226-0bbd4289fb9b",
+    "indexedAt": "2026-07-05T12:52:05.194Z"
+  },
+  {
+    "id": "Q134333",
+    "name": "Roger Moore",
+    "niche": "eu-musician",
+    "wikipedia": {
+      "title": "Roger Moore",
+      "url": "https://en.wikipedia.org/wiki/Roger_Moore",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Sir%20Roger%20Moore%20Allan%20Warren.jpg?width=800",
+    "faceId": "f1cc7c50-318e-47fb-84ce-710811df1e18",
+    "indexedAt": "2026-07-05T12:52:07.954Z"
+  },
+  {
+    "id": "Q1299",
+    "name": "The Beatles",
+    "niche": "eu-musician",
+    "wikipedia": {
+      "title": "The Beatles",
+      "url": "https://en.wikipedia.org/wiki/The_Beatles",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Beatles%20Trenter%201963.jpg?width=800",
+    "faceId": "2dde93f6-6ccd-4014-8cd5-92c0ba424c8c",
+    "indexedAt": "2026-07-05T12:52:17.274Z"
+  },
+  {
+    "id": "Q5959",
+    "name": "Quintus Curtius Rufus",
+    "niche": "eu-musician",
+    "wikipedia": {
+      "title": "Quintus Curtius Rufus",
+      "url": "https://en.wikipedia.org/wiki/Quintus_Curtius_Rufus",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Francia%2C%20quinto%20curzio%20rufo%2C%20storia%20di%20alessandro%20magno%2C%201450-1500%20ca.%2C%20med.%20pal.%20155%2C%2002.JPG?width=800",
+    "faceId": "471cadb3-60f6-41cf-a74b-c1dfdf64d782",
+    "indexedAt": "2026-07-05T12:53:24.647Z"
+  },
+  {
+    "id": "Q312366",
+    "name": "Bartolomeo Ammannati",
+    "niche": "eu-musician",
+    "wikipedia": {
+      "title": "Bartolomeo Ammannati",
+      "url": "https://en.wikipedia.org/wiki/Bartolomeo_Ammannati",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Santi%20di%20Tito%2C%20Fabbrica%20del%20Tempio%20di%20Salomone%2C%201570-71%2C%2004%2C2%20ritratti%20di%20architetti%20-%20bartolomeo%20ammannati.jpg?width=800",
+    "faceId": "3628c876-6a10-4da8-8171-6582c114b8ef",
+    "indexedAt": "2026-07-05T12:54:24.044Z"
+  },
+  {
+    "id": "Q36756",
+    "name": "Kristallnacht",
+    "niche": "eu-musician",
+    "wikipedia": {
+      "title": "Kristallnacht",
+      "url": "https://en.wikipedia.org/wiki/Kristallnacht",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20day%20after%20Kristallnacht.jpg?width=800",
+    "faceId": "e7327caf-c921-4999-92b2-c33a32d052fe",
+    "indexedAt": "2026-07-05T12:55:17.302Z"
+  },
+  {
+    "id": "Q152388",
+    "name": "Theodor W. Adorno",
+    "niche": "eu-musician",
+    "wikipedia": {
+      "title": "Theodor W. Adorno",
+      "url": "https://en.wikipedia.org/wiki/Theodor_W._Adorno",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Theodor%20W.%20Adorno.jpg?width=800",
+    "faceId": "e6f559c9-2387-4620-809d-a4512a2be52a",
+    "indexedAt": "2026-07-05T12:56:15.179Z"
+  },
+  {
+    "id": "Q94352",
+    "name": "Tany Youne",
+    "niche": "eu-actor",
+    "wikipedia": {
+      "title": "Tany Youne",
+      "url": "https://en.wikipedia.org/wiki/Tany_Youne",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Tany%20Youne.jpg?width=800",
+    "faceId": "a6202fb0-d416-4a2c-af75-08e5cbe50741",
+    "indexedAt": "2026-07-05T12:59:04.914Z"
+  },
+  {
+    "id": "Q94572",
+    "name": "Yefim Kopelyan",
+    "niche": "eu-actor",
+    "wikipedia": {
+      "title": "Yefim Kopelyan",
+      "url": "https://en.wikipedia.org/wiki/Yefim_Kopelyan",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Yefim%20Kopelyan%20Postal%20card%20Russia%202012.jpg?width=800",
+    "faceId": "fd31b57b-12bc-4bd6-bcff-30abcbcec0d5",
+    "indexedAt": "2026-07-05T12:59:07.067Z"
+  },
+  {
+    "id": "Q960873",
+    "name": "George Voskovec",
+    "niche": "eu-actor",
+    "wikipedia": {
+      "title": "George Voskovec",
+      "url": "https://en.wikipedia.org/wiki/George_Voskovec",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/George%20Voskovec%20in%20%2212%20Angry%20Men%22%20%281957%20film%29.jpg?width=800",
+    "faceId": "9b61247c-cfc6-45c8-9ab1-69fc81e2d8db",
+    "indexedAt": "2026-07-05T13:00:09.129Z"
+  },
+  {
+    "id": "Q999837",
+    "name": "Emil Fenyvessy",
+    "niche": "eu-actor",
+    "wikipedia": {
+      "title": "Emil Fenyvessy",
+      "url": "https://en.wikipedia.org/wiki/Emil_Fenyvessy",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Fenyvesi%20Emil.jpg?width=800",
+    "faceId": "06f75518-24e3-4695-8d7d-a0b135479ebc",
+    "indexedAt": "2026-07-05T13:02:52.558Z"
+  },
+  {
+    "id": "Q999960",
+    "name": "Jean-Laurent Cochet",
+    "niche": "eu-actor",
+    "wikipedia": {
+      "title": "Jean-Laurent Cochet",
+      "url": "https://en.wikipedia.org/wiki/Jean-Laurent_Cochet",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/IMG%2020180508%20154623%20edit1%20edit.jpg?width=800",
+    "faceId": "acba6e71-de8a-4ff1-a430-881802429815",
+    "indexedAt": "2026-07-05T13:05:22.879Z"
+  },
+  {
+    "id": "Q165706",
+    "name": "Rodion Shchedrin",
+    "niche": "eu-musician",
+    "wikipedia": {
+      "title": "Rodion Shchedrin",
+      "url": "https://en.wikipedia.org/wiki/Rodion_Shchedrin",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Rodion%20Shchedrin%20(2009-04-21).jpg?width=800",
+    "faceId": "13ff74f0-9f8e-4a7e-a381-a6217ba2b140",
+    "indexedAt": "2026-07-05T13:13:28.453Z"
+  }
+]

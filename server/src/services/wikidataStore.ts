@@ -1,4 +1,5 @@
 import fs from "fs/promises";
+import { existsSync } from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import type { WikipediaPage } from "./wikipedia.js";
@@ -20,17 +21,63 @@ export interface WikidataPersonRecord {
 }
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const DEFAULT_FILE = path.join(__dirname, "../../data/wikidata-us-actors.json");
+const INDEX_FILENAME = "wikidata-index.json";
 
-let cache: Map<string, WikidataPersonRecord> | null = null;
+function candidateStorePaths(): string[] {
+  const configured = process.env.WIKIDATA_ACTORS_FILE;
+  const paths: string[] = [];
+
+  if (configured) {
+    paths.push(
+      path.isAbsolute(configured)
+        ? configured
+        : path.join(process.cwd(), configured)
+    );
+  }
+
+  // Bundled with compiled server (Render production)
+  paths.push(path.join(__dirname, "../data", INDEX_FILENAME));
+  // Legacy local import path
+  paths.push(path.join(__dirname, "../../data/wikidata-us-actors.json"));
+  // Dev / tsx when running from server/src/services
+  paths.push(path.join(process.cwd(), "src/data", INDEX_FILENAME));
+  paths.push(path.join(process.cwd(), "data/wikidata-us-actors.json"));
+
+  return paths;
+}
+
+let resolvedStorePath: string | null = null;
 
 function getStorePath(): string {
-  const configured = process.env.WIKIDATA_ACTORS_FILE;
-  if (!configured) return DEFAULT_FILE;
-  return path.isAbsolute(configured)
-    ? configured
-    : path.join(__dirname, "../..", configured);
+  if (resolvedStorePath) return resolvedStorePath;
+
+  for (const candidate of candidateStorePaths()) {
+    if (existsSync(candidate)) {
+      resolvedStorePath = candidate;
+      return candidate;
+    }
+  }
+
+  // Default write target for imports (local dev)
+  resolvedStorePath = path.join(__dirname, "../data", INDEX_FILENAME);
+  return resolvedStorePath;
 }
+
+export function getWikidataStorePath(): string {
+  return getStorePath();
+}
+
+export async function wikidataStoreFileExists(): Promise<boolean> {
+  const storePath = getStorePath();
+  try {
+    await fs.access(storePath);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+let cache: Map<string, WikidataPersonRecord> | null = null;
 
 async function readFileStore(): Promise<WikidataPersonRecord[]> {
   const storePath = getStorePath();
@@ -43,7 +90,7 @@ async function readFileStore(): Promise<WikidataPersonRecord[]> {
     if (code === "ENOENT") {
       return [];
     }
-    console.warn("wikidata-us-actors.json unreadable, using empty list:", err);
+    console.warn(`Wikidata index unreadable (${storePath}), using empty list:`, err);
     return [];
   }
 }

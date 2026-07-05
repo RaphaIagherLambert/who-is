@@ -20,6 +20,8 @@ import {
   countWikidataEuMusicians,
   countWikidataIndexed,
   countWikidataMusicians,
+  getWikidataStorePath,
+  wikidataStoreFileExists,
 } from "./services/wikidataStore.js";
 
 const app = express();
@@ -47,6 +49,8 @@ app.get("/api/health", async (_req, res) => {
         usMusiciansIndexed: await countWikidataMusicians(),
         euActorsIndexed: await countWikidataEuActors(),
         euMusiciansIndexed: await countWikidataEuMusicians(),
+        storeFile: getWikidataStorePath(),
+        storeFileFound: await wikidataStoreFileExists(),
       },
       teach: {
         enabled: isTeachingsEnabled(),
