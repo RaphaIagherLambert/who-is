@@ -3,7 +3,11 @@ import path from "path";
 import { fileURLToPath } from "url";
 import type { WikipediaPage } from "./wikipedia.js";
 
-export type WikidataNiche = "us-actor" | "us-musician";
+export type WikidataNiche =
+  | "us-actor"
+  | "us-musician"
+  | "eu-actor"
+  | "eu-musician";
 
 export interface WikidataPersonRecord {
   id: string;
@@ -35,10 +39,12 @@ async function readFileStore(): Promise<WikidataPersonRecord[]> {
     const parsed = JSON.parse(raw) as WikidataPersonRecord[];
     return Array.isArray(parsed) ? parsed : [];
   } catch (err) {
-    if ((err as NodeJS.ErrnoException).code === "ENOENT") {
+    const code = (err as NodeJS.ErrnoException).code;
+    if (code === "ENOENT") {
       return [];
     }
-    throw err;
+    console.warn("wikidata-us-actors.json unreadable, using empty list:", err);
+    return [];
   }
 }
 
@@ -71,8 +77,41 @@ export async function saveWikidataPerson(
 }
 
 export async function countWikidataActors(): Promise<number> {
+  return countWikidataByNiche("us-actor");
+}
+
+export async function countWikidataMusicians(): Promise<number> {
+  return countWikidataByNiche("us-musician");
+}
+
+export async function countWikidataEuActors(): Promise<number> {
+  return countWikidataByNiche("eu-actor");
+}
+
+export async function countWikidataEuMusicians(): Promise<number> {
+  return countWikidataByNiche("eu-musician");
+}
+
+export async function countWikidataIndexed(): Promise<number> {
   const store = await loadCache();
   return store.size;
+}
+
+export async function countWikidataByNiche(niche: WikidataNiche): Promise<number> {
+  const store = await loadCache();
+  return [...store.values()].filter((r) => r.niche === niche).length;
+}
+
+export async function listWikidataPersonIds(): Promise<string[]> {
+  const store = await loadCache();
+  return [...store.keys()];
+}
+
+export async function listWikidataPersonIdsByNiche(
+  niche: WikidataNiche
+): Promise<string[]> {
+  const store = await loadCache();
+  return [...store.values()].filter((r) => r.niche === niche).map((r) => r.id);
 }
 
 export async function hasWikidataPerson(id: string): Promise<boolean> {

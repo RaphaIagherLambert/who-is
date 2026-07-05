@@ -14,7 +14,13 @@ import { teachRouter } from "./routes/teach.js";
 import { wikipediaRouter } from "./routes/wikipedia.js";
 import { ensureFaceCollection, getFaceCollectionStatus } from "./services/faceCollection.js";
 import { countTeachings, isTeachingsEnabled } from "./services/teachingsStore.js";
-import { countWikidataActors } from "./services/wikidataStore.js";
+import {
+  countWikidataActors,
+  countWikidataEuActors,
+  countWikidataEuMusicians,
+  countWikidataIndexed,
+  countWikidataMusicians,
+} from "./services/wikidataStore.js";
 
 const app = express();
 const PORT = Number(process.env.PORT) || 3001;
@@ -23,25 +29,37 @@ app.use(cors());
 app.use(express.json({ limit: "10mb" }));
 
 app.get("/api/health", async (_req, res) => {
-  const collection = getFaceCollectionStatus();
-  res.json({
-    ok: true,
-    provider: process.env.RECOGNITION_PROVIDER ?? "mock",
-    minConfidence: Number(process.env.MIN_CONFIDENCE) || 97,
-    collection: {
-      enabled: collection.enabled,
-      ready: collection.ready,
-      id: collection.collectionId,
-      minSimilarity: collection.minSimilarity,
-    },
-    wikidata: {
-      usActorsIndexed: await countWikidataActors(),
-    },
-    teach: {
-      enabled: isTeachingsEnabled(),
-      count: isTeachingsEnabled() ? await countTeachings() : 0,
-    },
-  });
+  try {
+    const collection = getFaceCollectionStatus();
+    res.json({
+      ok: true,
+      provider: process.env.RECOGNITION_PROVIDER ?? "mock",
+      minConfidence: Number(process.env.MIN_CONFIDENCE) || 97,
+      collection: {
+        enabled: collection.enabled,
+        ready: collection.ready,
+        id: collection.collectionId,
+        minSimilarity: collection.minSimilarity,
+      },
+      wikidata: {
+        totalIndexed: await countWikidataIndexed(),
+        usActorsIndexed: await countWikidataActors(),
+        usMusiciansIndexed: await countWikidataMusicians(),
+        euActorsIndexed: await countWikidataEuActors(),
+        euMusiciansIndexed: await countWikidataEuMusicians(),
+      },
+      teach: {
+        enabled: isTeachingsEnabled(),
+        count: isTeachingsEnabled() ? await countTeachings() : 0,
+      },
+    });
+  } catch (err) {
+    console.error("Health check error:", err);
+    res.status(500).json({
+      ok: false,
+      error: err instanceof Error ? err.message : "Health check failed",
+    });
+  }
 });
 
 app.use("/api/recognize", recognizeRouter);

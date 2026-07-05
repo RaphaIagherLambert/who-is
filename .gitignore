@@ -11,5 +11,7 @@ dist/
 *.pem
 *.key
 credentials*
-server/data/
+# Local import cache — allow the committed Wikidata index for Render
+server/data/*
+!server/data/wikidata-us-actors.json
 data/

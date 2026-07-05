@@ -29,6 +29,7 @@ async function resolveCollectionMatch(externalId: string, lang: string) {
       name: wikidata.name,
       wikipedia: wikidata.wikipedia,
       source: "wikidata" as const,
+      niche: wikidata.niche,
     };
   }
 
@@ -88,6 +89,7 @@ identifyRouter.post("/", async (req, res) => {
               confidence: collectionMatch.similarity,
               wikipedia: person.wikipedia,
               source: person.source,
+              niche: person.niche,
             },
           ],
           rejectReason: null,

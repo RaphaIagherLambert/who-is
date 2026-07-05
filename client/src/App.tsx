@@ -51,6 +51,9 @@ export default function App() {
   const [resultSource, setResultSource] = useState<
     "celebrity" | "learned" | "wikidata" | null
   >(null);
+  const [resultNiche, setResultNiche] = useState<
+    "us-actor" | "us-musician" | "eu-actor" | "eu-musician" | null
+  >(null);
 
   const [error, setError] = useState<string | null>(null);
 
@@ -139,6 +142,7 @@ export default function App() {
     setWiki(null);
 
     setResultSource(null);
+    setResultNiche(null);
 
     setLastFailedFrame(null);
 
@@ -233,6 +237,7 @@ export default function App() {
       setWiki(best.wikipedia);
 
       setResultSource(best.source ?? "celebrity");
+      setResultNiche(best.niche ?? null);
 
     } catch (err) {
 
@@ -271,6 +276,7 @@ export default function App() {
       setWiki(null);
 
       setResultSource(null);
+    setResultNiche(null);
 
       setLastFailedFrame(null);
 
@@ -307,6 +313,7 @@ export default function App() {
     setWiki(page);
 
     setResultSource("learned");
+    setResultNiche(null);
 
     setStatus(t.teachSuccess(name));
 
@@ -613,9 +620,15 @@ export default function App() {
             )}
 
             {resultSource === "wikidata" && (
-
-              <span className="learned-badge">{t.wikidataBadge}</span>
-
+              <span className="learned-badge">
+                {resultNiche === "us-musician"
+                  ? t.wikidataMusicianBadge
+                  : resultNiche === "eu-actor"
+                    ? t.wikidataEuActorBadge
+                    : resultNiche === "eu-musician"
+                      ? t.wikidataEuMusicianBadge
+                      : t.wikidataBadge}
+              </span>
             )}
 
             <span className="result-link">{t.wikiLink} →</span>
