@@ -4236,5 +4236,1136 @@
     "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Rodion%20Shchedrin%20(2009-04-21).jpg?width=800",
     "faceId": "13ff74f0-9f8e-4a7e-a381-a6217ba2b140",
     "indexedAt": "2026-07-05T13:13:28.453Z"
+  },
+  {
+    "id": "Q5673",
+    "name": "Hans Christian Andersen",
+    "niche": "br-actor",
+    "wikipedia": {
+      "title": "Hans Christian Andersen",
+      "url": "https://en.wikipedia.org/wiki/Hans_Christian_Andersen",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Christian%20Andersen%20by%20Thora%20Hallager%201869.jpg?width=800",
+    "faceId": "e8cc1273-b3fd-41d7-a6b0-f76085395c5c",
+    "indexedAt": "2026-07-10T15:43:23.262Z"
+  },
+  {
+    "id": "Q317422",
+    "name": "Eric Liddell",
+    "niche": "br-actor",
+    "wikipedia": {
+      "title": "Eric Liddell",
+      "url": "https://en.wikipedia.org/wiki/Eric_Liddell",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Eric%20Liddell.jpg?width=800",
+    "faceId": "4bf650e4-a64d-4fcf-8772-a587b6304c2a",
+    "indexedAt": "2026-07-10T15:43:26.332Z"
+  },
+  {
+    "id": "Q433479",
+    "name": "Robert Walthour",
+    "niche": "br-actor",
+    "wikipedia": {
+      "title": "Bobby Walthour",
+      "url": "https://en.wikipedia.org/wiki/Bobby_Walthour",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Bobby%20Walthoursr.jpg?width=800",
+    "faceId": "31e78b96-990b-49d3-81dd-13f36cd61cc8",
+    "indexedAt": "2026-07-10T15:43:28.471Z"
+  },
+  {
+    "id": "Q367661",
+    "name": "Paul Neumann",
+    "niche": "br-actor",
+    "wikipedia": {
+      "title": "Paul Neumann (swimmer)",
+      "url": "https://en.wikipedia.org/wiki/Paul_Neumann_(swimmer)",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul%20Neumann%20(1875-1932).jpg?width=800",
+    "faceId": "ef57a81c-56e6-4d4c-b654-818cadbbfa0d",
+    "indexedAt": "2026-07-10T15:43:38.883Z"
+  },
+  {
+    "id": "Q972813",
+    "name": "Jacques Crétineau-Joly",
+    "niche": "br-actor",
+    "wikipedia": {
+      "title": "Jacques Crétineau-Joly",
+      "url": "https://en.wikipedia.org/wiki/Jacques_Cr%C3%A9tineau-Joly",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Cr%C3%A9tineau-Joly%2C%20by%20Nadar%20(Getty%201045AE).jpg?width=800",
+    "faceId": "9ad4455d-fd65-407c-beba-de95c04d4e51",
+    "indexedAt": "2026-07-10T15:43:41.793Z"
+  },
+  {
+    "id": "Q103969",
+    "name": "Marianne Grunthal",
+    "niche": "br-actor",
+    "wikipedia": {
+      "title": "Marianne Grunthal",
+      "url": "https://en.wikipedia.org/wiki/Marianne_Grunthal",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Marianne%20Grunthal.jpg?width=800",
+    "faceId": "0f315462-603a-4c93-9d23-d0b784dc5027",
+    "indexedAt": "2026-07-10T15:43:44.734Z"
+  },
+  {
+    "id": "Q459689",
+    "name": "Ambrosius Hubrecht",
+    "niche": "br-actor",
+    "wikipedia": {
+      "title": "Ambrosius Hubrecht",
+      "url": "https://en.wikipedia.org/wiki/Ambrosius_Hubrecht",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ambrosius%20Arnold%20Willem%20Hubrecht.png?width=800",
+    "faceId": "215204e3-0374-4a1e-93e6-64319f49123b",
+    "indexedAt": "2026-07-10T15:43:50.191Z"
+  },
+  {
+    "id": "Q350609",
+    "name": "Earl Young",
+    "niche": "br-actor",
+    "wikipedia": {
+      "title": "Earl Young (athlete)",
+      "url": "https://en.wikipedia.org/wiki/Earl_Young_(athlete)",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Earl%20Young%201960.jpg?width=800",
+    "faceId": "4fa83715-a6d2-43a1-b098-473b817f6360",
+    "indexedAt": "2026-07-10T15:43:53.904Z"
+  },
+  {
+    "id": "Q312572",
+    "name": "Udo Lindenberg",
+    "niche": "br-actor",
+    "wikipedia": {
+      "title": "Udo Lindenberg",
+      "url": "https://en.wikipedia.org/wiki/Udo_Lindenberg",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1987%20Udo%20Lindenberg-800.jpg?width=800",
+    "faceId": "099b6e1e-c945-45d9-ad28-01ad0f9c86a1",
+    "indexedAt": "2026-07-10T15:43:57.871Z"
+  },
+  {
+    "id": "Q103301",
+    "name": "Jürgen Dueball",
+    "niche": "br-actor",
+    "wikipedia": {
+      "title": "Jürgen Dueball",
+      "url": "https://en.wikipedia.org/wiki/J%C3%BCrgen_Dueball",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Dueball%2CJ%C3%BCrgen%20B.jpg?width=800",
+    "faceId": "a6fa4d5d-a1d0-47dc-9e2d-4d82b700c47a",
+    "indexedAt": "2026-07-10T15:44:01.842Z"
+  },
+  {
+    "id": "Q459927",
+    "name": "Serguei Adoniev",
+    "niche": "br-actor",
+    "wikipedia": {
+      "title": "Sergey Adonyev",
+      "url": "https://en.wikipedia.org/wiki/Sergey_Adonyev",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/SA%20photo.jpg?width=800",
+    "faceId": "a861adcd-b06e-4c6a-b637-8e5eb8bd3767",
+    "indexedAt": "2026-07-10T15:44:37.409Z"
+  },
+  {
+    "id": "Q103314",
+    "name": "Constantine",
+    "niche": "br-actor",
+    "wikipedia": {
+      "title": "Pope Constantine",
+      "url": "https://en.wikipedia.org/wiki/Pope_Constantine",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/PopeConstantine.jpg?width=800",
+    "faceId": "457d18a0-8180-4aa2-b5e0-6f92aee85d58",
+    "indexedAt": "2026-07-10T15:44:45.581Z"
+  },
+  {
+    "id": "Q103080",
+    "name": "Hans-Jürgen Papier",
+    "niche": "br-actor",
+    "wikipedia": {
+      "title": "Hans-Jürgen Papier",
+      "url": "https://en.wikipedia.org/wiki/Hans-J%C3%BCrgen_Papier",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2014-01-08%20Hans-J%C3%BCrgen%20Papier%205150-cropped.JPG?width=800",
+    "faceId": "f3094bc2-7246-4583-826f-7ba27e5c6c70",
+    "indexedAt": "2026-07-10T15:44:55.114Z"
+  },
+  {
+    "id": "Q103079",
+    "name": "Rolf Bossi",
+    "niche": "br-actor",
+    "wikipedia": {
+      "title": "Rolf Bossi",
+      "url": "https://en.wikipedia.org/wiki/Rolf_Bossi",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Rolf%20Bossi.jpg?width=800",
+    "faceId": "b75e72d0-89f1-452d-b995-abd3682deda6",
+    "indexedAt": "2026-07-10T15:45:26.961Z"
+  },
+  {
+    "id": "Q434745",
+    "name": "Tinashe",
+    "niche": "br-musician",
+    "wikipedia": {
+      "title": "Tinashe",
+      "url": "https://en.wikipedia.org/wiki/Tinashe",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Tinashe%202020%20Vogue%201.jpg?width=800",
+    "faceId": "b409e13f-71cf-48ea-ada3-a03713ca51f4",
+    "indexedAt": "2026-07-10T15:50:01.092Z"
+  },
+  {
+    "id": "Q919460",
+    "name": "John Peverell Marley",
+    "niche": "br-musician",
+    "wikipedia": {
+      "title": "Peverell Marley",
+      "url": "https://en.wikipedia.org/wiki/Peverell_Marley",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Winterset%20(1936)%201.jpg?width=800",
+    "faceId": "91ba325f-3e73-4789-ac87-c89dd2ec81d0",
+    "indexedAt": "2026-07-10T15:50:03.954Z"
+  },
+  {
+    "id": "Q312242",
+    "name": "Hugo Gernsback",
+    "niche": "br-musician",
+    "wikipedia": {
+      "title": "Hugo Gernsback",
+      "url": "https://en.wikipedia.org/wiki/Hugo_Gernsback",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Radio%20News%20Nov%201928%20Cover.jpg?width=800",
+    "faceId": "8d386b74-3397-4cf3-a584-0a68b2f6e787",
+    "indexedAt": "2026-07-10T15:50:09.789Z"
+  },
+  {
+    "id": "Q460370",
+    "name": "Ticha Penicheiro",
+    "niche": "br-musician",
+    "wikipedia": {
+      "title": "Ticha Penicheiro",
+      "url": "https://en.wikipedia.org/wiki/Ticha_Penicheiro",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ticha%20Penicheiro%202019%2003.png?width=800",
+    "faceId": "a61db21d-f651-4ae8-adce-b4c20f392ce3",
+    "indexedAt": "2026-07-10T15:50:14.192Z"
+  },
+  {
+    "id": "Q10325488",
+    "name": "Marcos Rolim",
+    "niche": "br-musician",
+    "wikipedia": {
+      "title": "Marcos Rolim",
+      "url": "https://pt.wikipedia.org/wiki/Marcos_Rolim",
+      "lang": "pt"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Marcos%20Rolim.jpg?width=800",
+    "faceId": "eb219fdf-4ae3-4d40-afd3-d3fdbae3f71e",
+    "indexedAt": "2026-07-10T15:50:29.043Z"
+  },
+  {
+    "id": "Q719666",
+    "name": "Karel Dujardin",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Karel Dujardin",
+      "url": "https://en.wikipedia.org/wiki/Karel_Dujardin",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Karel%20dujardin%20zelfportret.jpg?width=800",
+    "faceId": "d8b9808c-b52c-4594-bab5-98db8015d1cd",
+    "indexedAt": "2026-07-10T15:57:09.327Z"
+  },
+  {
+    "id": "Q228928",
+    "name": "Eva Marie Saint",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Eva Marie Saint",
+      "url": "https://en.wikipedia.org/wiki/Eva_Marie_Saint",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Eva%20Marie%20Saint%20Promo%20Portrait%2C%20c.%201951.jpg?width=800",
+    "faceId": "b61bf528-b8eb-4649-a8ae-d52dd4ff9124",
+    "indexedAt": "2026-07-10T15:57:12.845Z"
+  },
+  {
+    "id": "Q356271",
+    "name": "Georges St-Pierre",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Georges St-Pierre",
+      "url": "https://en.wikipedia.org/wiki/Georges_St-Pierre",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20St-Pierre%20crop.jpg?width=800",
+    "faceId": "4578e898-bb3d-4850-acd8-d21a307806b0",
+    "indexedAt": "2026-07-10T15:57:15.631Z"
+  },
+  {
+    "id": "Q233817",
+    "name": "Debbie Gibson",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Debbie Gibson",
+      "url": "https://en.wikipedia.org/wiki/Debbie_Gibson",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Debbie%20Gibson%20-%20LATFOB%202026-03.jpg?width=800",
+    "faceId": "ac524347-a5e8-4ea9-8e97-55ac732642f7",
+    "indexedAt": "2026-07-10T15:57:19.040Z"
+  },
+  {
+    "id": "Q446724",
+    "name": "Grand Duke Konstantin Nikolayevich of Russia",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Grand Duke Konstantin Nikolayevich of Russia",
+      "url": "https://en.wikipedia.org/wiki/Grand_Duke_Konstantin_Nikolayevich_of_Russia",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Romanov%2C%20Constantin%20Nicolaievitch%2C%20Grand-Duc%20de%20Russie%2C%20Gallica%2C%20Nadar.jpg?width=800",
+    "faceId": "fbbcdf5c-9e4e-40b2-bfda-c11dd450a1d2",
+    "indexedAt": "2026-07-10T15:57:35.640Z"
+  },
+  {
+    "id": "Q1367562",
+    "name": "Halvdan Koht",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Halvdan Koht",
+      "url": "https://en.wikipedia.org/wiki/Halvdan_Koht",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Halvdan%20Koht%20-%20Oslo%20Museum.jpg?width=800",
+    "faceId": "4cee8665-b273-44c0-8951-3a4f7cf89eed",
+    "indexedAt": "2026-07-10T15:57:39.598Z"
+  },
+  {
+    "id": "Q229230",
+    "name": "Evan Rachel Wood",
+    "niche": "latam-musician",
+    "wikipedia": {
+      "title": "Evan Rachel Wood",
+      "url": "https://en.wikipedia.org/wiki/Evan_Rachel_Wood",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/EvanRachelWood.jpg?width=800",
+    "faceId": "0532d841-de05-4bc5-83a8-8f9aba1cbdb1",
+    "indexedAt": "2026-07-10T16:02:13.552Z"
+  },
+  {
+    "id": "Q208256",
+    "name": "Diomedes",
+    "niche": "latam-musician",
+    "wikipedia": {
+      "title": "Diomedes",
+      "url": "https://en.wikipedia.org/wiki/Diomedes",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Glyptothek%20Munich%20Diomedes%2017%2010%202016.jpg?width=800",
+    "faceId": "1f5685c5-bc5f-45f5-b0c5-e10b51b44bde",
+    "indexedAt": "2026-07-10T16:02:18.671Z"
+  },
+  {
+    "id": "Q312264",
+    "name": "Captain Beefheart",
+    "niche": "latam-musician",
+    "wikipedia": {
+      "title": "Captain Beefheart",
+      "url": "https://en.wikipedia.org/wiki/Captain_Beefheart",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Don%20Van%20Vliet%20and%20Gary%20Lucas%2C%20'Doc%20at%20the%20Radar%20Station'%20sessions%20(May%201980).jpg?width=800",
+    "faceId": "1e044424-bef1-4e2d-859c-522bb36b1fc9",
+    "indexedAt": "2026-07-10T16:02:27.230Z"
+  },
+  {
+    "id": "Q235066",
+    "name": "Laurie Anderson",
+    "niche": "latam-musician",
+    "wikipedia": {
+      "title": "Laurie Anderson",
+      "url": "https://en.wikipedia.org/wiki/Laurie_Anderson",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/LaurieAnderson-StudioHarcourt-1987.png?width=800",
+    "faceId": "aaaa650c-761a-4d9e-a73f-9d8c0b28ea3a",
+    "indexedAt": "2026-07-10T16:02:33.050Z"
+  },
+  {
+    "id": "Q980567",
+    "name": "Fernando Schweitzer",
+    "niche": "br-actor",
+    "wikipedia": {
+      "title": "Fernando Schweitzer",
+      "url": "https://es.wikipedia.org/wiki/Fernando_Schweitzer",
+      "lang": "es"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Nando%20Schweitzer.jpg?width=800",
+    "faceId": "a644e4f7-2215-443c-bdd4-ea976d9ab291",
+    "indexedAt": "2026-07-10T16:03:38.828Z"
+  },
+  {
+    "id": "Q981968",
+    "name": "Humberto Mauro",
+    "niche": "br-actor",
+    "wikipedia": {
+      "title": "Humberto Mauro",
+      "url": "https://en.wikipedia.org/wiki/Humberto_Mauro",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Humberto%20Mauro%201%2C%20sem%20data.tif?width=800",
+    "faceId": "8ab45d33-fe86-45a5-98c8-4ad841384baf",
+    "indexedAt": "2026-07-10T16:03:40.735Z"
+  },
+  {
+    "id": "Q9763866",
+    "name": "Cintia Rosa",
+    "niche": "br-actor",
+    "wikipedia": {
+      "title": "Cintia Rosa",
+      "url": "https://pt.wikipedia.org/wiki/Cintia_Rosa",
+      "lang": "pt"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Cintia%20Rosa%2001.jpg?width=800",
+    "faceId": "60aeecca-53f2-422e-95d2-fe998ecdaba7",
+    "indexedAt": "2026-07-10T16:03:42.200Z"
+  },
+  {
+    "id": "Q99638104",
+    "name": "Amanda Magalhães",
+    "niche": "br-actor",
+    "wikipedia": {
+      "title": "Amanda Magalhães",
+      "url": "https://en.wikipedia.org/wiki/Amanda_Magalh%C3%A3es",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Amanda%20Magalh%C3%A3es%20in%20S%C3%A3o%20Paulo%202023.jpg?width=800",
+    "faceId": "97e6f7fe-61ef-4875-bfba-bb62c5c8097a",
+    "indexedAt": "2026-07-10T16:04:52.637Z"
+  },
+  {
+    "id": "Q14747",
+    "name": "Sancho Gracia",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Sancho Gracia",
+      "url": "https://en.wikipedia.org/wiki/Sancho_Gracia",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Sancho%20Gracia%20%28cropped%29.jpg?width=800",
+    "faceId": "fa4286fa-8754-4166-ad30-cd7ccaa627da",
+    "indexedAt": "2026-07-10T16:06:36.073Z"
+  },
+  {
+    "id": "Q15079",
+    "name": "Louis C.K.",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Louis C.K.",
+      "url": "https://en.wikipedia.org/wiki/Louis_C.K.",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Louis%20C.K%20Peabody%20Awards%20wider%20crop%20slight%20retouching.jpg?width=800",
+    "faceId": "abc6ea81-7ecf-4acd-ae3f-68e6f445b537",
+    "indexedAt": "2026-07-10T16:06:38.052Z"
+  },
+  {
+    "id": "Q17515",
+    "name": "Diego Maradona",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Diego Maradona",
+      "url": "https://en.wikipedia.org/wiki/Diego_Maradona",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Maradona%201986%20vs%20italy.jpg?width=800",
+    "faceId": "83e5457e-36d5-4ddb-b3d6-5e7f40eb167f",
+    "indexedAt": "2026-07-10T16:06:39.621Z"
+  },
+  {
+    "id": "Q23880",
+    "name": "Lila Downs",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Lila Downs",
+      "url": "https://en.wikipedia.org/wiki/Lila_Downs",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/2018%20MX%20MM%20LILA%20DOWNS%20%2845614732444%29.jpg?width=800",
+    "faceId": "570fb8a7-cb9f-4211-870e-92f3f0cf0853",
+    "indexedAt": "2026-07-10T16:07:38.094Z"
+  },
+  {
+    "id": "Q28487",
+    "name": "Bérénice Bejo",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Bérénice Bejo",
+      "url": "https://en.wikipedia.org/wiki/B%C3%A9r%C3%A9nice_Bejo",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/B%C3%A9r%C3%A9nice%20Bejo%20lors%20du%20Festival%20du%20Film%20de%20Cabourg%2C%20en%202023%20%28cropped%29.jpg?width=800",
+    "faceId": "b89f670d-c708-40a9-8c15-b7a11b5386a0",
+    "indexedAt": "2026-07-10T16:07:39.862Z"
+  },
+  {
+    "id": "Q40501",
+    "name": "Raúl Valerio",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Raúl Valerio",
+      "url": "https://en.wikipedia.org/wiki/Ra%C3%BAl_Valerio",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Ra%C3%BAl%20Valerio%20%28cropped%29.jpg?width=800",
+    "faceId": "a3bbf395-70b4-4998-b08b-d0392e4e4a0b",
+    "indexedAt": "2026-07-10T16:29:28.008Z"
+  },
+  {
+    "id": "Q40933",
+    "name": "Eva Perón",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Eva Perón",
+      "url": "https://en.wikipedia.org/wiki/Eva_Per%C3%B3n",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Evita%20%28cropped2%29.JPG?width=800",
+    "faceId": "97034a1d-7118-4a55-926b-f84569fb8b52",
+    "indexedAt": "2026-07-10T16:29:30.372Z"
+  },
+  {
+    "id": "Q41129",
+    "name": "Germán Valdés",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Germán Valdés",
+      "url": "https://en.wikipedia.org/wiki/Germ%C3%A1n_Vald%C3%A9s",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Tin%20Tan%20en%201954%20%28cropped%29.jpg?width=800",
+    "faceId": "ca6d9a23-7c0e-4e21-bfc6-dc400a332cb2",
+    "indexedAt": "2026-07-10T16:30:28.888Z"
+  },
+  {
+    "id": "Q45560",
+    "name": "Catherine Siachoque",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Catherine Siachoque",
+      "url": "https://en.wikipedia.org/wiki/Catherine_Siachoque",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Catherine%20Siachoque.jpg?width=800",
+    "faceId": "8c89f7c1-4797-42a5-8857-b59ffcf83e9a",
+    "indexedAt": "2026-07-10T16:30:30.822Z"
+  },
+  {
+    "id": "Q51545",
+    "name": "Luis Buñuel",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Luis Buñuel",
+      "url": "https://en.wikipedia.org/wiki/Luis_Bu%C3%B1uel",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Luis%20Bu%C3%B1uel.JPG?width=800",
+    "faceId": "ead88384-eb11-487d-b762-0381a2c2db75",
+    "indexedAt": "2026-07-10T16:30:32.778Z"
+  },
+  {
+    "id": "Q44529",
+    "name": "Leonardo Favio",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Leonardo Favio",
+      "url": "https://en.wikipedia.org/wiki/Leonardo_Favio",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Leonardo%20Favio%20%281968%29.jpg?width=800",
+    "faceId": "01d8538e-9de1-46c1-8e01-60670ecba0e7",
+    "indexedAt": "2026-07-10T16:35:15.765Z"
+  },
+  {
+    "id": "Q66893",
+    "name": "Esther Vilar",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Esther Vilar",
+      "url": "https://en.wikipedia.org/wiki/Esther_Vilar",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Esther%20Vilar%20%281977%29.jpg?width=800",
+    "faceId": "92abeed3-b33f-486b-bac7-0fcc86d15c3d",
+    "indexedAt": "2026-07-10T16:36:15.408Z"
+  },
+  {
+    "id": "Q68027",
+    "name": "Verona Pooth",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Verona Pooth",
+      "url": "https://en.wikipedia.org/wiki/Verona_Pooth",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Verona%20Pooth%20auf%20Frankfurter%20Buchmesse%202023.jpg?width=800",
+    "faceId": "3d393ba4-6ccb-4c02-8c12-38319d2c3195",
+    "indexedAt": "2026-07-10T16:36:17.967Z"
+  },
+  {
+    "id": "Q69340",
+    "name": "Sky du Mont",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Sky du Mont",
+      "url": "https://en.wikipedia.org/wiki/Sky_du_Mont",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/2025-11-05-Sky%20du%20Mont-Maischberger-7111.jpg?width=800",
+    "faceId": "56873649-ccab-4c0d-b6ff-76b9910f56f8",
+    "indexedAt": "2026-07-10T16:37:15.521Z"
+  },
+  {
+    "id": "Q69474",
+    "name": "Nicole",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Nicole (Chilean singer)",
+      "url": "https://en.wikipedia.org/wiki/Nicole_(Chilean_singer)",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Nicole%20cantante%202.jpg?width=800",
+    "faceId": "9e83a319-65d1-4674-8485-87fec7dfc658",
+    "indexedAt": "2026-07-10T16:37:17.184Z"
+  },
+  {
+    "id": "Q69862",
+    "name": "Carlos Thompson",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Carlos Thompson",
+      "url": "https://en.wikipedia.org/wiki/Carlos_Thompson",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Carlos%20Thompson-Lana%20Turner%20in%20Flame%20and%20the%20Flesh.jpg?width=800",
+    "faceId": "78ef6de3-bb11-43fc-bada-26251988be6e",
+    "indexedAt": "2026-07-10T16:41:39.593Z"
+  },
+  {
+    "id": "Q83484",
+    "name": "Anthony Quinn",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Anthony Quinn",
+      "url": "https://en.wikipedia.org/wiki/Anthony_Quinn",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20Quinn%20around%20the%201960s.jpg?width=800",
+    "faceId": "a6cea1b5-fc87-4b11-9a10-8ac8e109b573",
+    "indexedAt": "2026-07-10T16:43:45.049Z"
+  },
+  {
+    "id": "Q93508",
+    "name": "Berta Singerman",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Berta Singerman",
+      "url": "https://en.wikipedia.org/wiki/Berta_Singerman",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Berta%20Singerman.jpg?width=800",
+    "faceId": "52516ac9-4d70-4bd3-a9c4-567c80ab9879",
+    "indexedAt": "2026-07-10T16:43:46.985Z"
+  },
+  {
+    "id": "Q704160",
+    "name": "Diego Torres",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Diego Torres (singer)",
+      "url": "https://en.wikipedia.org/wiki/Diego_Torres_(singer)",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Diego%20Torres%20at%20MIFF.jpg?width=800",
+    "faceId": "625c17b3-9b72-4ce3-a3a4-2126abf48bcf",
+    "indexedAt": "2026-07-10T16:43:48.527Z"
+  },
+  {
+    "id": "Q937259",
+    "name": "Karyme Lozano",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Karyme Lozano",
+      "url": "https://en.wikipedia.org/wiki/Karyme_Lozano",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Karyme%20Lozano%20-%20SF%20Gay%20Pride%20%28cropped%29.jpg?width=800",
+    "faceId": "33f475c2-f190-480e-b116-35366ee17364",
+    "indexedAt": "2026-07-10T16:46:15.881Z"
+  },
+  {
+    "id": "Q6105",
+    "name": "Hebe Camargo",
+    "niche": "br-musician",
+    "wikipedia": {
+      "title": "Hebe Camargo",
+      "url": "https://en.wikipedia.org/wiki/Hebe_Camargo",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Hebe%20Camargo.jpg?width=800",
+    "faceId": "11115883-403f-4dcf-800d-13fe111a8aa3",
+    "indexedAt": "2026-07-10T16:46:48.448Z"
+  },
+  {
+    "id": "Q12881",
+    "name": "Paulo Coelho",
+    "niche": "br-musician",
+    "wikipedia": {
+      "title": "Paulo Coelho",
+      "url": "https://en.wikipedia.org/wiki/Paulo_Coelho",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Paulo%20Coelho%2C%20June%202024.jpg?width=800",
+    "faceId": "3a796422-9078-4c7e-9b75-ff8dd34c5000",
+    "indexedAt": "2026-07-10T16:46:51.033Z"
+  },
+  {
+    "id": "Q12897",
+    "name": "Pelé",
+    "niche": "br-musician",
+    "wikipedia": {
+      "title": "Pelé",
+      "url": "https://en.wikipedia.org/wiki/Pel%C3%A9",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Pele%20con%20brasil%20%28cropped%29.jpg?width=800",
+    "faceId": "468f876a-86c4-4cbf-976d-8afd409c7408",
+    "indexedAt": "2026-07-10T16:46:53.054Z"
+  },
+  {
+    "id": "Q38363",
+    "name": "Frejat",
+    "niche": "br-musician",
+    "wikipedia": {
+      "title": "Frejat",
+      "url": "https://en.wikipedia.org/wiki/Frejat",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Roberto%20Frejat%2C%2011%20June%202019.JPG?width=800",
+    "faceId": "5c940920-ca22-4526-bdc7-6c822055067c",
+    "indexedAt": "2026-07-10T16:47:04.420Z"
+  },
+  {
+    "id": "Q39444",
+    "name": "Ronaldinho",
+    "niche": "br-musician",
+    "wikipedia": {
+      "title": "Ronaldinho",
+      "url": "https://en.wikipedia.org/wiki/Ronaldinho",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/2019%20-%20Press%20conferences%20-%20Day%201%20ENX%206950%20%2849019873887%29%20%28cropped%29.jpg?width=800",
+    "faceId": "ef7be350-5569-43ed-bc5c-c2dd7522125a",
+    "indexedAt": "2026-07-10T16:47:06.977Z"
+  },
+  {
+    "id": "Q43834",
+    "name": "Clementina de Jesus",
+    "niche": "br-musician",
+    "wikipedia": {
+      "title": "Clementina de Jesus",
+      "url": "https://en.wikipedia.org/wiki/Clementina_de_Jesus",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Clementina%20de%20Jesus%20%281966%29.jpg?width=800",
+    "faceId": "1bc735e2-480c-4d97-8905-db294e31a3b7",
+    "indexedAt": "2026-07-10T16:47:48.049Z"
+  },
+  {
+    "id": "Q43947",
+    "name": "Fernanda Abreu",
+    "niche": "br-musician",
+    "wikipedia": {
+      "title": "Fernanda Abreu",
+      "url": "https://en.wikipedia.org/wiki/Fernanda_Abreu",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Fernanda%20Abreu%20-%2026%C2%B0%20Pr%C3%AAmio%20da%20M%C3%BAsica%20Brasileira%2C%202015%20%28edit%29.jpg?width=800",
+    "faceId": "daff70a0-4624-4387-954e-235d4384c8dc",
+    "indexedAt": "2026-07-10T16:47:50.192Z"
+  },
+  {
+    "id": "Q44407",
+    "name": "Ronald Golias",
+    "niche": "br-musician",
+    "wikipedia": {
+      "title": "Ronald Golias",
+      "url": "https://en.wikipedia.org/wiki/Ronald_Golias",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Ronald%20Golias%2C%20sem%20data%20%28cropped%29.jpg?width=800",
+    "faceId": "210aaac1-132b-4273-a6de-e61137f5910d",
+    "indexedAt": "2026-07-10T16:47:52.219Z"
+  },
+  {
+    "id": "Q80761",
+    "name": "Dante",
+    "niche": "br-musician",
+    "wikipedia": {
+      "title": "Dante (footballer)",
+      "url": "https://en.wikipedia.org/wiki/Dante_(footballer)",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Dante%20asse%20ogcn%202425.png?width=800",
+    "faceId": "c2487783-2868-4176-afd4-ff582bc452db",
+    "indexedAt": "2026-07-10T16:48:02.379Z"
+  },
+  {
+    "id": "Q903013",
+    "name": "Braz da Viola",
+    "niche": "br-musician",
+    "wikipedia": {
+      "title": "Braz da Viola",
+      "url": "https://en.wikipedia.org/wiki/Braz_da_Viola",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Braz004.jpg?width=800",
+    "faceId": "14dbd777-105d-4ca0-aeff-a31f7f619fcd",
+    "indexedAt": "2026-07-10T16:48:15.383Z"
+  },
+  {
+    "id": "Q51960",
+    "name": "Marisa Monte",
+    "niche": "br-musician",
+    "wikipedia": {
+      "title": "Marisa Monte",
+      "url": "https://en.wikipedia.org/wiki/Marisa_Monte",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Marisa%20Monte%20TSE%202025.jpg?width=800",
+    "faceId": "9553f60a-8be4-4226-8904-f52f93fd0848",
+    "indexedAt": "2026-07-10T16:48:48.301Z"
+  },
+  {
+    "id": "Q831480",
+    "name": "Beto Barbosa",
+    "niche": "br-musician",
+    "wikipedia": {
+      "title": "Beto Barbosa",
+      "url": "https://en.wikipedia.org/wiki/Beto_Barbosa",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Beto%20Barbosa%20-%20Camarote%20Skol%20%285508520537%29%20%28cropped%29.jpg?width=800",
+    "faceId": "a4e661e7-acd3-4236-ba24-fd3f8e9bd450",
+    "indexedAt": "2026-07-10T16:48:59.515Z"
+  },
+  {
+    "id": "Q848556",
+    "name": "Renato Aragão",
+    "niche": "br-musician",
+    "wikipedia": {
+      "title": "Renato Aragão",
+      "url": "https://en.wikipedia.org/wiki/Renato_Arag%C3%A3o",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Renato%20Arag%C3%A3o%20%282017%29.jpg?width=800",
+    "faceId": "e111214b-38cc-4a99-b931-0159217a4187",
+    "indexedAt": "2026-07-10T16:49:01.587Z"
+  },
+  {
+    "id": "Q852396",
+    "name": "Rosa Passos",
+    "niche": "br-musician",
+    "wikipedia": {
+      "title": "Rosa Passos",
+      "url": "https://en.wikipedia.org/wiki/Rosa_Passos",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Rosa%2BPassos.jpg?width=800",
+    "faceId": "65d71da1-4720-40de-a15d-530b4269ee92",
+    "indexedAt": "2026-07-10T16:49:04.020Z"
+  },
+  {
+    "id": "Q932925",
+    "name": "Luiz Bonfá",
+    "niche": "br-musician",
+    "wikipedia": {
+      "title": "Luiz Bonfá",
+      "url": "https://en.wikipedia.org/wiki/Luiz_Bonf%C3%A1",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/LuizBonfa1962.jpg?width=800",
+    "faceId": "0f5a1d65-7a24-4bd1-8446-e8217ede3daa",
+    "indexedAt": "2026-07-10T16:49:15.483Z"
+  },
+  {
+    "id": "Q939829",
+    "name": "Djavan",
+    "niche": "br-musician",
+    "wikipedia": {
+      "title": "Djavan",
+      "url": "https://en.wikipedia.org/wiki/Djavan",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Djavan%20San%20Javier%20Jazz%202023%2026%20%28cropped%29.jpg?width=800",
+    "faceId": "275bfcde-270e-469d-bbbd-d2097b9b9178",
+    "indexedAt": "2026-07-10T16:49:17.618Z"
+  },
+  {
+    "id": "Q940848",
+    "name": "Nara Leão",
+    "niche": "br-musician",
+    "wikipedia": {
+      "title": "Nara Leão",
+      "url": "https://en.wikipedia.org/wiki/Nara_Le%C3%A3o",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/NaraLe%C3%A3o.jpg?width=800",
+    "faceId": "9afa2d09-b10b-4e78-8800-6ece75d0e479",
+    "indexedAt": "2026-07-10T16:49:26.146Z"
+  },
+  {
+    "id": "Q962883",
+    "name": "Jovino Santos-Neto",
+    "niche": "br-musician",
+    "wikipedia": {
+      "title": "Jovino Santos Neto",
+      "url": "https://en.wikipedia.org/wiki/Jovino_Santos_Neto",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Jovino%20Santos%20Neto.jpg?width=800",
+    "faceId": "39d5a360-2d07-446e-9e11-2ef8a494d2f3",
+    "indexedAt": "2026-07-10T16:49:40.383Z"
+  },
+  {
+    "id": "Q963412",
+    "name": "Toni Garrido",
+    "niche": "br-musician",
+    "wikipedia": {
+      "title": "Toni Garrido",
+      "url": "https://en.wikipedia.org/wiki/Toni_Garrido",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/2022-07-03%20anivers%C3%A1rio%20de%20210%20anos%20de%20Pelotas%20-%2009.jpg?width=800",
+    "faceId": "5107ca8a-6f81-44c5-a1f1-19eeb28e2304",
+    "indexedAt": "2026-07-10T16:49:42.288Z"
+  },
+  {
+    "id": "Q978375",
+    "name": "Edu Lobo",
+    "niche": "br-musician",
+    "wikipedia": {
+      "title": "Edu Lobo",
+      "url": "https://en.wikipedia.org/wiki/Edu_Lobo",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/25%C2%BA%20Pr%C3%AAmio%20da%20M%C3%BAsica%20Brasileira%20%2814004990988%29.jpg?width=800",
+    "faceId": "e840f208-d042-4255-b127-5752a5a01d4b",
+    "indexedAt": "2026-07-10T16:49:54.813Z"
+  },
+  {
+    "id": "Q982314",
+    "name": "Luiz Gonzaga",
+    "niche": "br-musician",
+    "wikipedia": {
+      "title": "Luiz Gonzaga",
+      "url": "https://en.wikipedia.org/wiki/Luiz_Gonzaga",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Luiz%20Gonzaga%20%281957%29.jpg?width=800",
+    "faceId": "21217f04-5a7b-4800-8483-4ba6b254898a",
+    "indexedAt": "2026-07-10T16:49:56.760Z"
+  },
+  {
+    "id": "Q982366",
+    "name": "Renato Russo",
+    "niche": "br-musician",
+    "wikipedia": {
+      "title": "Renato Russo",
+      "url": "https://en.wikipedia.org/wiki/Renato_Russo",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Renato%20Russo%2C%201987%20%28cropped%29.jpg?width=800",
+    "faceId": "542d6dc0-8240-4362-92eb-0faafb63eadd",
+    "indexedAt": "2026-07-10T16:49:58.807Z"
+  },
+  {
+    "id": "Q983074",
+    "name": "Toquinho",
+    "niche": "br-musician",
+    "wikipedia": {
+      "title": "Toquinho",
+      "url": "https://en.wikipedia.org/wiki/Toquinho",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Vinicius%20de%20Moraes%20e%20Toquinho%2C%201973%20%28cropped%29.jpg?width=800",
+    "faceId": "083cb322-cabb-40c7-b3fe-3325a5334aaf",
+    "indexedAt": "2026-07-10T16:50:07.921Z"
+  },
+  {
+    "id": "Q99938297",
+    "name": "Lazzo Matumbi",
+    "niche": "br-musician",
+    "wikipedia": {
+      "title": "Lazzo Matumbi",
+      "url": "https://pt.wikipedia.org/wiki/Lazzo_Matumbi",
+      "lang": "pt"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Lazzo%20Matumbi%20cropped.png?width=800",
+    "faceId": "8e4e3473-c7ca-4e85-af46-3be4fb11f6b2",
+    "indexedAt": "2026-07-10T16:50:10.790Z"
+  },
+  {
+    "id": "Q836732",
+    "name": "Fernando Colunga",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Fernando Colunga",
+      "url": "https://en.wikipedia.org/wiki/Fernando_Colunga",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Fernando%20Colunga%20in%20the%201980s%20%28cropped%29.jpg?width=800",
+    "faceId": "d96eb95c-9f32-4ef7-8eea-bd7d89653f58",
+    "indexedAt": "2026-07-10T16:58:49.009Z"
+  },
+  {
+    "id": "Q840946",
+    "name": "Kalimba Marichal",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Kalimba (singer)",
+      "url": "https://en.wikipedia.org/wiki/Kalimba_(singer)",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/MX%20MR%20HOMENAJE%20JOS%C3%89%20JOS%C3%89%20%2848961189892%29.jpg?width=800",
+    "faceId": "521f713d-7f2d-4ca9-9b52-247cbbabd1b3",
+    "indexedAt": "2026-07-10T16:58:51.446Z"
+  },
+  {
+    "id": "Q845542",
+    "name": "Ignacio López Tarso",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Ignacio López Tarso",
+      "url": "https://en.wikipedia.org/wiki/Ignacio_L%C3%B3pez_Tarso",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/L%C3%B3pez%20Tarso%202015%20%28cropped%29.jpg?width=800",
+    "faceId": "69cd1bc5-745a-44be-9466-ed2b45bbfba2",
+    "indexedAt": "2026-07-10T16:59:30.508Z"
+  },
+  {
+    "id": "Q846086",
+    "name": "Marlene Favela",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Marlene Favela",
+      "url": "https://en.wikipedia.org/wiki/Marlene_Favela",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Marl%C3%A9n%20Favela%20%28cropped%29.jpg?width=800",
+    "faceId": "6cdc56ab-c060-4d4f-8102-95bd2ec4de5f",
+    "indexedAt": "2026-07-10T16:59:32.026Z"
+  },
+  {
+    "id": "Q938043",
+    "name": "Fanny Lu",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Fanny Lu",
+      "url": "https://en.wikipedia.org/wiki/Fanny_Lu",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Fanny%20Lu%20en%202023.jpg?width=800",
+    "faceId": "73b6a9c0-1ac6-4dda-b4d6-de6b161cb623",
+    "indexedAt": "2026-07-10T17:01:39.258Z"
+  },
+  {
+    "id": "Q849224",
+    "name": "Mariana Torres",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Mariana Torres (actress)",
+      "url": "https://en.wikipedia.org/wiki/Mariana_Torres_(actress)",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Mariana%20Torres%20en%202025.png?width=800",
+    "faceId": "3d1a0e70-f53d-4986-8bb7-7165b6fbb570",
+    "indexedAt": "2026-07-10T17:08:15.843Z"
+  },
+  {
+    "id": "Q853459",
+    "name": "Rocío Banquells",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Rocío Banquells",
+      "url": "https://en.wikipedia.org/wiki/Roc%C3%ADo_Banquells",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Roc%C3%ADoBanquells.jpg?width=800",
+    "faceId": "0815a8a4-a910-4af9-be35-81ac0c647265",
+    "indexedAt": "2026-07-10T17:08:17.568Z"
+  },
+  {
+    "id": "Q858561",
+    "name": "Carla Peterson",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Carla Peterson (actress)",
+      "url": "https://en.wikipedia.org/wiki/Carla_Peterson_(actress)",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Carla%20Peterson%202014.jpg?width=800",
+    "faceId": "0c28c8f4-ab74-4739-ab30-a924d24e49e7",
+    "indexedAt": "2026-07-10T17:09:17.352Z"
+  },
+  {
+    "id": "Q858594",
+    "name": "Carlos Guillermo Haydon",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Carlos Guillermo Haydon",
+      "url": "https://en.wikipedia.org/wiki/Carlos_Guillermo_Haydon",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Carlos%20Guillermo%20Haydon.png?width=800",
+    "faceId": "c89289b3-730f-409e-8097-b1e50a6a610a",
+    "indexedAt": "2026-07-10T17:09:19.467Z"
+  },
+  {
+    "id": "Q937897",
+    "name": "Edgardo Cozarinsky",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Edgardo Cozarinsky",
+      "url": "https://en.wikipedia.org/wiki/Edgardo_Cozarinsky",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Edgardo%20Cozarinsky.jpg?width=800",
+    "faceId": "059b9a71-2908-44c0-b2f0-4de0a2ac0b9f",
+    "indexedAt": "2026-07-10T17:10:45.447Z"
   }
 ]

@@ -53,3 +53,13 @@ if (source !== target) {
 } else {
   console.log(`Using ${target} (${recordCount(target)} records)`);
 }
+
+const data = JSON.parse(fs.readFileSync(target, "utf8"));
+if (Array.isArray(data)) {
+  const byNiche = {};
+  for (const row of data) {
+    const niche = row.niche ?? "unknown";
+    byNiche[niche] = (byNiche[niche] ?? 0) + 1;
+  }
+  console.log("By niche:", byNiche);
+}
