@@ -52,7 +52,15 @@ export default function App() {
     "celebrity" | "learned" | "wikidata" | null
   >(null);
   const [resultNiche, setResultNiche] = useState<
-    "us-actor" | "us-musician" | "eu-actor" | "eu-musician" | null
+    | "us-actor"
+    | "us-musician"
+    | "eu-actor"
+    | "eu-musician"
+    | "br-actor"
+    | "br-musician"
+    | "latam-actor"
+    | "latam-musician"
+    | null
   >(null);
 
   const [error, setError] = useState<string | null>(null);
@@ -627,7 +635,15 @@ export default function App() {
                     ? t.wikidataEuActorBadge
                     : resultNiche === "eu-musician"
                       ? t.wikidataEuMusicianBadge
-                      : t.wikidataBadge}
+                      : resultNiche === "br-actor"
+                        ? t.wikidataBrActorBadge
+                        : resultNiche === "br-musician"
+                          ? t.wikidataBrMusicianBadge
+                          : resultNiche === "latam-actor"
+                            ? t.wikidataLatamActorBadge
+                            : resultNiche === "latam-musician"
+                              ? t.wikidataLatamMusicianBadge
+                              : t.wikidataBadge}
               </span>
             )}
 

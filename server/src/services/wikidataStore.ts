@@ -8,7 +8,11 @@ export type WikidataNiche =
   | "us-actor"
   | "us-musician"
   | "eu-actor"
-  | "eu-musician";
+  | "eu-musician"
+  | "br-actor"
+  | "br-musician"
+  | "latam-actor"
+  | "latam-musician";
 
 export interface WikidataPersonRecord {
   id: string;
@@ -137,6 +141,22 @@ export async function countWikidataEuActors(): Promise<number> {
 
 export async function countWikidataEuMusicians(): Promise<number> {
   return countWikidataByNiche("eu-musician");
+}
+
+export async function countWikidataBrActors(): Promise<number> {
+  return countWikidataByNiche("br-actor");
+}
+
+export async function countWikidataBrMusicians(): Promise<number> {
+  return countWikidataByNiche("br-musician");
+}
+
+export async function countWikidataLatamActors(): Promise<number> {
+  return countWikidataByNiche("latam-actor");
+}
+
+export async function countWikidataLatamMusicians(): Promise<number> {
+  return countWikidataByNiche("latam-musician");
 }
 
 export async function countWikidataIndexed(): Promise<number> {

@@ -1,12 +1,20 @@
 import dotenv from "dotenv";
 import path from "path";
 import { fileURLToPath } from "url";
+import { LATAM_ACTOR_SEED_UNIQUE } from "../src/data/latamActorSeed.js";
+import { LATAM_MUSICIAN_SEED_UNIQUE } from "../src/data/latamMusicianSeed.js";
+import { BR_ACTOR_SEED_UNIQUE } from "../src/data/brActorSeed.js";
+import { BR_MUSICIAN_SEED_UNIQUE } from "../src/data/brMusicianSeed.js";
 import { EU_ACTOR_SEED_UNIQUE } from "../src/data/euActorSeed.js";
 import { EU_MUSICIAN_SEED_UNIQUE } from "../src/data/euMusicianSeed.js";
 import { US_ACTOR_SEED_UNIQUE } from "../src/data/usActorSeed.js";
 import { US_MUSICIAN_SEED_UNIQUE } from "../src/data/usMusicianSeed.js";
 import { ensureFaceCollection, indexFaceBytes } from "../src/services/faceCollection.js";
 import {
+  fetchLatamActorsBatch,
+  fetchLatamMusiciansBatch,
+  fetchBrActorsBatch,
+  fetchBrMusiciansBatch,
   fetchEuActorsBatch,
   fetchEuMusiciansBatch,
   fetchUsActorsBatch,
@@ -66,6 +74,30 @@ const NICHE_CONFIG = {
     fetchBatch: fetchEuMusiciansBatch,
     sparqlHint: "npm.cmd run import:eu-musicians -- --mode sparql --limit 5 --batch-size 3",
   },
+  "br-actor": {
+    label: "Brazilian actors",
+    seedIds: BR_ACTOR_SEED_UNIQUE,
+    fetchBatch: fetchBrActorsBatch,
+    sparqlHint: "npm.cmd run import:br-actors -- --mode sparql --limit 5 --batch-size 3",
+  },
+  "br-musician": {
+    label: "Brazilian musicians",
+    seedIds: BR_MUSICIAN_SEED_UNIQUE,
+    fetchBatch: fetchBrMusiciansBatch,
+    sparqlHint: "npm.cmd run import:br-musicians -- --mode sparql --limit 5 --batch-size 3",
+  },
+  "latam-actor": {
+    label: "Latin American actors (South America + Mexico)",
+    seedIds: LATAM_ACTOR_SEED_UNIQUE,
+    fetchBatch: fetchLatamActorsBatch,
+    sparqlHint: "npm.cmd run import:latam-actors -- --mode sparql --limit 5 --batch-size 3",
+  },
+  "latam-musician": {
+    label: "Latin American musicians (South America + Mexico)",
+    seedIds: LATAM_MUSICIAN_SEED_UNIQUE,
+    fetchBatch: fetchLatamMusiciansBatch,
+    sparqlHint: "npm.cmd run import:latam-musicians -- --mode sparql --limit 5 --batch-size 3",
+  },
 } as const;
 
 function parseNiche(value: string | undefined): WikidataNiche {
@@ -81,6 +113,24 @@ function parseNiche(value: string | undefined): WikidataNiche {
     case "eu-musician":
     case "european-musicians":
       return "eu-musician";
+    case "br-actors":
+    case "br-actor":
+    case "brazilian-actors":
+      return "br-actor";
+    case "br-musicians":
+    case "br-musician":
+    case "brazilian-musicians":
+      return "br-musician";
+    case "latam-actors":
+    case "latam-actor":
+    case "south-america-actors":
+    case "sa-actors":
+      return "latam-actor";
+    case "latam-musicians":
+    case "latam-musician":
+    case "south-america-musicians":
+    case "sa-musicians":
+      return "latam-musician";
     case "actors":
     case "us-actor":
     default:

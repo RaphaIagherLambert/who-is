@@ -1,15 +1,19 @@
-# Wikidata import — actors & musicians (US + Europe)
+# Wikidata import — actors & musicians (US + Europe + Brazil + Latin America)
 
 Import public figures into the AWS face collection so the app can recognize them without admin teach mode.
 
-Four **niches** × two **modes**:
+Eight **niches** × two **modes**:
 
 | | **Seed** (default) | **SPARQL** |
 |---|---|---|
-| **US actors** | Famous names via Wikidata Entity API | US citizens, actor occupation |
+| **US actors** | Famous names via Wikidata Entity API | US citizens (`Q30`), actor |
 | **US musicians** | Famous singers/rappers | US citizens, singer/musician/rapper |
 | **European actors** | Famous UK/FR/DE/ES/IT/Nordic actors | European citizenship (excl. US), actor |
 | **European musicians** | Famous UK/FR/ES/SE/DE musicians | European citizenship (excl. US), musician |
+| **Brazilian actors** | Famous TV/cinema names | Brazilian citizens (`Q155`), actor |
+| **Brazilian musicians** | Famous MPB/sertanejo/funk/pop | Brazilian citizens, musician |
+| **Latin America actors** | Mexico + South America (excl. Brazil) | AR/CL/CO/PE/VE/UY/PY/BO/EC/MX citizens, actor |
+| **Latin America musicians** | Same region | Same countries, musician |
 
 ---
 
@@ -80,6 +84,40 @@ npm.cmd run import:eu-musicians:dry-run
 npm.cmd run import:eu-musicians:sparql
 ```
 
+### Brazilian actors (start here)
+
+```powershell
+npm.cmd run import:br-actors -- --limit 10
+npm.cmd run import:br-actors:dry-run
+npm.cmd run import:br-actors:sparql
+```
+
+### Brazilian musicians
+
+```powershell
+npm.cmd run import:br-musicians -- --limit 10
+npm.cmd run import:br-musicians:dry-run
+npm.cmd run import:br-musicians:sparql
+```
+
+### Latin America + Mexico actors (start here)
+
+South America excluding Brazil, plus Mexico.
+
+```powershell
+npm.cmd run import:latam-actors -- --limit 10
+npm.cmd run import:latam-actors:dry-run
+npm.cmd run import:latam-actors:sparql
+```
+
+### Latin America + Mexico musicians
+
+```powershell
+npm.cmd run import:latam-musicians -- --limit 10
+npm.cmd run import:latam-musicians:dry-run
+npm.cmd run import:latam-musicians:sparql
+```
+
 ---
 
 ## Modes explained
@@ -95,6 +133,8 @@ npm.cmd run import:eu-musicians:sparql
 
 - **US:** Wikidata query for US citizens (`Q30`).
 - **Europe:** citizens of countries on continent Europe (`Q46`), excluding US.
+- **Brazil:** Brazilian citizens (`Q155`). Labels use English + Portuguese; Wikipedia falls back to **pt.wikipedia** when English is missing.
+- **Latin America + Mexico:** Citizens of Argentina, Chile, Colombia, Peru, Venezuela, Uruguay, Paraguay, Bolivia, Ecuador, and Mexico. Labels use English + Spanish + Portuguese; Wikipedia falls back to **es.wikipedia** or **pt.wikipedia**.
 - Processes in small batches; **resumes** from where you left off (per niche, in `server/data/`).
 - Wikidata often returns **504 Gateway Timeout** when busy — retry later with smaller `--batch-size`.
 
@@ -129,8 +169,13 @@ npm.cmd run import:eu-musicians:sparql
   "totalIndexed": 350,
   "usActorsIndexed": 141,
   "usMusiciansIndexed": 44,
-  "euActorsIndexed": 85,
-  "euMusiciansIndexed": 80
+  "euActorsIndexed": 18,
+  "euMusiciansIndexed": 8,
+  "brActorsIndexed": 25,
+  "brMusiciansIndexed": 20,
+  "latamActorsIndexed": 18,
+  "latamMusiciansIndexed": 12,
+  "storeFileFound": true
 }
 ```
 
@@ -144,6 +189,10 @@ npm.cmd run import:eu-musicians:sparql
 | `server/src/data/usMusicianSeed.ts` | US musicians (~44 names) |
 | `server/src/data/euActorSeed.ts` | European actors (~47 names) |
 | `server/src/data/euMusicianSeed.ts` | European musicians (~40 names) |
+| `server/src/data/brActorSeed.ts` | Brazilian actors (~33 names) |
+| `server/src/data/brMusicianSeed.ts` | Brazilian musicians (~28 names) |
+| `server/src/data/latamActorSeed.ts` | Latin America + Mexico actors (~20 names) |
+| `server/src/data/latamMusicianSeed.ts` | Latin America + Mexico musicians (~12 names) |
 
 All records are stored in `server/data/wikidata-us-actors.json` (shared file, tagged by `niche`).
 
@@ -151,11 +200,12 @@ All records are stored in `server/data/wikidata-us-actors.json` (shared file, ta
 
 ## Suggested workflow
 
-1. Finish US (actors + musicians) — done ✓
-2. **European actors seed** — `import:eu-actors --limit 10` daily
-3. **European actors SPARQL** — when seed is mostly skipped
-4. **European musicians seed** — same pattern
-5. **European musicians SPARQL** — last
+1. Finish US + EU + BR — done ✓
+2. **Latin America actors seed** — `import:latam-actors --limit 10` daily
+3. **Latin America actors SPARQL** — when seed is mostly skipped
+4. **Latin America musicians seed** — same pattern
+5. **Latin America musicians SPARQL** — last
+6. **Deploy** — run `deploy-to-render.cmd` after imports to update production index
 
 ---
 

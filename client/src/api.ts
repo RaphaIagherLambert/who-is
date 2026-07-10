@@ -21,7 +21,7 @@ export interface WikipediaPage {
 export interface IdentifyResult extends CelebrityMatch {
   wikipedia: WikipediaPage | null;
   source?: "celebrity" | "learned" | "wikidata";
-  niche?: "us-actor" | "us-musician" | "eu-actor" | "eu-musician";
+  niche?: "us-actor" | "us-musician" | "eu-actor" | "eu-musician" | "br-actor" | "br-musician" | "latam-actor" | "latam-musician";
 }
 
 export interface IdentifyResponse {

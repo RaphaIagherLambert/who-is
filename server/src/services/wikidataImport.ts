@@ -72,6 +72,81 @@ LIMIT ${limit}
 `;
 }
 
+function buildBrCitizenshipClause(): string {
+  return `
+  ?person wdt:P27 wd:Q155 .`;
+}
+
+function buildBrActorsQuery(afterQid: string | null, limit: number): string {
+  const cursor = afterQid
+    ? `\n  FILTER(STR(?person) > "http://www.wikidata.org/entity/${afterQid}")`
+    : "";
+
+  return `
+SELECT ?person ?personLabel ?image WHERE {
+  ?person wdt:P106 wd:Q33999 ;
+          wdt:P18 ?image .${buildBrCitizenshipClause()}${cursor}
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,pt". }
+}
+LIMIT ${limit}
+`;
+}
+
+function buildBrMusiciansQuery(afterQid: string | null, limit: number): string {
+  const cursor = afterQid
+    ? `\n  FILTER(STR(?person) > "http://www.wikidata.org/entity/${afterQid}")`
+    : "";
+
+  return `
+SELECT ?person ?personLabel ?image WHERE {
+  VALUES ?occupation { wd:Q177220 wd:Q639669 wd:Q753110 }
+  ?person wdt:P106 ?occupation ;
+          wdt:P18 ?image .${buildBrCitizenshipClause()}${cursor}
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,pt". }
+}
+LIMIT ${limit}
+`;
+}
+
+function buildLatamCitizenshipClause(): string {
+  return `
+  VALUES ?country {
+    wd:Q414 wd:Q298 wd:Q739 wd:Q419 wd:Q717 wd:Q77 wd:Q733 wd:Q750 wd:Q736 wd:Q96
+  }
+  ?person wdt:P27 ?country .`;
+}
+
+function buildLatamActorsQuery(afterQid: string | null, limit: number): string {
+  const cursor = afterQid
+    ? `\n  FILTER(STR(?person) > "http://www.wikidata.org/entity/${afterQid}")`
+    : "";
+
+  return `
+SELECT ?person ?personLabel ?image WHERE {
+  ?person wdt:P106 wd:Q33999 ;
+          wdt:P18 ?image .${buildLatamCitizenshipClause()}${cursor}
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,es,pt". }
+}
+LIMIT ${limit}
+`;
+}
+
+function buildLatamMusiciansQuery(afterQid: string | null, limit: number): string {
+  const cursor = afterQid
+    ? `\n  FILTER(STR(?person) > "http://www.wikidata.org/entity/${afterQid}")`
+    : "";
+
+  return `
+SELECT ?person ?personLabel ?image WHERE {
+  VALUES ?occupation { wd:Q177220 wd:Q639669 wd:Q753110 }
+  ?person wdt:P106 ?occupation ;
+          wdt:P18 ?image .${buildLatamCitizenshipClause()}${cursor}
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,es,pt". }
+}
+LIMIT ${limit}
+`;
+}
+
 function buildUsActorsQuery(afterQid: string | null, limit: number): string {
   const cursor = afterQid
     ? `\n  FILTER(STR(?person) > "http://www.wikidata.org/entity/${afterQid}")`
@@ -193,6 +268,50 @@ export async function fetchUsActorsBatch(
   );
 }
 
+export async function fetchLatamMusiciansBatch(
+  limit: number,
+  _offset: number,
+  afterQid: string | null = null
+): Promise<WikidataImportRow[]> {
+  const safeLimit = Math.max(1, Math.min(limit, 5));
+  return parseSparqlBindings(
+    await fetchSparqlJson(buildLatamMusiciansQuery(afterQid, safeLimit))
+  );
+}
+
+export async function fetchLatamActorsBatch(
+  limit: number,
+  _offset: number,
+  afterQid: string | null = null
+): Promise<WikidataImportRow[]> {
+  const safeLimit = Math.max(1, Math.min(limit, 5));
+  return parseSparqlBindings(
+    await fetchSparqlJson(buildLatamActorsQuery(afterQid, safeLimit))
+  );
+}
+
+export async function fetchBrMusiciansBatch(
+  limit: number,
+  _offset: number,
+  afterQid: string | null = null
+): Promise<WikidataImportRow[]> {
+  const safeLimit = Math.max(1, Math.min(limit, 5));
+  return parseSparqlBindings(
+    await fetchSparqlJson(buildBrMusiciansQuery(afterQid, safeLimit))
+  );
+}
+
+export async function fetchBrActorsBatch(
+  limit: number,
+  _offset: number,
+  afterQid: string | null = null
+): Promise<WikidataImportRow[]> {
+  const safeLimit = Math.max(1, Math.min(limit, 5));
+  return parseSparqlBindings(
+    await fetchSparqlJson(buildBrActorsQuery(afterQid, safeLimit))
+  );
+}
+
 export async function fetchEuMusiciansBatch(
   limit: number,
   _offset: number,
@@ -234,8 +353,12 @@ type EntityJson = {
   entities?: Record<
     string,
     {
-      labels?: { en?: { value: string } };
-      sitelinks?: { enwiki?: { title: string; url?: string } };
+      labels?: { en?: { value: string }; es?: { value: string }; pt?: { value: string } };
+      sitelinks?: {
+        enwiki?: { title: string; url?: string };
+        eswiki?: { title: string; url?: string };
+        ptwiki?: { title: string; url?: string };
+      };
       claims?: {
         P18?: Array<{
           mainsnak?: {
@@ -295,17 +418,26 @@ export async function fetchWikidataEntityMetadata(
   const data = (await res.json()) as EntityJson;
   const entity = data.entities?.[id];
   const enwiki = entity?.sitelinks?.enwiki;
-  const name = entity?.labels?.en?.value ?? enwiki?.title;
-  if (!name || !enwiki?.title) return null;
+  const eswiki = entity?.sitelinks?.eswiki;
+  const ptwiki = entity?.sitelinks?.ptwiki;
+  const wiki = enwiki ?? eswiki ?? ptwiki;
+  const name =
+    entity?.labels?.en?.value ??
+    entity?.labels?.es?.value ??
+    entity?.labels?.pt?.value ??
+    wiki?.title;
+  if (!name || !wiki?.title) return null;
+
+  const lang = enwiki ? "en" : eswiki ? "es" : "pt";
 
   return {
     name,
     wikipedia: {
-      title: enwiki.title,
+      title: wiki.title,
       url:
-        enwiki.url ??
-        `https://en.wikipedia.org/wiki/${encodeURIComponent(enwiki.title.replace(/ /g, "_"))}`,
-      lang: "en",
+        wiki.url ??
+        `https://${lang}.wikipedia.org/wiki/${encodeURIComponent(wiki.title.replace(/ /g, "_"))}`,
+      lang,
     },
   };
 }

@@ -15,7 +15,15 @@
     "import:eu-actors": "tsx scripts/import-eu-actors.ts",
     "import:eu-actors:sparql": "tsx scripts/import-eu-actors.ts -- --mode sparql --limit 5 --batch-size 3",
     "import:eu-musicians": "tsx scripts/import-eu-musicians.ts",
-    "import:eu-musicians:sparql": "tsx scripts/import-eu-musicians.ts -- --mode sparql --limit 5 --batch-size 3"
+    "import:eu-musicians:sparql": "tsx scripts/import-eu-musicians.ts -- --mode sparql --limit 5 --batch-size 3",
+    "import:br-actors": "tsx scripts/import-br-actors.ts",
+    "import:br-actors:sparql": "tsx scripts/import-br-actors.ts -- --mode sparql --limit 5 --batch-size 3",
+    "import:br-musicians": "tsx scripts/import-br-musicians.ts",
+    "import:br-musicians:sparql": "tsx scripts/import-br-musicians.ts -- --mode sparql --limit 5 --batch-size 3",
+    "import:latam-actors": "tsx scripts/import-latam-actors.ts",
+    "import:latam-actors:sparql": "tsx scripts/import-latam-actors.ts -- --mode sparql --limit 5 --batch-size 3",
+    "import:latam-musicians": "tsx scripts/import-latam-musicians.ts",
+    "import:latam-musicians:sparql": "tsx scripts/import-latam-musicians.ts -- --mode sparql --limit 5 --batch-size 3"
   },
   "dependencies": {
     "@aws-sdk/client-rekognition": "^3.787.0",

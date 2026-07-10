@@ -1,14 +1,26 @@
 @echo off
+setlocal
 cd /d "%~dp0"
-echo === Who is? — commit and push to Render ===
+echo === Who is? - commit and push to Render ===
 echo.
 
-node server\scripts\sync-wikidata-index.mjs
+where node >nul 2>nul
 if errorlevel 1 (
-  echo Could not sync Wikidata index. Is server\data\wikidata-us-actors.json present?
+  echo ERROR: Node.js not found. Open a terminal where "node" works, or install Node 20+.
+  echo Then run: deploy-to-render.cmd
+  pause
   exit /b 1
 )
 
+node server\scripts\sync-wikidata-index.mjs
+if errorlevel 1 (
+  echo.
+  echo Sync failed. Run an import first if you have not indexed anyone yet.
+  pause
+  exit /b 1
+)
+
+echo.
 git status -sb
 echo.
 
@@ -16,28 +28,35 @@ git add -A
 git reset -- .env .env.* 2>nul
 git add -f server\src\data\wikidata-index.json 2>nul
 
-echo Staged files:
-git status -sb
-echo.
-
-git diff --cached --name-only | findstr /i "wikidata-index.json" >nul
-if errorlevel 1 (
-  echo ERROR: server\src\data\wikidata-index.json is NOT staged. Aborting.
-  exit /b 1
+git diff --cached --quiet
+if not errorlevel 1 (
+  echo Nothing to commit. Working tree already matches the last deploy.
+  git status -sb
+  pause
+  exit /b 0
 )
 
-git commit -m "Include Wikidata face index for production health and name lookup."
+echo Staged files:
+git diff --cached --name-only
+echo.
+
+git commit -m "Deploy Wikidata index and app updates for production."
 if errorlevel 1 (
-  echo No commit created ^(maybe nothing changed^).
+  echo Commit failed.
+  pause
+  exit /b 1
 )
 
 git push -u origin HEAD
 if errorlevel 1 (
-  echo Push failed. Check your GitHub connection.
+  echo Push failed. Check GitHub login / network.
+  pause
   exit /b 1
 )
 
 echo.
 echo Done. Render should start deploying shortly.
-echo After deploy, check: https://who-is.onrender.com/api/health
+echo Check: https://who-is.onrender.com/api/health
 git rev-parse HEAD
+echo.
+pause
