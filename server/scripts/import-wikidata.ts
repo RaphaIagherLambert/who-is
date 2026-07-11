@@ -9,10 +9,16 @@ import { BR_ACTOR_SEED_UNIQUE } from "../src/data/brActorSeed.js";
 import { BR_MUSICIAN_SEED_UNIQUE } from "../src/data/brMusicianSeed.js";
 import { EU_ACTOR_SEED_UNIQUE } from "../src/data/euActorSeed.js";
 import { EU_MUSICIAN_SEED_UNIQUE } from "../src/data/euMusicianSeed.js";
+import { US_INFLUENCER_SEED_UNIQUE } from "../src/data/usInfluencerSeed.js";
+import { EU_INFLUENCER_SEED_UNIQUE } from "../src/data/euInfluencerSeed.js";
+import { BR_INFLUENCER_SEED_UNIQUE } from "../src/data/brInfluencerSeed.js";
 import { US_ACTOR_SEED_UNIQUE } from "../src/data/usActorSeed.js";
 import { US_MUSICIAN_SEED_UNIQUE } from "../src/data/usMusicianSeed.js";
 import { ensureFaceCollection, indexFaceBytes } from "../src/services/faceCollection.js";
 import {
+  fetchBrInfluencersBatch,
+  fetchEuInfluencersBatch,
+  fetchUsInfluencersBatch,
   fetchAsiaActorsBatch,
   fetchAsiaMusiciansBatch,
   fetchLatamActorsBatch,
@@ -66,6 +72,12 @@ const NICHE_CONFIG = {
     fetchBatch: fetchUsMusiciansBatch,
     sparqlHint: "npm.cmd run import:musicians -- --mode sparql --limit 5 --batch-size 3",
   },
+  "us-influencer": {
+    label: "US digital influencers",
+    seedIds: US_INFLUENCER_SEED_UNIQUE,
+    fetchBatch: fetchUsInfluencersBatch,
+    sparqlHint: "npm.cmd run import:us-influencers -- --mode sparql --limit 5 --batch-size 3",
+  },
   "eu-actor": {
     label: "European actors",
     seedIds: EU_ACTOR_SEED_UNIQUE,
@@ -78,6 +90,12 @@ const NICHE_CONFIG = {
     fetchBatch: fetchEuMusiciansBatch,
     sparqlHint: "npm.cmd run import:eu-musicians -- --mode sparql --limit 5 --batch-size 3",
   },
+  "eu-influencer": {
+    label: "European digital influencers",
+    seedIds: EU_INFLUENCER_SEED_UNIQUE,
+    fetchBatch: fetchEuInfluencersBatch,
+    sparqlHint: "npm.cmd run import:eu-influencers -- --mode sparql --limit 5 --batch-size 3",
+  },
   "br-actor": {
     label: "Brazilian actors",
     seedIds: BR_ACTOR_SEED_UNIQUE,
@@ -89,6 +107,12 @@ const NICHE_CONFIG = {
     seedIds: BR_MUSICIAN_SEED_UNIQUE,
     fetchBatch: fetchBrMusiciansBatch,
     sparqlHint: "npm.cmd run import:br-musicians -- --mode sparql --limit 5 --batch-size 3",
+  },
+  "br-influencer": {
+    label: "Brazilian digital influencers",
+    seedIds: BR_INFLUENCER_SEED_UNIQUE,
+    fetchBatch: fetchBrInfluencersBatch,
+    sparqlHint: "npm.cmd run import:br-influencers -- --mode sparql --limit 5 --batch-size 3",
   },
   "latam-actor": {
     label: "Latin American actors (South America + Mexico)",
@@ -121,6 +145,9 @@ function parseNiche(value: string | undefined): WikidataNiche {
     case "musicians":
     case "us-musician":
       return "us-musician";
+    case "us-influencers":
+    case "us-influencer":
+      return "us-influencer";
     case "eu-actors":
     case "eu-actor":
     case "european-actors":
@@ -129,6 +156,10 @@ function parseNiche(value: string | undefined): WikidataNiche {
     case "eu-musician":
     case "european-musicians":
       return "eu-musician";
+    case "eu-influencers":
+    case "eu-influencer":
+    case "european-influencers":
+      return "eu-influencer";
     case "br-actors":
     case "br-actor":
     case "brazilian-actors":
@@ -137,6 +168,10 @@ function parseNiche(value: string | undefined): WikidataNiche {
     case "br-musician":
     case "brazilian-musicians":
       return "br-musician";
+    case "br-influencers":
+    case "br-influencer":
+    case "brazilian-influencers":
+      return "br-influencer";
     case "latam-actors":
     case "latam-actor":
     case "south-america-actors":

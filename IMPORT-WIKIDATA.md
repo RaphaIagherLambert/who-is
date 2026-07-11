@@ -138,6 +138,36 @@ npm.cmd run import:asia-musicians:sparql
 
 ---
 
+## Digital influencers (US, Europe, Brazil)
+
+Occupations: **YouTuber**, **blogger**, **video blogger** (Wikidata).
+
+### US influencers
+
+```powershell
+npm.cmd run import:us-influencers -- --limit 10
+npm.cmd run import:us-influencers:dry-run
+npm.cmd run import:us-influencers:sparql
+```
+
+### European influencers
+
+```powershell
+npm.cmd run import:eu-influencers -- --limit 10
+npm.cmd run import:eu-influencers:dry-run
+npm.cmd run import:eu-influencers:sparql
+```
+
+### Brazilian influencers
+
+```powershell
+npm.cmd run import:br-influencers -- --limit 10
+npm.cmd run import:br-influencers:dry-run
+npm.cmd run import:br-influencers:sparql
+```
+
+---
+
 ## Modes explained
 
 ### Seed mode (`--mode seed`, default)

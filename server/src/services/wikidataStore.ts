@@ -14,7 +14,10 @@ export type WikidataNiche =
   | "latam-actor"
   | "latam-musician"
   | "asia-actor"
-  | "asia-musician";
+  | "asia-musician"
+  | "us-influencer"
+  | "eu-influencer"
+  | "br-influencer";
 
 export interface WikidataPersonRecord {
   id: string;
@@ -167,6 +170,18 @@ export async function countWikidataAsiaActors(): Promise<number> {
 
 export async function countWikidataAsiaMusicians(): Promise<number> {
   return countWikidataByNiche("asia-musician");
+}
+
+export async function countWikidataUsInfluencers(): Promise<number> {
+  return countWikidataByNiche("us-influencer");
+}
+
+export async function countWikidataEuInfluencers(): Promise<number> {
+  return countWikidataByNiche("eu-influencer");
+}
+
+export async function countWikidataBrInfluencers(): Promise<number> {
+  return countWikidataByNiche("br-influencer");
 }
 
 export async function countWikidataIndexed(): Promise<number> {

@@ -8,6 +8,8 @@ import {
 
   WikipediaPage,
 
+  type IdentifyResult,
+
 } from "./api";
 
 import { AdminUnlock, TeachPanel } from "./components/TeachPanel";
@@ -34,6 +36,33 @@ import { useAdminMode } from "./hooks/useAdminMode";
 
 type CapturePhase = "idle" | "viewfinder" | "shutter" | "processing";
 
+type WikidataNiche = NonNullable<IdentifyResult["niche"]>;
+
+function wikidataBadgeForNiche(
+  niche: WikidataNiche | null,
+  t: (typeof translations)[AppLanguage]
+): string {
+  if (!niche) return t.wikidataBadge;
+
+  const badges: Record<WikidataNiche, string> = {
+    "us-actor": t.wikidataBadge,
+    "us-musician": t.wikidataMusicianBadge,
+    "us-influencer": t.wikidataUsInfluencerBadge,
+    "eu-actor": t.wikidataEuActorBadge,
+    "eu-musician": t.wikidataEuMusicianBadge,
+    "eu-influencer": t.wikidataEuInfluencerBadge,
+    "br-actor": t.wikidataBrActorBadge,
+    "br-musician": t.wikidataBrMusicianBadge,
+    "br-influencer": t.wikidataBrInfluencerBadge,
+    "latam-actor": t.wikidataLatamActorBadge,
+    "latam-musician": t.wikidataLatamMusicianBadge,
+    "asia-actor": t.wikidataAsiaActorBadge,
+    "asia-musician": t.wikidataAsiaMusicianBadge,
+  };
+
+  return badges[niche];
+}
+
 
 
 export default function App() {
@@ -54,10 +83,13 @@ export default function App() {
   const [resultNiche, setResultNiche] = useState<
     | "us-actor"
     | "us-musician"
+    | "us-influencer"
     | "eu-actor"
     | "eu-musician"
+    | "eu-influencer"
     | "br-actor"
     | "br-musician"
+    | "br-influencer"
     | "latam-actor"
     | "latam-musician"
     | "asia-actor"
@@ -631,25 +663,7 @@ export default function App() {
 
             {resultSource === "wikidata" && (
               <span className="learned-badge">
-                {resultNiche === "us-musician"
-                  ? t.wikidataMusicianBadge
-                  : resultNiche === "eu-actor"
-                    ? t.wikidataEuActorBadge
-                    : resultNiche === "eu-musician"
-                      ? t.wikidataEuMusicianBadge
-                      : resultNiche === "br-actor"
-                        ? t.wikidataBrActorBadge
-                        : resultNiche === "br-musician"
-                          ? t.wikidataBrMusicianBadge
-                          : resultNiche === "latam-actor"
-                            ? t.wikidataLatamActorBadge
-                            : resultNiche === "latam-musician"
-                              ? t.wikidataLatamMusicianBadge
-                              : resultNiche === "asia-actor"
-                                ? t.wikidataAsiaActorBadge
-                                : resultNiche === "asia-musician"
-                                  ? t.wikidataAsiaMusicianBadge
-                                  : t.wikidataBadge}
+                {wikidataBadgeForNiche(resultNiche, t)}
               </span>
             )}
 

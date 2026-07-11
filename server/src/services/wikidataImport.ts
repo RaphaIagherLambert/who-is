@@ -185,6 +185,55 @@ LIMIT ${limit}
 `;
 }
 
+function buildInfluencerOccupationClause(): string {
+  return `
+  VALUES ?occupation { wd:Q2906862 wd:Q512030 wd:Q2066131 }
+  ?person wdt:P106 ?occupation .`;
+}
+
+function buildUsInfluencersQuery(afterQid: string | null, limit: number): string {
+  const cursor = afterQid
+    ? `\n  FILTER(STR(?person) > "http://www.wikidata.org/entity/${afterQid}")`
+    : "";
+
+  return `
+SELECT ?person ?personLabel ?image WHERE {
+  ?person wdt:P27 wd:Q30 ;
+          wdt:P18 ?image .${buildInfluencerOccupationClause()}${cursor}
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}
+LIMIT ${limit}
+`;
+}
+
+function buildEuInfluencersQuery(afterQid: string | null, limit: number): string {
+  const cursor = afterQid
+    ? `\n  FILTER(STR(?person) > "http://www.wikidata.org/entity/${afterQid}")`
+    : "";
+
+  return `
+SELECT ?person ?personLabel ?image WHERE {
+  ?person wdt:P18 ?image .${buildInfluencerOccupationClause()}${buildEuropeanCitizenshipClause()}${cursor}
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}
+LIMIT ${limit}
+`;
+}
+
+function buildBrInfluencersQuery(afterQid: string | null, limit: number): string {
+  const cursor = afterQid
+    ? `\n  FILTER(STR(?person) > "http://www.wikidata.org/entity/${afterQid}")`
+    : "";
+
+  return `
+SELECT ?person ?personLabel ?image WHERE {
+  ?person wdt:P18 ?image .${buildInfluencerOccupationClause()}${buildBrCitizenshipClause()}${cursor}
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,pt". }
+}
+LIMIT ${limit}
+`;
+}
+
 function buildUsActorsQuery(afterQid: string | null, limit: number): string {
   const cursor = afterQid
     ? `\n  FILTER(STR(?person) > "http://www.wikidata.org/entity/${afterQid}")`
@@ -269,6 +318,39 @@ async function fetchSparqlJson(query: string): Promise<SparqlBinding[]> {
   }
 
   throw lastError ?? new Error("Wikidata SPARQL failed");
+}
+
+export async function fetchUsInfluencersBatch(
+  limit: number,
+  _offset: number,
+  afterQid: string | null = null
+): Promise<WikidataImportRow[]> {
+  const safeLimit = Math.max(1, Math.min(limit, 5));
+  return parseSparqlBindings(
+    await fetchSparqlJson(buildUsInfluencersQuery(afterQid, safeLimit))
+  );
+}
+
+export async function fetchEuInfluencersBatch(
+  limit: number,
+  _offset: number,
+  afterQid: string | null = null
+): Promise<WikidataImportRow[]> {
+  const safeLimit = Math.max(1, Math.min(limit, 5));
+  return parseSparqlBindings(
+    await fetchSparqlJson(buildEuInfluencersQuery(afterQid, safeLimit))
+  );
+}
+
+export async function fetchBrInfluencersBatch(
+  limit: number,
+  _offset: number,
+  afterQid: string | null = null
+): Promise<WikidataImportRow[]> {
+  const safeLimit = Math.max(1, Math.min(limit, 5));
+  return parseSparqlBindings(
+    await fetchSparqlJson(buildBrInfluencersQuery(afterQid, safeLimit))
+  );
 }
 
 export async function fetchUsMusiciansBatch(

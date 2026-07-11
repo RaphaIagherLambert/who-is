@@ -5952,5 +5952,512 @@
     "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Polnalyubvi%20%D0%B2%202025%20%D0%B3%D0%BE%D0%B4%D1%83.png?width=800",
     "faceId": "446a7b54-c301-4624-9519-13ca24a74d7f",
     "indexedAt": "2026-07-11T13:48:23.900Z"
+  },
+  {
+    "id": "Q273206",
+    "name": "Joe Louis",
+    "niche": "us-influencer",
+    "wikipedia": {
+      "title": "Joe Louis",
+      "url": "https://en.wikipedia.org/wiki/Joe_Louis",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Joe%20Louis%201937%20headshot%20by%20the%20Associated%20Press.jpg?width=800",
+    "faceId": "aede14b2-d2fc-4e9a-93a9-dee5a3aa960f",
+    "indexedAt": "2026-07-11T14:01:21.485Z"
+  },
+  {
+    "id": "Q273233",
+    "name": "Paul Robeson",
+    "niche": "us-influencer",
+    "wikipedia": {
+      "title": "Paul Robeson",
+      "url": "https://en.wikipedia.org/wiki/Paul_Robeson",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Paul%20Robeson%201942%20crop.jpg?width=800",
+    "faceId": "5c9e57dd-aa05-4165-9f79-bdb35fee4e4f",
+    "indexedAt": "2026-07-11T14:01:23.358Z"
+  },
+  {
+    "id": "Q289781",
+    "name": "The Iron Sheik",
+    "niche": "us-influencer",
+    "wikipedia": {
+      "title": "The Iron Sheik",
+      "url": "https://en.wikipedia.org/wiki/The_Iron_Sheik",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/The%20Iron%20Sheik%202009.jpg?width=800",
+    "faceId": "cc916870-04cb-4cdb-904d-5de559bc3902",
+    "indexedAt": "2026-07-11T14:01:24.906Z"
+  },
+  {
+    "id": "Q62253",
+    "name": "Meredith Michaels-Beerbaum",
+    "niche": "us-influencer",
+    "wikipedia": {
+      "title": "Meredith Michaels-Beerbaum",
+      "url": "https://en.wikipedia.org/wiki/Meredith_Michaels-Beerbaum",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Meredith%20Michaels-Beerbaum.jpg?width=800",
+    "faceId": "48c1574e-3230-41e7-8045-26f9c79b8223",
+    "indexedAt": "2026-07-11T14:01:33.408Z"
+  },
+  {
+    "id": "Q9434",
+    "name": "Arnold Palmer",
+    "niche": "us-influencer",
+    "wikipedia": {
+      "title": "Arnold Palmer",
+      "url": "https://en.wikipedia.org/wiki/Arnold_Palmer",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/YN3ArnoldPalmer.jpg?width=800",
+    "faceId": "07e3899d-ef88-423d-8b49-65dd4b0277d6",
+    "indexedAt": "2026-07-11T14:01:41.821Z"
+  },
+  {
+    "id": "Q7407",
+    "name": "Andre Agassi",
+    "niche": "us-influencer",
+    "wikipedia": {
+      "title": "Andre Agassi",
+      "url": "https://en.wikipedia.org/wiki/Andre_Agassi",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Andre%20Agassi%20%282011%29.jpg?width=800",
+    "faceId": "3aed258a-23bf-4724-9c6a-6764ed9a2c41",
+    "indexedAt": "2026-07-11T14:01:56.146Z"
+  },
+  {
+    "id": "Q77102",
+    "name": "Max Schmeling",
+    "niche": "us-influencer",
+    "wikipedia": {
+      "title": "Max Schmeling",
+      "url": "https://en.wikipedia.org/wiki/Max_Schmeling",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Max-schmeling.jpg?width=800",
+    "faceId": "f8ee6b6c-39be-4947-9157-ac527cadbcb0",
+    "indexedAt": "2026-07-11T14:01:58.809Z"
+  },
+  {
+    "id": "Q818066",
+    "name": "Benny Leonard",
+    "niche": "us-influencer",
+    "wikipedia": {
+      "title": "Benny Leonard",
+      "url": "https://en.wikipedia.org/wiki/Benny_Leonard",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Benny%20Leonard%20%26%20Annette%20Kellerman%20-%20Jan%2028%201922%20NPG.jpg?width=800",
+    "faceId": "505aa100-2617-458a-91c6-4c6f47ecfbb9",
+    "indexedAt": "2026-07-11T14:02:07.204Z"
+  },
+  {
+    "id": "Q863115",
+    "name": "Superstar Billy Graham",
+    "niche": "us-influencer",
+    "wikipedia": {
+      "title": "\"Superstar\" Billy Graham",
+      "url": "https://en.wikipedia.org/wiki/%22Superstar%22_Billy_Graham",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Superstar%20Billy%20Graham%201973.jpg?width=800",
+    "faceId": "dd772d01-728c-4cbc-bca6-fcfb6c09cdda",
+    "indexedAt": "2026-07-11T14:02:09.455Z"
+  },
+  {
+    "id": "Q949410",
+    "name": "Walter Hagen",
+    "niche": "us-influencer",
+    "wikipedia": {
+      "title": "Walter Hagen",
+      "url": "https://en.wikipedia.org/wiki/Walter_Hagen",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Walter%20Hagen%20LCCN2014712556%20%28cropped%29.jpg?width=800",
+    "faceId": "599021ce-9771-47d0-8d3e-baa229d9ba4e",
+    "indexedAt": "2026-07-11T14:02:28.908Z"
+  },
+  {
+    "id": "Q954517",
+    "name": "Donald Lippincott",
+    "niche": "us-influencer",
+    "wikipedia": {
+      "title": "Donald Lippincott",
+      "url": "https://en.wikipedia.org/wiki/Donald_Lippincott",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Donald%20Lippincott%201912.jpg?width=800",
+    "faceId": "7e7a74e9-6e0d-427e-a388-baca01c8923a",
+    "indexedAt": "2026-07-11T14:02:41.262Z"
+  },
+  {
+    "id": "Q958864",
+    "name": "Charles Reidpath",
+    "niche": "us-influencer",
+    "wikipedia": {
+      "title": "Charles Reidpath",
+      "url": "https://en.wikipedia.org/wiki/Charles_Reidpath",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Charles%20Reidpath.jpg?width=800",
+    "faceId": "dfb12370-7c1e-4fb8-b34f-d4887b806409",
+    "indexedAt": "2026-07-11T14:02:43.340Z"
+  },
+  {
+    "id": "Q983608",
+    "name": "John Thayer",
+    "niche": "us-influencer",
+    "wikipedia": {
+      "title": "John B. Thayer",
+      "url": "https://en.wikipedia.org/wiki/John_B._Thayer",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/John%20Borland%20Thayer.jpg?width=800",
+    "faceId": "2f1e1232-85bc-4f65-b5f0-4310be767c25",
+    "indexedAt": "2026-07-11T14:02:51.058Z"
+  },
+  {
+    "id": "Q61493",
+    "name": "Bernd Kannenberg",
+    "niche": "eu-influencer",
+    "wikipedia": {
+      "title": "Bernd Kannenberg",
+      "url": "https://en.wikipedia.org/wiki/Bernd_Kannenberg",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Bernd%20Kannenberg%201972.jpg?width=800",
+    "faceId": "83110f68-0de2-4856-b473-4949f09556fd",
+    "indexedAt": "2026-07-11T14:04:51.723Z"
+  },
+  {
+    "id": "Q61703",
+    "name": "Dieter Thoma",
+    "niche": "eu-influencer",
+    "wikipedia": {
+      "title": "Dieter Thoma",
+      "url": "https://en.wikipedia.org/wiki/Dieter_Thoma",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Dieter%20Thoma%202005.jpg?width=800",
+    "faceId": "82e71ab4-3298-4d7a-b069-8fad0ca0db0e",
+    "indexedAt": "2026-07-11T14:04:53.431Z"
+  },
+  {
+    "id": "Q61846",
+    "name": "Gerhard Stöck",
+    "niche": "eu-influencer",
+    "wikipedia": {
+      "title": "Gerhard Stöck",
+      "url": "https://en.wikipedia.org/wiki/Gerhard_St%C3%B6ck",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Gerhard%20St%C3%B6ck.jpg?width=800",
+    "faceId": "ab1c444d-edd7-4382-a4fe-149c8460aec3",
+    "indexedAt": "2026-07-11T14:05:00.864Z"
+  },
+  {
+    "id": "Q61854",
+    "name": "Karl Hein",
+    "niche": "eu-influencer",
+    "wikipedia": {
+      "title": "Karl Hein (athlete)",
+      "url": "https://en.wikipedia.org/wiki/Karl_Hein_(athlete)",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Karl%20Hein%201936.jpg?width=800",
+    "faceId": "968f8f08-fa21-4604-bbdf-2d8bc2f7d029",
+    "indexedAt": "2026-07-11T14:05:07.849Z"
+  },
+  {
+    "id": "Q62193",
+    "name": "Eike Immel",
+    "niche": "eu-influencer",
+    "wikipedia": {
+      "title": "Eike Immel",
+      "url": "https://en.wikipedia.org/wiki/Eike_Immel",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/5839%20Eike%20Immel.JPG?width=800",
+    "faceId": "8236d7a7-615d-4dfa-8c5c-da49894210ee",
+    "indexedAt": "2026-07-11T14:05:19.323Z"
+  },
+  {
+    "id": "Q77136",
+    "name": "Kati Wilhelm",
+    "niche": "eu-influencer",
+    "wikipedia": {
+      "title": "Kati Wilhelm",
+      "url": "https://en.wikipedia.org/wiki/Kati_Wilhelm",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/2018-12-13%20Pressekonferenz%20zur%20Vorbereitung%20des%20Biathlon-Weltcups%20und%20der%20Umbenennung%20der%20Ski-Arena%20StP%207404%20LR10%20by%20Stepro.jpg?width=800",
+    "faceId": "26bb0748-e278-4e4a-81db-ac36b3d9739a",
+    "indexedAt": "2026-07-11T14:05:45.632Z"
+  },
+  {
+    "id": "Q77178",
+    "name": "Angelique Kerber",
+    "niche": "eu-influencer",
+    "wikipedia": {
+      "title": "Angelique Kerber",
+      "url": "https://en.wikipedia.org/wiki/Angelique_Kerber",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Australian%20Open%202020%20%2849836755508%29%20%28cropped%29.jpg?width=800",
+    "faceId": "67764728-db27-4a01-9ebb-d090464e28e8",
+    "indexedAt": "2026-07-11T14:05:53.359Z"
+  },
+  {
+    "id": "Q77356",
+    "name": "Peter Joppich",
+    "niche": "eu-influencer",
+    "wikipedia": {
+      "title": "Peter Joppich",
+      "url": "https://en.wikipedia.org/wiki/Peter_Joppich",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Joppich%20CIP%202015%20teams%20t131210.jpg?width=800",
+    "faceId": "6a082840-1a3c-4966-a846-ae81d859c659",
+    "indexedAt": "2026-07-11T14:06:01.957Z"
+  },
+  {
+    "id": "Q84323",
+    "name": "Josef Hickersberger",
+    "niche": "eu-influencer",
+    "wikipedia": {
+      "title": "Josef Hickersberger",
+      "url": "https://en.wikipedia.org/wiki/Josef_Hickersberger",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/AUT%20vs.%20MDA%202015-09-05%20%28209%29.jpg?width=800",
+    "faceId": "d9b7be68-31eb-4ba4-b766-dd75f3070246",
+    "indexedAt": "2026-07-11T14:06:14.864Z"
+  },
+  {
+    "id": "Q84426",
+    "name": "Egon Müller",
+    "niche": "eu-influencer",
+    "wikipedia": {
+      "title": "Egon Müller",
+      "url": "https://en.wikipedia.org/wiki/Egon_M%C3%BCller",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Egon%20Mueller%202018.jpg?width=800",
+    "faceId": "a58e93d7-945e-4f2b-8199-9e3d48b4d6d3",
+    "indexedAt": "2026-07-11T14:06:22.502Z"
+  },
+  {
+    "id": "Q84865",
+    "name": "Herbert Steffny",
+    "niche": "eu-influencer",
+    "wikipedia": {
+      "title": "Herbert Steffny",
+      "url": "https://en.wikipedia.org/wiki/Herbert_Steffny",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Herbert%20Steffny%2C%202013%20%28cropped%29.jpg?width=800",
+    "faceId": "4e580a57-313a-4e06-8237-6ddcfc94c983",
+    "indexedAt": "2026-07-11T16:53:45.594Z"
+  },
+  {
+    "id": "Q85007",
+    "name": "Monika Sozanska",
+    "niche": "eu-influencer",
+    "wikipedia": {
+      "title": "Monika Sozanska",
+      "url": "https://en.wikipedia.org/wiki/Monika_Sozanska",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Monika%20Sozanska.jpeg?width=800",
+    "faceId": "a0c672c9-636e-46f2-9a87-b9b898620083",
+    "indexedAt": "2026-07-11T16:53:47.675Z"
+  },
+  {
+    "id": "Q86299",
+    "name": "Karl Adam",
+    "niche": "eu-influencer",
+    "wikipedia": {
+      "title": "Karl Adam (rowing coach)",
+      "url": "https://en.wikipedia.org/wiki/Karl_Adam_(rowing_coach)",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Karl%20Adam%201968.jpg?width=800",
+    "faceId": "9ea9242c-929a-4c4f-a13c-23163a7fac24",
+    "indexedAt": "2026-07-11T16:53:54.628Z"
+  },
+  {
+    "id": "Q87853",
+    "name": "Peter Lichtner-Hoyer",
+    "niche": "eu-influencer",
+    "wikipedia": {
+      "title": "Peter Lichtner-Hoyer",
+      "url": "https://en.wikipedia.org/wiki/Peter_Lichtner-Hoyer",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Lichtner-Hoyer%20%281962%29.jpg?width=800",
+    "faceId": "3bc2aa69-3a2a-4cd2-8736-3c0c5014a473",
+    "indexedAt": "2026-07-11T16:54:03.774Z"
+  },
+  {
+    "id": "Q88996",
+    "name": "Franz Dusika",
+    "niche": "eu-influencer",
+    "wikipedia": {
+      "title": "Franz Dusika",
+      "url": "https://en.wikipedia.org/wiki/Franz_Dusika",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Franz%20Dusika%2C%201933.jpeg?width=800",
+    "faceId": "bba5ce9d-6e87-4ca5-b3ce-c24830a5f384",
+    "indexedAt": "2026-07-11T16:54:11.441Z"
+  },
+  {
+    "id": "Q89644",
+    "name": "Norbert Sedlacek",
+    "niche": "eu-influencer",
+    "wikipedia": {
+      "title": "Norbert Sedlacek",
+      "url": "https://en.wikipedia.org/wiki/Norbert_Sedlacek",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Vend%C3%A9e%20Globe%202008-2009%20Norbert%20Sedlacek.jpg?width=800",
+    "faceId": "3b9c85df-c7d9-4473-b98e-6ede1f491cbf",
+    "indexedAt": "2026-07-11T16:54:25.211Z"
+  },
+  {
+    "id": "Q90120",
+    "name": "Josef Steinbach",
+    "niche": "eu-influencer",
+    "wikipedia": {
+      "title": "Josef Steinbach",
+      "url": "https://en.wikipedia.org/wiki/Josef_Steinbach",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Josef%20Steinbach.jpg?width=800",
+    "faceId": "8fdf3b2e-05ae-4ef7-ad24-7c0ee93047ba",
+    "indexedAt": "2026-07-11T16:54:26.602Z"
+  },
+  {
+    "id": "Q90451",
+    "name": "Joelle Franzmann",
+    "niche": "eu-influencer",
+    "wikipedia": {
+      "title": "Joelle Franzmann",
+      "url": "https://en.wikipedia.org/wiki/Joelle_Franzmann",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Joelle%20Franzmann.jpg?width=800",
+    "faceId": "c8d5de1a-523c-4672-974b-8b776e7179c1",
+    "indexedAt": "2026-07-11T16:54:35.251Z"
+  },
+  {
+    "id": "Q98640",
+    "name": "Jochen Schweizer",
+    "niche": "eu-influencer",
+    "wikipedia": {
+      "title": "Jochen Schweizer",
+      "url": "https://en.wikipedia.org/wiki/Jochen_Schweizer",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Jochen%20Schweizer%202014-1.jpg?width=800",
+    "faceId": "52557ab0-aa7b-4d03-b4bc-ef038e971996",
+    "indexedAt": "2026-07-11T16:55:24.199Z"
+  },
+  {
+    "id": "Q99285",
+    "name": "Heinz Rosner",
+    "niche": "eu-influencer",
+    "wikipedia": {
+      "title": "Heinz Rosner",
+      "url": "https://en.wikipedia.org/wiki/Heinz_Rosner",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Heinz%20Rosner%2C%202010%20%28cropped%29.jpg?width=800",
+    "faceId": "4ab0434c-580b-4226-80b0-129233bcf873",
+    "indexedAt": "2026-07-11T19:02:08.653Z"
+  },
+  {
+    "id": "Q997540",
+    "name": "Gustav Scholz",
+    "niche": "eu-influencer",
+    "wikipedia": {
+      "title": "Gustav Scholz",
+      "url": "https://en.wikipedia.org/wiki/Gustav_Scholz",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Bundesarchiv%20Bild%20183-23969-0002%2C%20Al%20Andrews%2C%20Gustav%20Scholz.jpg?width=800",
+    "faceId": "b1ef5873-b487-49a0-bbee-e239d6d38c78",
+    "indexedAt": "2026-07-11T19:02:17.102Z"
+  },
+  {
+    "id": "Q73797",
+    "name": "Antonio Neves Braga",
+    "niche": "br-influencer",
+    "wikipedia": {
+      "title": "Antonio Neves Braga",
+      "url": "https://en.wikipedia.org/wiki/Antonio_Neves_Braga",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Antonio%20Neves%20Braga.jpg?width=800",
+    "faceId": "8e1ca953-4099-424d-bd40-5f87751c1c3d",
+    "indexedAt": "2026-07-11T19:06:16.664Z"
+  },
+  {
+    "id": "Q204825",
+    "name": "Bebeto",
+    "niche": "br-influencer",
+    "wikipedia": {
+      "title": "Bebeto",
+      "url": "https://en.wikipedia.org/wiki/Bebeto",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Bebeto%20brazil%20%28cropped%29.jpg?width=800",
+    "faceId": "01859623-eafd-4b10-b1d8-1809d44f76ea",
+    "indexedAt": "2026-07-11T19:06:19.075Z"
+  },
+  {
+    "id": "Q922415",
+    "name": "Carlos Gracie",
+    "niche": "br-influencer",
+    "wikipedia": {
+      "title": "Carlos Gracie",
+      "url": "https://en.wikipedia.org/wiki/Carlos_Gracie",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Carlos%20Gracie%20%281951%29.tif?width=800",
+    "faceId": "e6a92c65-5d12-486f-8b96-0af983adb5ea",
+    "indexedAt": "2026-07-11T19:06:33.864Z"
+  },
+  {
+    "id": "Q9697357",
+    "name": "Carlos Terena",
+    "niche": "br-influencer",
+    "wikipedia": {
+      "title": "Carlos Terena",
+      "url": "https://pt.wikipedia.org/wiki/Carlos_Terena",
+      "lang": "pt"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/CarlosTerenaPintura.jpg?width=800",
+    "faceId": "01e01256-eb6d-4aa6-bf9a-da8109103af6",
+    "indexedAt": "2026-07-11T19:06:35.504Z"
+  },
+  {
+    "id": "Q98636725",
+    "name": "Fredison Costa",
+    "niche": "br-influencer",
+    "wikipedia": {
+      "title": "Fredison Costa",
+      "url": "https://pt.wikipedia.org/wiki/Fredison_Costa",
+      "lang": "pt"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Fredison%20Costa%20on%20Greenpont%20Av%20in%202019%20NYCM%20jeh.jpg?width=800",
+    "faceId": "90ee8b2f-65d2-425a-b5eb-1ebabdd7648e",
+    "indexedAt": "2026-07-11T19:06:54.653Z"
   }
 ]
