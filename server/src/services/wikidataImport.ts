@@ -147,6 +147,44 @@ LIMIT ${limit}
 `;
 }
 
+function buildAsiaCitizenshipClause(): string {
+  return `
+  ?person wdt:P27 ?country .
+  ?country wdt:P30 wd:Q48 .
+  FILTER(?country != wd:Q30)`;
+}
+
+function buildAsiaActorsQuery(afterQid: string | null, limit: number): string {
+  const cursor = afterQid
+    ? `\n  FILTER(STR(?person) > "http://www.wikidata.org/entity/${afterQid}")`
+    : "";
+
+  return `
+SELECT ?person ?personLabel ?image WHERE {
+  ?person wdt:P106 wd:Q33999 ;
+          wdt:P18 ?image .${buildAsiaCitizenshipClause()}${cursor}
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,ja,zh,ko,hi". }
+}
+LIMIT ${limit}
+`;
+}
+
+function buildAsiaMusiciansQuery(afterQid: string | null, limit: number): string {
+  const cursor = afterQid
+    ? `\n  FILTER(STR(?person) > "http://www.wikidata.org/entity/${afterQid}")`
+    : "";
+
+  return `
+SELECT ?person ?personLabel ?image WHERE {
+  VALUES ?occupation { wd:Q177220 wd:Q639669 wd:Q753110 }
+  ?person wdt:P106 ?occupation ;
+          wdt:P18 ?image .${buildAsiaCitizenshipClause()}${cursor}
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,ja,zh,ko,hi". }
+}
+LIMIT ${limit}
+`;
+}
+
 function buildUsActorsQuery(afterQid: string | null, limit: number): string {
   const cursor = afterQid
     ? `\n  FILTER(STR(?person) > "http://www.wikidata.org/entity/${afterQid}")`
@@ -268,6 +306,28 @@ export async function fetchUsActorsBatch(
   );
 }
 
+export async function fetchAsiaMusiciansBatch(
+  limit: number,
+  _offset: number,
+  afterQid: string | null = null
+): Promise<WikidataImportRow[]> {
+  const safeLimit = Math.max(1, Math.min(limit, 5));
+  return parseSparqlBindings(
+    await fetchSparqlJson(buildAsiaMusiciansQuery(afterQid, safeLimit))
+  );
+}
+
+export async function fetchAsiaActorsBatch(
+  limit: number,
+  _offset: number,
+  afterQid: string | null = null
+): Promise<WikidataImportRow[]> {
+  const safeLimit = Math.max(1, Math.min(limit, 5));
+  return parseSparqlBindings(
+    await fetchSparqlJson(buildAsiaActorsQuery(afterQid, safeLimit))
+  );
+}
+
 export async function fetchLatamMusiciansBatch(
   limit: number,
   _offset: number,
@@ -353,12 +413,8 @@ type EntityJson = {
   entities?: Record<
     string,
     {
-      labels?: { en?: { value: string }; es?: { value: string }; pt?: { value: string } };
-      sitelinks?: {
-        enwiki?: { title: string; url?: string };
-        eswiki?: { title: string; url?: string };
-        ptwiki?: { title: string; url?: string };
-      };
+      labels?: Record<string, { value: string }>;
+      sitelinks?: Record<string, { title: string; url?: string }>;
       claims?: {
         P18?: Array<{
           mainsnak?: {
@@ -369,6 +425,18 @@ type EntityJson = {
     }
   >;
 };
+
+const WIKI_SITE_PRIORITY: Array<{ site: string; lang: string }> = [
+  { site: "enwiki", lang: "en" },
+  { site: "jawiki", lang: "ja" },
+  { site: "zhwiki", lang: "zh" },
+  { site: "kowiki", lang: "ko" },
+  { site: "hiwiki", lang: "hi" },
+  { site: "eswiki", lang: "es" },
+  { site: "ptwiki", lang: "pt" },
+];
+
+const LABEL_LANG_PRIORITY = ["en", "ja", "zh", "ko", "hi", "es", "pt"];
 
 /** Reliable single-person fetch — use for seed import mode. */
 export async function fetchWikidataPersonForImport(
@@ -417,18 +485,28 @@ export async function fetchWikidataEntityMetadata(
 
   const data = (await res.json()) as EntityJson;
   const entity = data.entities?.[id];
-  const enwiki = entity?.sitelinks?.enwiki;
-  const eswiki = entity?.sitelinks?.eswiki;
-  const ptwiki = entity?.sitelinks?.ptwiki;
-  const wiki = enwiki ?? eswiki ?? ptwiki;
-  const name =
-    entity?.labels?.en?.value ??
-    entity?.labels?.es?.value ??
-    entity?.labels?.pt?.value ??
-    wiki?.title;
-  if (!name || !wiki?.title) return null;
+  const sitelinks = entity?.sitelinks ?? {};
 
-  const lang = enwiki ? "en" : eswiki ? "es" : "pt";
+  let wiki: { title: string; url?: string } | undefined;
+  let lang = "en";
+  for (const { site, lang: siteLang } of WIKI_SITE_PRIORITY) {
+    if (sitelinks[site]?.title) {
+      wiki = sitelinks[site];
+      lang = siteLang;
+      break;
+    }
+  }
+
+  let name: string | undefined;
+  for (const code of LABEL_LANG_PRIORITY) {
+    const label = entity?.labels?.[code]?.value;
+    if (label) {
+      name = label;
+      break;
+    }
+  }
+  name ??= wiki?.title;
+  if (!name || !wiki?.title) return null;
 
   return {
     name,

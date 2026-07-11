@@ -1,6 +1,8 @@
 import dotenv from "dotenv";
 import path from "path";
 import { fileURLToPath } from "url";
+import { ASIA_ACTOR_SEED_UNIQUE } from "../src/data/asiaActorSeed.js";
+import { ASIA_MUSICIAN_SEED_UNIQUE } from "../src/data/asiaMusicianSeed.js";
 import { LATAM_ACTOR_SEED_UNIQUE } from "../src/data/latamActorSeed.js";
 import { LATAM_MUSICIAN_SEED_UNIQUE } from "../src/data/latamMusicianSeed.js";
 import { BR_ACTOR_SEED_UNIQUE } from "../src/data/brActorSeed.js";
@@ -11,6 +13,8 @@ import { US_ACTOR_SEED_UNIQUE } from "../src/data/usActorSeed.js";
 import { US_MUSICIAN_SEED_UNIQUE } from "../src/data/usMusicianSeed.js";
 import { ensureFaceCollection, indexFaceBytes } from "../src/services/faceCollection.js";
 import {
+  fetchAsiaActorsBatch,
+  fetchAsiaMusiciansBatch,
   fetchLatamActorsBatch,
   fetchLatamMusiciansBatch,
   fetchBrActorsBatch,
@@ -98,6 +102,18 @@ const NICHE_CONFIG = {
     fetchBatch: fetchLatamMusiciansBatch,
     sparqlHint: "npm.cmd run import:latam-musicians -- --mode sparql --limit 5 --batch-size 3",
   },
+  "asia-actor": {
+    label: "Asian actors",
+    seedIds: ASIA_ACTOR_SEED_UNIQUE,
+    fetchBatch: fetchAsiaActorsBatch,
+    sparqlHint: "npm.cmd run import:asia-actors -- --mode sparql --limit 5 --batch-size 3",
+  },
+  "asia-musician": {
+    label: "Asian musicians",
+    seedIds: ASIA_MUSICIAN_SEED_UNIQUE,
+    fetchBatch: fetchAsiaMusiciansBatch,
+    sparqlHint: "npm.cmd run import:asia-musicians -- --mode sparql --limit 5 --batch-size 3",
+  },
 } as const;
 
 function parseNiche(value: string | undefined): WikidataNiche {
@@ -131,6 +147,14 @@ function parseNiche(value: string | undefined): WikidataNiche {
     case "south-america-musicians":
     case "sa-musicians":
       return "latam-musician";
+    case "asia-actors":
+    case "asia-actor":
+    case "asian-actors":
+      return "asia-actor";
+    case "asia-musicians":
+    case "asia-musician":
+    case "asian-musicians":
+      return "asia-musician";
     case "actors":
     case "us-actor":
     default:

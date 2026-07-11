@@ -60,6 +60,8 @@ export default function App() {
     | "br-musician"
     | "latam-actor"
     | "latam-musician"
+    | "asia-actor"
+    | "asia-musician"
     | null
   >(null);
 
@@ -643,7 +645,11 @@ export default function App() {
                             ? t.wikidataLatamActorBadge
                             : resultNiche === "latam-musician"
                               ? t.wikidataLatamMusicianBadge
-                              : t.wikidataBadge}
+                              : resultNiche === "asia-actor"
+                                ? t.wikidataAsiaActorBadge
+                                : resultNiche === "asia-musician"
+                                  ? t.wikidataAsiaMusicianBadge
+                                  : t.wikidataBadge}
               </span>
             )}
 

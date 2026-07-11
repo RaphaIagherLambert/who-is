@@ -34,7 +34,13 @@
     "import:latam-actors:sparql": "npm run import:latam-actors:sparql --prefix server",
     "import:latam-musicians": "npm run import:latam-musicians --prefix server --",
     "import:latam-musicians:dry-run": "npm run import:latam-musicians --prefix server -- --dry-run --limit 5",
-    "import:latam-musicians:sparql": "npm run import:latam-musicians:sparql --prefix server"
+    "import:latam-musicians:sparql": "npm run import:latam-musicians:sparql --prefix server",
+    "import:asia-actors": "npm run import:asia-actors --prefix server --",
+    "import:asia-actors:dry-run": "npm run import:asia-actors --prefix server -- --dry-run --limit 5",
+    "import:asia-actors:sparql": "npm run import:asia-actors:sparql --prefix server",
+    "import:asia-musicians": "npm run import:asia-musicians --prefix server --",
+    "import:asia-musicians:dry-run": "npm run import:asia-musicians --prefix server -- --dry-run --limit 5",
+    "import:asia-musicians:sparql": "npm run import:asia-musicians:sparql --prefix server"
   },
   "engines": {
     "node": ">=20"

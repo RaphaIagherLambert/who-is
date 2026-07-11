@@ -118,6 +118,24 @@ npm.cmd run import:latam-musicians:dry-run
 npm.cmd run import:latam-musicians:sparql
 ```
 
+### Asian actors
+
+East / South / Southeast Asia (continent `Q48`, excl. US).
+
+```powershell
+npm.cmd run import:asia-actors -- --limit 10
+npm.cmd run import:asia-actors:dry-run
+npm.cmd run import:asia-actors:sparql
+```
+
+### Asian musicians
+
+```powershell
+npm.cmd run import:asia-musicians -- --limit 10
+npm.cmd run import:asia-musicians:dry-run
+npm.cmd run import:asia-musicians:sparql
+```
+
 ---
 
 ## Modes explained

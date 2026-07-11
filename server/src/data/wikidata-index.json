@@ -5367,5 +5367,590 @@
     "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Edgardo%20Cozarinsky.jpg?width=800",
     "faceId": "059b9a71-2908-44c0-b2f0-4de0a2ac0b9f",
     "indexedAt": "2026-07-10T17:10:45.447Z"
+  },
+  {
+    "id": "Q855659",
+    "name": "Fernanda Castillo",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Fernanda Castillo",
+      "url": "https://en.wikipedia.org/wiki/Fernanda_Castillo",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Fernanda%20Castillo%20at%20the%202019%20Metropolitan%20Theather%20Awards%20%28cropped%29.jpg?width=800",
+    "faceId": "94113926-7ab0-437b-b331-a6a0b2714388",
+    "indexedAt": "2026-07-11T13:15:22.749Z"
+  },
+  {
+    "id": "Q856762",
+    "name": "Laura León",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Laura León",
+      "url": "https://en.wikipedia.org/wiki/Laura_Le%C3%B3n",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Laura%20Leon.jpg?width=800",
+    "faceId": "1098ae3c-ca28-4ec4-b9a4-21039f5a00d9",
+    "indexedAt": "2026-07-11T13:16:02.368Z"
+  },
+  {
+    "id": "Q858636",
+    "name": "Carmen Salinas",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Carmen Salinas",
+      "url": "https://en.wikipedia.org/wiki/Carmen_Salinas",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Carmen%20Salinas%2C%20circa%201956.jpg?width=800",
+    "faceId": "2c662382-70a2-4185-a668-ed615ec0b793",
+    "indexedAt": "2026-07-11T13:16:52.029Z"
+  },
+  {
+    "id": "Q861324",
+    "name": "Christian Meier",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Christian Meier",
+      "url": "https://en.wikipedia.org/wiki/Christian_Meier",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/MX%20MM%20PREMIOS%20FENIX%20ESCENARIO%20%2823043591609%29%20%28cropped%29.jpg?width=800",
+    "faceId": "d00e4fdc-0750-46a3-a044-24e6fa4f0ab3",
+    "indexedAt": "2026-07-11T13:19:09.557Z"
+  },
+  {
+    "id": "Q938948",
+    "name": "Cepillín",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Cepillín",
+      "url": "https://en.wikipedia.org/wiki/Cepill%C3%ADn",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Cepill%C3%ADn.jpg?width=800",
+    "faceId": "cdaf7494-b4b1-4fc1-8072-07b62cd6ae84",
+    "indexedAt": "2026-07-11T13:20:39.568Z"
+  },
+  {
+    "id": "Q319532",
+    "name": "Candido Portinari",
+    "niche": "asia-actor",
+    "wikipedia": {
+      "title": "Candido Portinari",
+      "url": "https://en.wikipedia.org/wiki/Candido_Portinari",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/C%C3%A2ndido%20Portinari%20(1962).jpg?width=800",
+    "faceId": "a9223625-2117-40ce-a091-6adcbe7122a3",
+    "indexedAt": "2026-07-11T13:21:25.431Z"
+  },
+  {
+    "id": "Q283459",
+    "name": "Marek Malík",
+    "niche": "asia-actor",
+    "wikipedia": {
+      "title": "Marek Malík",
+      "url": "https://en.wikipedia.org/wiki/Marek_Mal%C3%ADk",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Marek%20Malik.JPG?width=800",
+    "faceId": "81ebefcd-fef6-42f8-be8b-32a55eee455d",
+    "indexedAt": "2026-07-11T13:21:30.975Z"
+  },
+  {
+    "id": "Q83287",
+    "name": "Selena Gomez",
+    "niche": "asia-actor",
+    "wikipedia": {
+      "title": "Selena Gomez",
+      "url": "https://en.wikipedia.org/wiki/Selena_Gomez",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Selena%20Gomez%20at%20the%202024%20Toronto%20International%20Film%20Festival%2010%20(cropped).jpg?width=800",
+    "faceId": "83d679b2-cdd5-40a1-a699-031319b7001f",
+    "indexedAt": "2026-07-11T13:21:36.915Z"
+  },
+  {
+    "id": "Q467145",
+    "name": "Kauksi Ülle",
+    "niche": "asia-actor",
+    "wikipedia": {
+      "title": "Kauksi Ülle",
+      "url": "https://en.wikipedia.org/wiki/Kauksi_%C3%9Clle",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Kauksi%20Ylle%20portree.jpeg?width=800",
+    "faceId": "ce230518-30d0-434c-b425-ba0cb311b861",
+    "indexedAt": "2026-07-11T13:21:39.225Z"
+  },
+  {
+    "id": "Q80739",
+    "name": "Charlton Heston",
+    "niche": "asia-actor",
+    "wikipedia": {
+      "title": "Charlton Heston",
+      "url": "https://en.wikipedia.org/wiki/Charlton_Heston",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Charlton%20Heston%20-%201953.jpg?width=800",
+    "faceId": "2f41630e-45b7-4589-a887-582010d79af7",
+    "indexedAt": "2026-07-11T13:21:45.617Z"
+  },
+  {
+    "id": "Q379580",
+    "name": "John Muir",
+    "niche": "asia-actor",
+    "wikipedia": {
+      "title": "John Muir",
+      "url": "https://en.wikipedia.org/wiki/John_Muir",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/John%20Muir%201912.jpg?width=800",
+    "faceId": "3cc416ed-6dc6-4b36-b9df-3033e2aa3eef",
+    "indexedAt": "2026-07-11T13:21:49.065Z"
+  },
+  {
+    "id": "Q467304",
+    "name": "Daniele Barioni",
+    "niche": "asia-actor",
+    "wikipedia": {
+      "title": "Daniele Barioni",
+      "url": "https://en.wikipedia.org/wiki/Daniele_Barioni",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Daniele%20Barioni%2C%201957%20-%20collezione%20Tino%20Barindelli.tif?width=800",
+    "faceId": "0c83bee5-45ca-4b20-a3f7-5c2309674768",
+    "indexedAt": "2026-07-11T13:22:10.646Z"
+  },
+  {
+    "id": "Q93166",
+    "name": "Milan Kundera",
+    "niche": "asia-actor",
+    "wikipedia": {
+      "title": "Milan Kundera",
+      "url": "https://en.wikipedia.org/wiki/Milan_Kundera",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Milan%20Kundera%20redux.jpg?width=800",
+    "faceId": "3f1f0e4d-e5a9-4c20-b3c6-16d6a7baa6bf",
+    "indexedAt": "2026-07-11T13:22:15.306Z"
+  },
+  {
+    "id": "Q234891",
+    "name": "Yo-Yo Ma",
+    "niche": "asia-musician",
+    "wikipedia": {
+      "title": "Yo-Yo Ma",
+      "url": "https://en.wikipedia.org/wiki/Yo-Yo_Ma",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Yo-Yo%20Ma%20in%202018%20(cropped).jpg?width=800",
+    "faceId": "e82385f2-3759-40bf-b678-a17613927288",
+    "indexedAt": "2026-07-11T13:23:54.853Z"
+  },
+  {
+    "id": "Q232972",
+    "name": "Sonia Delaunay",
+    "niche": "asia-musician",
+    "wikipedia": {
+      "title": "Sonia Delaunay",
+      "url": "https://en.wikipedia.org/wiki/Sonia_Delaunay",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Sonia%20Delaunay%20portrait%20photograph.jpg?width=800",
+    "faceId": "7df1ea75-988e-4b36-98e7-cff01236f015",
+    "indexedAt": "2026-07-11T13:24:02.018Z"
+  },
+  {
+    "id": "Q296609",
+    "name": "ラッセル・ブランド",
+    "niche": "asia-musician",
+    "wikipedia": {
+      "title": "Russell Brand",
+      "url": "https://en.wikipedia.org/wiki/Russell_Brand",
+      "lang": "en"
+    },
+    "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Russell%20Brand%202025.jpg?width=800",
+    "faceId": "c663e0b7-9d6c-406a-9e66-415241df4b99",
+    "indexedAt": "2026-07-11T13:24:24.240Z"
+  },
+  {
+    "id": "Q49524",
+    "name": "Kana Hanazawa",
+    "niche": "asia-actor",
+    "wikipedia": {
+      "title": "Kana Hanazawa",
+      "url": "https://en.wikipedia.org/wiki/Kana_Hanazawa",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Kana%20Hanazawa%20at%20the%20Tokyo%20International%20Film%20Festival%20-%202019%20%2849013086453%29%20%28cropped%29.jpg?width=800",
+    "faceId": "618137a8-3aa5-4309-921f-5255274b6f1a",
+    "indexedAt": "2026-07-11T13:25:57.119Z"
+  },
+  {
+    "id": "Q49552",
+    "name": "Miyuki Sawashiro",
+    "niche": "asia-actor",
+    "wikipedia": {
+      "title": "Miyuki Sawashiro",
+      "url": "https://en.wikipedia.org/wiki/Miyuki_Sawashiro",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Miyukichi%28Miyuki%20Sawashiro%29.jpg?width=800",
+    "faceId": "b0899b89-dba8-4468-affe-87982552c6fc",
+    "indexedAt": "2026-07-11T13:25:59.062Z"
+  },
+  {
+    "id": "Q49563",
+    "name": "Noriko Hidaka",
+    "niche": "asia-actor",
+    "wikipedia": {
+      "title": "Noriko Hidaka",
+      "url": "https://en.wikipedia.org/wiki/Noriko_Hidaka",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/%E6%97%A5%E3%81%AE%E3%82%8A%E5%AD%90.jpg?width=800",
+    "faceId": "01adbf9c-ed57-4d8f-b43b-fe72a0c7e9ea",
+    "indexedAt": "2026-07-11T13:26:00.850Z"
+  },
+  {
+    "id": "Q49569",
+    "name": "Mamiko Noto",
+    "niche": "asia-actor",
+    "wikipedia": {
+      "title": "Mamiko Noto",
+      "url": "https://en.wikipedia.org/wiki/Mamiko_Noto",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Mamiko%20Noto%20at%20Otakon%2020070722.jpg?width=800",
+    "faceId": "ba627eba-095b-4540-95a6-a8412c10d52e",
+    "indexedAt": "2026-07-11T13:26:02.543Z"
+  },
+  {
+    "id": "Q49993",
+    "name": "Ayahi Takagaki",
+    "niche": "asia-actor",
+    "wikipedia": {
+      "title": "Ayahi Takagaki",
+      "url": "https://en.wikipedia.org/wiki/Ayahi_Takagaki",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Takagaki%20Ayahi%202021.png?width=800",
+    "faceId": "f5f56168-7527-4cb6-9b0a-4d227de17286",
+    "indexedAt": "2026-07-11T13:26:04.965Z"
+  },
+  {
+    "id": "Q50025",
+    "name": "Haruka Tomatsu",
+    "niche": "asia-actor",
+    "wikipedia": {
+      "title": "Haruka Tomatsu",
+      "url": "https://en.wikipedia.org/wiki/Haruka_Tomatsu",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Tomatsu%20Haruka%202021.png?width=800",
+    "faceId": "51c5e550-c722-4b76-8639-80458daaf12b",
+    "indexedAt": "2026-07-11T13:26:27.121Z"
+  },
+  {
+    "id": "Q50027",
+    "name": "Chiwa Saitō",
+    "niche": "asia-actor",
+    "wikipedia": {
+      "title": "Chiwa Saitō",
+      "url": "https://en.wikipedia.org/wiki/Chiwa_Sait%C5%8D",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Saito%20Chiwa%20at%20Anime%20Festival%20Asia%202011-11-23.jpg?width=800",
+    "faceId": "da3c7dcc-ce6b-40d5-b103-cf67826d364c",
+    "indexedAt": "2026-07-11T13:26:28.574Z"
+  },
+  {
+    "id": "Q50029",
+    "name": "Minako Kotobuki",
+    "niche": "asia-actor",
+    "wikipedia": {
+      "title": "Minako Kotobuki",
+      "url": "https://en.wikipedia.org/wiki/Minako_Kotobuki",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Minako%20Kotobuki%20at%20Tokyo%20International%20Film%20Festival%202013-10-17.jpg?width=800",
+    "faceId": "2018d20b-7b13-4518-8786-af749bd0a70d",
+    "indexedAt": "2026-07-11T13:26:30.150Z"
+  },
+  {
+    "id": "Q984486",
+    "name": "Sabah Fakhri",
+    "niche": "asia-actor",
+    "wikipedia": {
+      "title": "Sabah Fakhri",
+      "url": "https://en.wikipedia.org/wiki/Sabah_Fakhri",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Sabah%20Fakhri.png?width=800",
+    "faceId": "73d8abae-8dd8-4a70-93f6-89f17ea5591e",
+    "indexedAt": "2026-07-11T13:27:10.419Z"
+  },
+  {
+    "id": "Q7241",
+    "name": "Rabindranath Tagore",
+    "niche": "asia-actor",
+    "wikipedia": {
+      "title": "Rabindranath Tagore",
+      "url": "https://en.wikipedia.org/wiki/Rabindranath_Tagore",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Rabindranath%20Tagore%20in%201909.jpg?width=800",
+    "faceId": "f4e20752-80c5-4742-b431-d0f0477db8b9",
+    "indexedAt": "2026-07-11T13:27:28.394Z"
+  },
+  {
+    "id": "Q81807",
+    "name": "Sadakichi Hartmann",
+    "niche": "asia-actor",
+    "wikipedia": {
+      "title": "Sadakichi Hartmann",
+      "url": "https://en.wikipedia.org/wiki/Sadakichi_Hartmann",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Sadakichi%20Hartmann%20LCCN2004677354%20%28cropped%29.jpg?width=800",
+    "faceId": "618a9824-9566-4b24-bd28-c7ba563e0ce1",
+    "indexedAt": "2026-07-11T13:27:30.502Z"
+  },
+  {
+    "id": "Q984641",
+    "name": "Yūichi Nakamura",
+    "niche": "asia-actor",
+    "wikipedia": {
+      "title": "Yuichi Nakamura",
+      "url": "https://en.wikipedia.org/wiki/Yuichi_Nakamura",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Nakamura%20Yuichi%20from%20%22Genocidal%20Organ%22%20at%20Opening%20Ceremony%20of%20the%20Tokyo%20International%20Film%20Festival%202016%20%2833487664872%29.jpg?width=800",
+    "faceId": "43ec39a2-df07-464f-bfef-bc8c13538651",
+    "indexedAt": "2026-07-11T13:27:51.702Z"
+  },
+  {
+    "id": "Q999260",
+    "name": "LaSalle Ishii",
+    "niche": "asia-actor",
+    "wikipedia": {
+      "title": "LaSalle Ishii",
+      "url": "https://en.wikipedia.org/wiki/LaSalle_Ishii",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/LaSalle%20Ishii%20-%20campaigning%20in%20front%20of%20Fujisawa%20Station%202025%20July%209.jpg?width=800",
+    "faceId": "296affcb-4de0-4510-9258-a7c038ffc4f2",
+    "indexedAt": "2026-07-11T13:27:55.186Z"
+  },
+  {
+    "id": "Q999296",
+    "name": "Yasuaki Kurata",
+    "niche": "asia-actor",
+    "wikipedia": {
+      "title": "Yasuaki Kurata",
+      "url": "https://en.wikipedia.org/wiki/Yasuaki_Kurata",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Yasuaki%20Kurata%20201809.jpg?width=800",
+    "faceId": "f54a0359-7c4e-4f5d-8fda-ea7b18963e41",
+    "indexedAt": "2026-07-11T13:27:57.029Z"
+  },
+  {
+    "id": "Q34580",
+    "name": "Ichirō Mizuki",
+    "niche": "asia-musician",
+    "wikipedia": {
+      "title": "Ichirou Mizuki",
+      "url": "https://en.wikipedia.org/wiki/Ichirou_Mizuki",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Ichiro%20Mizuki%2020070706%20Japan%20Expo%2003.jpg?width=800",
+    "faceId": "42b1bc5f-7883-49c5-a0ed-7a537fdf55f4",
+    "indexedAt": "2026-07-11T13:34:04.554Z"
+  },
+  {
+    "id": "Q50022",
+    "name": "Kanae Itō",
+    "niche": "asia-musician",
+    "wikipedia": {
+      "title": "Kanae Itō",
+      "url": "https://en.wikipedia.org/wiki/Kanae_It%C5%8D",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/FanimeCon%202017%20125%20Kanae%20Ito.jpg?width=800",
+    "faceId": "222a607a-26b1-4dfd-8138-b6bc9e8d93d1",
+    "indexedAt": "2026-07-11T13:36:24.942Z"
+  },
+  {
+    "id": "Q60933",
+    "name": "Minami Takahashi",
+    "niche": "asia-musician",
+    "wikipedia": {
+      "title": "Minami Takahashi",
+      "url": "https://en.wikipedia.org/wiki/Minami_Takahashi",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Minami%20Takahashi%20at%20AKB48%20J%21-ENT%20Live.jpg?width=800",
+    "faceId": "576754e7-d54d-4b5e-be86-c9dddba15015",
+    "indexedAt": "2026-07-11T13:36:28.126Z"
+  },
+  {
+    "id": "Q80399",
+    "name": "Edita Piekha",
+    "niche": "asia-musician",
+    "wikipedia": {
+      "title": "Edita Piekha",
+      "url": "https://en.wikipedia.org/wiki/Edita_Piekha",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/PiekhaE.jpg?width=800",
+    "faceId": "cf0c3121-3939-4083-8674-53b7151d2c9e",
+    "indexedAt": "2026-07-11T13:37:24.847Z"
+  },
+  {
+    "id": "Q92122",
+    "name": "Kimiko Douglass-Ishizaka",
+    "niche": "asia-musician",
+    "wikipedia": {
+      "title": "Kimiko Ishizaka",
+      "url": "https://en.wikipedia.org/wiki/Kimiko_Ishizaka",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Kimiko%20Douglass-Ishizaka.JPG?width=800",
+    "faceId": "e97d88d8-e18d-4b61-a18c-6fd4b6cb4b25",
+    "indexedAt": "2026-07-11T13:37:26.931Z"
+  },
+  {
+    "id": "Q936862",
+    "name": "Tsuyoshi Tsutsumi",
+    "niche": "asia-musician",
+    "wikipedia": {
+      "title": "Tsuyoshi Tsutsumi",
+      "url": "https://en.wikipedia.org/wiki/Tsuyoshi_Tsutsumi",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/%E5%A0%A4%E5%89%9B.jpg?width=800",
+    "faceId": "520a5d13-3943-4752-92ce-8e13528bf841",
+    "indexedAt": "2026-07-11T13:38:22.929Z"
+  },
+  {
+    "id": "Q937359",
+    "name": "Yuma Asami",
+    "niche": "asia-musician",
+    "wikipedia": {
+      "title": "Yuma Asami",
+      "url": "https://en.wikipedia.org/wiki/Yuma_Asami",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Asami%20Yuma%200112.jpg?width=800",
+    "faceId": "9cb1f21a-ca0c-44d4-ac31-000a4d9a3e24",
+    "indexedAt": "2026-07-11T13:38:24.736Z"
+  },
+  {
+    "id": "Q949993",
+    "name": "Mikhail Savoyarov",
+    "niche": "asia-musician",
+    "wikipedia": {
+      "title": "Mikhail Savoyarov",
+      "url": "https://en.wikipedia.org/wiki/Mikhail_Savoyarov",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/M.N.Savoiarov%20otkrytka%201912.jpg?width=800",
+    "faceId": "45089ddd-7f5d-4033-9833-54abf50a0ed4",
+    "indexedAt": "2026-07-11T13:41:47.984Z"
+  },
+  {
+    "id": "Q973400",
+    "name": "Alexander Bashlachev",
+    "niche": "asia-musician",
+    "wikipedia": {
+      "title": "Alexander Bashlachev",
+      "url": "https://en.wikipedia.org/wiki/Alexander_Bashlachev",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Cropped%20%D0%91%D0%B0%D1%88%D0%BB%D0%B0%D1%87%D1%91%D0%B2.jpg?width=800",
+    "faceId": "d41a474e-8720-4bc5-a89c-5476c89a5ebc",
+    "indexedAt": "2026-07-11T13:41:54.876Z"
+  },
+  {
+    "id": "Q977584",
+    "name": "Ken'ichi Mikawa",
+    "niche": "asia-musician",
+    "wikipedia": {
+      "title": "Kenichi Mikawa",
+      "url": "https://en.wikipedia.org/wiki/Kenichi_Mikawa",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/%E7%BE%8E%E5%B7%9D%E6%86%B2%E4%B8%80.JPG?width=800",
+    "faceId": "fe9a1740-7700-4ec3-bb53-c30e7363322d",
+    "indexedAt": "2026-07-11T13:43:43.238Z"
+  },
+  {
+    "id": "Q981526",
+    "name": "Sugizo",
+    "niche": "asia-musician",
+    "wikipedia": {
+      "title": "Sugizo",
+      "url": "https://en.wikipedia.org/wiki/Sugizo",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Sugizo%20in%20S%C3%A3o%20Paulo%2C%20Brazil%202011-11-09.jpg?width=800",
+    "faceId": "553e0fb0-81ed-4500-8e16-0ad14e4f1d4e",
+    "indexedAt": "2026-07-11T13:43:46.091Z"
+  },
+  {
+    "id": "Q996607",
+    "name": "Stephen Fung",
+    "niche": "asia-musician",
+    "wikipedia": {
+      "title": "Stephen Fung",
+      "url": "https://en.wikipedia.org/wiki/Stephen_Fung",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/STEPHEN%20FUNG%20%28%E9%A6%AE%E5%BE%B7%E5%80%AB%29%20%E2%88%92%202023.10.18%20%E2%88%92%20P1.jpg?width=800",
+    "faceId": "84299abd-10a3-4dee-b61a-6ea5740610cd",
+    "indexedAt": "2026-07-11T13:45:57.158Z"
+  },
+  {
+    "id": "Q98784388",
+    "name": "Ei Wada",
+    "niche": "asia-musician",
+    "wikipedia": {
+      "title": "Ei Wada",
+      "url": "https://en.wikipedia.org/wiki/Ei_Wada",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Ei%20Wada%2C%202011.jpg?width=800",
+    "faceId": "89413d6a-0431-45b3-984e-0b3861ded1cb",
+    "indexedAt": "2026-07-11T13:46:00.126Z"
+  },
+  {
+    "id": "Q99704148",
+    "name": "Melike Şahin",
+    "niche": "asia-musician",
+    "wikipedia": {
+      "title": "Melike Şahin",
+      "url": "https://en.wikipedia.org/wiki/Melike_%C5%9Eahin",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Melike%20%C5%9Eahin%203.jpg?width=800",
+    "faceId": "daaa46db-cee4-4504-a666-e2fcd304e94b",
+    "indexedAt": "2026-07-11T13:47:24.330Z"
+  },
+  {
+    "id": "Q99975999",
+    "name": "polnalyubvi",
+    "niche": "asia-musician",
+    "wikipedia": {
+      "title": "Polnalyubvi",
+      "url": "https://en.wikipedia.org/wiki/Polnalyubvi",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Polnalyubvi%20%D0%B2%202025%20%D0%B3%D0%BE%D0%B4%D1%83.png?width=800",
+    "faceId": "446a7b54-c301-4624-9519-13ca24a74d7f",
+    "indexedAt": "2026-07-11T13:48:23.900Z"
   }
 ]
