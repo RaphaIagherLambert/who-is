@@ -31,12 +31,39 @@ export interface IdentifyResponse {
     | "low_confidence"
     | "ambiguous"
     | "poor_quality"
+    | "bad_pose"
     | "no_wiki"
     | null;
   allMatches: CelebrityMatch[];
   minConfidence: number;
   lang: string;
   provider: string;
+}
+
+export type RejectReason = IdentifyResponse["rejectReason"];
+
+/** Try each frame until one identifies a person (burst / retry). */
+export async function identifyBestFromFrames(
+  frames: string[],
+  lang: string,
+  onAttempt?: (index: number, total: number) => void
+): Promise<{
+  result: IdentifyResult | null;
+  rejectReason: RejectReason;
+  framesTried: number;
+}> {
+  let lastReject: RejectReason = null;
+
+  for (let i = 0; i < frames.length; i++) {
+    onAttempt?.(i + 1, frames.length);
+    const res = await identifyImage(frames[i], lang);
+    if (res.results[0]) {
+      return { result: res.results[0], rejectReason: null, framesTried: i + 1 };
+    }
+    lastReject = res.rejectReason;
+  }
+
+  return { result: null, rejectReason: lastReject, framesTried: frames.length };
 }
 
 export async function identifyImage(

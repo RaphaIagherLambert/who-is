@@ -57,6 +57,26 @@ export const translations = {
     adminUnlockButton: "Entrar",
     adminWrongSecret: "Senha incorreta",
     adminModeOn: "Admin",
+    tipNoFaces: "Nenhum rosto detectado. Pause a TV, aproxime o rosto na mira e tente de novo.",
+    tipLowConfidence:
+      "Não deu para confirmar. Pause o vídeo, aponte de frente com boa luz e tente outra vez.",
+    tipAmbiguous:
+      "Mais de uma pessoa possível. Centralize só um rosto na mira e tente de novo.",
+    tipPoorQuality:
+      "Imagem borrada ou escura. Pause a cena, segure firme e tente de novo.",
+    tipNoWiki: "Pessoa reconhecida, mas sem página na Wikipedia.",
+    tipBadPose: "Rosto de lado ou parcial. Aponte de frente e tente de novo.",
+    uploading: "Analisando imagem…",
+    uploadButton: "Enviar print / foto",
+    uploadHint: "Use um print pausado da TV ou série",
+    bursting: "Capturando várias fotos…",
+    retryingFrame: (n: number, total: number) => `Tentativa ${n} de ${total}…`,
+    onboardingTitle: "Como usar na TV",
+    onboardingStep1: "Pause o vídeo ou série",
+    onboardingStep2: "Aponte a câmera para o rosto",
+    onboardingStep3: "Toque na mira para identificar",
+    onboardingAlt: "Ou envie um print da tela",
+    onboardingGotIt: "Entendi",
   },
   en: {
     subtitle: "Point and find out",
@@ -112,6 +132,26 @@ export const translations = {
     adminUnlockButton: "Unlock",
     adminWrongSecret: "Wrong password",
     adminModeOn: "Admin",
+    tipNoFaces: "No face detected. Pause the TV, center the face in the sight, and try again.",
+    tipLowConfidence:
+      "Could not confirm. Pause the video, face the camera with good light, and try again.",
+    tipAmbiguous:
+      "More than one possible person. Center a single face in the sight and try again.",
+    tipPoorQuality:
+      "Image too blurry or dark. Pause the scene, hold steady, and try again.",
+    tipNoWiki: "Person recognized, but no Wikipedia page was found.",
+    tipBadPose: "Face is angled or partial. Point straight-on and try again.",
+    uploading: "Analyzing image…",
+    uploadButton: "Upload screenshot / photo",
+    uploadHint: "Use a paused TV or series screenshot",
+    bursting: "Capturing several frames…",
+    retryingFrame: (n: number, total: number) => `Attempt ${n} of ${total}…`,
+    onboardingTitle: "How to use with TV",
+    onboardingStep1: "Pause the video or series",
+    onboardingStep2: "Point the camera at the face",
+    onboardingStep3: "Tap the sight to identify",
+    onboardingAlt: "Or upload a screenshot",
+    onboardingGotIt: "Got it",
   },
 } as const;
 

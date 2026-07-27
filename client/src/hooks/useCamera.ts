@@ -109,6 +109,19 @@ export function useCamera() {
     return canvas.toDataURL("image/jpeg", 0.88);
   }, []);
 
+  const captureBurst = useCallback(
+    async (count = 4, intervalMs = 180): Promise<string[]> => {
+      const frames: string[] = [];
+      for (let i = 0; i < count; i++) {
+        const frame = captureFrame();
+        if (frame) frames.push(frame);
+        if (i < count - 1) await wait(intervalMs);
+      }
+      return frames;
+    },
+    [captureFrame]
+  );
+
   return {
     videoRef,
     canvasRef,
@@ -119,6 +132,7 @@ export function useCamera() {
     startCamera,
     stopCamera,
     captureFrame,
+    captureBurst,
   };
 }
 

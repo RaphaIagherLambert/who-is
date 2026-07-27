@@ -801,3 +801,90 @@ a {
   color: #fca5a5;
   font-size: 0.8rem;
 }
+
+.upload-row {
+  margin: 0 1.25rem 0.85rem;
+  text-align: center;
+}
+
+.upload-input {
+  display: none;
+}
+
+.upload-button {
+  display: inline-block;
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 1px solid #404040;
+  border-radius: 0.65rem;
+  background: #0a0a0a;
+  color: #e5e5e5;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.upload-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.upload-hint {
+  margin: 0.4rem 0 0;
+  color: #737373;
+  font-size: 0.75rem;
+}
+
+.onboarding-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 1.25rem;
+  padding-bottom: calc(1.25rem + var(--safe-bottom));
+  background: rgba(0, 0, 0, 0.72);
+}
+
+.onboarding-card {
+  width: min(100%, 420px);
+  padding: 1.35rem 1.25rem 1.25rem;
+  border: 1px solid #333;
+  border-radius: 1rem;
+  background: #0a0a0a;
+}
+
+.onboarding-card h2 {
+  margin: 0 0 0.85rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.onboarding-steps {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: #d4d4d4;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.onboarding-alt {
+  margin: 0.85rem 0 1.1rem;
+  color: #a3a3a3;
+  font-size: 0.85rem;
+}
+
+.onboarding-got-it {
+  display: block;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 0.65rem;
+  background: #f5f5f5;
+  color: #0a0a0a;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
