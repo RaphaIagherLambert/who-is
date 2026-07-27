@@ -3,11 +3,11 @@ import { useCallback, useRef, useState, type ChangeEvent } from "react";
 import {
   CelebrityMatch,
   identifyBestFromFrames,
-  identifyImage,
   WikipediaPage,
   type IdentifyResult,
 } from "./api";
 import { AdminUnlock, TeachPanel } from "./components/TeachPanel";
+import { CropEditor } from "./components/CropEditor";
 import {
   OnboardingGuide,
   shouldShowOnboarding,
@@ -19,11 +19,17 @@ import {
   toApiLanguage,
   translations,
 } from "./i18n";
+import { applyCropToFrames, type CropTransform } from "./cropImage";
 import { messageForRejectReason, readImageFile } from "./identifyHelpers";
 import { useCamera, wait } from "./hooks/useCamera";
 import { useAdminMode } from "./hooks/useAdminMode";
+import {
+  getRecognitionMode,
+  saveRecognitionMode,
+  type RecognitionMode,
+} from "./recognitionMode";
 
-type CapturePhase = "idle" | "viewfinder" | "shutter" | "processing";
+type CapturePhase = "idle" | "viewfinder" | "shutter" | "processing" | "crop";
 
 type WikidataNiche = NonNullable<IdentifyResult["niche"]>;
 
@@ -57,6 +63,7 @@ function wikidataBadgeForNiche(
 
 export default function App() {
   const [lang, setLang] = useState<AppLanguage>(getDefaultLanguage);
+  const [mode, setMode] = useState<RecognitionMode>(getRecognitionMode);
   const [phase, setPhase] = useState<CapturePhase>("idle");
   const [status, setStatus] = useState("");
   const [match, setMatch] = useState<CelebrityMatch | null>(null);
@@ -65,12 +72,14 @@ export default function App() {
     "celebrity" | "learned" | "wikidata" | null
   >(null);
   const [resultNiche, setResultNiche] = useState<WikidataNiche | null>(null);
+  const [uncertain, setUncertain] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [snapshot, setSnapshot] = useState<string | null>(null);
   const [flash, setFlash] = useState(false);
   const [teachOpen, setTeachOpen] = useState(false);
   const [lastFailedFrame, setLastFailedFrame] = useState<string | null>(null);
   const [showOnboarding, setShowOnboarding] = useState(shouldShowOnboarding);
+  const [pendingFrames, setPendingFrames] = useState<string[] | null>(null);
   const busyRef = useRef(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -105,12 +114,18 @@ export default function App() {
     }
   };
 
+  const switchMode = (next: RecognitionMode) => {
+    setMode(next);
+    saveRecognitionMode(next);
+  };
+
   const resetResultState = () => {
     setError(null);
     setMatch(null);
     setWiki(null);
     setResultSource(null);
     setResultNiche(null);
+    setUncertain(false);
     setLastFailedFrame(null);
     setTeachOpen(false);
   };
@@ -121,6 +136,90 @@ export default function App() {
     setWiki(best.wikipedia);
     setResultSource(best.source ?? "celebrity");
     setResultNiche(best.niche ?? null);
+    setUncertain(Boolean(best.uncertain));
+  };
+
+  const runIdentifyFrames = useCallback(
+    async (frames: string[]) => {
+      setPhase("processing");
+      setSnapshot(frames[0] ?? null);
+      setStatus(t.scanning);
+
+      const { result: best, rejectReason, framesTried } =
+        await identifyBestFromFrames(
+          frames,
+          toApiLanguage(lang),
+          (n, total) => {
+            if (n > 1) setStatus(t.retryingFrame(n, total));
+          },
+          mode
+        );
+
+      if (!best) {
+        setLastFailedFrame(frames[framesTried - 1] ?? frames[0] ?? null);
+        setStatus(messageForRejectReason(rejectReason, t));
+        return;
+      }
+
+      applySuccess(best);
+    },
+    [lang, mode, t]
+  );
+
+  const openCrop = (frames: string[]) => {
+    stopCamera();
+    setPendingFrames(frames);
+    setSnapshot(frames[0] ?? null);
+    setPhase("crop");
+    busyRef.current = false;
+  };
+
+  const finishIdentifySession = () => {
+    setSnapshot(null);
+    setPendingFrames(null);
+    setPhase("idle");
+    busyRef.current = false;
+    stopCamera();
+  };
+
+  const handleCropConfirm = async (transform: CropTransform) => {
+    if (!pendingFrames?.length || busyRef.current) return;
+    busyRef.current = true;
+    try {
+      setStatus(t.scanning);
+      const cropped = await applyCropToFrames(pendingFrames, transform);
+      setPendingFrames(null);
+      await runIdentifyFrames(cropped);
+    } catch (err) {
+      setLastFailedFrame(pendingFrames[0] ?? null);
+      setError(err instanceof Error ? err.message : t.errorGeneric);
+    } finally {
+      finishIdentifySession();
+    }
+  };
+
+  const handleCropSkip = async () => {
+    if (!pendingFrames?.length || busyRef.current) return;
+    busyRef.current = true;
+    const frames = pendingFrames;
+    setPendingFrames(null);
+    try {
+      await runIdentifyFrames(frames);
+    } catch (err) {
+      setLastFailedFrame(frames[0] ?? null);
+      setError(err instanceof Error ? err.message : t.errorGeneric);
+    } finally {
+      finishIdentifySession();
+    }
+  };
+
+  const handleCropCancel = () => {
+    setPendingFrames(null);
+    setSnapshot(null);
+    setPhase("idle");
+    busyRef.current = false;
+    stopCamera();
+    setStatus(active ? t.aimAndTap : t.idle);
   };
 
   const runIdentify = useCallback(async () => {
@@ -128,8 +227,6 @@ export default function App() {
 
     busyRef.current = true;
     resetResultState();
-
-    let capturedFrame: string | null = null;
 
     try {
       setPhase("viewfinder");
@@ -140,10 +237,10 @@ export default function App() {
       const frames = await captureBurst(BURST_COUNT, BURST_INTERVAL_MS);
       if (frames.length === 0) {
         setStatus(t.errorGeneric);
+        finishIdentifySession();
         return;
       }
 
-      capturedFrame = frames[0];
       setPhase("shutter");
       setSnapshot(frames[0]);
       setFlash(true);
@@ -151,72 +248,12 @@ export default function App() {
       setFlash(false);
       await wait(180);
 
-      setPhase("processing");
-      setStatus(t.scanning);
-
-      const { result: best, rejectReason, framesTried } = await identifyBestFromFrames(
-        frames,
-        toApiLanguage(lang),
-        (n, total) => {
-          if (n > 1) setStatus(t.retryingFrame(n, total));
-        }
-      );
-
-      if (!best) {
-        setLastFailedFrame(frames[framesTried - 1] ?? frames[0]);
-        setStatus(messageForRejectReason(rejectReason, t));
-        return;
-      }
-
-      applySuccess(best);
+      openCrop(frames);
     } catch (err) {
-      if (capturedFrame) setLastFailedFrame(capturedFrame);
       setError(err instanceof Error ? err.message : t.errorGeneric);
-    } finally {
-      setSnapshot(null);
-      setPhase("idle");
-      busyRef.current = false;
-      stopCamera();
+      finishIdentifySession();
     }
-  }, [captureBurst, lang, ready, stopCamera, t]);
-
-  const runIdentifyFromUpload = useCallback(
-    async (dataUrl: string) => {
-      if (busyRef.current) return;
-
-      busyRef.current = true;
-      resetResultState();
-      stopCamera();
-
-      try {
-        setPhase("processing");
-        setSnapshot(dataUrl);
-        setStatus(t.uploading);
-
-        const { results, rejectReason } = await identifyImage(
-          dataUrl,
-          toApiLanguage(lang)
-        );
-        const best = results[0] ?? null;
-
-        if (!best) {
-          setLastFailedFrame(dataUrl);
-          setStatus(messageForRejectReason(rejectReason, t));
-          return;
-        }
-
-        applySuccess(best);
-      } catch (err) {
-        setLastFailedFrame(dataUrl);
-        setError(err instanceof Error ? err.message : t.errorGeneric);
-      } finally {
-        setSnapshot(null);
-        setPhase("idle");
-        busyRef.current = false;
-      }
-    },
-    [lang, stopCamera, t]
-  );
+  }, [captureBurst, ready, t]);
 
   const handleUploadChange = useCallback(
     async (e: ChangeEvent<HTMLInputElement>) => {
@@ -224,17 +261,21 @@ export default function App() {
       e.target.value = "";
       if (!file || busyRef.current) return;
       try {
+        resetResultState();
+        stopCamera();
         const dataUrl = await readImageFile(file);
-        await runIdentifyFromUpload(dataUrl);
+        busyRef.current = true;
+        openCrop([dataUrl]);
       } catch {
         setError(t.errorGeneric);
+        busyRef.current = false;
       }
     },
-    [runIdentifyFromUpload, t]
+    [stopCamera, t]
   );
 
   const handleForesightClick = useCallback(async () => {
-    if (busyRef.current || starting) return;
+    if (busyRef.current || starting || phase === "crop") return;
 
     if (!active) {
       resetResultState();
@@ -246,7 +287,7 @@ export default function App() {
 
     if (!ready) return;
     await runIdentify();
-  }, [active, ready, runIdentify, startCamera, starting, t]);
+  }, [active, phase, ready, runIdentify, startCamera, starting, t]);
 
   const handleTeachSuccess = (name: string, page: WikipediaPage) => {
     setTeachOpen(false);
@@ -255,13 +296,14 @@ export default function App() {
     setWiki(page);
     setResultSource("learned");
     setResultNiche(null);
+    setUncertain(false);
     setStatus(t.teachSuccess(name));
   };
 
-  const isActive = phase !== "idle";
+  const isActive = phase !== "idle" && phase !== "crop";
   const displayStatus =
     status || (active ? t.aimAndTap : starting ? t.openingCamera : t.idle);
-  const busy = phase !== "idle" || starting;
+  const busy = (phase !== "idle" && phase !== "crop") || starting;
   const showTeachButton =
     isAdmin && phase === "idle" && !match && Boolean(lastFailedFrame);
 
@@ -280,12 +322,30 @@ export default function App() {
                 {t.adminModeOn}
               </button>
             )}
+            <div className="mode-switch" role="group" aria-label={t.modeLabel}>
+              <button
+                type="button"
+                className={mode === "strict" ? "active" : ""}
+                onClick={() => switchMode("strict")}
+                disabled={busy || phase === "crop"}
+              >
+                {t.modeStrict}
+              </button>
+              <button
+                type="button"
+                className={mode === "curious" ? "active" : ""}
+                onClick={() => switchMode("curious")}
+                disabled={busy || phase === "crop"}
+              >
+                {t.modeCurious}
+              </button>
+            </div>
             <div className="lang-switch" role="group" aria-label="Language">
               <button
                 type="button"
                 className={lang === "pt" ? "active" : ""}
                 onClick={() => switchLanguage("pt")}
-                disabled={busy}
+                disabled={busy || phase === "crop"}
               >
                 PT
               </button>
@@ -293,7 +353,7 @@ export default function App() {
                 type="button"
                 className={lang === "en" ? "active" : ""}
                 onClick={() => switchLanguage("en")}
-                disabled={busy}
+                disabled={busy || phase === "crop"}
               >
                 EN
               </button>
@@ -308,7 +368,7 @@ export default function App() {
       >
         <video ref={videoRef} playsInline muted className="target-video" />
 
-        {snapshot && (
+        {snapshot && phase !== "crop" && (
           <img src={snapshot} alt="" className="freeze-frame" aria-hidden="true" />
         )}
 
@@ -318,7 +378,7 @@ export default function App() {
           type="button"
           className="foresight-trigger"
           onClick={handleForesightClick}
-          disabled={busy}
+          disabled={busy || phase === "crop"}
           aria-label={t.foresightLabel}
         >
           <span className="foresight-hint">
@@ -426,6 +486,9 @@ export default function App() {
           {wiki.thumbnail && <img src={wiki.thumbnail} alt={match.name} />}
           <div className="result-card-body">
             <h2>{match.name}</h2>
+            {uncertain && (
+              <span className="uncertain-badge">{t.uncertainBadge}</span>
+            )}
             {resultSource === "learned" && (
               <span className="learned-badge">{t.learnedBadge}</span>
             )}
@@ -453,6 +516,16 @@ export default function App() {
           frame={lastFailedFrame}
           onClose={() => setTeachOpen(false)}
           onSuccess={handleTeachSuccess}
+        />
+      )}
+
+      {phase === "crop" && pendingFrames?.[0] && (
+        <CropEditor
+          lang={lang}
+          imageSrc={pendingFrames[0]}
+          onConfirm={handleCropConfirm}
+          onSkip={handleCropSkip}
+          onCancel={handleCropCancel}
         />
       )}
 

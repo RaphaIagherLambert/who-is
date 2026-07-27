@@ -22,6 +22,7 @@ export interface IdentifyResult extends CelebrityMatch {
   wikipedia: WikipediaPage | null;
   source?: "celebrity" | "learned" | "wikidata";
   niche?: "us-actor" | "us-musician" | "us-influencer" | "eu-actor" | "eu-musician" | "eu-influencer" | "br-actor" | "br-musician" | "br-influencer" | "latam-actor" | "latam-musician" | "asia-actor" | "asia-musician";
+  uncertain?: boolean;
 }
 
 export interface IdentifyResponse {
@@ -36,6 +37,8 @@ export interface IdentifyResponse {
     | null;
   allMatches: CelebrityMatch[];
   minConfidence: number;
+  mode?: "strict" | "curious";
+  uncertain?: boolean;
   lang: string;
   provider: string;
 }
@@ -46,7 +49,8 @@ export type RejectReason = IdentifyResponse["rejectReason"];
 export async function identifyBestFromFrames(
   frames: string[],
   lang: string,
-  onAttempt?: (index: number, total: number) => void
+  onAttempt?: (index: number, total: number) => void,
+  mode: "strict" | "curious" = "strict"
 ): Promise<{
   result: IdentifyResult | null;
   rejectReason: RejectReason;
@@ -56,7 +60,7 @@ export async function identifyBestFromFrames(
 
   for (let i = 0; i < frames.length; i++) {
     onAttempt?.(i + 1, frames.length);
-    const res = await identifyImage(frames[i], lang);
+    const res = await identifyImage(frames[i], lang, mode);
     if (res.results[0]) {
       return { result: res.results[0], rejectReason: null, framesTried: i + 1 };
     }
@@ -68,12 +72,13 @@ export async function identifyBestFromFrames(
 
 export async function identifyImage(
   imageBase64: string,
-  lang: string
+  lang: string,
+  mode: "strict" | "curious" = "strict"
 ): Promise<IdentifyResponse> {
   const res = await fetch("/api/identify", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ image: imageBase64, lang }),
+    body: JSON.stringify({ image: imageBase64, lang, mode }),
   });
 
   if (!res.ok) {

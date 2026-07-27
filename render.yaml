@@ -24,6 +24,12 @@ services:
         value: who-is-faces
       - key: MIN_FACE_SIMILARITY
         value: "95"
+      - key: CURIOUS_MIN_CONFIDENCE
+        value: "90"
+      - key: CURIOUS_MIN_MATCH_MARGIN
+        value: "6"
+      - key: CURIOUS_MIN_FACE_SIMILARITY
+        value: "88"
       - key: CUSTOM_TEACH_ENABLED
         value: "true"
       - key: ADMIN_SECRET

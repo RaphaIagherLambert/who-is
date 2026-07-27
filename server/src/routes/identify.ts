@@ -1,7 +1,10 @@
 import { Router } from "express";
 import { searchFaceCollection } from "../services/faceCollection.js";
 import {
+  applyRecognitionMode,
+  isUncertainConfidence,
   loadMatchFilterConfig,
+  parseRecognitionMode,
   pickConfidentMatch,
 } from "../services/matchFilter.js";
 import { createRecognitionProvider } from "../services/providerFactory.js";
@@ -62,6 +65,7 @@ async function resolveCollectionMatch(externalId: string, lang: string) {
 
 /**
  * Search indexed faces (Wikidata + admin teach), then AWS celebrities.
+ * Body: { image, lang?, mode?: "strict" | "curious" }
  */
 identifyRouter.post("/", async (req, res) => {
   try {
@@ -72,16 +76,22 @@ identifyRouter.post("/", async (req, res) => {
     }
 
     const lang = typeof req.body?.lang === "string" ? req.body.lang : "en";
-    const filterConfig = loadMatchFilterConfig();
+    const mode = parseRecognitionMode(req.body?.mode);
+    const baseConfig = loadMatchFilterConfig();
+    const filterConfig = applyRecognitionMode(baseConfig, mode);
     const providerName = process.env.RECOGNITION_PROVIDER ?? "mock";
+    const strictFaceSimilarity = Number(process.env.MIN_FACE_SIMILARITY) || 95;
 
-    const collectionMatch = await searchFaceCollection(parsed.base64);
+    const collectionMatch = await searchFaceCollection(parsed.base64, mode);
     if (collectionMatch) {
       const person = await resolveCollectionMatch(
         collectionMatch.externalId,
         lang
       );
       if (person) {
+        const uncertain =
+          mode === "curious" &&
+          collectionMatch.similarity < strictFaceSimilarity;
         res.json({
           results: [
             {
@@ -90,11 +100,14 @@ identifyRouter.post("/", async (req, res) => {
               wikipedia: person.wikipedia,
               source: person.source,
               niche: person.niche,
+              uncertain,
             },
           ],
           rejectReason: null,
           allMatches: [],
           minConfidence: filterConfig.minConfidence,
+          mode,
+          uncertain,
           lang,
           provider: providerName,
         });
@@ -111,6 +124,8 @@ identifyRouter.post("/", async (req, res) => {
         rejectReason: reason,
         allMatches: matches,
         minConfidence: filterConfig.minConfidence,
+        mode,
+        uncertain: false,
         lang,
         provider: providerName,
       });
@@ -124,17 +139,25 @@ identifyRouter.post("/", async (req, res) => {
         rejectReason: "no_wiki",
         allMatches: matches,
         minConfidence: filterConfig.minConfidence,
+        mode,
+        uncertain: false,
         lang,
         provider: providerName,
       });
       return;
     }
 
+    const uncertain = isUncertainConfidence(match.confidence, mode);
+
     res.json({
-      results: [{ ...match, wikipedia: wiki, source: "celebrity" }],
+      results: [
+        { ...match, wikipedia: wiki, source: "celebrity", uncertain },
+      ],
       rejectReason: null,
       allMatches: matches,
       minConfidence: filterConfig.minConfidence,
+      mode,
+      uncertain,
       lang,
       provider: providerName,
     });

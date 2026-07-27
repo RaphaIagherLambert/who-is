@@ -23,8 +23,24 @@ export function getCollectionId(): string {
   return process.env.REKOGNITION_COLLECTION_ID ?? "who-is-faces";
 }
 
-function getMinSimilarity(): number {
-  return Number(process.env.MIN_FACE_SIMILARITY) || 95;
+function getMinSimilarity(mode: "strict" | "curious" = "strict"): number {
+  const strict = Number(process.env.MIN_FACE_SIMILARITY) || 95;
+  if (mode === "curious") {
+    return (
+      Number(process.env.CURIOUS_MIN_FACE_SIMILARITY) || Math.min(strict, 88)
+    );
+  }
+  return strict;
+}
+
+/** AWS ExternalImageId for the nth face of a person (1-based). */
+export function faceExternalId(personId: string, faceIndex: number): string {
+  return faceIndex <= 1 ? personId : `${personId}_${faceIndex}`;
+}
+
+/** Strip `_2`, `_3`, … suffixes so Q42_2 resolves to person Q42. */
+export function normalizePersonExternalId(externalId: string): string {
+  return externalId.replace(/_\d+$/, "");
 }
 
 export function isFaceCollectionEnabled(): boolean {
@@ -99,12 +115,13 @@ export interface FaceCollectionMatch {
 }
 
 export async function searchFaceCollection(
-  imageBase64: string
+  imageBase64: string,
+  mode: "strict" | "curious" = "strict"
 ): Promise<FaceCollectionMatch | null> {
   if (!(await ensureFaceCollection())) return null;
 
   const imageBytes = Buffer.from(imageBase64, "base64");
-  const minSimilarity = getMinSimilarity();
+  const minSimilarity = getMinSimilarity(mode);
 
   const response = await getClient().send(
     new SearchFacesByImageCommand({
@@ -116,14 +133,15 @@ export async function searchFaceCollection(
   );
 
   const best = response.FaceMatches?.[0];
-  if (!best?.Face?.ExternalImageId || (best.Similarity ?? 0) < minSimilarity) {
+  const rawId = best?.Face?.ExternalImageId;
+  if (!rawId || (best.Similarity ?? 0) < minSimilarity) {
     return null;
   }
 
   return {
-    externalId: best.Face.ExternalImageId,
+    externalId: normalizePersonExternalId(rawId),
     similarity: best.Similarity ?? 0,
-    faceId: best.Face.FaceId,
+    faceId: best.Face?.FaceId,
   };
 }
 
@@ -132,6 +150,7 @@ export function getFaceCollectionStatus() {
     enabled: isFaceCollectionEnabled(),
     ready: collectionReady,
     collectionId: getCollectionId(),
-    minSimilarity: getMinSimilarity(),
+    minSimilarity: getMinSimilarity("strict"),
+    curiousMinSimilarity: getMinSimilarity("curious"),
   };
 }

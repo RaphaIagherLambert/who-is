@@ -14,7 +14,7 @@ import { EU_INFLUENCER_SEED_UNIQUE } from "../src/data/euInfluencerSeed.js";
 import { BR_INFLUENCER_SEED_UNIQUE } from "../src/data/brInfluencerSeed.js";
 import { US_ACTOR_SEED_UNIQUE } from "../src/data/usActorSeed.js";
 import { US_MUSICIAN_SEED_UNIQUE } from "../src/data/usMusicianSeed.js";
-import { ensureFaceCollection, indexFaceBytes } from "../src/services/faceCollection.js";
+import { ensureFaceCollection, faceExternalId, indexFaceBytes } from "../src/services/faceCollection.js";
 import {
   fetchBrInfluencersBatch,
   fetchEuInfluencersBatch,
@@ -57,6 +57,8 @@ interface ImportOptions {
   batchSize: number;
   dryRun: boolean;
   delayMs: number;
+  /** How many P18 images to index per person (1–3). */
+  facesPerPerson: number;
 }
 
 const NICHE_CONFIG = {
@@ -205,6 +207,7 @@ function parseArgs(argv: string[]): ImportOptions {
     batchSize: 3,
     dryRun: false,
     delayMs: 400,
+    facesPerPerson: 3,
   };
 
   const positional: string[] = [];
@@ -218,6 +221,10 @@ function parseArgs(argv: string[]): ImportOptions {
     else if (arg === "--limit") opts.limit = Number(argv[++i] ?? opts.limit);
     else if (arg === "--batch-size") opts.batchSize = Number(argv[++i] ?? opts.batchSize);
     else if (arg === "--delay-ms") opts.delayMs = Number(argv[++i] ?? opts.delayMs);
+    else if (arg === "--faces-per-person") {
+      const n = Number(argv[++i] ?? 3);
+      opts.facesPerPerson = Math.min(3, Math.max(1, Number.isFinite(n) ? n : 3));
+    }
     else if (!arg.startsWith("-")) positional.push(arg);
   }
 
@@ -248,7 +255,7 @@ async function downloadImage(url: string): Promise<Buffer | null> {
 }
 
 async function indexRow(
-  row: { id: string; name: string; imageUrl: string },
+  row: { id: string; name: string; imageUrl: string; imageUrls?: string[] },
   wikipedia: { title: string; url: string; lang: string },
   niche: WikidataNiche,
   opts: ImportOptions
@@ -256,19 +263,42 @@ async function indexRow(
   if (await hasWikidataPerson(row.id)) return "skipped";
 
   if (opts.dryRun) {
-    console.log(`[dry-run] ${row.id} ${row.name}`);
+    const urls = (row.imageUrls?.length ? row.imageUrls : [row.imageUrl]).slice(
+      0,
+      opts.facesPerPerson
+    );
+    console.log(`[dry-run] ${row.id} ${row.name} (${urls.length} face image(s))`);
     return "imported";
   }
 
   try {
-    const imageBytes = await downloadImage(row.imageUrl);
-    if (!imageBytes) {
-      console.warn(`Skip (image): ${row.name}`);
-      return "failed";
+    const urls = (row.imageUrls?.length ? row.imageUrls : [row.imageUrl]).slice(
+      0,
+      opts.facesPerPerson
+    );
+    const faceIds: string[] = [];
+    const indexedUrls: string[] = [];
+
+    for (let i = 0; i < urls.length; i++) {
+      const imageBytes = await downloadImage(urls[i]);
+      if (!imageBytes) {
+        console.warn(`Skip image ${i + 1}/${urls.length}: ${row.name}`);
+        continue;
+      }
+
+      const externalId = faceExternalId(row.id, i + 1);
+      const faceId = await indexFaceBytes(imageBytes, externalId);
+      if (!faceId) {
+        console.warn(`No face in image ${i + 1}/${urls.length}: ${row.name}`);
+        continue;
+      }
+
+      faceIds.push(faceId);
+      indexedUrls.push(urls[i]);
+      if (i < urls.length - 1) await sleep(Math.min(opts.delayMs, 250));
     }
 
-    const faceId = await indexFaceBytes(imageBytes, row.id);
-    if (!faceId) {
+    if (faceIds.length === 0) {
       console.warn(`Skip (no face): ${row.name}`);
       return "failed";
     }
@@ -278,10 +308,16 @@ async function indexRow(
       name: row.name,
       niche,
       wikipedia,
-      imageUrl: row.imageUrl,
-      faceId,
+      imageUrl: indexedUrls[0] ?? row.imageUrl,
+      imageUrls: indexedUrls,
+      faceId: faceIds[0],
+      faceIds,
       indexedAt: new Date().toISOString(),
     });
+
+    if (faceIds.length > 1) {
+      console.log(`  → ${faceIds.length} faces indexed for ${row.name}`);
+    }
 
     return "imported";
   } catch (err) {

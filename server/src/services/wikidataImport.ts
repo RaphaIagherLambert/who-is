@@ -2,6 +2,8 @@ export interface WikidataImportRow {
   id: string;
   name: string;
   imageUrl: string;
+  /** Up to a few Commons images (P18) for multi-face indexing. */
+  imageUrls: string[];
   articleUrl?: string;
 }
 
@@ -270,6 +272,7 @@ function parseSparqlBindings(bindings: SparqlBinding[]): WikidataImportRow[] {
       id,
       name: label,
       imageUrl: normalizeCommonsImageUrl(imageUrl),
+      imageUrls: [normalizeCommonsImageUrl(imageUrl)],
     });
   }
 
@@ -538,20 +541,24 @@ export async function fetchWikidataPersonForImport(
   const imageClaims = entity?.claims?.P18 ?? [];
 
   let imageUrl: string | null = null;
+  const imageUrls: string[] = [];
   for (const claim of imageClaims) {
     const filename = claim.mainsnak?.datavalue?.value;
     if (typeof filename === "string" && filename.length > 0) {
-      imageUrl = commonsUrlFromFilename(filename);
-      break;
+      const url = commonsUrlFromFilename(filename);
+      if (!imageUrl) imageUrl = url;
+      if (!imageUrls.includes(url)) imageUrls.push(url);
+      if (imageUrls.length >= 3) break;
     }
   }
 
-  if (!imageUrl) return null;
+  if (!imageUrl || imageUrls.length === 0) return null;
 
   return {
     id,
     name: meta.name,
     imageUrl,
+    imageUrls,
     articleUrl: meta.wikipedia.url,
   };
 }

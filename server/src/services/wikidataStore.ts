@@ -25,7 +25,10 @@ export interface WikidataPersonRecord {
   niche: WikidataNiche;
   wikipedia: WikipediaPage;
   imageUrl: string;
+  /** Extra Commons images indexed for this person (multi-face). */
+  imageUrls?: string[];
   faceId?: string;
+  faceIds?: string[];
   indexedAt: string;
 }
 

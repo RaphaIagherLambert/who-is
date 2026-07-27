@@ -1,5 +1,7 @@
 import type { CelebrityMatch } from "./types.js";
 
+export type RecognitionMode = "strict" | "curious";
+
 export interface MatchFilterConfig {
   minConfidence: number;
   /** Top match must beat the runner-up by at least this many points. */
@@ -25,6 +27,10 @@ export interface FilterResult {
   reason: RejectReason | null;
 }
 
+export function parseRecognitionMode(value: unknown): RecognitionMode {
+  return value === "curious" ? "curious" : "strict";
+}
+
 export function loadMatchFilterConfig(): MatchFilterConfig {
   return {
     minConfidence: Number(process.env.MIN_CONFIDENCE) || 97,
@@ -36,6 +42,38 @@ export function loadMatchFilterConfig(): MatchFilterConfig {
     maxPoseYaw: Number(process.env.MAX_POSE_YAW) || 35,
     maxPosePitch: Number(process.env.MAX_POSE_PITCH) || 30,
   };
+}
+
+/** Curious mode lowers the bar but keeps quality gates from going fully open. */
+export function applyRecognitionMode(
+  config: MatchFilterConfig,
+  mode: RecognitionMode
+): MatchFilterConfig {
+  if (mode === "strict") return config;
+
+  return {
+    ...config,
+    minConfidence:
+      Number(process.env.CURIOUS_MIN_CONFIDENCE) ||
+      Math.min(config.minConfidence, 90),
+    minMargin:
+      Number(process.env.CURIOUS_MIN_MATCH_MARGIN) ||
+      Math.min(config.minMargin, 6),
+    minFaceConfidence: Math.min(config.minFaceConfidence, 85),
+    minSharpness: Math.min(config.minSharpness, 25),
+    maxPoseYaw: Math.max(config.maxPoseYaw, 50),
+    maxPosePitch: Math.max(config.maxPosePitch, 45),
+  };
+}
+
+/** Below strict celebrity confidence → show uncertain badge in curious mode. */
+export function isUncertainConfidence(
+  confidence: number,
+  mode: RecognitionMode
+): boolean {
+  if (mode !== "curious") return false;
+  const strictMin = Number(process.env.MIN_CONFIDENCE) || 97;
+  return confidence < strictMin;
 }
 
 function passesQualityChecks(match: CelebrityMatch, config: MatchFilterConfig): boolean {
