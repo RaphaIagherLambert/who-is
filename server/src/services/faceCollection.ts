@@ -23,14 +23,9 @@ export function getCollectionId(): string {
   return process.env.REKOGNITION_COLLECTION_ID ?? "who-is-faces";
 }
 
-function getMinSimilarity(mode: "strict" | "curious" = "strict"): number {
-  const strict = Number(process.env.MIN_FACE_SIMILARITY) || 95;
-  if (mode === "curious") {
-    return (
-      Number(process.env.CURIOUS_MIN_FACE_SIMILARITY) || Math.min(strict, 88)
-    );
-  }
-  return strict;
+function getMinSimilarity(): number {
+  // Slightly lower than studio-photo defaults — helps paused video / TV frames.
+  return Number(process.env.MIN_FACE_SIMILARITY) || 88;
 }
 
 /** AWS ExternalImageId for the nth face of a person (1-based). */
@@ -115,13 +110,12 @@ export interface FaceCollectionMatch {
 }
 
 export async function searchFaceCollection(
-  imageBase64: string,
-  mode: "strict" | "curious" = "strict"
+  imageBase64: string
 ): Promise<FaceCollectionMatch | null> {
   if (!(await ensureFaceCollection())) return null;
 
   const imageBytes = Buffer.from(imageBase64, "base64");
-  const minSimilarity = getMinSimilarity(mode);
+  const minSimilarity = getMinSimilarity();
 
   const response = await getClient().send(
     new SearchFacesByImageCommand({
@@ -150,7 +144,6 @@ export function getFaceCollectionStatus() {
     enabled: isFaceCollectionEnabled(),
     ready: collectionReady,
     collectionId: getCollectionId(),
-    minSimilarity: getMinSimilarity("strict"),
-    curiousMinSimilarity: getMinSimilarity("curious"),
+    minSimilarity: getMinSimilarity(),
   };
 }

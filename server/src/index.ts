@@ -45,7 +45,7 @@ app.get("/api/health", async (_req, res) => {
     res.json({
       ok: true,
       provider: process.env.RECOGNITION_PROVIDER ?? "mock",
-      minConfidence: Number(process.env.MIN_CONFIDENCE) || 97,
+      minConfidence: Number(process.env.MIN_CONFIDENCE) || 90,
       collection: {
         enabled: collection.enabled,
         ready: collection.ready,

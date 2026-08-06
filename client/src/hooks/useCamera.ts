@@ -106,7 +106,7 @@ export function useCamera() {
     if (!ctx) return null;
 
     ctx.drawImage(video, 0, 0);
-    return canvas.toDataURL("image/jpeg", 0.88);
+    return canvas.toDataURL("image/jpeg", 0.92);
   }, []);
 
   const captureBurst = useCallback(

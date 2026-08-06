@@ -22,7 +22,6 @@ export interface IdentifyResult extends CelebrityMatch {
   wikipedia: WikipediaPage | null;
   source?: "celebrity" | "learned" | "wikidata";
   niche?: "us-actor" | "us-musician" | "us-influencer" | "eu-actor" | "eu-musician" | "eu-influencer" | "br-actor" | "br-musician" | "br-influencer" | "latam-actor" | "latam-musician" | "asia-actor" | "asia-musician";
-  uncertain?: boolean;
 }
 
 export interface IdentifyResponse {
@@ -37,34 +36,42 @@ export interface IdentifyResponse {
     | null;
   allMatches: CelebrityMatch[];
   minConfidence: number;
-  mode?: "strict" | "curious";
-  uncertain?: boolean;
   lang: string;
   provider: string;
 }
 
 export type RejectReason = IdentifyResponse["rejectReason"];
 
-/** Try each frame until one identifies a person (burst / retry). */
+/**
+ * Try all frames and keep the strongest successful match (helps paused / moving video).
+ */
 export async function identifyBestFromFrames(
   frames: string[],
   lang: string,
-  onAttempt?: (index: number, total: number) => void,
-  mode: "strict" | "curious" = "strict"
+  onAttempt?: (index: number, total: number) => void
 ): Promise<{
   result: IdentifyResult | null;
   rejectReason: RejectReason;
   framesTried: number;
 }> {
   let lastReject: RejectReason = null;
+  let best: IdentifyResult | null = null;
 
   for (let i = 0; i < frames.length; i++) {
     onAttempt?.(i + 1, frames.length);
-    const res = await identifyImage(frames[i], lang, mode);
-    if (res.results[0]) {
-      return { result: res.results[0], rejectReason: null, framesTried: i + 1 };
+    const res = await identifyImage(frames[i], lang);
+    const candidate = res.results[0];
+    if (candidate) {
+      if (!best || candidate.confidence > best.confidence) {
+        best = candidate;
+      }
+    } else {
+      lastReject = res.rejectReason;
     }
-    lastReject = res.rejectReason;
+  }
+
+  if (best) {
+    return { result: best, rejectReason: null, framesTried: frames.length };
   }
 
   return { result: null, rejectReason: lastReject, framesTried: frames.length };
@@ -72,13 +79,12 @@ export async function identifyBestFromFrames(
 
 export async function identifyImage(
   imageBase64: string,
-  lang: string,
-  mode: "strict" | "curious" = "strict"
+  lang: string
 ): Promise<IdentifyResponse> {
   const res = await fetch("/api/identify", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ image: imageBase64, lang, mode }),
+    body: JSON.stringify({ image: imageBase64, lang }),
   });
 
   if (!res.ok) {
