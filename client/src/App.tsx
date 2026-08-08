@@ -63,6 +63,8 @@ export default function App() {
   const [status, setStatus] = useState("");
   const [match, setMatch] = useState<CelebrityMatch | null>(null);
   const [wiki, setWiki] = useState<WikipediaPage | null>(null);
+  const [wikiAlternatives, setWikiAlternatives] = useState<WikipediaPage[]>([]);
+  const [wikiAmbiguous, setWikiAmbiguous] = useState(false);
   const [resultSource, setResultSource] = useState<
     "celebrity" | "learned" | "wikidata" | null
   >(null);
@@ -111,6 +113,8 @@ export default function App() {
     setError(null);
     setMatch(null);
     setWiki(null);
+    setWikiAlternatives([]);
+    setWikiAmbiguous(false);
     setResultSource(null);
     setResultNiche(null);
     setLastFailedFrame(null);
@@ -121,6 +125,8 @@ export default function App() {
     setMatch(best);
     setStatus(t.identified(best.name, best.confidence));
     setWiki(best.wikipedia);
+    setWikiAlternatives(best.wikipediaAlternatives ?? []);
+    setWikiAmbiguous(Boolean(best.wikipediaAmbiguous));
     setResultSource(best.source ?? "celebrity");
     setResultNiche(best.niche ?? null);
   };
@@ -256,6 +262,8 @@ export default function App() {
     setLastFailedFrame(null);
     setMatch({ name, confidence: 100 });
     setWiki(page);
+    setWikiAlternatives([page]);
+    setWikiAmbiguous(false);
     setResultSource("learned");
     setResultNiche(null);
     setStatus(t.teachSuccess(name));
@@ -419,7 +427,32 @@ export default function App() {
         </button>
       )}
 
-      {wiki && match && phase === "idle" && (
+      {match && phase === "idle" && wikiAmbiguous && wikiAlternatives.length > 0 && (
+        <div className="result-card result-card-multi">
+          <div className="result-card-body">
+            <h2>{match.name}</h2>
+            <p className="wiki-pick-title">{t.wikiPickTitle}</p>
+            <p className="wiki-pick-hint">{t.wikiPickHint}</p>
+            <ul className="wiki-pick-list">
+              {wikiAlternatives.map((page) => (
+                <li key={page.url}>
+                  <a href={page.url} target="_blank" rel="noopener noreferrer">
+                    <span className="wiki-pick-name">{page.title}</span>
+                    {page.description && (
+                      <span className="wiki-pick-desc">{page.description}</span>
+                    )}
+                    <span className="wiki-pick-meta">
+                      {t.wikiLang(page.lang)} →
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
+
+      {wiki && match && phase === "idle" && !wikiAmbiguous && (
         <a
           className="result-card"
           href={wiki.url}
@@ -437,7 +470,12 @@ export default function App() {
                 {wikidataBadgeForNiche(resultNiche, t)}
               </span>
             )}
-            <span className="result-link">{t.wikiLink} →</span>
+            {wiki.description && (
+              <span className="wiki-single-desc">{wiki.description}</span>
+            )}
+            <span className="result-link">
+              {t.wikiLink} ({t.wikiLang(wiki.lang)}) →
+            </span>
           </div>
         </a>
       )}

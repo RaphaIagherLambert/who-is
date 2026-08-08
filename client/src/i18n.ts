@@ -19,6 +19,9 @@ export const translations = {
     noWiki: (name: string) =>
       `${name} identificado, mas não há página na Wikipedia`,
     wikiLink: "Ver na Wikipedia",
+    wikiPickTitle: "Várias páginas possíveis",
+    wikiPickHint: "Escolha a Wikipedia da pessoa correta:",
+    wikiLang: (lang: string) => lang.toUpperCase(),
     errorGeneric: "Algo deu errado",
     cameraError: "Câmera indisponível ou acesso negado",
     foresightLabel: "Mira — toque para abrir a câmera e identificar",
@@ -94,6 +97,9 @@ export const translations = {
     noWiki: (name: string) =>
       `${name} identified, but no Wikipedia page was found`,
     wikiLink: "View on Wikipedia",
+    wikiPickTitle: "Several possible pages",
+    wikiPickHint: "Pick the Wikipedia page for the correct person:",
+    wikiLang: (lang: string) => lang.toUpperCase(),
     errorGeneric: "Something went wrong",
     cameraError: "Camera unavailable or access denied",
     foresightLabel: "Sight — tap to open camera and identify",

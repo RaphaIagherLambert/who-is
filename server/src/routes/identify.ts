@@ -5,10 +5,13 @@ import {
   pickConfidentMatch,
 } from "../services/matchFilter.js";
 import { createRecognitionProvider } from "../services/providerFactory.js";
-import { fetchWikidataEntityMetadata } from "../services/wikidataImport.js";
 import { getWikidataPersonById } from "../services/wikidataStore.js";
 import { getTeachingById } from "../services/teachingsStore.js";
-import { findWikipediaPage } from "../services/wikipedia.js";
+import {
+  resolvePersonWikipedia,
+  wikipediaForWikidataId,
+  type WikipediaPage,
+} from "../services/wikipedia.js";
 import { parseImagePayload } from "../utils/imagePayload.js";
 
 export const identifyRouter = Router();
@@ -25,24 +28,26 @@ function getProvider() {
 async function resolveCollectionMatch(externalId: string, lang: string) {
   const wikidata = await getWikidataPersonById(externalId);
   if (wikidata) {
+    const preferred = await wikipediaForWikidataId(wikidata.id, lang);
+    const page = preferred?.page ?? wikidata.wikipedia;
     return {
-      name: wikidata.name,
-      wikipedia: wikidata.wikipedia,
+      name: preferred?.name ?? wikidata.name,
+      wikipedia: page,
+      wikipediaAlternatives: [page],
+      wikipediaAmbiguous: false,
       source: "wikidata" as const,
       niche: wikidata.niche,
     };
   }
 
   if (/^Q\d+$/.test(externalId)) {
-    const live = await fetchWikidataEntityMetadata(externalId);
-    if (live) {
-      const localized =
-        lang.startsWith("pt") && live.wikipedia.lang === "en"
-          ? (await findWikipediaPage(live.name, "pt")) ?? live.wikipedia
-          : live.wikipedia;
+    const preferred = await wikipediaForWikidataId(externalId, lang);
+    if (preferred) {
       return {
-        name: live.name,
-        wikipedia: localized,
+        name: preferred.name,
+        wikipedia: preferred.page,
+        wikipediaAlternatives: [preferred.page],
+        wikipediaAmbiguous: false,
         source: "wikidata" as const,
       };
     }
@@ -53,11 +58,27 @@ async function resolveCollectionMatch(externalId: string, lang: string) {
     return {
       name: teaching.name,
       wikipedia: teaching.wikipedia,
+      wikipediaAlternatives: [teaching.wikipedia],
+      wikipediaAmbiguous: false,
       source: "learned" as const,
     };
   }
 
   return null;
+}
+
+function wikiPayload(wiki: {
+  wikipedia: WikipediaPage | null;
+  wikipediaAlternatives?: WikipediaPage[];
+  wikipediaAmbiguous?: boolean;
+}) {
+  const alternatives = wiki.wikipediaAlternatives ?? [];
+  const ambiguous = Boolean(wiki.wikipediaAmbiguous);
+  return {
+    wikipedia: ambiguous ? null : wiki.wikipedia,
+    wikipediaAlternatives: alternatives,
+    wikipediaAmbiguous: ambiguous,
+  };
 }
 
 /**
@@ -82,12 +103,13 @@ identifyRouter.post("/", async (req, res) => {
         lang
       );
       if (person) {
+        const wiki = wikiPayload(person);
         res.json({
           results: [
             {
               name: person.name,
               confidence: collectionMatch.similarity,
-              wikipedia: person.wikipedia,
+              ...wiki,
               source: person.source,
               niche: person.niche,
             },
@@ -117,8 +139,9 @@ identifyRouter.post("/", async (req, res) => {
       return;
     }
 
-    const wiki = await findWikipediaPage(match.name, lang);
-    if (!wiki) {
+    const resolved = await resolvePersonWikipedia(match.name, lang);
+
+    if (resolved.alternatives.length === 0 && !resolved.primary) {
       res.json({
         results: [],
         rejectReason: "no_wiki",
@@ -131,7 +154,15 @@ identifyRouter.post("/", async (req, res) => {
     }
 
     res.json({
-      results: [{ ...match, wikipedia: wiki, source: "celebrity" }],
+      results: [
+        {
+          ...match,
+          wikipedia: resolved.ambiguous ? null : resolved.primary,
+          wikipediaAlternatives: resolved.alternatives,
+          wikipediaAmbiguous: resolved.ambiguous,
+          source: "celebrity",
+        },
+      ],
       rejectReason: null,
       allMatches: matches,
       minConfidence: filterConfig.minConfidence,

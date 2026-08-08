@@ -20,6 +20,8 @@ export interface WikipediaPage {
 
 export interface IdentifyResult extends CelebrityMatch {
   wikipedia: WikipediaPage | null;
+  wikipediaAlternatives?: WikipediaPage[];
+  wikipediaAmbiguous?: boolean;
   source?: "celebrity" | "learned" | "wikidata";
   niche?: "us-actor" | "us-musician" | "us-influencer" | "eu-actor" | "eu-musician" | "eu-influencer" | "br-actor" | "br-musician" | "br-influencer" | "latam-actor" | "latam-musician" | "asia-actor" | "asia-musician";
 }
@@ -62,7 +64,11 @@ export async function identifyBestFromFrames(
     const res = await identifyImage(frames[i], lang);
     const candidate = res.results[0];
     if (candidate) {
-      if (!best || candidate.confidence > best.confidence) {
+      // Success if we have a primary page OR alternative person pages to pick from.
+      const hasWiki =
+        Boolean(candidate.wikipedia) ||
+        (candidate.wikipediaAlternatives?.length ?? 0) > 0;
+      if (hasWiki && (!best || candidate.confidence > best.confidence)) {
         best = candidate;
       }
     } else {
