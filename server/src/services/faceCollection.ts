@@ -110,8 +110,7 @@ export interface FaceCollectionMatch {
 }
 
 export async function searchFaceCollection(
-  imageBase64: string,
-  minSimilarity = getMinSimilarity()
+  imageBase64: string
 ): Promise<FaceCollectionMatch | null> {
   if (!(await ensureFaceCollection())) return null;
 
