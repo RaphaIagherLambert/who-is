@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { searchFaceCollection } from "../services/faceCollection.js";
+import { scoreImageQuality } from "../services/imageQuality.js";
 import {
   loadMatchFilterConfig,
   pickConfidentMatch,
@@ -95,6 +96,19 @@ identifyRouter.post("/", async (req, res) => {
     const lang = typeof req.body?.lang === "string" ? req.body.lang : "en";
     const filterConfig = loadMatchFilterConfig();
     const providerName = process.env.RECOGNITION_PROVIDER ?? "mock";
+
+    const quality = scoreImageQuality(parsed.base64);
+    if (!quality.ok) {
+      res.json({
+        results: [],
+        rejectReason: quality.reason ?? "poor_quality",
+        allMatches: [],
+        minConfidence: filterConfig.minConfidence,
+        lang,
+        provider: providerName,
+      });
+      return;
+    }
 
     const collectionMatch = await searchFaceCollection(parsed.base64);
     if (collectionMatch) {

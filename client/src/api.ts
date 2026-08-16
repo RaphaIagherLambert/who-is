@@ -44,8 +44,25 @@ export interface IdentifyResponse {
 
 export type RejectReason = IdentifyResponse["rejectReason"];
 
+/** Prefer the tip that most helps the user retry (blur/light before generic). */
+function pickFinalRejectReason(reasons: RejectReason[]): RejectReason {
+  const rank: RejectReason[] = [
+    "poor_quality",
+    "bad_pose",
+    "no_faces",
+    "low_confidence",
+    "ambiguous",
+    "no_wiki",
+  ];
+  for (const reason of rank) {
+    if (reasons.includes(reason)) return reason;
+  }
+  return reasons[reasons.length - 1] ?? null;
+}
+
 /**
  * Try all frames and keep the strongest successful match (helps paused / moving video).
+ * Failure tips are returned only after every frame has been tried.
  */
 export async function identifyBestFromFrames(
   frames: string[],
@@ -56,7 +73,7 @@ export async function identifyBestFromFrames(
   rejectReason: RejectReason;
   framesTried: number;
 }> {
-  let lastReject: RejectReason = null;
+  const rejects: RejectReason[] = [];
   let best: IdentifyResult | null = null;
 
   for (let i = 0; i < frames.length; i++) {
@@ -64,15 +81,16 @@ export async function identifyBestFromFrames(
     const res = await identifyImage(frames[i], lang);
     const candidate = res.results[0];
     if (candidate) {
-      // Success if we have a primary page OR alternative person pages to pick from.
       const hasWiki =
         Boolean(candidate.wikipedia) ||
         (candidate.wikipediaAlternatives?.length ?? 0) > 0;
       if (hasWiki && (!best || candidate.confidence > best.confidence)) {
         best = candidate;
+      } else if (!hasWiki) {
+        rejects.push("no_wiki");
       }
     } else {
-      lastReject = res.rejectReason;
+      rejects.push(res.rejectReason);
     }
   }
 
@@ -80,7 +98,11 @@ export async function identifyBestFromFrames(
     return { result: best, rejectReason: null, framesTried: frames.length };
   }
 
-  return { result: null, rejectReason: lastReject, framesTried: frames.length };
+  return {
+    result: null,
+    rejectReason: pickFinalRejectReason(rejects),
+    framesTried: frames.length,
+  };
 }
 
 export async function identifyImage(

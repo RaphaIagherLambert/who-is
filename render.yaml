@@ -30,6 +30,10 @@ services:
         value: "50"
       - key: MAX_POSE_PITCH
         value: "45"
+      - key: PRE_AWS_QUALITY_ENABLED
+        value: "true"
+      - key: PRE_AWS_MIN_SHARPNESS
+        value: "12"
       - key: CUSTOM_TEACH_ENABLED
         value: "true"
       - key: ADMIN_SECRET

@@ -162,17 +162,16 @@ export default function App() {
       setPhase("processing");
       setStatus(t.scanning);
 
-      const { result: best, rejectReason, framesTried } =
-        await identifyBestFromFrames(
-          frames,
-          toApiLanguage(lang),
-          (n, total) => {
-            if (n > 1) setStatus(t.retryingFrame(n, total));
-          }
-        );
+      const { result: best, rejectReason } = await identifyBestFromFrames(
+        frames,
+        toApiLanguage(lang),
+        (n, total) => {
+          setStatus(t.retryingFrame(n, total));
+        }
+      );
 
       if (!best) {
-        setLastFailedFrame(frames[framesTried - 1] ?? frames[0]);
+        setLastFailedFrame(frames[frames.length - 1] ?? frames[0]);
         setStatus(messageForRejectReason(rejectReason, t));
         return;
       }

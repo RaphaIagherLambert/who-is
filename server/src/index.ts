@@ -8,6 +8,7 @@ dotenv.config({ path: path.join(__dirname, "../../.env") });
 import cors from "cors";
 import express from "express";
 import fs from "fs";
+import { loadPreAwsQualityConfig } from "./services/imageQuality.js";
 import { identifyRouter } from "./routes/identify.js";
 import { recognizeRouter } from "./routes/recognize.js";
 import { teachRouter } from "./routes/teach.js";
@@ -46,6 +47,7 @@ app.get("/api/health", async (_req, res) => {
       ok: true,
       provider: process.env.RECOGNITION_PROVIDER ?? "mock",
       minConfidence: Number(process.env.MIN_CONFIDENCE) || 90,
+      preAwsQuality: loadPreAwsQualityConfig(),
       collection: {
         enabled: collection.enabled,
         ready: collection.ready,
