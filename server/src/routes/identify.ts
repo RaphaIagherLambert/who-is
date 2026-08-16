@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { prepareFaceImage } from "../services/faceCrop.js";
 import { searchFaceCollection } from "../services/faceCollection.js";
 import { scoreImageQuality } from "../services/imageQuality.js";
 import {
@@ -110,7 +111,22 @@ identifyRouter.post("/", async (req, res) => {
       return;
     }
 
-    const collectionMatch = await searchFaceCollection(parsed.base64);
+    const prepared = await prepareFaceImage(parsed.base64);
+    if (prepared.facesFound === 0) {
+      res.json({
+        results: [],
+        rejectReason: "no_faces",
+        allMatches: [],
+        minConfidence: filterConfig.minConfidence,
+        lang,
+        provider: providerName,
+      });
+      return;
+    }
+
+    const imageForAws = prepared.imageBase64;
+
+    const collectionMatch = await searchFaceCollection(imageForAws);
     if (collectionMatch) {
       const person = await resolveCollectionMatch(
         collectionMatch.externalId,
@@ -138,7 +154,7 @@ identifyRouter.post("/", async (req, res) => {
       }
     }
 
-    const matches = await getProvider().recognize(parsed.base64);
+    const matches = await getProvider().recognize(imageForAws);
     const { match, reason } = pickConfidentMatch(matches, filterConfig);
 
     if (!match) {
