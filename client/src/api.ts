@@ -95,7 +95,11 @@ export async function identifyBestFromFrames(
   }
 
   if (best) {
-    return { result: best, rejectReason: null, framesTried: frames.length };
+    return {
+      result: best,
+      rejectReason: null,
+      framesTried: frames.length,
+    };
   }
 
   return {

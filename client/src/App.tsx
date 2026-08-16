@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState, type ChangeEvent } from "react";
+import { useCallback, useEffect, useRef, useState, type ChangeEvent } from "react";
 
 import {
   CelebrityMatch,
@@ -8,6 +8,8 @@ import {
   type IdentifyResult,
 } from "./api";
 import { AdminUnlock, TeachPanel } from "./components/TeachPanel";
+import { ColdStartBanner } from "./components/ColdStartBanner";
+import { LegalSheet } from "./components/LegalSheet";
 import {
   OnboardingGuide,
   shouldShowOnboarding,
@@ -22,6 +24,7 @@ import {
 import { messageForRejectReason, readImageFile } from "./identifyHelpers";
 import { useCamera, wait } from "./hooks/useCamera";
 import { useAdminMode } from "./hooks/useAdminMode";
+import type { LegalDoc } from "./legal";
 
 type CapturePhase = "idle" | "viewfinder" | "shutter" | "processing";
 
@@ -75,10 +78,15 @@ export default function App() {
   const [teachOpen, setTeachOpen] = useState(false);
   const [lastFailedFrame, setLastFailedFrame] = useState<string | null>(null);
   const [showOnboarding, setShowOnboarding] = useState(shouldShowOnboarding);
+  const [legalDoc, setLegalDoc] = useState<LegalDoc | null>(null);
   const busyRef = useRef(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const t = translations[lang];
+
+  useEffect(() => {
+    document.documentElement.lang = lang;
+  }, [lang]);
 
   const {
     isAdmin,
@@ -277,6 +285,7 @@ export default function App() {
 
   return (
     <div className="app">
+      <ColdStartBanner lang={lang} />
       <header className="header">
         <div className="header-top">
           <h1>
@@ -499,6 +508,26 @@ export default function App() {
       {showOnboarding && (
         <OnboardingGuide lang={lang} onDismiss={() => setShowOnboarding(false)} />
       )}
+
+      {legalDoc && (
+        <LegalSheet
+          lang={lang}
+          doc={legalDoc}
+          onClose={() => setLegalDoc(null)}
+        />
+      )}
+
+      <footer className="app-footer">
+        <button type="button" onClick={() => setLegalDoc("privacy")}>
+          {t.footerPrivacy}
+        </button>
+        <button type="button" onClick={() => setLegalDoc("terms")}>
+          {t.footerTerms}
+        </button>
+        <button type="button" onClick={() => setLegalDoc("about")}>
+          {t.footerAbout}
+        </button>
+      </footer>
     </div>
   );
 }

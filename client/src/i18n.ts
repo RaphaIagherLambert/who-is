@@ -80,6 +80,11 @@ export const translations = {
     onboardingStep3: "Toque na mira para identificar",
     onboardingAlt: "Ou envie um print da tela",
     onboardingGotIt: "Entendi",
+    footerPrivacy: "Privacidade",
+    footerTerms: "Termos",
+    footerAbout: "Sobre",
+    legalClose: "Fechar",
+    coldStart: "O servidor está acordando… isso pode levar alguns segundos.",
   },
   en: {
     subtitle: "Point and find out",
@@ -158,6 +163,11 @@ export const translations = {
     onboardingStep3: "Tap the sight to identify",
     onboardingAlt: "Or upload a screenshot",
     onboardingGotIt: "Got it",
+    footerPrivacy: "Privacy",
+    footerTerms: "Terms",
+    footerAbout: "About",
+    legalClose: "Close",
+    coldStart: "The server is waking up… this can take a few seconds.",
   },
 } as const;
 
