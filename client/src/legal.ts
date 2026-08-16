@@ -29,7 +29,7 @@ const docs: Record<
         },
         {
           title: "LGPD",
-          body: "Tratamos a imagem do scan como dado necessário para prestar o serviço que você pediu. Você pode recusar a câmera e usar só o envio de print. Para dúvidas sobre dados, use o contato indicado em Sobre.",
+          body: "Não pedimos nome, e-mail ou cadastro. A imagem do scan é usada só para identificar a figura pública na hora e não fica guardada depois. Você pode recusar a câmera e enviar um print.",
         },
       ],
     },
@@ -90,7 +90,7 @@ const docs: Record<
         },
         {
           title: "Your rights",
-          body: "The scan image is processed to provide the service you asked for. You can deny the camera and upload a screenshot instead. For data questions, use the contact in About.",
+          body: "We do not ask for a name, email, or account. The scan image is used only to identify the public figure in that moment and is not kept afterward. You can deny the camera and upload a screenshot instead.",
         },
       ],
     },
