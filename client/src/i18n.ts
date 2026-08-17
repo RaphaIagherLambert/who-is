@@ -18,6 +18,7 @@ export const translations = {
       `Identificado: ${name} (${confidence.toFixed(0)}%)`,
     noWiki: (name: string) =>
       `${name} identificado, mas não há página na Wikipedia`,
+    googleLink: "Buscar no Google",
     wikiLink: "Ver na Wikipedia",
     wikiPickTitle: "Várias páginas possíveis",
     wikiPickHint: "Escolha a Wikipedia da pessoa correta:",
@@ -101,6 +102,7 @@ export const translations = {
       `Identified: ${name} (${confidence.toFixed(0)}%)`,
     noWiki: (name: string) =>
       `${name} identified, but no Wikipedia page was found`,
+    googleLink: "Search on Google",
     wikiLink: "View on Wikipedia",
     wikiPickTitle: "Several possible pages",
     wikiPickHint: "Pick the Wikipedia page for the correct person:",

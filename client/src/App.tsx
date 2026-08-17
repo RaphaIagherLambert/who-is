@@ -35,6 +35,14 @@ const BURST_COUNT = 6;
 const BURST_INTERVAL_MS = 250;
 const FOCUS_MS = 1100;
 
+function googleSearchUrl(name: string, lang: AppLanguage): string {
+  const query = encodeURIComponent(name);
+  if (lang === "pt") {
+    return `https://www.google.com.br/search?q=${query}&hl=pt-BR`;
+  }
+  return `https://www.google.com/search?q=${query}&hl=en`;
+}
+
 function wikidataBadgeForNiche(
   niche: WikidataNiche | null,
   t: (typeof translations)[AppLanguage]
@@ -435,39 +443,9 @@ export default function App() {
         </button>
       )}
 
-      {match && phase === "idle" && wikiAmbiguous && wikiAlternatives.length > 0 && (
-        <div className="result-card result-card-multi">
-          <div className="result-card-body">
-            <h2>{match.name}</h2>
-            <p className="wiki-pick-title">{t.wikiPickTitle}</p>
-            <p className="wiki-pick-hint">{t.wikiPickHint}</p>
-            <ul className="wiki-pick-list">
-              {wikiAlternatives.map((page) => (
-                <li key={page.url}>
-                  <a href={page.url} target="_blank" rel="noopener noreferrer">
-                    <span className="wiki-pick-name">{page.title}</span>
-                    {page.description && (
-                      <span className="wiki-pick-desc">{page.description}</span>
-                    )}
-                    <span className="wiki-pick-meta">
-                      {t.wikiLang(page.lang)} →
-                    </span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      )}
-
-      {wiki && match && phase === "idle" && !wikiAmbiguous && (
-        <a
-          className="result-card"
-          href={wiki.url}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {wiki.thumbnail && <img src={wiki.thumbnail} alt={match.name} />}
+      {match && phase === "idle" && (
+        <div className="result-card">
+          {wiki?.thumbnail && <img src={wiki.thumbnail} alt={match.name} />}
           <div className="result-card-body">
             <h2>{match.name}</h2>
             {resultSource === "learned" && (
@@ -478,14 +456,50 @@ export default function App() {
                 {wikidataBadgeForNiche(resultNiche, t)}
               </span>
             )}
-            {wiki.description && (
+            {wiki?.description && !wikiAmbiguous && (
               <span className="wiki-single-desc">{wiki.description}</span>
             )}
-            <span className="result-link">
-              {t.wikiLink} ({t.wikiLang(wiki.lang)}) →
-            </span>
+            <a
+              className="result-link result-link-primary"
+              href={googleSearchUrl(match.name, lang)}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t.googleLink} →
+            </a>
+            {wiki && !wikiAmbiguous && (
+              <a
+                className="result-link result-link-alt"
+                href={wiki.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t.wikiLink} ({t.wikiLang(wiki.lang)}) →
+              </a>
+            )}
+            {wikiAmbiguous && wikiAlternatives.length > 0 && (
+              <>
+                <p className="wiki-pick-title">{t.wikiPickTitle}</p>
+                <p className="wiki-pick-hint">{t.wikiPickHint}</p>
+                <ul className="wiki-pick-list">
+                  {wikiAlternatives.map((page) => (
+                    <li key={page.url}>
+                      <a href={page.url} target="_blank" rel="noopener noreferrer">
+                        <span className="wiki-pick-name">{page.title}</span>
+                        {page.description && (
+                          <span className="wiki-pick-desc">{page.description}</span>
+                        )}
+                        <span className="wiki-pick-meta">
+                          {t.wikiLang(page.lang)} →
+                        </span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )}
           </div>
-        </a>
+        </div>
       )}
 
       {unlockOpen && (
