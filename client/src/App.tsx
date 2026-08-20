@@ -333,13 +333,45 @@ export default function App() {
       <div
         className={`target-stage ${isActive ? "active" : ""} ${active ? "camera-live" : ""}`}
       >
-        <video ref={videoRef} playsInline muted className="target-video" />
+        <div className="viewfinder-screen">
+          <video ref={videoRef} playsInline muted className="target-video" />
 
-        {snapshot && (
-          <img src={snapshot} alt="" className="freeze-frame" aria-hidden="true" />
-        )}
+          {snapshot && (
+            <img src={snapshot} alt="" className="freeze-frame" aria-hidden="true" />
+          )}
 
-        <div className="target-vignette" aria-hidden="true" />
+          {!active && !snapshot && (
+            <div className="viewfinder-placeholder" aria-hidden="true" />
+          )}
+        </div>
+
+        <div className="viewfinder-overlay">
+          <div className="vf-top">
+            <div className="vf-top-left">
+              {active && (
+                <span className="vf-live">
+                  <span className="live-dot" /> {t.live}
+                </span>
+              )}
+            </div>
+            <div className="vf-top-right">
+              {isActive && <span className="vf-af">{t.afLock}</span>}
+            </div>
+          </div>
+
+          <div className="viewfinder-frame">
+            <span className="corner tl" />
+            <span className="corner tr" />
+            <span className="corner bl" />
+            <span className="corner br" />
+            <div className="vf-center-mark">(+)</div>
+            {isActive && <div className="focus-ring" />}
+          </div>
+
+          <div className="vf-bottom">
+            <span className="vf-brand">WHO IS?</span>
+          </div>
+        </div>
 
         <button
           type="button"
@@ -348,45 +380,12 @@ export default function App() {
           disabled={busy}
           aria-label={t.foresightLabel}
         >
-          <span className="foresight-hint">
-            {starting ? "…" : active ? "◎" : "◉"}
-          </span>
-        </button>
-
-        <div className="viewfinder-hud" aria-hidden={!isActive}>
-          <div className="hud-top">
-            <span className="hud-rec">
-              <span className="rec-dot" /> {t.rec}
+          {!active && (
+            <span className="foresight-hint">
+              {starting ? "…" : "◉"}
             </span>
-            <span className="hud-meta">4K · 24fps</span>
-          </div>
-          <div className="hud-bottom">
-            <span className="hud-af">{t.afLock}</span>
-            <span className="hud-focal">85mm · f/1.8</span>
-            <span className="hud-iso">ISO 400</span>
-          </div>
-        </div>
-
-        <div className="viewfinder-frame" aria-hidden="true">
-          <div className="viewfinder-ring" />
-          <span className="corner tl" />
-          <span className="corner tr" />
-          <span className="corner bl" />
-          <span className="corner br" />
-          <div className="focus-ring" />
-          <div className="grid-lines">
-            <span />
-            <span />
-            <span />
-            <span />
-          </div>
-        </div>
-
-        <div className="lens-ring" aria-hidden="true" />
-        <div className="target-crosshair" aria-hidden="true">
-          <span />
-          <span />
-        </div>
+          )}
+        </button>
 
         {flash && <div className="shutter-flash" aria-hidden="true" />}
       </div>
