@@ -21,7 +21,7 @@ import {
   toApiLanguage,
   translations,
 } from "./i18n";
-import { messageForRejectReason, readImageFile } from "./identifyHelpers";
+import { messageForRejectReason, readImageFile, type RejectReason } from "./identifyHelpers";
 import { useCamera, wait } from "./hooks/useCamera";
 import { useAdminMode } from "./hooks/useAdminMode";
 import type { LegalDoc } from "./legal";
@@ -85,6 +85,7 @@ export default function App() {
   const [flash, setFlash] = useState(false);
   const [teachOpen, setTeachOpen] = useState(false);
   const [lastFailedFrame, setLastFailedFrame] = useState<string | null>(null);
+  const [lastRejectReason, setLastRejectReason] = useState<RejectReason>(null);
   const [showOnboarding, setShowOnboarding] = useState(shouldShowOnboarding);
   const [legalDoc, setLegalDoc] = useState<LegalDoc | null>(null);
   const busyRef = useRef(false);
@@ -134,6 +135,7 @@ export default function App() {
     setResultSource(null);
     setResultNiche(null);
     setLastFailedFrame(null);
+    setLastRejectReason(null);
     setTeachOpen(false);
   };
 
@@ -188,7 +190,7 @@ export default function App() {
 
       if (!best) {
         setLastFailedFrame(frames[frames.length - 1] ?? frames[0]);
-        setStatus(messageForRejectReason(rejectReason, t));
+        setLastRejectReason(rejectReason);
         return;
       }
 
@@ -225,7 +227,7 @@ export default function App() {
 
         if (!best) {
           setLastFailedFrame(dataUrl);
-          setStatus(messageForRejectReason(rejectReason, t));
+          setLastRejectReason(rejectReason);
           return;
         }
 
@@ -275,6 +277,7 @@ export default function App() {
   const handleTeachSuccess = (name: string, page: WikipediaPage) => {
     setTeachOpen(false);
     setLastFailedFrame(null);
+    setLastRejectReason(null);
     setMatch({ name, confidence: 100 });
     setWiki(page);
     setWikiAlternatives([page]);
@@ -285,8 +288,14 @@ export default function App() {
   };
 
   const isActive = phase !== "idle";
+  const rejectTip =
+    lastRejectReason && phase === "idle" && !match
+      ? messageForRejectReason(lastRejectReason, t)
+      : null;
   const displayStatus =
-    status || (active ? t.aimAndTap : starting ? t.openingCamera : t.idle);
+    rejectTip ||
+    status ||
+    (active ? t.aimAndTap : starting ? t.openingCamera : t.idle);
   const busy = phase !== "idle" || starting;
   const showTeachButton =
     isAdmin && phase === "idle" && !match && Boolean(lastFailedFrame);
