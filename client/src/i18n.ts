@@ -87,6 +87,12 @@ export const translations = {
     footerAbout: "Sobre",
     legalClose: "Fechar",
     coldStart: "O servidor está acordando… isso pode levar alguns segundos.",
+    cancelScan: "Cancelar",
+    cancelled: "Identificação cancelada",
+    detectingFaces: "Detectando rostos…",
+    pickFaceTitle: "Quem identificar?",
+    pickFaceHint: "Toque no rosto da pessoa que você quer reconhecer.",
+    pickFacePerson: (n: number) => `Pessoa ${n}`,
   },
   en: {
     subtitle: "Point and find out",
@@ -172,6 +178,12 @@ export const translations = {
     footerAbout: "About",
     legalClose: "Close",
     coldStart: "The server is waking up… this can take a few seconds.",
+    cancelScan: "Cancel",
+    cancelled: "Identification cancelled",
+    detectingFaces: "Detecting faces…",
+    pickFaceTitle: "Who should we identify?",
+    pickFaceHint: "Tap the face of the person you want to recognize.",
+    pickFacePerson: (n: number) => `Person ${n}`,
   },
 } as const;
 

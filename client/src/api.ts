@@ -67,7 +67,8 @@ function pickFinalRejectReason(reasons: RejectReason[]): RejectReason {
 export async function identifyBestFromFrames(
   frames: string[],
   lang: string,
-  onAttempt?: (index: number, total: number) => void
+  onAttempt?: (index: number, total: number) => void,
+  options?: { signal?: AbortSignal; faceIndex?: number }
 ): Promise<{
   result: IdentifyResult | null;
   rejectReason: RejectReason;
@@ -77,8 +78,14 @@ export async function identifyBestFromFrames(
   let best: IdentifyResult | null = null;
 
   for (let i = 0; i < frames.length; i++) {
+    if (options?.signal?.aborted) {
+      throw new DOMException("Aborted", "AbortError");
+    }
     onAttempt?.(i + 1, frames.length);
-    const res = await identifyImage(frames[i], lang);
+    const res = await identifyImage(frames[i], lang, {
+      signal: options?.signal,
+      faceIndex: options?.faceIndex,
+    });
     const candidate = res.results[0];
     if (candidate) {
       const hasWiki =
@@ -109,14 +116,47 @@ export async function identifyBestFromFrames(
   };
 }
 
+export interface FaceBox {
+  left: number;
+  top: number;
+  width: number;
+  height: number;
+}
+
+export async function detectFacesInImage(
+  imageBase64: string,
+  signal?: AbortSignal
+): Promise<FaceBox[]> {
+  const res = await fetch("/api/identify/faces", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ image: imageBase64 }),
+    signal,
+  });
+
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.error ?? "Face detection failed");
+  }
+
+  const data = (await res.json()) as { faces?: FaceBox[] };
+  return data.faces ?? [];
+}
+
 export async function identifyImage(
   imageBase64: string,
-  lang: string
+  lang: string,
+  options?: { signal?: AbortSignal; faceIndex?: number }
 ): Promise<IdentifyResponse> {
   const res = await fetch("/api/identify", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ image: imageBase64, lang }),
+    body: JSON.stringify({
+      image: imageBase64,
+      lang,
+      faceIndex: options?.faceIndex ?? 0,
+    }),
+    signal: options?.signal,
   });
 
   if (!res.ok) {

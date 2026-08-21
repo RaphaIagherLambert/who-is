@@ -2,13 +2,16 @@ import { useCallback, useEffect, useRef, useState, type ChangeEvent } from "reac
 
 import {
   CelebrityMatch,
+  detectFacesInImage,
   identifyBestFromFrames,
   identifyImage,
   WikipediaPage,
+  type FaceBox,
   type IdentifyResult,
 } from "./api";
 import { AdminUnlock, TeachPanel } from "./components/TeachPanel";
 import { ColdStartBanner } from "./components/ColdStartBanner";
+import { FacePicker } from "./components/FacePicker";
 import { LegalSheet } from "./components/LegalSheet";
 import {
   OnboardingGuide,
@@ -26,7 +29,12 @@ import { useCamera, wait } from "./hooks/useCamera";
 import { useAdminMode } from "./hooks/useAdminMode";
 import type { LegalDoc } from "./legal";
 
-type CapturePhase = "idle" | "viewfinder" | "shutter" | "processing";
+type CapturePhase =
+  | "idle"
+  | "viewfinder"
+  | "shutter"
+  | "processing"
+  | "picking";
 
 type WikidataNiche = NonNullable<IdentifyResult["niche"]>;
 
@@ -34,6 +42,13 @@ type WikidataNiche = NonNullable<IdentifyResult["niche"]>;
 const BURST_COUNT = 6;
 const BURST_INTERVAL_MS = 250;
 const FOCUS_MS = 1100;
+
+function isAbortError(err: unknown): boolean {
+  return (
+    (err instanceof DOMException && err.name === "AbortError") ||
+    (err instanceof Error && err.name === "AbortError")
+  );
+}
 
 function googleSearchUrl(name: string, lang: AppLanguage): string {
   const query = encodeURIComponent(name);
@@ -88,7 +103,11 @@ export default function App() {
   const [lastRejectReason, setLastRejectReason] = useState<RejectReason>(null);
   const [showOnboarding, setShowOnboarding] = useState(shouldShowOnboarding);
   const [legalDoc, setLegalDoc] = useState<LegalDoc | null>(null);
+  const [pickFaces, setPickFaces] = useState<FaceBox[]>([]);
+  const [pickImage, setPickImage] = useState<string | null>(null);
   const busyRef = useRef(false);
+  const abortRef = useRef<AbortController | null>(null);
+  const pendingFramesRef = useRef<string[]>([]);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const t = translations[lang];
@@ -137,7 +156,33 @@ export default function App() {
     setLastFailedFrame(null);
     setLastRejectReason(null);
     setTeachOpen(false);
+    setPickFaces([]);
+    setPickImage(null);
   };
+
+  const beginAbortable = () => {
+    abortRef.current?.abort();
+    const controller = new AbortController();
+    abortRef.current = controller;
+    return controller.signal;
+  };
+
+  const finishSession = useCallback(() => {
+    pendingFramesRef.current = [];
+    setPickFaces([]);
+    setPickImage(null);
+    setSnapshot(null);
+    setPhase("idle");
+    busyRef.current = false;
+    abortRef.current = null;
+    stopCamera();
+  }, [stopCamera]);
+
+  const cancelIdentify = useCallback(() => {
+    abortRef.current?.abort();
+    finishSession();
+    setStatus(t.cancelled);
+  }, [finishSession, t]);
 
   const applySuccess = (best: IdentifyResult) => {
     setMatch(best);
@@ -149,21 +194,53 @@ export default function App() {
     setResultNiche(best.niche ?? null);
   };
 
+  const identifyFrames = useCallback(
+    async (frames: string[], faceIndex: number, signal: AbortSignal) => {
+      setPhase("processing");
+      setStatus(t.scanning);
+      setPickFaces([]);
+      setPickImage(null);
+
+      const { result: best, rejectReason } = await identifyBestFromFrames(
+        frames,
+        toApiLanguage(lang),
+        (n, total) => {
+          setStatus(t.retryingFrame(n, total));
+        },
+        { signal, faceIndex }
+      );
+
+      if (signal.aborted) throw new DOMException("Aborted", "AbortError");
+
+      if (!best) {
+        setLastFailedFrame(frames[frames.length - 1] ?? frames[0]);
+        setLastRejectReason(rejectReason);
+        return;
+      }
+
+      applySuccess(best);
+    },
+    [lang, t]
+  );
+
   const runIdentify = useCallback(async () => {
     if (busyRef.current || !ready) return;
 
     busyRef.current = true;
     resetResultState();
-
+    const signal = beginAbortable();
+    let holdForPick = false;
     let capturedFrame: string | null = null;
 
     try {
       setPhase("viewfinder");
       setStatus(t.focusing);
       await wait(FOCUS_MS);
+      if (signal.aborted) throw new DOMException("Aborted", "AbortError");
 
       setStatus(t.bursting);
       const frames = await captureBurst(BURST_COUNT, BURST_INTERVAL_MS);
+      if (signal.aborted) throw new DOMException("Aborted", "AbortError");
       if (frames.length === 0) {
         setStatus(t.errorGeneric);
         return;
@@ -176,35 +253,36 @@ export default function App() {
       await wait(120);
       setFlash(false);
       await wait(180);
+      if (signal.aborted) throw new DOMException("Aborted", "AbortError");
 
       setPhase("processing");
-      setStatus(t.scanning);
+      setStatus(t.detectingFaces);
+      const faces = await detectFacesInImage(frames[0], signal);
+      if (signal.aborted) throw new DOMException("Aborted", "AbortError");
 
-      const { result: best, rejectReason } = await identifyBestFromFrames(
-        frames,
-        toApiLanguage(lang),
-        (n, total) => {
-          setStatus(t.retryingFrame(n, total));
-        }
-      );
-
-      if (!best) {
-        setLastFailedFrame(frames[frames.length - 1] ?? frames[0]);
-        setLastRejectReason(rejectReason);
+      if (faces.length > 1) {
+        pendingFramesRef.current = frames;
+        setPickImage(frames[0]);
+        setPickFaces(faces);
+        setSnapshot(frames[0]);
+        setPhase("picking");
+        setStatus(t.pickFaceHint);
+        holdForPick = true;
         return;
       }
 
-      applySuccess(best);
+      await identifyFrames(frames, 0, signal);
     } catch (err) {
+      if (isAbortError(err)) {
+        setStatus(t.cancelled);
+        return;
+      }
       if (capturedFrame) setLastFailedFrame(capturedFrame);
       setError(err instanceof Error ? err.message : t.errorGeneric);
     } finally {
-      setSnapshot(null);
-      setPhase("idle");
-      busyRef.current = false;
-      stopCamera();
+      if (!holdForPick) finishSession();
     }
-  }, [captureBurst, lang, ready, stopCamera, t]);
+  }, [captureBurst, finishSession, identifyFrames, ready, t]);
 
   const runIdentifyFromUpload = useCallback(
     async (dataUrl: string) => {
@@ -213,35 +291,95 @@ export default function App() {
       busyRef.current = true;
       resetResultState();
       stopCamera();
+      const signal = beginAbortable();
+      let holdForPick = false;
 
       try {
         setPhase("processing");
         setSnapshot(dataUrl);
-        setStatus(t.uploading);
+        setStatus(t.detectingFaces);
 
+        const faces = await detectFacesInImage(dataUrl, signal);
+        if (signal.aborted) throw new DOMException("Aborted", "AbortError");
+
+        if (faces.length > 1) {
+          pendingFramesRef.current = [dataUrl];
+          setPickImage(dataUrl);
+          setPickFaces(faces);
+          setSnapshot(dataUrl);
+          setPhase("picking");
+          setStatus(t.pickFaceHint);
+          holdForPick = true;
+          return;
+        }
+
+        setStatus(t.uploading);
         const { results, rejectReason } = await identifyImage(
           dataUrl,
-          toApiLanguage(lang)
+          toApiLanguage(lang),
+          { signal, faceIndex: 0 }
         );
-        const best = results[0] ?? null;
+        if (signal.aborted) throw new DOMException("Aborted", "AbortError");
 
+        const best = results[0] ?? null;
         if (!best) {
           setLastFailedFrame(dataUrl);
           setLastRejectReason(rejectReason);
           return;
         }
-
         applySuccess(best);
       } catch (err) {
+        if (isAbortError(err)) {
+          setStatus(t.cancelled);
+          return;
+        }
         setLastFailedFrame(dataUrl);
         setError(err instanceof Error ? err.message : t.errorGeneric);
       } finally {
-        setSnapshot(null);
-        setPhase("idle");
-        busyRef.current = false;
+        if (!holdForPick) finishSession();
       }
     },
-    [lang, stopCamera, t]
+    [finishSession, lang, stopCamera, t]
+  );
+
+  const handlePickFace = useCallback(
+    async (faceIndex: number) => {
+      const frames = pendingFramesRef.current;
+      if (frames.length === 0 || !abortRef.current) return;
+
+      const signal = abortRef.current.signal;
+      try {
+        setStatus(t.scanning);
+        if (frames.length === 1) {
+          setPhase("processing");
+          const { results, rejectReason } = await identifyImage(
+            frames[0],
+            toApiLanguage(lang),
+            { signal, faceIndex }
+          );
+          if (signal.aborted) throw new DOMException("Aborted", "AbortError");
+          const best = results[0] ?? null;
+          if (!best) {
+            setLastFailedFrame(frames[0]);
+            setLastRejectReason(rejectReason);
+          } else {
+            applySuccess(best);
+          }
+        } else {
+          await identifyFrames(frames, faceIndex, signal);
+        }
+      } catch (err) {
+        if (isAbortError(err)) {
+          setStatus(t.cancelled);
+          return;
+        }
+        setLastFailedFrame(frames[0] ?? null);
+        setError(err instanceof Error ? err.message : t.errorGeneric);
+      } finally {
+        finishSession();
+      }
+    },
+    [finishSession, identifyFrames, lang, t]
   );
 
   const handleUploadChange = useCallback(
@@ -287,7 +425,7 @@ export default function App() {
     setStatus(t.teachSuccess(name));
   };
 
-  const isActive = phase !== "idle";
+  const isActive = phase !== "idle" && phase !== "picking";
   const rejectTip =
     lastRejectReason && phase === "idle" && !match
       ? messageForRejectReason(lastRejectReason, t)
@@ -297,6 +435,11 @@ export default function App() {
     status ||
     (active ? t.aimAndTap : starting ? t.openingCamera : t.idle);
   const busy = phase !== "idle" || starting;
+  const canCancel =
+    phase === "viewfinder" ||
+    phase === "shutter" ||
+    phase === "processing" ||
+    phase === "picking";
   const showTeachButton =
     isAdmin && phase === "idle" && !match && Boolean(lastFailedFrame);
 
@@ -404,7 +547,10 @@ export default function App() {
       <div className="status-bar">
         <span
           className={`status-dot ${
-            phase === "viewfinder" || phase === "processing" || starting
+            phase === "viewfinder" ||
+            phase === "processing" ||
+            phase === "picking" ||
+            starting
               ? "scanning"
               : match
                 ? "found"
@@ -414,6 +560,15 @@ export default function App() {
           }`}
         />
         <span className="status-text">{displayStatus}</span>
+        {canCancel && (
+          <button
+            type="button"
+            className="cancel-scan-button"
+            onClick={cancelIdentify}
+          >
+            {t.cancelScan}
+          </button>
+        )}
       </div>
 
       {phase === "idle" && !busy && (
@@ -508,6 +663,16 @@ export default function App() {
             )}
           </div>
         </div>
+      )}
+
+      {phase === "picking" && pickImage && pickFaces.length > 1 && (
+        <FacePicker
+          lang={lang}
+          image={pickImage}
+          faces={pickFaces}
+          onSelect={handlePickFace}
+          onCancel={cancelIdentify}
+        />
       )}
 
       {unlockOpen && (

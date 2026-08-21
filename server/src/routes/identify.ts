@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { prepareFaceImage } from "../services/faceCrop.js";
+import { detectFaces, prepareFaceImage } from "../services/faceCrop.js";
 import { searchFaceCollection } from "../services/faceCollection.js";
 import { scoreImageQuality } from "../services/imageQuality.js";
 import {
@@ -17,6 +17,25 @@ import {
 import { parseImagePayload } from "../utils/imagePayload.js";
 
 export const identifyRouter = Router();
+
+/** Detect faces so the client can ask the user which person to identify. */
+identifyRouter.post("/faces", async (req, res) => {
+  try {
+    const parsed = parseImagePayload(req.body?.image);
+    if (!parsed.ok) {
+      res.status(400).json({ error: parsed.error });
+      return;
+    }
+
+    const faces = await detectFaces(parsed.base64);
+    res.json({ faces, count: faces.length });
+  } catch (err) {
+    console.error("Detect faces error:", err);
+    res.status(500).json({
+      error: err instanceof Error ? err.message : "Face detection failed",
+    });
+  }
+});
 
 let provider: ReturnType<typeof createRecognitionProvider> | null = null;
 
@@ -95,6 +114,10 @@ identifyRouter.post("/", async (req, res) => {
     }
 
     const lang = typeof req.body?.lang === "string" ? req.body.lang : "en";
+    const faceIndex =
+      typeof req.body?.faceIndex === "number" && Number.isFinite(req.body.faceIndex)
+        ? Math.max(0, Math.floor(req.body.faceIndex))
+        : 0;
     const filterConfig = loadMatchFilterConfig();
     const providerName = process.env.RECOGNITION_PROVIDER ?? "mock";
 
@@ -111,7 +134,7 @@ identifyRouter.post("/", async (req, res) => {
       return;
     }
 
-    const prepared = await prepareFaceImage(parsed.base64);
+    const prepared = await prepareFaceImage(parsed.base64, faceIndex);
     if (prepared.facesFound === 0) {
       res.json({
         results: [],

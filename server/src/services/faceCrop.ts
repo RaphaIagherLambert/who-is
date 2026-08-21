@@ -120,6 +120,13 @@ function paddedSquare(
   return { left, top, size };
 }
 
+export interface FaceBox {
+  left: number;
+  top: number;
+  width: number;
+  height: number;
+}
+
 export interface PreparedFaceImage {
   imageBase64: string;
   facesFound: number;
@@ -127,20 +134,14 @@ export interface PreparedFaceImage {
 }
 
 /**
- * Detect the main face and auto-crop around it before celebrity/collection search.
- * No UI crop — full picture in, tighter face crop out.
- * Fail-open to the original image if detection or crop cannot run.
+ * Detect faces (normalized 0–1 boxes), largest first.
+ * Uses AWS when credentials are present (even if FACE_CROP_ENABLED is false).
  */
-export async function prepareFaceImage(
-  imageBase64: string
-): Promise<PreparedFaceImage> {
-  const original: PreparedFaceImage = {
-    imageBase64,
-    facesFound: -1,
-    cropped: false,
-  };
-
-  if (!isFaceCropEnabled()) return original;
+export async function detectFaces(imageBase64: string): Promise<FaceBox[]> {
+  const canDetect =
+    (process.env.RECOGNITION_PROVIDER ?? "mock") === "aws" &&
+    Boolean(process.env.AWS_ACCESS_KEY_ID && process.env.AWS_SECRET_ACCESS_KEY);
+  if (!canDetect) return [];
 
   const imageBytes = Buffer.from(imageBase64, "base64");
 
@@ -152,7 +153,7 @@ export async function prepareFaceImage(
       })
     );
 
-    const faces = (response.FaceDetails ?? [])
+    return (response.FaceDetails ?? [])
       .filter((face) => (face.Confidence ?? 0) >= 80 && face.BoundingBox)
       .map((face) => ({
         left: face.BoundingBox!.Left ?? 0,
@@ -162,18 +163,51 @@ export async function prepareFaceImage(
       }))
       .filter((box) => box.width * box.height >= 0.004)
       .sort((a, b) => b.width * b.height - a.width * a.height);
+  } catch (err) {
+    console.warn(
+      "Face detect skipped:",
+      err instanceof Error ? err.message : err
+    );
+    return [];
+  }
+}
+
+/**
+ * Detect faces and auto-crop around one of them before celebrity/collection search.
+ * `faceIndex` selects which detected face (0 = largest). Fail-open to original.
+ */
+export async function prepareFaceImage(
+  imageBase64: string,
+  faceIndex = 0
+): Promise<PreparedFaceImage> {
+  const original: PreparedFaceImage = {
+    imageBase64,
+    facesFound: -1,
+    cropped: false,
+  };
+
+  if (!isFaceCropEnabled()) return original;
+
+  try {
+    const faces = await detectFaces(imageBase64);
 
     if (faces.length === 0) {
       return { imageBase64, facesFound: 0, cropped: false };
     }
 
+    const index = Math.max(0, Math.min(faceIndex, faces.length - 1));
+    const imageBytes = Buffer.from(imageBase64, "base64");
     const decoded = decodeJpeg(imageBytes);
-    if (!decoded) return { imageBase64, facesFound: faces.length, cropped: false };
+    if (!decoded) {
+      return { imageBase64, facesFound: faces.length, cropped: false };
+    }
 
-    const crop = paddedSquare(faces[0], decoded.width, decoded.height);
+    const crop = paddedSquare(faces[index], decoded.width, decoded.height);
     const cropped = cropRgba(decoded, crop.left, crop.top, crop.size);
     const encoded = encodeJpeg(cropped);
-    if (!encoded) return { imageBase64, facesFound: faces.length, cropped: false };
+    if (!encoded) {
+      return { imageBase64, facesFound: faces.length, cropped: false };
+    }
 
     return { imageBase64: encoded, facesFound: faces.length, cropped: true };
   } catch (err) {
