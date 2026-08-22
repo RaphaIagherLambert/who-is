@@ -9,9 +9,7 @@ const WEAK_ADMIN_SECRETS = new Set([
 export function validateAdminSecret(): void {
   const secret = process.env.ADMIN_SECRET?.trim();
   const isProduction = process.env.NODE_ENV === "production";
-  const teachConfigured = Boolean(secret);
-
-  if (!teachConfigured) {
+  if (!secret) {
     if (isProduction && process.env.CUSTOM_TEACH_ENABLED !== "false") {
       console.warn(
         "[security] ADMIN_SECRET is not set — admin teach mode is disabled."
