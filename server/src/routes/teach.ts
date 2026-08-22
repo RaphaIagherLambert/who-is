@@ -1,5 +1,6 @@
-import { Router } from "express";
 import { randomUUID } from "crypto";
+import { Router } from "express";
+import { adminVerifyRateLimit } from "../middleware/rateLimit.js";
 import { requireAdmin } from "../middleware/requireAdmin.js";
 import { indexTeachingFace } from "../services/customCollection.js";
 import {
@@ -9,6 +10,7 @@ import {
 } from "../services/teachingsStore.js";
 import { findWikipediaPage } from "../services/wikipedia.js";
 import { parseImagePayload } from "../utils/imagePayload.js";
+import { isAllowedWikipediaUrl } from "../utils/wikipediaUrl.js";
 
 export const teachRouter = Router();
 
@@ -19,7 +21,7 @@ teachRouter.get("/status", async (_req, res) => {
   });
 });
 
-teachRouter.post("/verify", requireAdmin, (_req, res) => {
+teachRouter.post("/verify", adminVerifyRateLimit, requireAdmin, (_req, res) => {
   res.json({ ok: true });
 });
 
@@ -52,6 +54,13 @@ teachRouter.post("/", requireAdmin, async (req, res) => {
       typeof req.body?.wikipediaUrl === "string"
         ? req.body.wikipediaUrl.trim()
         : "";
+
+    if (wikiUrl && !isAllowedWikipediaUrl(wikiUrl)) {
+      res.status(400).json({
+        error: "Wikipedia URL must be an https://*.wikipedia.org/wiki/... link.",
+      });
+      return;
+    }
 
     let wikipedia = wikiUrl
       ? {

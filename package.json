@@ -49,7 +49,8 @@
     "import:asia-actors:sparql": "npm run import:asia-actors:sparql --prefix server",
     "import:asia-musicians": "npm run import:asia-musicians --prefix server --",
     "import:asia-musicians:dry-run": "npm run import:asia-musicians --prefix server -- --dry-run --limit 5",
-    "import:asia-musicians:sparql": "npm run import:asia-musicians:sparql --prefix server"
+    "import:asia-musicians:sparql": "npm run import:asia-musicians:sparql --prefix server",
+    "security:check": "npm run security:check --prefix server"
   },
   "engines": {
     "node": ">=20"

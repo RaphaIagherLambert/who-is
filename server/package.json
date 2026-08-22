@@ -33,7 +33,8 @@
     "import:asia-actors": "tsx scripts/import-asia-actors.ts",
     "import:asia-actors:sparql": "tsx scripts/import-asia-actors.ts -- --mode sparql --limit 5 --batch-size 3",
     "import:asia-musicians": "tsx scripts/import-asia-musicians.ts",
-    "import:asia-musicians:sparql": "tsx scripts/import-asia-musicians.ts -- --mode sparql --limit 5 --batch-size 3"
+    "import:asia-musicians:sparql": "tsx scripts/import-asia-musicians.ts -- --mode sparql --limit 5 --batch-size 3",
+    "security:check": "node scripts/check-secrets.mjs"
   },
   "dependencies": {
     "@aws-sdk/client-rekognition": "^3.787.0",

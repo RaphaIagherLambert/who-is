@@ -40,6 +40,8 @@ services:
         value: "true"
       - key: ADMIN_SECRET
         sync: false
+      - key: CORS_ORIGINS
+        value: https://who-is.onrender.com
       - key: AWS_ACCESS_KEY_ID
         sync: false
       - key: AWS_SECRET_ACCESS_KEY
