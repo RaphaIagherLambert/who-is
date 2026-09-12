@@ -235,3 +235,46 @@ export async function teachPerson(
 
   return res.json();
 }
+
+export interface TmdbProvider {
+  id: number;
+  name: string;
+  logoUrl: string;
+}
+
+export interface TmdbTitle {
+  id: number;
+  mediaType: "movie" | "tv";
+  title: string;
+  year: string | null;
+  rating: number | null;
+  posterUrl: string | null;
+  tmdbUrl: string;
+  watchLink: string | null;
+  providers: TmdbProvider[];
+}
+
+export interface TmdbPersonEnrichment {
+  id: number;
+  name: string;
+  tmdbUrl: string;
+  region: string;
+  titles: TmdbTitle[];
+  attribution: string;
+}
+
+export async function fetchTmdbPerson(
+  name: string,
+  lang: string,
+  signal?: AbortSignal
+): Promise<TmdbPersonEnrichment | null> {
+  const res = await fetch(
+    `/api/tmdb/person?name=${encodeURIComponent(name)}&lang=${encodeURIComponent(lang)}`,
+    { signal }
+  );
+  if (!res.ok) return null;
+  const data = (await res.json()) as {
+    enrichment: TmdbPersonEnrichment | null;
+  };
+  return data.enrichment ?? null;
+}

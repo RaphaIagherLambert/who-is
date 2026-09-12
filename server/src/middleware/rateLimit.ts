@@ -53,3 +53,9 @@ export const wikipediaRateLimit = createRateLimiter(
   Number(process.env.RATE_LIMIT_WIKI_MAX) || 80,
   Number(process.env.RATE_LIMIT_WIKI_WINDOW_MS) || 15 * 60 * 1000
 );
+
+/** TMDB filmography / watch-provider enrichment. */
+export const tmdbRateLimit = createRateLimiter(
+  Number(process.env.RATE_LIMIT_TMDB_MAX) || 60,
+  Number(process.env.RATE_LIMIT_TMDB_WINDOW_MS) || 15 * 60 * 1000
+);

@@ -73,3 +73,5 @@ Local dev allows `localhost:5173` automatically when `NODE_ENV` is not `producti
 | `RATE_LIMIT_IDENTIFY_WINDOW_MS` | 900000 (15 min) | Identify rate window |
 | `RATE_LIMIT_ADMIN_MAX` | 10 | Admin verify attempts per window |
 | `RATE_LIMIT_WIKI_MAX` | 80 | Wikipedia proxy requests per window |
+| `RATE_LIMIT_TMDB_MAX` | 60 | TMDB enrichment requests per window |
+| `TMDB_API_KEY` | (none) | The Movie Database API key for actor filmography / streaming |

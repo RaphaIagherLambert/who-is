@@ -26,6 +26,8 @@ import {
 
   identifyRateLimit,
 
+  tmdbRateLimit,
+
   wikipediaRateLimit,
 
 } from "./middleware/rateLimit.js";
@@ -34,7 +36,11 @@ import { identifyRouter } from "./routes/identify.js";
 
 import { teachRouter } from "./routes/teach.js";
 
+import { tmdbRouter } from "./routes/tmdb.js";
+
 import { wikipediaRouter } from "./routes/wikipedia.js";
+
+import { isTmdbConfigured } from "./services/tmdb.js";
 
 import { getFaceCropStatus } from "./services/faceCrop.js";
 
@@ -202,6 +208,12 @@ app.get("/api/health", async (_req, res) => {
 
       },
 
+      tmdb: {
+
+        configured: isTmdbConfigured(),
+
+      },
+
     });
 
   } catch (err) {
@@ -227,6 +239,8 @@ app.use("/api/identify", identifyRateLimit, identifyRouter);
 app.use("/api/teach", teachRouter);
 
 app.use("/api/wikipedia", wikipediaRateLimit, wikipediaRouter);
+
+app.use("/api/tmdb", tmdbRateLimit, tmdbRouter);
 
 
 

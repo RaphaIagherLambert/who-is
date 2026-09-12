@@ -3,15 +3,18 @@ import { useCallback, useEffect, useRef, useState, type ChangeEvent } from "reac
 import {
   CelebrityMatch,
   detectFacesInImage,
+  fetchTmdbPerson,
   identifyBestFromFrames,
   identifyImage,
   WikipediaPage,
   type FaceBox,
   type IdentifyResult,
+  type TmdbPersonEnrichment,
 } from "./api";
 import { AdminUnlock, TeachPanel } from "./components/TeachPanel";
 import { ColdStartBanner } from "./components/ColdStartBanner";
 import { FacePicker } from "./components/FacePicker";
+import { FilmographySection } from "./components/FilmographySection";
 import { LegalSheet } from "./components/LegalSheet";
 import {
   OnboardingGuide,
@@ -95,6 +98,7 @@ export default function App() {
     "celebrity" | "learned" | "wikidata" | null
   >(null);
   const [resultNiche, setResultNiche] = useState<WikidataNiche | null>(null);
+  const [tmdb, setTmdb] = useState<TmdbPersonEnrichment | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [snapshot, setSnapshot] = useState<string | null>(null);
   const [flash, setFlash] = useState(false);
@@ -115,6 +119,21 @@ export default function App() {
   useEffect(() => {
     document.documentElement.lang = lang;
   }, [lang]);
+
+  useEffect(() => {
+    if (!match?.name || phase !== "idle") return;
+    let cancelled = false;
+    void fetchTmdbPerson(match.name, toApiLanguage(lang))
+      .then((enrichment) => {
+        if (!cancelled) setTmdb(enrichment);
+      })
+      .catch(() => {
+        if (!cancelled) setTmdb(null);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [lang, match?.name, phase]);
 
   const {
     isAdmin,
@@ -153,6 +172,7 @@ export default function App() {
     setWikiAmbiguous(false);
     setResultSource(null);
     setResultNiche(null);
+    setTmdb(null);
     setLastFailedFrame(null);
     setLastRejectReason(null);
     setTeachOpen(false);
@@ -192,6 +212,7 @@ export default function App() {
     setWikiAmbiguous(Boolean(best.wikipediaAmbiguous));
     setResultSource(best.source ?? "celebrity");
     setResultNiche(best.niche ?? null);
+    setTmdb(null);
   };
 
   const identifyFrames = useCallback(
@@ -607,8 +628,10 @@ export default function App() {
       )}
 
       {match && phase === "idle" && (
-        <div className="result-card">
-          {wiki?.thumbnail && <img src={wiki.thumbnail} alt={match.name} />}
+        <div className={`result-card${tmdb ? " result-card-rich" : ""}`}>
+          {wiki?.thumbnail && (
+            <img className="result-avatar" src={wiki.thumbnail} alt={match.name} />
+          )}
           <div className="result-card-body">
             <h2>{match.name}</h2>
             {resultSource === "learned" && (
@@ -640,6 +663,16 @@ export default function App() {
                 {t.wikiLink} ({t.wikiLang(wiki.lang)}) →
               </a>
             )}
+            {tmdb && (
+              <a
+                className="result-link result-link-alt"
+                href={tmdb.tmdbUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t.tmdbLink} →
+              </a>
+            )}
             {wikiAmbiguous && wikiAlternatives.length > 0 && (
               <>
                 <p className="wiki-pick-title">{t.wikiPickTitle}</p>
@@ -661,6 +694,7 @@ export default function App() {
                 </ul>
               </>
             )}
+            {tmdb && <FilmographySection enrichment={tmdb} lang={lang} />}
           </div>
         </div>
       )}

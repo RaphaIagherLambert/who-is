@@ -93,6 +93,15 @@ export const translations = {
     pickFaceTitle: "Quem identificar?",
     pickFaceHint: "Toque no rosto da pessoa que você quer reconhecer.",
     pickFacePerson: (n: number) => `Pessoa ${n}`,
+    tmdbLink: "Ver no TMDB",
+    filmographyTitle: "Filmes e séries principais",
+    movieLabel: "Filme",
+    seriesLabel: "Série",
+    ratingLabel: (rating: number) => `${rating.toFixed(1)}★`,
+    watchOn: "Onde assistir",
+    watchRegion: (region: string) =>
+      region === "BR" ? "Disponível no Brasil" : `Disponível (${region})`,
+    tmdbAttribution: "Dados de filmes e streaming: TMDB",
   },
   en: {
     subtitle: "Point and find out",
@@ -184,6 +193,15 @@ export const translations = {
     pickFaceTitle: "Who should we identify?",
     pickFaceHint: "Tap the face of the person you want to recognize.",
     pickFacePerson: (n: number) => `Person ${n}`,
+    tmdbLink: "View on TMDB",
+    filmographyTitle: "Top films & series",
+    movieLabel: "Movie",
+    seriesLabel: "Series",
+    ratingLabel: (rating: number) => `${rating.toFixed(1)}★`,
+    watchOn: "Where to watch",
+    watchRegion: (region: string) =>
+      region === "US" ? "Available in the US" : `Available (${region})`,
+    tmdbAttribution: "Movie & streaming data: TMDB",
   },
 } as const;
 

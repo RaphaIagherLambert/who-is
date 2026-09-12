@@ -8,7 +8,7 @@ Identify public figures in live camera feed, still images, and video. When a per
 - **Image / video upload** — analyze files from your device
 - **Celebrity recognition** — powered by AWS Rekognition (production) or a mock provider (development)
 - **Localized Wikipedia** — uses your browser language (`navigator.language`) to find the right article
-- **Auto-open** — optionally opens Wikipedia in a new tab when someone is identified
+- **Actor filmography (TMDB)** — for actors/actresses, shows top titles, ratings, TMDB link, and streaming icons (Brazil when app language is PT, US when EN)
 
 ## Quick start
 
@@ -38,9 +38,10 @@ AWS_ACCESS_KEY_ID=your_key
 AWS_SECRET_ACCESS_KEY=your_secret
 AWS_REGION=us-east-1
 MIN_CONFIDENCE=85
+TMDB_API_KEY=your_tmdb_v3_key
 ```
 
-AWS Rekognition includes a free tier for new accounts (see [AWS Rekognition pricing](https://aws.amazon.com/rekognition/pricing/)).
+Get a free TMDB key at [themoviedb.org/settings/api](https://www.themoviedb.org/settings/api). Without it, results still work — only filmography / streaming is skipped.
 
 ## How it works
 
