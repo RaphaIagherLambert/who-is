@@ -5,24 +5,37 @@ export type RejectReason = IdentifyResponse["rejectReason"];
 
 export function messageForRejectReason(
   reason: RejectReason,
-  t: (typeof translations)[AppLanguage]
+  t: (typeof translations)[AppLanguage],
+  hint?: { topName?: string | null; topConfidence?: number | null }
 ): string {
-  switch (reason) {
-    case "no_faces":
-      return t.tipNoFaces;
-    case "low_confidence":
-      return t.tipLowConfidence;
-    case "ambiguous":
-      return t.tipAmbiguous;
-    case "poor_quality":
-      return t.tipPoorQuality;
-    case "bad_pose":
-      return t.tipBadPose;
-    case "no_wiki":
-      return t.tipNoWiki;
-    default:
-      return t.notFound;
+  const base = (() => {
+    switch (reason) {
+      case "no_faces":
+        return t.tipNoFaces;
+      case "low_confidence":
+        return t.tipLowConfidence;
+      case "ambiguous":
+        return t.tipAmbiguous;
+      case "poor_quality":
+        return t.tipPoorQuality;
+      case "bad_pose":
+        return t.tipBadPose;
+      case "no_wiki":
+        return t.tipNoWiki;
+      default:
+        return t.notFound;
+    }
+  })();
+
+  if (
+    hint?.topName &&
+    typeof hint.topConfidence === "number" &&
+    (reason === "low_confidence" || reason === "ambiguous")
+  ) {
+    return `${base} (${hint.topName} ${hint.topConfidence.toFixed(0)}%)`;
   }
+
+  return base;
 }
 
 export function readImageFile(file: File): Promise<string> {

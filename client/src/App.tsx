@@ -105,6 +105,10 @@ export default function App() {
   const [teachOpen, setTeachOpen] = useState(false);
   const [lastFailedFrame, setLastFailedFrame] = useState<string | null>(null);
   const [lastRejectReason, setLastRejectReason] = useState<RejectReason>(null);
+  const [lastRejectHint, setLastRejectHint] = useState<{
+    topName?: string | null;
+    topConfidence?: number | null;
+  } | null>(null);
   const [showOnboarding, setShowOnboarding] = useState(shouldShowOnboarding);
   const [legalDoc, setLegalDoc] = useState<LegalDoc | null>(null);
   const [pickFaces, setPickFaces] = useState<FaceBox[]>([]);
@@ -175,6 +179,7 @@ export default function App() {
     setTmdb(null);
     setLastFailedFrame(null);
     setLastRejectReason(null);
+    setLastRejectHint(null);
     setTeachOpen(false);
     setPickFaces([]);
     setPickImage(null);
@@ -222,7 +227,8 @@ export default function App() {
       setPickFaces([]);
       setPickImage(null);
 
-      const { result: best, rejectReason } = await identifyBestFromFrames(
+      const { result: best, rejectReason, diagnostics, allMatches } =
+        await identifyBestFromFrames(
         frames,
         toApiLanguage(lang),
         (n, total) => {
@@ -236,6 +242,14 @@ export default function App() {
       if (!best) {
         setLastFailedFrame(frames[frames.length - 1] ?? frames[0]);
         setLastRejectReason(rejectReason);
+        setLastRejectHint({
+          topName: diagnostics?.topName ?? allMatches?.[0]?.name ?? null,
+          topConfidence:
+            diagnostics?.topConfidence ?? allMatches?.[0]?.confidence ?? null,
+        });
+        if (diagnostics) {
+          console.info("[who-is] identify failed", diagnostics);
+        }
         return;
       }
 

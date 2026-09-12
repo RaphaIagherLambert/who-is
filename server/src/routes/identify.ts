@@ -130,11 +130,17 @@ identifyRouter.post("/", async (req, res) => {
         minConfidence: filterConfig.minConfidence,
         lang,
         provider: providerName,
+        diagnostics: {
+          stage: "pre_aws_quality",
+          sharpness: quality.sharpness,
+          brightness: quality.brightness,
+        },
       });
       return;
     }
 
-    const prepared = await prepareFaceImage(parsed.base64, faceIndex);
+    const originalBase64 = parsed.base64;
+    const prepared = await prepareFaceImage(originalBase64, faceIndex);
     // Fail-open: if DetectFaces finds nothing (common on soft TV/phone frames),
     // still try collection + celebrity on the original full frame.
     // Only hard-fail when the client explicitly picked a face index that doesn't exist.
@@ -146,6 +152,11 @@ identifyRouter.post("/", async (req, res) => {
         minConfidence: filterConfig.minConfidence,
         lang,
         provider: providerName,
+        diagnostics: {
+          facesFound: 0,
+          cropped: false,
+          stage: "face_detect",
+        },
       });
       return;
     }
@@ -175,13 +186,36 @@ identifyRouter.post("/", async (req, res) => {
           minConfidence: filterConfig.minConfidence,
           lang,
           provider: providerName,
+          diagnostics: {
+            facesFound: prepared.facesFound,
+            cropped: prepared.cropped,
+            stage: "collection",
+          },
         });
         return;
       }
     }
 
-    const matches = await getProvider().recognize(imageForAws);
-    const { match, reason } = pickConfidentMatch(matches, filterConfig);
+    let matches = await getProvider().recognize(imageForAws);
+    let { match, reason } = pickConfidentMatch(matches, filterConfig);
+    let usedFullFrameRetry = false;
+
+    // Crop helps collection search but often hurts CelebrityFaces on screen photos.
+    // If the cropped pass fails, retry the original full frame once.
+    if (
+      !match &&
+      prepared.cropped &&
+      imageForAws !== originalBase64
+    ) {
+      const fullMatches = await getProvider().recognize(originalBase64);
+      const fullPick = pickConfidentMatch(fullMatches, filterConfig);
+      usedFullFrameRetry = true;
+      if (fullPick.match || (fullMatches[0]?.confidence ?? 0) > (matches[0]?.confidence ?? 0)) {
+        matches = fullMatches;
+        match = fullPick.match;
+        reason = fullPick.reason;
+      }
+    }
 
     if (!match) {
       res.json({
@@ -191,6 +225,14 @@ identifyRouter.post("/", async (req, res) => {
         minConfidence: filterConfig.minConfidence,
         lang,
         provider: providerName,
+        diagnostics: {
+          facesFound: prepared.facesFound,
+          cropped: prepared.cropped,
+          fullFrameRetry: usedFullFrameRetry,
+          stage: "celebrity",
+          topConfidence: matches[0]?.confidence ?? null,
+          topName: matches[0]?.name ?? null,
+        },
       });
       return;
     }
@@ -205,6 +247,14 @@ identifyRouter.post("/", async (req, res) => {
         minConfidence: filterConfig.minConfidence,
         lang,
         provider: providerName,
+        diagnostics: {
+          facesFound: prepared.facesFound,
+          cropped: prepared.cropped,
+          fullFrameRetry: usedFullFrameRetry,
+          stage: "wikipedia",
+          topConfidence: match.confidence,
+          topName: match.name,
+        },
       });
       return;
     }
@@ -224,6 +274,12 @@ identifyRouter.post("/", async (req, res) => {
       minConfidence: filterConfig.minConfidence,
       lang,
       provider: providerName,
+      diagnostics: {
+        facesFound: prepared.facesFound,
+        cropped: prepared.cropped,
+        fullFrameRetry: usedFullFrameRetry,
+        stage: "celebrity",
+      },
     });
   } catch (err) {
     console.error("Identify error:", err);

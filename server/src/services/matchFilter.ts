@@ -10,6 +10,8 @@ export interface MatchFilterConfig {
   maxBrightness: number;
   maxPoseYaw: number;
   maxPosePitch: number;
+  /** When true, also enforce AWS Face Quality / pose gates (strict). */
+  requireFaceQuality: boolean;
 }
 
 export type RejectReason =
@@ -28,6 +30,9 @@ export interface FilterResult {
 /**
  * Defaults tuned for paused video / TV frames (more recall, less rejection for blur/pose).
  * Celebrity MatchConfidence on screen photos is often 75–90; sharpness is often soft.
+ *
+ * Face Quality (sharpness/brightness/pose) from CelebrityFaces is unreliable on
+ * phone→screen captures — off by default. Set CELEBRITY_FACE_QUALITY=true to enforce.
  */
 export function loadMatchFilterConfig(): MatchFilterConfig {
   return {
@@ -39,6 +44,9 @@ export function loadMatchFilterConfig(): MatchFilterConfig {
     maxBrightness: Number(process.env.MAX_FACE_BRIGHTNESS) || 100,
     maxPoseYaw: Number(process.env.MAX_POSE_YAW) || 60,
     maxPosePitch: Number(process.env.MAX_POSE_PITCH) || 55,
+    requireFaceQuality:
+      process.env.CELEBRITY_FACE_QUALITY === "true" ||
+      process.env.CELEBRITY_FACE_QUALITY === "1",
   };
 }
 
@@ -95,7 +103,7 @@ export function pickConfidentMatch(
     return { match: null, reason: "ambiguous" };
   }
 
-  if (!passesQualityChecks(best, config)) {
+  if (config.requireFaceQuality && !passesQualityChecks(best, config)) {
     const yaw = Math.abs(best.pose?.yaw ?? 0);
     const pitch = Math.abs(best.pose?.pitch ?? 0);
     if (yaw > config.maxPoseYaw || pitch > config.maxPosePitch) {

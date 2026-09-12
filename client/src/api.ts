@@ -26,6 +26,17 @@ export interface IdentifyResult extends CelebrityMatch {
   niche?: "us-actor" | "us-musician" | "us-influencer" | "eu-actor" | "eu-musician" | "eu-influencer" | "br-actor" | "br-musician" | "br-influencer" | "latam-actor" | "latam-musician" | "asia-actor" | "asia-musician";
 }
 
+export interface IdentifyDiagnostics {
+  stage?: string;
+  facesFound?: number;
+  cropped?: boolean;
+  fullFrameRetry?: boolean;
+  topConfidence?: number | null;
+  topName?: string | null;
+  sharpness?: number;
+  brightness?: number;
+}
+
 export interface IdentifyResponse {
   results: IdentifyResult[];
   rejectReason:
@@ -40,6 +51,7 @@ export interface IdentifyResponse {
   minConfidence: number;
   lang: string;
   provider: string;
+  diagnostics?: IdentifyDiagnostics;
 }
 
 export type RejectReason = IdentifyResponse["rejectReason"];
@@ -73,9 +85,13 @@ export async function identifyBestFromFrames(
   result: IdentifyResult | null;
   rejectReason: RejectReason;
   framesTried: number;
+  diagnostics?: IdentifyDiagnostics;
+  allMatches?: CelebrityMatch[];
 }> {
   const rejects: RejectReason[] = [];
   let best: IdentifyResult | null = null;
+  let lastDiagnostics: IdentifyDiagnostics | undefined;
+  let lastMatches: CelebrityMatch[] = [];
 
   for (let i = 0; i < frames.length; i++) {
     if (options?.signal?.aborted) {
@@ -86,6 +102,8 @@ export async function identifyBestFromFrames(
       signal: options?.signal,
       faceIndex: options?.faceIndex,
     });
+    if (res.diagnostics) lastDiagnostics = res.diagnostics;
+    if (res.allMatches?.length) lastMatches = res.allMatches;
     const candidate = res.results[0];
     if (candidate) {
       const hasWiki =
@@ -106,6 +124,8 @@ export async function identifyBestFromFrames(
       result: best,
       rejectReason: null,
       framesTried: frames.length,
+      diagnostics: lastDiagnostics,
+      allMatches: lastMatches,
     };
   }
 
@@ -113,6 +133,8 @@ export async function identifyBestFromFrames(
     result: null,
     rejectReason: pickFinalRejectReason(rejects),
     framesTried: frames.length,
+    diagnostics: lastDiagnostics,
+    allMatches: lastMatches,
   };
 }
 

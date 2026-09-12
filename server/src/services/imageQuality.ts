@@ -25,8 +25,8 @@ export function loadPreAwsQualityConfig(): PreAwsQualityConfig {
 
   return {
     enabled: !disabled,
-    // Laplacian variance on a ~160px grayscale. Conservative for TV/video frames.
-    minSharpness: Number(process.env.PRE_AWS_MIN_SHARPNESS) || 12,
+    // Laplacian variance on a ~160px grayscale. Soft for phone→screen frames.
+    minSharpness: Number(process.env.PRE_AWS_MIN_SHARPNESS) || 4,
     minBrightness: Number(process.env.PRE_AWS_MIN_BRIGHTNESS) || 10,
     maxBrightness: Number(process.env.PRE_AWS_MAX_BRIGHTNESS) || 250,
   };
