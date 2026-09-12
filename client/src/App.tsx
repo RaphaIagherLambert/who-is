@@ -463,7 +463,7 @@ export default function App() {
   const isActive = phase !== "idle" && phase !== "picking";
   const rejectTip =
     lastRejectReason && phase === "idle" && !match
-      ? messageForRejectReason(lastRejectReason, t)
+      ? messageForRejectReason(lastRejectReason, t, lastRejectHint ?? undefined)
       : null;
   const displayStatus =
     rejectTip ||
