@@ -135,7 +135,10 @@ identifyRouter.post("/", async (req, res) => {
     }
 
     const prepared = await prepareFaceImage(parsed.base64, faceIndex);
-    if (prepared.facesFound === 0) {
+    // Fail-open: if DetectFaces finds nothing (common on soft TV/phone frames),
+    // still try collection + celebrity on the original full frame.
+    // Only hard-fail when the client explicitly picked a face index that doesn't exist.
+    if (prepared.facesFound === 0 && faceIndex > 0) {
       res.json({
         results: [],
         rejectReason: "no_faces",

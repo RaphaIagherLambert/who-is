@@ -17,19 +17,21 @@ services:
       - key: AWS_REGION
         value: us-east-1
       - key: MIN_CONFIDENCE
-        value: "90"
+        value: "80"
       - key: MIN_MATCH_MARGIN
-        value: "6"
+        value: "4"
       - key: REKOGNITION_COLLECTION_ID
         value: who-is-faces
       - key: MIN_FACE_SIMILARITY
-        value: "88"
+        value: "85"
       - key: MIN_FACE_SHARPNESS
-        value: "20"
+        value: "8"
+      - key: MAX_FACE_BRIGHTNESS
+        value: "100"
       - key: MAX_POSE_YAW
-        value: "50"
+        value: "60"
       - key: MAX_POSE_PITCH
-        value: "45"
+        value: "55"
       - key: PRE_AWS_QUALITY_ENABLED
         value: "true"
       - key: PRE_AWS_MIN_SHARPNESS

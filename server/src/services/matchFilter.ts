@@ -27,17 +27,18 @@ export interface FilterResult {
 
 /**
  * Defaults tuned for paused video / TV frames (more recall, less rejection for blur/pose).
+ * Celebrity MatchConfidence on screen photos is often 75–90; sharpness is often soft.
  */
 export function loadMatchFilterConfig(): MatchFilterConfig {
   return {
-    minConfidence: Number(process.env.MIN_CONFIDENCE) || 90,
-    minMargin: Number(process.env.MIN_MATCH_MARGIN) || 6,
-    minFaceConfidence: Number(process.env.MIN_FACE_CONFIDENCE) || 85,
-    minSharpness: Number(process.env.MIN_FACE_SHARPNESS) || 20,
-    minBrightness: Number(process.env.MIN_FACE_BRIGHTNESS) || 12,
-    maxBrightness: Number(process.env.MAX_FACE_BRIGHTNESS) || 99,
-    maxPoseYaw: Number(process.env.MAX_POSE_YAW) || 50,
-    maxPosePitch: Number(process.env.MAX_POSE_PITCH) || 45,
+    minConfidence: Number(process.env.MIN_CONFIDENCE) || 80,
+    minMargin: Number(process.env.MIN_MATCH_MARGIN) || 4,
+    minFaceConfidence: Number(process.env.MIN_FACE_CONFIDENCE) || 80,
+    minSharpness: Number(process.env.MIN_FACE_SHARPNESS) || 8,
+    minBrightness: Number(process.env.MIN_FACE_BRIGHTNESS) || 8,
+    maxBrightness: Number(process.env.MAX_FACE_BRIGHTNESS) || 100,
+    maxPoseYaw: Number(process.env.MAX_POSE_YAW) || 60,
+    maxPosePitch: Number(process.env.MAX_POSE_PITCH) || 55,
   };
 }
 
@@ -95,6 +96,11 @@ export function pickConfidentMatch(
   }
 
   if (!passesQualityChecks(best, config)) {
+    const yaw = Math.abs(best.pose?.yaw ?? 0);
+    const pitch = Math.abs(best.pose?.pitch ?? 0);
+    if (yaw > config.maxPoseYaw || pitch > config.maxPosePitch) {
+      return { match: null, reason: "bad_pose" };
+    }
     return { match: null, reason: "poor_quality" };
   }
 
