@@ -148,7 +148,7 @@ app.get("/api/health", async (_req, res) => {
 
       provider: process.env.RECOGNITION_PROVIDER ?? "mock",
 
-      minConfidence: Number(process.env.MIN_CONFIDENCE) || 90,
+      minConfidence: Number(process.env.MIN_CONFIDENCE) || 80,
 
       preAwsQuality: loadPreAwsQualityConfig(),
 
