@@ -6459,5 +6459,917 @@
     "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Fredison%20Costa%20on%20Greenpont%20Av%20in%202019%20NYCM%20jeh.jpg?width=800",
     "faceId": "90ee8b2f-65d2-425a-b5eb-1ebabdd7648e",
     "indexedAt": "2026-07-11T19:06:54.653Z"
+  },
+  {
+    "id": "Q9960",
+    "name": "Ronald Reagan",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Ronald Reagan",
+      "url": "https://en.wikipedia.org/wiki/Ronald_Reagan",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Ronald%20Reagan%201981%20presidential%20portrait.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Ronald%20Reagan%201981%20presidential%20portrait.jpg?width=800"
+    ],
+    "faceId": "8fd292fc-4619-46be-af93-e601ebd78591",
+    "faceIds": [
+      "8fd292fc-4619-46be-af93-e601ebd78591"
+    ],
+    "indexedAt": "2026-09-13T14:57:30.495Z"
+  },
+  {
+    "id": "Q83851",
+    "name": "Ben Shenkman",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Ben Shenkman",
+      "url": "https://en.wikipedia.org/wiki/Ben_Shenkman",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Ben%20Shenkman.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Ben%20Shenkman.jpg?width=800"
+    ],
+    "faceId": "8c274076-ff51-461f-8f08-cc6754f1351f",
+    "faceIds": [
+      "8c274076-ff51-461f-8f08-cc6754f1351f"
+    ],
+    "indexedAt": "2026-09-13T14:58:35.470Z"
+  },
+  {
+    "id": "Q84053",
+    "name": "Tony Oller",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Tony Oller",
+      "url": "https://en.wikipedia.org/wiki/Tony_Oller",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Tony%20Oller%20%28cropped%29.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Tony%20Oller%20%28cropped%29.jpg?width=800"
+    ],
+    "faceId": "8ff5f2de-d9b5-4017-8e98-f4a6dce74f85",
+    "faceIds": [
+      "8ff5f2de-d9b5-4017-8e98-f4a6dce74f85"
+    ],
+    "indexedAt": "2026-09-13T14:58:48.645Z"
+  },
+  {
+    "id": "Q84232",
+    "name": "Veronica Lake",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Veronica Lake",
+      "url": "https://en.wikipedia.org/wiki/Veronica_Lake",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Veronica%20Lake%20by%20A.%20L.%20Whitey%20Schafer.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Veronica%20Lake%20by%20A.%20L.%20Whitey%20Schafer.jpg?width=800"
+    ],
+    "faceId": "cff5470b-0e59-4055-a1e1-8f907be1d824",
+    "faceIds": [
+      "cff5470b-0e59-4055-a1e1-8f907be1d824"
+    ],
+    "indexedAt": "2026-09-13T14:59:04.270Z"
+  },
+  {
+    "id": "Q84765",
+    "name": "Betty Amann",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Betty Amann",
+      "url": "https://en.wikipedia.org/wiki/Betty_Amann",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Betty%20Amann.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Betty%20Amann.jpg?width=800"
+    ],
+    "faceId": "575c8075-dc0d-4927-a874-70c12f093ef0",
+    "faceIds": [
+      "575c8075-dc0d-4927-a874-70c12f093ef0"
+    ],
+    "indexedAt": "2026-09-13T14:59:23.439Z"
+  },
+  {
+    "id": "Q86498",
+    "name": "August Zirner",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "August Zirner",
+      "url": "https://en.wikipedia.org/wiki/August_Zirner",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/August%20Zirner%2C%20ROMY%202010.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/August%20Zirner%2C%20ROMY%202010.jpg?width=800"
+    ],
+    "faceId": "26bf54c2-5881-4942-987c-5caa14a4158e",
+    "faceIds": [
+      "26bf54c2-5881-4942-987c-5caa14a4158e"
+    ],
+    "indexedAt": "2026-09-13T14:59:56.054Z"
+  },
+  {
+    "id": "Q951523",
+    "name": "Deran Sarafian",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Deran Sarafian",
+      "url": "https://en.wikipedia.org/wiki/Deran_Sarafian",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Deran%20Sarafian%20by%20Gage%20Skidmore%20%28cropped%29.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Deran%20Sarafian%20by%20Gage%20Skidmore%20%28cropped%29.jpg?width=800"
+    ],
+    "faceId": "0bcf1536-aa32-4a49-9602-06c54836d69a",
+    "faceIds": [
+      "0bcf1536-aa32-4a49-9602-06c54836d69a"
+    ],
+    "indexedAt": "2026-09-13T15:02:13.846Z"
+  },
+  {
+    "id": "Q951556",
+    "name": "Samuel Ramey",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Samuel Ramey",
+      "url": "https://en.wikipedia.org/wiki/Samuel_Ramey",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Samuel%20Ramey%20como%20Argante.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Samuel%20Ramey%20como%20Argante.jpg?width=800"
+    ],
+    "faceId": "f9226f29-8967-4ca7-8dea-5a4cdb43ae84",
+    "faceIds": [
+      "f9226f29-8967-4ca7-8dea-5a4cdb43ae84"
+    ],
+    "indexedAt": "2026-09-13T15:02:16.506Z"
+  },
+  {
+    "id": "Q951634",
+    "name": "Maury Chaykin",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Maury Chaykin",
+      "url": "https://en.wikipedia.org/wiki/Maury_Chaykin",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Maury%20Chaykin.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Maury%20Chaykin.jpg?width=800"
+    ],
+    "faceId": "4d946798-0ad0-474f-9aa0-708b30d72e2e",
+    "faceIds": [
+      "4d946798-0ad0-474f-9aa0-708b30d72e2e"
+    ],
+    "indexedAt": "2026-09-13T15:02:28.527Z"
+  },
+  {
+    "id": "Q952127",
+    "name": "Merlin Olsen",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Merlin Olsen",
+      "url": "https://en.wikipedia.org/wiki/Merlin_Olsen",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Merlin%20Olsen%2C%201975.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Merlin%20Olsen%2C%201975.jpg?width=800"
+    ],
+    "faceId": "7d31f950-fda5-458a-a052-8acc66bdac62",
+    "faceIds": [
+      "7d31f950-fda5-458a-a052-8acc66bdac62"
+    ],
+    "indexedAt": "2026-09-13T15:02:30.146Z"
+  },
+  {
+    "id": "Q976310",
+    "name": "Ron Leibman",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Ron Leibman",
+      "url": "https://en.wikipedia.org/wiki/Ron_Leibman",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Ron%20Leibman%20%22Kaz%22%20%281978%20CBS%20press%20photo%29.JPG?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Ron%20Leibman%20%22Kaz%22%20%281978%20CBS%20press%20photo%29.JPG?width=800"
+    ],
+    "faceId": "129ebd8e-10c0-45c1-b92b-03c1441a63d2",
+    "faceIds": [
+      "129ebd8e-10c0-45c1-b92b-03c1441a63d2"
+    ],
+    "indexedAt": "2026-09-13T15:02:44.898Z"
+  },
+  {
+    "id": "Q977069",
+    "name": "Blanche Mehaffey",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Blanche Mehaffey",
+      "url": "https://en.wikipedia.org/wiki/Blanche_Mehaffey",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Blanche%20Mehaffey%20Witzel.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Blanche%20Mehaffey%20Witzel.jpg?width=800"
+    ],
+    "faceId": "c950b1ff-d580-44a5-a78d-8b90f2f0f4e1",
+    "faceIds": [
+      "c950b1ff-d580-44a5-a78d-8b90f2f0f4e1"
+    ],
+    "indexedAt": "2026-09-13T15:02:57.268Z"
+  },
+  {
+    "id": "Q995160",
+    "name": "Bryant Washburn",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Bryant Washburn",
+      "url": "https://en.wikipedia.org/wiki/Bryant_Washburn",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Bryant%20Washburn.lowrey.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Bryant%20Washburn.lowrey.jpg?width=800"
+    ],
+    "faceId": "3e3d924b-22de-4d21-9850-6af2e5403f43",
+    "faceIds": [
+      "3e3d924b-22de-4d21-9850-6af2e5403f43"
+    ],
+    "indexedAt": "2026-09-13T15:02:59.669Z"
+  },
+  {
+    "id": "Q711642",
+    "name": "Ramón Novarro",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Ramon Novarro",
+      "url": "https://en.wikipedia.org/wiki/Ramon_Novarro",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Ram%C3%B3n%20Novarro%20en%201925.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Ram%C3%B3n%20Novarro%20en%201925.jpg?width=800"
+    ],
+    "faceId": "d74d0fdf-0ae4-4592-9622-10eeda2f5630",
+    "faceIds": [
+      "d74d0fdf-0ae4-4592-9622-10eeda2f5630"
+    ],
+    "indexedAt": "2026-09-13T15:07:16.735Z"
+  },
+  {
+    "id": "Q726925",
+    "name": "Juan J. Campanella",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Juan José Campanella",
+      "url": "https://en.wikipedia.org/wiki/Juan_Jos%C3%A9_Campanella",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Juan%20Jos%C3%A9%20Camapanella%202019.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Juan%20Jos%C3%A9%20Camapanella%202019.jpg?width=800"
+    ],
+    "faceId": "f3273642-d3a2-46f5-a4c7-66965bf76eb6",
+    "faceIds": [
+      "f3273642-d3a2-46f5-a4c7-66965bf76eb6"
+    ],
+    "indexedAt": "2026-09-13T15:07:19.648Z"
+  },
+  {
+    "id": "Q734580",
+    "name": "Jorge Negrete",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Jorge Negrete",
+      "url": "https://en.wikipedia.org/wiki/Jorge_Negrete",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Jorge%20Negrete%20en%201953%20%28cropped%29.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Jorge%20Negrete%20en%201953%20%28cropped%29.jpg?width=800"
+    ],
+    "faceId": "08822f2c-ef35-45ac-bb68-3b1570152ef8",
+    "faceIds": [
+      "08822f2c-ef35-45ac-bb68-3b1570152ef8"
+    ],
+    "indexedAt": "2026-09-13T15:07:57.535Z"
+  },
+  {
+    "id": "Q736116",
+    "name": "Aylín Mújica",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Aylín Mújica",
+      "url": "https://en.wikipedia.org/wiki/Ayl%C3%ADn_M%C3%BAjica",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Aylin%20Mujica%202007.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Aylin%20Mujica%202007.jpg?width=800"
+    ],
+    "faceId": "00210270-c373-4679-a439-be548215a4d9",
+    "faceIds": [
+      "00210270-c373-4679-a439-be548215a4d9"
+    ],
+    "indexedAt": "2026-09-13T15:07:59.662Z"
+  },
+  {
+    "id": "Q742140",
+    "name": "Copi",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Copi",
+      "url": "https://en.wikipedia.org/wiki/Copi",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Copi%20y%20Susana%20Gim%C3%A9nez.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Copi%20y%20Susana%20Gim%C3%A9nez.jpg?width=800"
+    ],
+    "faceId": "d492d4a2-cec2-4152-80f8-fec866ea1405",
+    "faceIds": [
+      "d492d4a2-cec2-4152-80f8-fec866ea1405"
+    ],
+    "indexedAt": "2026-09-13T15:10:07.127Z"
+  },
+  {
+    "id": "Q742554",
+    "name": "Laura Flores",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Laura Flores",
+      "url": "https://en.wikipedia.org/wiki/Laura_Flores",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Laura%20Flores..jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Laura%20Flores..jpg?width=800"
+    ],
+    "faceId": "5d2f9bdd-95d6-4ee8-954c-8b8b0bb2671e",
+    "faceIds": [
+      "5d2f9bdd-95d6-4ee8-954c-8b8b0bb2671e"
+    ],
+    "indexedAt": "2026-09-13T15:10:09.385Z"
+  },
+  {
+    "id": "Q746436",
+    "name": "Ester Soré",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Ester Soré",
+      "url": "https://en.wikipedia.org/wiki/Ester_Sor%C3%A9",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Ester%20Sor%C3%A9.JPG?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Ester%20Sor%C3%A9.JPG?width=800"
+    ],
+    "faceId": "9d050e6e-d1cd-45a7-a0b9-bbcf991ec518",
+    "faceIds": [
+      "9d050e6e-d1cd-45a7-a0b9-bbcf991ec518"
+    ],
+    "indexedAt": "2026-09-13T15:10:54.866Z"
+  },
+  {
+    "id": "Q748221",
+    "name": "Ramón Vinay",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Ramón Vinay",
+      "url": "https://en.wikipedia.org/wiki/Ram%C3%B3n_Vinay",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Ramon%20Vinay%2C%201949%20-%20collezione%20Tino%20Barindelli%20%28ritaglio%29.tif?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Ramon%20Vinay%2C%201949%20-%20collezione%20Tino%20Barindelli%20%28ritaglio%29.tif?width=800"
+    ],
+    "faceId": "697ccd7c-9798-48e4-a0e0-9007bac138ec",
+    "faceIds": [
+      "697ccd7c-9798-48e4-a0e0-9007bac138ec"
+    ],
+    "indexedAt": "2026-09-13T15:10:58.818Z"
+  },
+  {
+    "id": "Q750614",
+    "name": "Celeste Cid",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Celeste Cid",
+      "url": "https://en.wikipedia.org/wiki/Celeste_Cid",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Celeste%20Cid.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Celeste%20Cid.jpg?width=800"
+    ],
+    "faceId": "755dd489-05df-4856-80e4-baf97415e822",
+    "faceIds": [
+      "755dd489-05df-4856-80e4-baf97415e822"
+    ],
+    "indexedAt": "2026-09-13T15:11:41.632Z"
+  },
+  {
+    "id": "Q762636",
+    "name": "Rosmeri Marval",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Rosmeri Marval",
+      "url": "https://en.wikipedia.org/wiki/Rosmeri_Marval",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Rosmeri%20Marval%20in%202019%20screenshot.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Rosmeri%20Marval%20in%202019%20screenshot.jpg?width=800"
+    ],
+    "faceId": "cef7462f-562e-4461-b69d-08e867b664eb",
+    "faceIds": [
+      "cef7462f-562e-4461-b69d-08e867b664eb"
+    ],
+    "indexedAt": "2026-09-13T15:11:43.243Z"
+  },
+  {
+    "id": "Q765871",
+    "name": "Enrique Santos Discépolo",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Enrique Santos Discépolo",
+      "url": "https://en.wikipedia.org/wiki/Enrique_Santos_Disc%C3%A9polo",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Enrique%20Santos%20Disc%C3%A9polo%20por%20Annemarie%20Heinrich.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Enrique%20Santos%20Disc%C3%A9polo%20por%20Annemarie%20Heinrich.jpg?width=800"
+    ],
+    "faceId": "fe48aa66-996c-485f-9604-0e4522a716d0",
+    "faceIds": [
+      "fe48aa66-996c-485f-9604-0e4522a716d0"
+    ],
+    "indexedAt": "2026-09-13T15:11:44.791Z"
+  },
+  {
+    "id": "Q765943",
+    "name": "César Évora",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "César Évora",
+      "url": "https://en.wikipedia.org/wiki/C%C3%A9sar_%C3%89vora",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Cesar%20Evora.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Cesar%20Evora.jpg?width=800"
+    ],
+    "faceId": "9e6507ba-9d31-497e-afaa-edf79302cfde",
+    "faceIds": [
+      "9e6507ba-9d31-497e-afaa-edf79302cfde"
+    ],
+    "indexedAt": "2026-09-13T15:12:17.872Z"
+  },
+  {
+    "id": "Q769719",
+    "name": "Soledad Villamil",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Soledad Villamil",
+      "url": "https://en.wikipedia.org/wiki/Soledad_Villamil",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Soledad-villamil-perfil.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Soledad-villamil-perfil.jpg?width=800"
+    ],
+    "faceId": "eeb87809-f975-44d1-bfb1-28dfd85bc5a9",
+    "faceIds": [
+      "eeb87809-f975-44d1-bfb1-28dfd85bc5a9"
+    ],
+    "indexedAt": "2026-09-13T15:13:11.832Z"
+  },
+  {
+    "id": "Q779247",
+    "name": "Astrid Carolina Herrera",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Astrid Carolina Herrera",
+      "url": "https://en.wikipedia.org/wiki/Astrid_Carolina_Herrera",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Astrid%20Carolina%20Herrera%20en%20la%20actualidad.png?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Astrid%20Carolina%20Herrera%20en%20la%20actualidad.png?width=800"
+    ],
+    "faceId": "d08e9407-34dc-4c74-9c56-04d36ed4c15a",
+    "faceIds": [
+      "d08e9407-34dc-4c74-9c56-04d36ed4c15a"
+    ],
+    "indexedAt": "2026-09-13T15:13:18.398Z"
+  },
+  {
+    "id": "Q787728",
+    "name": "Ignacio Garmendia",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Ignacio Garmendia",
+      "url": "https://es.wikipedia.org/wiki/Ignacio_Garmendia",
+      "lang": "es"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Ignacio%20Garmendia.JPG?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Ignacio%20Garmendia.JPG?width=800"
+    ],
+    "faceId": "581f9507-5bfc-46a3-a6e4-95d448ce22ec",
+    "faceIds": [
+      "581f9507-5bfc-46a3-a6e4-95d448ce22ec"
+    ],
+    "indexedAt": "2026-09-13T15:15:17.286Z"
+  },
+  {
+    "id": "Q804319",
+    "name": "Blanca Guerra",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Blanca Guerra",
+      "url": "https://en.wikipedia.org/wiki/Blanca_Guerra",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Blanca%20Guerra%20I.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Blanca%20Guerra%20I.jpg?width=800"
+    ],
+    "faceId": "baa72a91-7108-4b20-8234-525754b7d59a",
+    "faceIds": [
+      "baa72a91-7108-4b20-8234-525754b7d59a"
+    ],
+    "indexedAt": "2026-09-13T15:16:19.173Z"
+  },
+  {
+    "id": "Q804324",
+    "name": "Blanca Soto",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Blanca Soto",
+      "url": "https://en.wikipedia.org/wiki/Blanca_Soto",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Blanca%20Soto%20en%20Dulce%20Osuna.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Blanca%20Soto%20en%20Dulce%20Osuna.jpg?width=800"
+    ],
+    "faceId": "aad95619-8370-407f-8569-871a745a6319",
+    "faceIds": [
+      "aad95619-8370-407f-8569-871a745a6319"
+    ],
+    "indexedAt": "2026-09-13T15:16:21.060Z"
+  },
+  {
+    "id": "Q817773",
+    "name": "Benjamín Rausseo",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Benjamín Rausseo",
+      "url": "https://en.wikipedia.org/wiki/Benjam%C3%ADn_Rausseo",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Benjam%C3%ADn%20Rausseo%202024.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Benjam%C3%ADn%20Rausseo%202024.jpg?width=800"
+    ],
+    "faceId": "8410d9da-038c-471e-987d-760641075ebd",
+    "faceIds": [
+      "8410d9da-038c-471e-987d-760641075ebd"
+    ],
+    "indexedAt": "2026-09-13T15:17:11.757Z"
+  },
+  {
+    "id": "Q821004",
+    "name": "Margarita Rosa de Francisco",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Margarita Rosa de Francisco",
+      "url": "https://en.wikipedia.org/wiki/Margarita_Rosa_de_Francisco",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Margarita%20Rosa%20de%20Francisco%20entrevista.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Margarita%20Rosa%20de%20Francisco%20entrevista.jpg?width=800"
+    ],
+    "faceId": "e37b7d9c-4445-4182-afe1-ecafd17ce29c",
+    "faceIds": [
+      "e37b7d9c-4445-4182-afe1-ecafd17ce29c"
+    ],
+    "indexedAt": "2026-09-13T15:17:13.562Z"
+  },
+  {
+    "id": "Q872345",
+    "name": "Paz Bascuñán",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Paz Bascuñán",
+      "url": "https://en.wikipedia.org/wiki/Paz_Bascu%C3%B1%C3%A1n",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Paz%20Bascu%C3%B1%C3%A1n%202016%20%28cropped%29.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Paz%20Bascu%C3%B1%C3%A1n%202016%20%28cropped%29.jpg?width=800"
+    ],
+    "faceId": "295e793e-b179-46dd-be0b-c69f8b3649c9",
+    "faceIds": [
+      "295e793e-b179-46dd-be0b-c69f8b3649c9"
+    ],
+    "indexedAt": "2026-09-13T15:20:06.132Z"
+  },
+  {
+    "id": "Q901764",
+    "name": "Daniela Castro",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Daniela Castro",
+      "url": "https://en.wikipedia.org/wiki/Daniela_Castro",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Daniela%20Castro.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Daniela%20Castro.jpg?width=800"
+    ],
+    "faceId": "dc8d3dda-eab2-4d3b-9f98-1ae2e203cb4e",
+    "faceIds": [
+      "dc8d3dda-eab2-4d3b-9f98-1ae2e203cb4e"
+    ],
+    "indexedAt": "2026-09-13T15:20:08.635Z"
+  },
+  {
+    "id": "Q902757",
+    "name": "David Zepeda",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "David Zepeda",
+      "url": "https://en.wikipedia.org/wiki/David_Zepeda",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/David%20Zep.png?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/David%20Zep.png?width=800"
+    ],
+    "faceId": "b7798b21-54e6-42f0-873d-b147c5d09ae5",
+    "faceIds": [
+      "b7798b21-54e6-42f0-873d-b147c5d09ae5"
+    ],
+    "indexedAt": "2026-09-13T15:21:04.817Z"
+  },
+  {
+    "id": "Q921676",
+    "name": "Emilio Vieyra",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Emilio Vieyra",
+      "url": "https://en.wikipedia.org/wiki/Emilio_Vieyra",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Emilio%20Vieyra.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Emilio%20Vieyra.jpg?width=800"
+    ],
+    "faceId": "4b4b84cc-4e3d-4403-92e9-3edbba6fd530",
+    "faceIds": [
+      "4b4b84cc-4e3d-4403-92e9-3edbba6fd530"
+    ],
+    "indexedAt": "2026-09-13T15:21:06.076Z"
+  },
+  {
+    "id": "Q922232",
+    "name": "Simón Pesutic",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Simón Pešutić",
+      "url": "https://es.wikipedia.org/wiki/Sim%C3%B3n_Pe%C5%A1uti%C4%87",
+      "lang": "es"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Simon%20Pesutic%202023.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Simon%20Pesutic%202023.jpg?width=800"
+    ],
+    "faceId": "2f545263-9254-471e-9d24-50a5b0279a7f",
+    "faceIds": [
+      "2f545263-9254-471e-9d24-50a5b0279a7f"
+    ],
+    "indexedAt": "2026-09-13T15:21:08.534Z"
+  },
+  {
+    "id": "Q923591",
+    "name": "Pablo Alarcón",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Pablo Alarcón (actor)",
+      "url": "https://en.wikipedia.org/wiki/Pablo_Alarc%C3%B3n_(actor)",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Pablo%20Alarc%C3%B3n%202019%20%28cropped%29.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Pablo%20Alarc%C3%B3n%202019%20%28cropped%29.jpg?width=800"
+    ],
+    "faceId": "3c0db30a-4d3a-46ce-ad4d-41d309cbadfc",
+    "faceIds": [
+      "3c0db30a-4d3a-46ce-ad4d-41d309cbadfc"
+    ],
+    "indexedAt": "2026-09-13T15:21:49.196Z"
+  },
+  {
+    "id": "Q924626",
+    "name": "Miguel Varoni",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Miguel Varoni",
+      "url": "https://en.wikipedia.org/wiki/Miguel_Varoni",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Miguel%2BVaroni%2BArrivals%2BBillboard%2BLatin%2BMusic%2B6peQxrw1tWll.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Miguel%2BVaroni%2BArrivals%2BBillboard%2BLatin%2BMusic%2B6peQxrw1tWll.jpg?width=800"
+    ],
+    "faceId": "0b2ba40e-185e-47c5-bc35-fb2a1d2b0467",
+    "faceIds": [
+      "0b2ba40e-185e-47c5-bc35-fb2a1d2b0467"
+    ],
+    "indexedAt": "2026-09-13T15:21:50.985Z"
+  },
+  {
+    "id": "Q924697",
+    "name": "Margarita Magaña",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Margarita Magaña",
+      "url": "https://en.wikipedia.org/wiki/Margarita_Maga%C3%B1a",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Margarita%20Maga%C3%B1a.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Margarita%20Maga%C3%B1a.jpg?width=800"
+    ],
+    "faceId": "4b9df791-a790-4416-b28d-aa07c7ac9368",
+    "faceIds": [
+      "4b9df791-a790-4416-b28d-aa07c7ac9368"
+    ],
+    "indexedAt": "2026-09-13T15:21:52.545Z"
+  },
+  {
+    "id": "Q929860",
+    "name": "Dolores Fonzi",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Dolores Fonzi",
+      "url": "https://en.wikipedia.org/wiki/Dolores_Fonzi",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Premios%20Goya%202026%20-%20Dolores%20Fonzi%20%28cropped%29.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Premios%20Goya%202026%20-%20Dolores%20Fonzi%20%28cropped%29.jpg?width=800"
+    ],
+    "faceId": "ba6cc8a1-3e7c-436b-a6a9-a61d27a220e4",
+    "faceIds": [
+      "ba6cc8a1-3e7c-436b-a6a9-a61d27a220e4"
+    ],
+    "indexedAt": "2026-09-13T15:22:52.482Z"
+  },
+  {
+    "id": "Q931189",
+    "name": "Flavio Caballero",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Flavio Caballero",
+      "url": "https://en.wikipedia.org/wiki/Flavio_Caballero",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Flavio%20caballero%208.png?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Flavio%20caballero%208.png?width=800"
+    ],
+    "faceId": "bdc78857-b55f-4abb-b61d-64177ff15002",
+    "faceIds": [
+      "bdc78857-b55f-4abb-b61d-64177ff15002"
+    ],
+    "indexedAt": "2026-09-13T15:22:54.552Z"
+  },
+  {
+    "id": "Q932397",
+    "name": "Héctor Díaz",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Héctor Díaz (actor)",
+      "url": "https://es.wikipedia.org/wiki/H%C3%A9ctor_D%C3%ADaz_(actor)",
+      "lang": "es"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/H%C3%A9ctor%20D%C3%ADaz%20en%20la%20apertura%20del%20Festival%20de%20Teatro%20Adolescente%20%28cropped%29.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/H%C3%A9ctor%20D%C3%ADaz%20en%20la%20apertura%20del%20Festival%20de%20Teatro%20Adolescente%20%28cropped%29.jpg?width=800"
+    ],
+    "faceId": "2c1c1e85-f852-45e9-9724-f7bd3f546563",
+    "faceIds": [
+      "2c1c1e85-f852-45e9-9724-f7bd3f546563"
+    ],
+    "indexedAt": "2026-09-13T15:22:56.846Z"
+  },
+  {
+    "id": "Q944345",
+    "name": "Manuel Ojeda",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Manuel Ojeda",
+      "url": "https://en.wikipedia.org/wiki/Manuel_Ojeda",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/El%20primer%20actor%20Manuel%20Ojeda%20%28cropped%29.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/El%20primer%20actor%20Manuel%20Ojeda%20%28cropped%29.jpg?width=800"
+    ],
+    "faceId": "00270621-ec23-4cb6-a951-618fc24d8450",
+    "faceIds": [
+      "00270621-ec23-4cb6-a951-618fc24d8450"
+    ],
+    "indexedAt": "2026-09-13T15:24:43.743Z"
+  },
+  {
+    "id": "Q945217",
+    "name": "Coraima Torres",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Coraima Torres",
+      "url": "https://en.wikipedia.org/wiki/Coraima_Torres",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Coraima%20Torres%202022%2002.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Coraima%20Torres%202022%2002.jpg?width=800"
+    ],
+    "faceId": "905c6a78-7827-4933-aa15-b5ec3b0671fe",
+    "faceIds": [
+      "905c6a78-7827-4933-aa15-b5ec3b0671fe"
+    ],
+    "indexedAt": "2026-09-13T15:24:45.231Z"
+  },
+  {
+    "id": "Q960204",
+    "name": "Adabel Guerrero",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Adabel Guerrero",
+      "url": "https://en.wikipedia.org/wiki/Adabel_Guerrero",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Adabelguerrero.JPG?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Adabelguerrero.JPG?width=800"
+    ],
+    "faceId": "214c6999-775b-4952-89ec-db51129b7b4e",
+    "faceIds": [
+      "214c6999-775b-4952-89ec-db51129b7b4e"
+    ],
+    "indexedAt": "2026-09-13T15:26:23.619Z"
+  },
+  {
+    "id": "Q965888",
+    "name": "Carlos Vives",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Carlos Vives",
+      "url": "https://en.wikipedia.org/wiki/Carlos_Vives",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Carlos%20Vives%20-%20World%20Economic%20Forum%20on%20Latin%20America%202010.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Carlos%20Vives%20-%20World%20Economic%20Forum%20on%20Latin%20America%202010.jpg?width=800"
+    ],
+    "faceId": "3e32bda6-2d05-4ade-9059-3412f989bed0",
+    "faceIds": [
+      "3e32bda6-2d05-4ade-9059-3412f989bed0"
+    ],
+    "indexedAt": "2026-09-13T15:27:03.911Z"
+  },
+  {
+    "id": "Q966080",
+    "name": "Javiera Mena",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Javiera Mena",
+      "url": "https://en.wikipedia.org/wiki/Javiera_Mena",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/20230301%20JavieraMena.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/20230301%20JavieraMena.jpg?width=800"
+    ],
+    "faceId": "ab61c152-8bc3-4f70-a13b-fa559050e61a",
+    "faceIds": [
+      "ab61c152-8bc3-4f70-a13b-fa559050e61a"
+    ],
+    "indexedAt": "2026-09-13T15:27:06.677Z"
   }
 ]
