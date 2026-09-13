@@ -218,9 +218,14 @@ identifyRouter.post("/", async (req, res) => {
     }
 
     if (!match) {
+      const rejectReason =
+        prepared.smallFaceOnly &&
+        (reason === "no_faces" || reason === "low_confidence")
+          ? "small_face"
+          : reason;
       res.json({
         results: [],
-        rejectReason: reason,
+        rejectReason,
         allMatches: matches,
         minConfidence: filterConfig.minConfidence,
         lang,
@@ -228,6 +233,7 @@ identifyRouter.post("/", async (req, res) => {
         diagnostics: {
           facesFound: prepared.facesFound,
           cropped: prepared.cropped,
+          smallFaceOnly: prepared.smallFaceOnly ?? false,
           fullFrameRetry: usedFullFrameRetry,
           stage: "celebrity",
           topConfidence: matches[0]?.confidence ?? null,

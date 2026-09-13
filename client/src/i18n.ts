@@ -13,9 +13,8 @@ export const translations = {
     aimAndTap: "Aponte e toque na mira para identificar",
     notFound: "Nenhuma figura pública detectada",
     notConfident:
-      "Não foi possível identificar com segurança. Aponte de frente, com boa luz, e tente de novo.",
-    identified: (name: string, confidence: number) =>
-      `Identificado: ${name} (${confidence.toFixed(0)}%)`,
+      "Não foi possível identificar. Possíveis causas: rosto pequeno, movimento, reflexo ou pouca luz.",
+    identified: (name: string) => `Identificado: ${name}`,
     noWiki: (name: string) =>
       `${name} identificado, mas não há página na Wikipedia`,
     googleLink: "Buscar no Google",
@@ -62,16 +61,26 @@ export const translations = {
     adminUnlockButton: "Entrar",
     adminWrongSecret: "Senha incorreta",
     adminModeOn: "Admin",
-    tipNoFaces: "Nenhum rosto detectado. Pause o vídeo, aproxime o rosto na mira e tente de novo.",
+    tipNoFaces:
+      "Nenhum rosto detectado. Possíveis causas: rosto pequeno, movimento, reflexo ou pouca luz. Pause o vídeo, aproxime o rosto e tente de novo.",
     tipLowConfidence:
-      "Não deu para confirmar. Pause o vídeo, aponte de frente com boa luz e tente outra vez.",
+      "Não deu para confirmar. Possíveis causas: rosto pequeno, movimento, reflexo ou pouca luz. Pause o vídeo, aponte de frente e tente outra vez.",
     tipAmbiguous:
       "Mais de uma pessoa possível. Centralize só um rosto na mira e tente de novo.",
     tipPoorQuality:
-      "Imagem borrada ou escura. Pause o vídeo, segure firme e tente de novo.",
+      "Imagem inadequada. Possíveis causas: movimento, reflexo ou pouca luz. Pause o vídeo, segure firme e tente de novo.",
     tipNoWiki: "Pessoa reconhecida, mas sem página na Wikipedia.",
     tipBadPose: "Rosto de lado ou parcial. Aponte de frente e tente de novo.",
+    tipLowLight:
+      "Pouca luz. Aumente a claridade da tela ou do ambiente e tente de novo.",
+    tipMotionBlur:
+      "Movimento ou imagem borrada. Pause o vídeo, segure firme e tente de novo.",
+    tipGlare:
+      "Reflexo ou tela muito clara. Evite brilho na tela e tente de novo.",
+    tipSmallFace:
+      "Rosto pequeno demais na imagem. Aproxime a câmera do rosto e tente de novo.",
     uploading: "Analisando imagem…",
+    uploadLabel: "Enviar print ou foto",
     uploadButton: "Enviar print / foto",
     uploadHint: "Use um print pausado do vídeo",
     bursting: "Capturando várias fotos…",
@@ -113,9 +122,8 @@ export const translations = {
     aimAndTap: "Point and tap the sight to identify",
     notFound: "No public figure detected",
     notConfident:
-      "Could not identify with confidence. Face the camera with good lighting and try again.",
-    identified: (name: string, confidence: number) =>
-      `Identified: ${name} (${confidence.toFixed(0)}%)`,
+      "Could not identify. Possible causes: small face, movement, reflection, or low light.",
+    identified: (name: string) => `Identified: ${name}`,
     noWiki: (name: string) =>
       `${name} identified, but no Wikipedia page was found`,
     googleLink: "Search on Google",
@@ -162,16 +170,26 @@ export const translations = {
     adminUnlockButton: "Unlock",
     adminWrongSecret: "Wrong password",
     adminModeOn: "Admin",
-    tipNoFaces: "No face detected. Pause the video, center the face in the sight, and try again.",
+    tipNoFaces:
+      "No face detected. Possible causes: small face, movement, reflection, or low light. Pause the video, move closer, and try again.",
     tipLowConfidence:
-      "Could not confirm. Pause the video, face the camera with good light, and try again.",
+      "Could not confirm. Possible causes: small face, movement, reflection, or low light. Pause the video, face the camera, and try again.",
     tipAmbiguous:
       "More than one possible person. Center a single face in the sight and try again.",
     tipPoorQuality:
-      "Image too blurry or dark. Pause the video, hold steady, and try again.",
+      "Image not clear enough. Possible causes: movement, reflection, or low light. Pause the video, hold steady, and try again.",
     tipNoWiki: "Person recognized, but no Wikipedia page was found.",
     tipBadPose: "Face is angled or partial. Point straight-on and try again.",
+    tipLowLight:
+      "Low light. Brighten the screen or room lighting and try again.",
+    tipMotionBlur:
+      "Movement or blur. Pause the video, hold steady, and try again.",
+    tipGlare:
+      "Reflection or screen glare. Reduce glare on the screen and try again.",
+    tipSmallFace:
+      "Face is too small in the frame. Move closer to the face and try again.",
     uploading: "Analyzing image…",
+    uploadLabel: "Upload screenshot or photo",
     uploadButton: "Upload screenshot / photo",
     uploadHint: "Use a paused video screenshot",
     bursting: "Capturing several frames…",

@@ -148,12 +148,16 @@ export function scoreImageQuality(
     const brightness = mean(gray);
     const sharpness = laplacianVariance(gray, width, height);
 
-    if (brightness < config.minBrightness || brightness > config.maxBrightness) {
-      return { ok: false, reason: "poor_quality", sharpness, brightness };
+    if (brightness < config.minBrightness) {
+      return { ok: false, reason: "low_light", sharpness, brightness };
+    }
+
+    if (brightness > config.maxBrightness) {
+      return { ok: false, reason: "glare", sharpness, brightness };
     }
 
     if (sharpness < config.minSharpness) {
-      return { ok: false, reason: "poor_quality", sharpness, brightness };
+      return { ok: false, reason: "motion_blur", sharpness, brightness };
     }
 
     return { ok: true, reason: null, sharpness, brightness };

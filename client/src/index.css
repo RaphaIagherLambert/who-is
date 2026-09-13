@@ -1024,8 +1024,25 @@ a {
   text-align: center;
 }
 
+.upload-label {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: #e5e5e5;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-align: left;
+}
+
 .upload-input {
-  display: none;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .upload-button {

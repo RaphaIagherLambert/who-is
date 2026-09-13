@@ -5,37 +5,32 @@ export type RejectReason = IdentifyResponse["rejectReason"];
 
 export function messageForRejectReason(
   reason: RejectReason,
-  t: (typeof translations)[AppLanguage],
-  hint?: { topName?: string | null; topConfidence?: number | null }
+  t: (typeof translations)[AppLanguage]
 ): string {
-  const base = (() => {
-    switch (reason) {
-      case "no_faces":
-        return t.tipNoFaces;
-      case "low_confidence":
-        return t.tipLowConfidence;
-      case "ambiguous":
-        return t.tipAmbiguous;
-      case "poor_quality":
-        return t.tipPoorQuality;
-      case "bad_pose":
-        return t.tipBadPose;
-      case "no_wiki":
-        return t.tipNoWiki;
-      default:
-        return t.notFound;
-    }
-  })();
-
-  if (
-    hint?.topName &&
-    typeof hint.topConfidence === "number" &&
-    (reason === "low_confidence" || reason === "ambiguous")
-  ) {
-    return `${base} (${hint.topName} ${hint.topConfidence.toFixed(0)}%)`;
+  switch (reason) {
+    case "no_faces":
+      return t.tipNoFaces;
+    case "low_confidence":
+      return t.tipLowConfidence;
+    case "ambiguous":
+      return t.tipAmbiguous;
+    case "poor_quality":
+      return t.tipPoorQuality;
+    case "bad_pose":
+      return t.tipBadPose;
+    case "no_wiki":
+      return t.tipNoWiki;
+    case "low_light":
+      return t.tipLowLight;
+    case "motion_blur":
+      return t.tipMotionBlur;
+    case "glare":
+      return t.tipGlare;
+    case "small_face":
+      return t.tipSmallFace;
+    default:
+      return t.notFound;
   }
-
-  return base;
 }
 
 export function readImageFile(file: File): Promise<string> {

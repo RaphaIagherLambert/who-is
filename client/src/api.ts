@@ -46,6 +46,10 @@ export interface IdentifyResponse {
     | "poor_quality"
     | "bad_pose"
     | "no_wiki"
+    | "low_light"
+    | "motion_blur"
+    | "glare"
+    | "small_face"
     | null;
   allMatches: CelebrityMatch[];
   minConfidence: number;
@@ -59,6 +63,10 @@ export type RejectReason = IdentifyResponse["rejectReason"];
 /** Prefer the tip that most helps the user retry (blur/light before generic). */
 function pickFinalRejectReason(reasons: RejectReason[]): RejectReason {
   const rank: RejectReason[] = [
+    "low_light",
+    "glare",
+    "motion_blur",
+    "small_face",
     "poor_quality",
     "bad_pose",
     "no_faces",

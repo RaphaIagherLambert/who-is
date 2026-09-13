@@ -131,7 +131,13 @@ export interface PreparedFaceImage {
   imageBase64: string;
   facesFound: number;
   cropped: boolean;
+  /** True when a face was seen but it was too small to use for crop. */
+  smallFaceOnly?: boolean;
 }
+
+const MIN_FACE_AREA = 0.004;
+/** Below this area (even if above MIN_FACE_AREA) we still tip "face too small" on failure. */
+const COMFORTABLE_FACE_AREA = 0.02;
 
 /**
  * Detect faces (normalized 0–1 boxes), largest first.
@@ -161,13 +167,41 @@ export async function detectFaces(imageBase64: string): Promise<FaceBox[]> {
         width: face.BoundingBox!.Width ?? 0,
         height: face.BoundingBox!.Height ?? 0,
       }))
-      .filter((box) => box.width * box.height >= 0.004)
+      .filter((box) => box.width * box.height >= MIN_FACE_AREA)
       .sort((a, b) => b.width * b.height - a.width * a.height);
   } catch (err) {
     console.warn(
       "Face detect skipped:",
       err instanceof Error ? err.message : err
     );
+    return [];
+  }
+}
+
+async function detectAllFacesRaw(imageBase64: string): Promise<FaceBox[]> {
+  const canDetect =
+    (process.env.RECOGNITION_PROVIDER ?? "mock") === "aws" &&
+    Boolean(process.env.AWS_ACCESS_KEY_ID && process.env.AWS_SECRET_ACCESS_KEY);
+  if (!canDetect) return [];
+
+  const imageBytes = Buffer.from(imageBase64, "base64");
+  try {
+    const response = await getClient().send(
+      new DetectFacesCommand({
+        Image: { Bytes: imageBytes },
+        Attributes: ["DEFAULT"],
+      })
+    );
+    return (response.FaceDetails ?? [])
+      .filter((face) => (face.Confidence ?? 0) >= 70 && face.BoundingBox)
+      .map((face) => ({
+        left: face.BoundingBox!.Left ?? 0,
+        top: face.BoundingBox!.Top ?? 0,
+        width: face.BoundingBox!.Width ?? 0,
+        height: face.BoundingBox!.Height ?? 0,
+      }))
+      .sort((a, b) => b.width * b.height - a.width * a.height);
+  } catch {
     return [];
   }
 }
@@ -189,27 +223,56 @@ export async function prepareFaceImage(
   if (!isFaceCropEnabled()) return original;
 
   try {
-    const faces = await detectFaces(imageBase64);
+    const rawFaces = await detectAllFacesRaw(imageBase64);
+    const faces = rawFaces.filter(
+      (box) => box.width * box.height >= MIN_FACE_AREA
+    );
+    const largestArea = rawFaces[0]
+      ? rawFaces[0].width * rawFaces[0].height
+      : 0;
+    const smallFaceOnly =
+      rawFaces.length > 0 &&
+      (faces.length === 0 || largestArea < COMFORTABLE_FACE_AREA);
 
     if (faces.length === 0) {
-      return { imageBase64, facesFound: 0, cropped: false };
+      return {
+        imageBase64,
+        facesFound: 0,
+        cropped: false,
+        smallFaceOnly,
+      };
     }
 
     const index = Math.max(0, Math.min(faceIndex, faces.length - 1));
     const imageBytes = Buffer.from(imageBase64, "base64");
     const decoded = decodeJpeg(imageBytes);
     if (!decoded) {
-      return { imageBase64, facesFound: faces.length, cropped: false };
+      return {
+        imageBase64,
+        facesFound: faces.length,
+        cropped: false,
+        smallFaceOnly,
+      };
     }
 
     const crop = paddedSquare(faces[index], decoded.width, decoded.height);
     const cropped = cropRgba(decoded, crop.left, crop.top, crop.size);
     const encoded = encodeJpeg(cropped);
     if (!encoded) {
-      return { imageBase64, facesFound: faces.length, cropped: false };
+      return {
+        imageBase64,
+        facesFound: faces.length,
+        cropped: false,
+        smallFaceOnly,
+      };
     }
 
-    return { imageBase64: encoded, facesFound: faces.length, cropped: true };
+    return {
+      imageBase64: encoded,
+      facesFound: faces.length,
+      cropped: true,
+      smallFaceOnly,
+    };
   } catch (err) {
     console.warn(
       "Face detect/crop skipped:",

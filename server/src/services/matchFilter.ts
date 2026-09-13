@@ -20,7 +20,11 @@ export type RejectReason =
   | "ambiguous"
   | "poor_quality"
   | "bad_pose"
-  | "no_wiki";
+  | "no_wiki"
+  | "low_light"
+  | "motion_blur"
+  | "glare"
+  | "small_face";
 
 export interface FilterResult {
   match: CelebrityMatch | null;
