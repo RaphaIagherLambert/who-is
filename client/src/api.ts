@@ -55,6 +55,7 @@ export interface IdentifyResponse {
   minConfidence: number;
   lang: string;
   provider: string;
+  needsPick?: boolean;
   diagnostics?: IdentifyDiagnostics;
 }
 
@@ -91,6 +92,8 @@ export async function identifyBestFromFrames(
   options?: { signal?: AbortSignal; faceIndex?: number }
 ): Promise<{
   result: IdentifyResult | null;
+  results: IdentifyResult[];
+  needsPick: boolean;
   rejectReason: RejectReason;
   framesTried: number;
   diagnostics?: IdentifyDiagnostics;
@@ -98,6 +101,8 @@ export async function identifyBestFromFrames(
 }> {
   const rejects: RejectReason[] = [];
   let best: IdentifyResult | null = null;
+  let bestResults: IdentifyResult[] = [];
+  let needsPick = false;
   let lastDiagnostics: IdentifyDiagnostics | undefined;
   let lastMatches: CelebrityMatch[] = [];
 
@@ -112,13 +117,20 @@ export async function identifyBestFromFrames(
     });
     if (res.diagnostics) lastDiagnostics = res.diagnostics;
     if (res.allMatches?.length) lastMatches = res.allMatches;
-    const candidate = res.results[0];
+    const candidates = res.results ?? [];
+    const candidate = candidates[0];
     if (candidate) {
       const hasWiki =
         Boolean(candidate.wikipedia) ||
-        (candidate.wikipediaAlternatives?.length ?? 0) > 0;
+        (candidate.wikipediaAlternatives?.length ?? 0) > 0 ||
+        candidates.some(
+          (c) =>
+            Boolean(c.wikipedia) || (c.wikipediaAlternatives?.length ?? 0) > 0
+        );
       if (hasWiki && (!best || candidate.confidence > best.confidence)) {
         best = candidate;
+        bestResults = candidates;
+        needsPick = Boolean(res.needsPick) || candidates.length > 1;
       } else if (!hasWiki) {
         rejects.push("no_wiki");
       }
@@ -130,6 +142,8 @@ export async function identifyBestFromFrames(
   if (best) {
     return {
       result: best,
+      results: bestResults,
+      needsPick,
       rejectReason: null,
       framesTried: frames.length,
       diagnostics: lastDiagnostics,
@@ -139,6 +153,8 @@ export async function identifyBestFromFrames(
 
   return {
     result: null,
+    results: [],
+    needsPick: false,
     rejectReason: pickFinalRejectReason(rejects),
     framesTried: frames.length,
     diagnostics: lastDiagnostics,

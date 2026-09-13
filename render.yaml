@@ -24,6 +24,10 @@ services:
         value: who-is-faces
       - key: MIN_FACE_SIMILARITY
         value: "85"
+      - key: SOFT_CELEBRITY_MIN
+        value: "55"
+      - key: STRONG_COLLECTION_SIMILARITY
+        value: "92"
       - key: MIN_FACE_SHARPNESS
         value: "8"
       - key: MAX_FACE_BRIGHTNESS

@@ -774,6 +774,26 @@ a {
   text-decoration: none;
 }
 
+.person-pick-button {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  width: 100%;
+  padding: 0.65rem 0.7rem;
+  border: 1px solid #333;
+  border-radius: 0.55rem;
+  background: #111;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.person-pick-button:hover,
+.person-pick-button:focus-visible {
+  border-color: #525252;
+  background: #171717;
+}
+
 .wiki-pick-name {
   display: block;
   color: #fff;

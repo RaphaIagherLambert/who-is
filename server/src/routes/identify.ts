@@ -1,6 +1,8 @@
 import { Router } from "express";
 import { detectFaces, prepareFaceImage } from "../services/faceCrop.js";
-import { searchFaceCollection } from "../services/faceCollection.js";
+import {
+  searchFaceCollectionMatches,
+} from "../services/faceCollection.js";
 import { scoreImageQuality } from "../services/imageQuality.js";
 import {
   loadMatchFilterConfig,
@@ -15,6 +17,7 @@ import {
   type WikipediaPage,
 } from "../services/wikipedia.js";
 import { parseImagePayload } from "../utils/imagePayload.js";
+import type { CelebrityMatch } from "../services/types.js";
 
 export const identifyRouter = Router();
 
@@ -162,62 +165,136 @@ identifyRouter.post("/", async (req, res) => {
     }
 
     const imageForAws = prepared.imageBase64;
+    const STRONG_COLLECTION =
+      Number(process.env.STRONG_COLLECTION_SIMILARITY) || 92;
+    const SOFT_CELEBRITY_MIN = Number(process.env.SOFT_CELEBRITY_MIN) || 55;
 
-    const collectionMatch = await searchFaceCollection(imageForAws);
-    if (collectionMatch) {
-      const person = await resolveCollectionMatch(
-        collectionMatch.externalId,
-        lang
-      );
-      if (person) {
-        const wiki = wikiPayload(person);
-        res.json({
-          results: [
-            {
-              name: person.name,
-              confidence: collectionMatch.similarity,
-              ...wiki,
-              source: person.source,
-              niche: person.niche,
-            },
-          ],
-          rejectReason: null,
-          allMatches: [],
-          minConfidence: filterConfig.minConfidence,
-          lang,
-          provider: providerName,
-          diagnostics: {
-            facesFound: prepared.facesFound,
-            cropped: prepared.cropped,
-            stage: "collection",
-          },
-        });
-        return;
-      }
+    // Primary path: custom face index (scales with Wikidata imports).
+    const collectionHits = await searchFaceCollectionMatches(imageForAws, 3);
+    const collectionResults: Array<{
+      name: string;
+      confidence: number;
+      wikipedia: WikipediaPage | null;
+      wikipediaAlternatives?: WikipediaPage[];
+      wikipediaAmbiguous?: boolean;
+      source: "wikidata" | "learned";
+      niche?: string;
+    }> = [];
+
+    for (const hit of collectionHits) {
+      const person = await resolveCollectionMatch(hit.externalId, lang);
+      if (!person) continue;
+      const wiki = wikiPayload(person);
+      collectionResults.push({
+        name: person.name,
+        confidence: hit.similarity,
+        ...wiki,
+        source: person.source,
+        niche: person.niche,
+      });
+    }
+
+    if (collectionResults.length > 0) {
+      const best = collectionResults[0];
+      const runnerUp = collectionResults[1];
+      const clearWinner =
+        best.confidence >= STRONG_COLLECTION ||
+        !runnerUp ||
+        best.confidence - runnerUp.confidence >= 4;
+
+      res.json({
+        results: clearWinner ? [best] : collectionResults,
+        rejectReason: null,
+        allMatches: collectionResults.map((r) => ({
+          name: r.name,
+          confidence: r.confidence,
+        })),
+        minConfidence: filterConfig.minConfidence,
+        lang,
+        provider: providerName,
+        needsPick: !clearWinner && collectionResults.length > 1,
+        diagnostics: {
+          facesFound: prepared.facesFound,
+          cropped: prepared.cropped,
+          stage: "collection",
+          collectionHits: collectionResults.length,
+        },
+      });
+      return;
     }
 
     let matches = await getProvider().recognize(imageForAws);
     let { match, reason } = pickConfidentMatch(matches, filterConfig);
     let usedFullFrameRetry = false;
 
-    // Crop helps collection search but often hurts CelebrityFaces on screen photos.
-    // If the cropped pass fails, retry the original full frame once.
-    if (
-      !match &&
-      prepared.cropped &&
-      imageForAws !== originalBase64
-    ) {
+    if (!match && prepared.cropped && imageForAws !== originalBase64) {
       const fullMatches = await getProvider().recognize(originalBase64);
       const fullPick = pickConfidentMatch(fullMatches, filterConfig);
       usedFullFrameRetry = true;
-      if (fullPick.match || (fullMatches[0]?.confidence ?? 0) > (matches[0]?.confidence ?? 0)) {
+      if (
+        fullPick.match ||
+        (fullMatches[0]?.confidence ?? 0) > (matches[0]?.confidence ?? 0)
+      ) {
         matches = fullMatches;
         match = fullPick.match;
         reason = fullPick.reason;
       }
     }
 
+    async function buildCelebrityResults(celebs: CelebrityMatch[], limit: number) {
+      const out: Array<{
+        name: string;
+        confidence: number;
+        wikipedia: WikipediaPage | null;
+        wikipediaAlternatives?: WikipediaPage[];
+        wikipediaAmbiguous?: boolean;
+        source: "celebrity";
+        urls?: string[];
+      }> = [];
+
+      for (const celeb of celebs.slice(0, Math.max(limit, celebs.length))) {
+        if (out.length >= limit) break;
+        if (out.some((r) => r.name === celeb.name)) continue;
+        const resolved = await resolvePersonWikipedia(celeb.name, lang);
+        if (!resolved.primary && resolved.alternatives.length === 0) continue;
+        out.push({
+          ...celeb,
+          wikipedia: resolved.ambiguous ? null : resolved.primary,
+          wikipediaAlternatives: resolved.alternatives,
+          wikipediaAmbiguous: resolved.ambiguous,
+          source: "celebrity",
+        });
+      }
+      return out;
+    }
+
     if (!match) {
+      const softPool = matches.filter((m) => m.confidence >= SOFT_CELEBRITY_MIN);
+      if (softPool.length > 0) {
+        const softResults = await buildCelebrityResults(softPool, 3);
+        if (softResults.length > 0) {
+          res.json({
+            results: softResults,
+            rejectReason: null,
+            allMatches: matches,
+            minConfidence: filterConfig.minConfidence,
+            lang,
+            provider: providerName,
+            needsPick: softResults.length > 1,
+            diagnostics: {
+              facesFound: prepared.facesFound,
+              cropped: prepared.cropped,
+              smallFaceOnly: prepared.smallFaceOnly ?? false,
+              fullFrameRetry: usedFullFrameRetry,
+              stage: "celebrity_soft",
+              topConfidence: softResults[0]?.confidence ?? null,
+              topName: softResults[0]?.name ?? null,
+            },
+          });
+          return;
+        }
+      }
+
       const rejectReason =
         prepared.smallFaceOnly &&
         (reason === "no_faces" || reason === "low_confidence")
@@ -243,9 +320,12 @@ identifyRouter.post("/", async (req, res) => {
       return;
     }
 
-    const resolved = await resolvePersonWikipedia(match.name, lang);
+    const primaryResults = await buildCelebrityResults(
+      [match, ...matches.filter((m) => m.name !== match.name)],
+      3
+    );
 
-    if (resolved.alternatives.length === 0 && !resolved.primary) {
+    if (primaryResults.length === 0) {
       res.json({
         results: [],
         rejectReason: "no_wiki",
@@ -265,21 +345,19 @@ identifyRouter.post("/", async (req, res) => {
       return;
     }
 
+    const needsPick =
+      primaryResults.length > 1 &&
+      primaryResults[0].confidence - (primaryResults[1]?.confidence ?? 0) <
+        filterConfig.minMargin;
+
     res.json({
-      results: [
-        {
-          ...match,
-          wikipedia: resolved.ambiguous ? null : resolved.primary,
-          wikipediaAlternatives: resolved.alternatives,
-          wikipediaAmbiguous: resolved.ambiguous,
-          source: "celebrity",
-        },
-      ],
+      results: needsPick ? primaryResults : [primaryResults[0]],
       rejectReason: null,
       allMatches: matches,
       minConfidence: filterConfig.minConfidence,
       lang,
       provider: providerName,
+      needsPick,
       diagnostics: {
         facesFound: prepared.facesFound,
         cropped: prepared.cropped,

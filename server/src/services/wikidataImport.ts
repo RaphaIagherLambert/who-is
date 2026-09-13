@@ -51,7 +51,10 @@ function buildEuActorsQuery(afterQid: string | null, limit: number): string {
   return `
 SELECT ?person ?personLabel ?image WHERE {
   ?person wdt:P106 wd:Q33999 ;
-          wdt:P18 ?image .${buildEuropeanCitizenshipClause()}${cursor}
+          wdt:P345 ?imdb ;
+          wdt:P18 ?image ;
+          wikibase:sitelinks ?sitelinks .${buildEuropeanCitizenshipClause()}
+  FILTER(?sitelinks >= 10)${cursor}
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
 }
 LIMIT ${limit}
@@ -87,7 +90,9 @@ function buildBrActorsQuery(afterQid: string | null, limit: number): string {
   return `
 SELECT ?person ?personLabel ?image WHERE {
   ?person wdt:P106 wd:Q33999 ;
-          wdt:P18 ?image .${buildBrCitizenshipClause()}${cursor}
+          wdt:P18 ?image ;
+          wikibase:sitelinks ?sitelinks .${buildBrCitizenshipClause()}
+  FILTER(?sitelinks >= 5)${cursor}
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en,pt". }
 }
 LIMIT ${limit}
@@ -241,11 +246,15 @@ function buildUsActorsQuery(afterQid: string | null, limit: number): string {
     ? `\n  FILTER(STR(?person) > "http://www.wikidata.org/entity/${afterQid}")`
     : "";
 
+  // Prefer actors with IMDb + enough Wikipedia sitelinks (more recognizable faces).
   return `
 SELECT ?person ?personLabel ?image WHERE {
   ?person wdt:P27 wd:Q30 ;
           wdt:P106 wd:Q33999 ;
-          wdt:P18 ?image .${cursor}
+          wdt:P345 ?imdb ;
+          wdt:P18 ?image ;
+          wikibase:sitelinks ?sitelinks .
+  FILTER(?sitelinks >= 12)${cursor}
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
 }
 LIMIT ${limit}

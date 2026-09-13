@@ -109,6 +109,7 @@ export default function App() {
   const [legalDoc, setLegalDoc] = useState<LegalDoc | null>(null);
   const [pickFaces, setPickFaces] = useState<FaceBox[]>([]);
   const [pickImage, setPickImage] = useState<string | null>(null);
+  const [personCandidates, setPersonCandidates] = useState<IdentifyResult[]>([]);
   const busyRef = useRef(false);
   const abortRef = useRef<AbortController | null>(null);
   const pendingFramesRef = useRef<string[]>([]);
@@ -178,6 +179,7 @@ export default function App() {
     setTeachOpen(false);
     setPickFaces([]);
     setPickImage(null);
+    setPersonCandidates([]);
   };
 
   const beginAbortable = () => {
@@ -205,6 +207,7 @@ export default function App() {
   }, [finishSession, t]);
 
   const applySuccess = (best: IdentifyResult) => {
+    setPersonCandidates([]);
     setMatch(best);
     setStatus(t.identified(best.name));
     setWiki(best.wikipedia);
@@ -215,6 +218,26 @@ export default function App() {
     setTmdb(null);
   };
 
+  const takeIdentifyPayload = (
+    results: IdentifyResult[],
+    needsPick: boolean | undefined,
+    rejectReason: RejectReason,
+    failedFrame: string | null
+  ) => {
+    const best = results[0] ?? null;
+    if (!best) {
+      setLastFailedFrame(failedFrame);
+      setLastRejectReason(rejectReason);
+      return;
+    }
+    if (needsPick && results.length > 1) {
+      setPersonCandidates(results);
+      setStatus(t.pickPersonTitle);
+      return;
+    }
+    applySuccess(best);
+  };
+
   const identifyFrames = useCallback(
     async (frames: string[], faceIndex: number, signal: AbortSignal) => {
       setPhase("processing");
@@ -222,7 +245,7 @@ export default function App() {
       setPickFaces([]);
       setPickImage(null);
 
-      const { result: best, rejectReason, diagnostics } =
+      const { result: best, results, needsPick, rejectReason, diagnostics } =
         await identifyBestFromFrames(
         frames,
         toApiLanguage(lang),
@@ -240,6 +263,12 @@ export default function App() {
         if (diagnostics) {
           console.info("[who-is] identify failed", diagnostics);
         }
+        return;
+      }
+
+      if (needsPick && results.length > 1) {
+        setPersonCandidates(results);
+        setStatus(t.pickPersonTitle);
         return;
       }
 
@@ -339,20 +368,17 @@ export default function App() {
         }
 
         setStatus(t.uploading);
-        const { results, rejectReason } = await identifyImage(
-          dataUrl,
-          toApiLanguage(lang),
-          { signal, faceIndex: 0 }
-        );
+        const res = await identifyImage(dataUrl, toApiLanguage(lang), {
+          signal,
+          faceIndex: 0,
+        });
         if (signal.aborted) throw new DOMException("Aborted", "AbortError");
-
-        const best = results[0] ?? null;
-        if (!best) {
-          setLastFailedFrame(dataUrl);
-          setLastRejectReason(rejectReason);
-          return;
-        }
-        applySuccess(best);
+        takeIdentifyPayload(
+          res.results,
+          res.needsPick,
+          res.rejectReason,
+          dataUrl
+        );
       } catch (err) {
         if (isAbortError(err)) {
           setStatus(t.cancelled);
@@ -377,19 +403,18 @@ export default function App() {
         setStatus(t.scanning);
         if (frames.length === 1) {
           setPhase("processing");
-          const { results, rejectReason } = await identifyImage(
+          const res = await identifyImage(
             frames[0],
             toApiLanguage(lang),
             { signal, faceIndex }
           );
           if (signal.aborted) throw new DOMException("Aborted", "AbortError");
-          const best = results[0] ?? null;
-          if (!best) {
-            setLastFailedFrame(frames[0]);
-            setLastRejectReason(rejectReason);
-          } else {
-            applySuccess(best);
-          }
+          takeIdentifyPayload(
+            res.results,
+            res.needsPick,
+            res.rejectReason,
+            frames[0]
+          );
         } else {
           await identifyFrames(frames, faceIndex, signal);
         }
@@ -636,6 +661,33 @@ export default function App() {
         >
           {t.teachButton}
         </button>
+      )}
+
+      {personCandidates.length > 1 && phase === "idle" && !match && (
+        <div className="result-card result-card-rich">
+          <div className="result-card-body">
+            <p className="wiki-pick-title">{t.pickPersonTitle}</p>
+            <p className="wiki-pick-hint">{t.pickPersonHint}</p>
+            <ul className="wiki-pick-list">
+              {personCandidates.map((person) => (
+                <li key={`${person.name}-${person.confidence}`}>
+                  <button
+                    type="button"
+                    className="person-pick-button"
+                    onClick={() => applySuccess(person)}
+                  >
+                    <span className="wiki-pick-name">{person.name}</span>
+                    {person.wikipedia?.description && (
+                      <span className="wiki-pick-desc">
+                        {person.wikipedia.description}
+                      </span>
+                    )}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       )}
 
       {match && phase === "idle" && (

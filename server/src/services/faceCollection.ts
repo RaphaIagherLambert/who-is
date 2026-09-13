@@ -109,34 +109,62 @@ export interface FaceCollectionMatch {
   faceId?: string;
 }
 
+/**
+ * Best single collection hit (legacy helper).
+ */
 export async function searchFaceCollection(
   imageBase64: string
 ): Promise<FaceCollectionMatch | null> {
-  if (!(await ensureFaceCollection())) return null;
+  const matches = await searchFaceCollectionMatches(imageBase64, 1);
+  return matches[0] ?? null;
+}
+
+/**
+ * Top unique people in the collection (by ExternalImageId person id).
+ * Used as the primary recognition path as the index grows.
+ */
+export async function searchFaceCollectionMatches(
+  imageBase64: string,
+  maxPeople = 3
+): Promise<FaceCollectionMatch[]> {
+  if (!(await ensureFaceCollection())) return [];
 
   const imageBytes = Buffer.from(imageBase64, "base64");
   const minSimilarity = getMinSimilarity();
+  // Fetch extra faces so multi-image people and near-ties still yield unique persons.
+  const maxFaces = Math.min(25, Math.max(5, maxPeople * 5));
 
   const response = await getClient().send(
     new SearchFacesByImageCommand({
       CollectionId: getCollectionId(),
       Image: { Bytes: imageBytes },
-      MaxFaces: 1,
-      FaceMatchThreshold: minSimilarity,
+      MaxFaces: maxFaces,
+      FaceMatchThreshold: Math.max(70, minSimilarity - 8),
     })
   );
 
-  const best = response.FaceMatches?.[0];
-  const rawId = best?.Face?.ExternalImageId;
-  if (!rawId || (best.Similarity ?? 0) < minSimilarity) {
-    return null;
+  const byPerson = new Map<string, FaceCollectionMatch>();
+
+  for (const hit of response.FaceMatches ?? []) {
+    const rawId = hit.Face?.ExternalImageId;
+    const similarity = hit.Similarity ?? 0;
+    if (!rawId || similarity < Math.max(70, minSimilarity - 8)) continue;
+
+    const externalId = normalizePersonExternalId(rawId);
+    const prev = byPerson.get(externalId);
+    if (!prev || similarity > prev.similarity) {
+      byPerson.set(externalId, {
+        externalId,
+        similarity,
+        faceId: hit.Face?.FaceId,
+      });
+    }
   }
 
-  return {
-    externalId: normalizePersonExternalId(rawId),
-    similarity: best.Similarity ?? 0,
-    faceId: best.Face?.FaceId,
-  };
+  return [...byPerson.values()]
+    .filter((m) => m.similarity >= minSimilarity)
+    .sort((a, b) => b.similarity - a.similarity)
+    .slice(0, maxPeople);
 }
 
 export function getFaceCollectionStatus() {
