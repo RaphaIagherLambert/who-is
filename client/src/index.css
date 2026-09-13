@@ -614,16 +614,16 @@ a {
   margin-top: 0.25rem;
   color: #a3a3a3;
   font-size: 0.8rem;
+  font-weight: 600;
   text-decoration: none;
 }
 
 .result-link-primary {
   color: #e5e5e5;
-  font-weight: 600;
 }
 
 .result-link-alt {
-  color: #737373;
+  color: #e5e5e5;
 }
 
 .wiki-single-desc {
