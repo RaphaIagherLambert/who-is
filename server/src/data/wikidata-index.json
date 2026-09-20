@@ -7371,5 +7371,119 @@
       "ab61c152-8bc3-4f70-a13b-fa559050e61a"
     ],
     "indexedAt": "2026-09-13T15:27:06.677Z"
+  },
+  {
+    "id": "Q957639",
+    "name": "William Hopper",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "William Hopper",
+      "url": "https://en.wikipedia.org/wiki/William_Hopper",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/William%20Hopper%20by%20Van%20Vechten.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/William%20Hopper%20by%20Van%20Vechten.jpg?width=800"
+    ],
+    "faceId": "46adf9c5-c0c8-44a3-8dc3-e3917ddee93b",
+    "faceIds": [
+      "46adf9c5-c0c8-44a3-8dc3-e3917ddee93b"
+    ],
+    "indexedAt": "2026-09-20T11:14:49.475Z"
+  },
+  {
+    "id": "Q957673",
+    "name": "Isabel Jewell",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Isabel Jewell",
+      "url": "https://en.wikipedia.org/wiki/Isabel_Jewell",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Jewell-isabel-01.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Jewell-isabel-01.jpg?width=800"
+    ],
+    "faceId": "4b332179-d2d9-4424-996b-23d6c7e386f7",
+    "faceIds": [
+      "4b332179-d2d9-4424-996b-23d6c7e386f7"
+    ],
+    "indexedAt": "2026-09-20T11:14:51.654Z"
+  },
+  {
+    "id": "Q957804",
+    "name": "Ryan Kelley",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Ryan Kelley",
+      "url": "https://en.wikipedia.org/wiki/Ryan_Kelley",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Ryan%20Kelley%20at%20Nostalgia%20Con%20Anaheim%202026.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Ryan%20Kelley%20at%20Nostalgia%20Con%20Anaheim%202026.jpg?width=800"
+    ],
+    "faceId": "7a13e3fa-4e05-4a0e-aaf5-6c80a719a334",
+    "faceIds": [
+      "7a13e3fa-4e05-4a0e-aaf5-6c80a719a334"
+    ],
+    "indexedAt": "2026-09-20T11:14:53.304Z"
+  },
+  {
+    "id": "Q957941",
+    "name": "William Kunstler",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "William Kunstler",
+      "url": "https://en.wikipedia.org/wiki/William_Kunstler",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/William%20Kunstler.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/William%20Kunstler.jpg?width=800"
+    ],
+    "faceId": "76ad32c4-538f-492f-b975-50564630c673",
+    "faceIds": [
+      "76ad32c4-538f-492f-b975-50564630c673"
+    ],
+    "indexedAt": "2026-09-20T11:14:55.282Z"
+  },
+  {
+    "id": "Q958077",
+    "name": "Don \"The Dragon\" Wilson",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Don Wilson (kickboxer)",
+      "url": "https://en.wikipedia.org/wiki/Don_Wilson_(kickboxer)",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Don%20Wilson.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Don%20Wilson.jpg?width=800"
+    ],
+    "faceId": "fe463f74-c9cc-497c-bbf5-c6d4161e5f2d",
+    "faceIds": [
+      "fe463f74-c9cc-497c-bbf5-c6d4161e5f2d"
+    ],
+    "indexedAt": "2026-09-20T11:15:59.181Z"
+  },
+  {
+    "id": "Q958205",
+    "name": "Manolo Cardona",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Manolo Cardona",
+      "url": "https://en.wikipedia.org/wiki/Manolo_Cardona",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Manolo%20Cardona%202016.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Manolo%20Cardona%202016.jpg?width=800"
+    ],
+    "faceId": "4a530cab-029b-4422-9a8e-73dbf0c7a77e",
+    "faceIds": [
+      "4a530cab-029b-4422-9a8e-73dbf0c7a77e"
+    ],
+    "indexedAt": "2026-09-20T11:16:01.182Z"
   }
 ]
