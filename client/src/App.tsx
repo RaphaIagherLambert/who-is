@@ -43,7 +43,7 @@ type WikidataNiche = NonNullable<IdentifyResult["niche"]>;
 
 /** More frames + wider spacing helps with moving / paused video. */
 const BURST_COUNT = 6;
-const BURST_INTERVAL_MS = 250;
+const BURST_INTERVAL_MS = 220;
 const FOCUS_MS = 1100;
 
 function isAbortError(err: unknown): boolean {

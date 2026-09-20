@@ -122,15 +122,20 @@ export async function searchFaceCollection(
 /**
  * Top unique people in the collection (by ExternalImageId person id).
  * Used as the primary recognition path as the index grows.
+ * Pass softMin (e.g. 65) from ensemble so weaker hits still feed the top-3 picker.
  */
 export async function searchFaceCollectionMatches(
   imageBase64: string,
-  maxPeople = 3
+  maxPeople = 3,
+  softMin?: number
 ): Promise<FaceCollectionMatch[]> {
   if (!(await ensureFaceCollection())) return [];
 
   const imageBytes = Buffer.from(imageBase64, "base64");
-  const minSimilarity = getMinSimilarity();
+  const configuredMin = getMinSimilarity();
+  const floor = softMin ?? configuredMin;
+  // AWS SearchFacesByImage threshold; keep a bit below our accept floor.
+  const awsThreshold = Math.max(60, Math.min(floor, configuredMin) - 8);
   // Fetch extra faces so multi-image people and near-ties still yield unique persons.
   const maxFaces = Math.min(25, Math.max(5, maxPeople * 5));
 
@@ -139,7 +144,7 @@ export async function searchFaceCollectionMatches(
       CollectionId: getCollectionId(),
       Image: { Bytes: imageBytes },
       MaxFaces: maxFaces,
-      FaceMatchThreshold: Math.max(70, minSimilarity - 8),
+      FaceMatchThreshold: awsThreshold,
     })
   );
 
@@ -148,7 +153,7 @@ export async function searchFaceCollectionMatches(
   for (const hit of response.FaceMatches ?? []) {
     const rawId = hit.Face?.ExternalImageId;
     const similarity = hit.Similarity ?? 0;
-    if (!rawId || similarity < Math.max(70, minSimilarity - 8)) continue;
+    if (!rawId || similarity < awsThreshold) continue;
 
     const externalId = normalizePersonExternalId(rawId);
     const prev = byPerson.get(externalId);
@@ -162,7 +167,7 @@ export async function searchFaceCollectionMatches(
   }
 
   return [...byPerson.values()]
-    .filter((m) => m.similarity >= minSimilarity)
+    .filter((m) => m.similarity >= floor)
     .sort((a, b) => b.similarity - a.similarity)
     .slice(0, maxPeople);
 }

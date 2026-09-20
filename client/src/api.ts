@@ -120,6 +120,7 @@ export async function identifyBestFromFrames(
     const candidates = res.results ?? [];
     const candidate = candidates[0];
     if (candidate) {
+      // Prefer wiki-backed hits, but never discard named soft candidates (no silence).
       const hasWiki =
         Boolean(candidate.wikipedia) ||
         (candidate.wikipediaAlternatives?.length ?? 0) > 0 ||
@@ -127,12 +128,16 @@ export async function identifyBestFromFrames(
           (c) =>
             Boolean(c.wikipedia) || (c.wikipediaAlternatives?.length ?? 0) > 0
         );
-      if (hasWiki && (!best || candidate.confidence > best.confidence)) {
+      const better =
+        !best ||
+        candidate.confidence > best.confidence ||
+        (hasWiki &&
+          !Boolean(best.wikipedia) &&
+          !(best.wikipediaAlternatives?.length ?? 0));
+      if (better) {
         best = candidate;
         bestResults = candidates;
         needsPick = Boolean(res.needsPick) || candidates.length > 1;
-      } else if (!hasWiki) {
-        rejects.push("no_wiki");
       }
     } else {
       rejects.push(res.rejectReason);

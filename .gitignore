@@ -14,3 +14,8 @@ credentials*
 # Local import cache (legacy); production uses src/data/wikidata-index.json
 server/data/
 data/
+
+# Local measure fixtures (keep example + gitkeep)
+server/measure/labels.json
+server/measure/fixtures/*
+!server/measure/fixtures/.gitkeep

@@ -4,6 +4,14 @@ const VIDEO_CONSTRAINTS: MediaStreamConstraints[] = [
   {
     video: {
       facingMode: { ideal: "environment" },
+      width: { ideal: 1920 },
+      height: { ideal: 1080 },
+    },
+    audio: false,
+  },
+  {
+    video: {
+      facingMode: { ideal: "environment" },
       width: { ideal: 1280 },
       height: { ideal: 720 },
     },
@@ -19,6 +27,9 @@ const VIDEO_CONSTRAINTS: MediaStreamConstraints[] = [
   },
   { video: true, audio: false },
 ];
+
+/** Higher JPEG quality helps AWS on phone→screen photos. */
+const JPEG_QUALITY = 0.97;
 
 export function useCamera() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -79,47 +90,75 @@ export function useCamera() {
         await video.play();
         setActive(true);
         setReady(true);
-        return true;
       }
-
-      return false;
-    } catch {
-      setError("Camera access denied or unavailable.");
-      setActive(false);
-      setReady(false);
+      return true;
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Camera unavailable");
+      stopCamera();
       return false;
     } finally {
       setStarting(false);
     }
-  }, [ready, starting]);
+  }, [ready, starting, stopCamera]);
 
   useEffect(() => () => stopCamera(), [stopCamera]);
 
+  const encodeFrame = useCallback(
+    (mode: "full" | "zoom" = "full"): string | null => {
+      const video = videoRef.current;
+      const canvas = canvasRef.current;
+      if (!video || !canvas || video.readyState < 2) return null;
+      if (!video.videoWidth || !video.videoHeight) return null;
+
+      const vw = video.videoWidth;
+      const vh = video.videoHeight;
+      const ctx = canvas.getContext("2d");
+      if (!ctx) return null;
+
+      if (mode === "zoom") {
+        // ~1.35× center crop — helps small faces on TV without losing too much.
+        const zoom = 1.35;
+        const sw = vw / zoom;
+        const sh = vh / zoom;
+        const sx = (vw - sw) / 2;
+        const sy = (vh - sh) / 2;
+        canvas.width = Math.round(sw);
+        canvas.height = Math.round(sh);
+        ctx.filter = "contrast(1.06) saturate(1.05)";
+        ctx.drawImage(video, sx, sy, sw, sh, 0, 0, canvas.width, canvas.height);
+        ctx.filter = "none";
+      } else {
+        canvas.width = vw;
+        canvas.height = vh;
+        ctx.filter = "contrast(1.04)";
+        ctx.drawImage(video, 0, 0);
+        ctx.filter = "none";
+      }
+
+      return canvas.toDataURL("image/jpeg", JPEG_QUALITY);
+    },
+    []
+  );
+
   const captureFrame = useCallback((): string | null => {
-    const video = videoRef.current;
-    const canvas = canvasRef.current;
-    if (!video || !canvas || video.readyState < 2) return null;
+    return encodeFrame("full");
+  }, [encodeFrame]);
 
-    canvas.width = video.videoWidth;
-    canvas.height = video.videoHeight;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return null;
-
-    ctx.drawImage(video, 0, 0);
-    return canvas.toDataURL("image/jpeg", 0.92);
-  }, []);
-
+  /**
+   * Burst alternates full-frame and zoomed center crops for multi-scale ensemble.
+   */
   const captureBurst = useCallback(
-    async (count = 4, intervalMs = 180): Promise<string[]> => {
+    async (count = 6, intervalMs = 220): Promise<string[]> => {
       const frames: string[] = [];
       for (let i = 0; i < count; i++) {
-        const frame = captureFrame();
+        const mode = i % 2 === 0 ? "full" : "zoom";
+        const frame = encodeFrame(mode);
         if (frame) frames.push(frame);
         if (i < count - 1) await wait(intervalMs);
       }
       return frames;
     },
-    [captureFrame]
+    [encodeFrame]
   );
 
   return {
