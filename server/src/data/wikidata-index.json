@@ -7485,5 +7485,404 @@
       "4a530cab-029b-4422-9a8e-73dbf0c7a77e"
     ],
     "indexedAt": "2026-09-20T11:16:01.182Z"
+  },
+  {
+    "id": "Q32927",
+    "name": "Valery Leontiev",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Valery Leontiev",
+      "url": "https://en.wikipedia.org/wiki/Valery_Leontiev",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Valery%20Leontiev%20at%20Laima%20Rendez%20Vous%20Jurmala%202017%20%282%29%20%28cropped%29.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Valery%20Leontiev%20at%20Laima%20Rendez%20Vous%20Jurmala%202017%20%282%29%20%28cropped%29.jpg?width=800"
+    ],
+    "faceId": "505bd676-e718-4115-af82-699979c84134",
+    "faceIds": [
+      "505bd676-e718-4115-af82-699979c84134"
+    ],
+    "indexedAt": "2026-09-20T12:22:49.280Z"
+  },
+  {
+    "id": "Q33605",
+    "name": "Kesha",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Kesha",
+      "url": "https://en.wikipedia.org/wiki/Kesha",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Kesha%20AMAs%202019%20%28cropped%29.png?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Kesha%20AMAs%202019%20%28cropped%29.png?width=800"
+    ],
+    "faceId": "b763f105-6a54-4b11-9dc4-7123c25d80b8",
+    "faceIds": [
+      "b763f105-6a54-4b11-9dc4-7123c25d80b8"
+    ],
+    "indexedAt": "2026-09-20T12:22:50.780Z"
+  },
+  {
+    "id": "Q34012",
+    "name": "Marlon Brando",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Marlon Brando",
+      "url": "https://en.wikipedia.org/wiki/Marlon_Brando",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Marlon%20Brando%20publicity%20for%20One-Eyed%20Jacks.png?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Marlon%20Brando%20publicity%20for%20One-Eyed%20Jacks.png?width=800"
+    ],
+    "faceId": "6f5c981e-a6db-4258-98a3-ed421a920871",
+    "faceIds": [
+      "6f5c981e-a6db-4258-98a3-ed421a920871"
+    ],
+    "indexedAt": "2026-09-20T12:22:52.892Z"
+  },
+  {
+    "id": "Q34091",
+    "name": "Mae Jemison",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Mae Jemison",
+      "url": "https://en.wikipedia.org/wiki/Mae_Jemison",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Mae%20Carol%20Jemison.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Mae%20Carol%20Jemison.jpg?width=800"
+    ],
+    "faceId": "4ceecaca-0e8c-4d8e-9e45-dbee688f3f46",
+    "faceIds": [
+      "4ceecaca-0e8c-4d8e-9e45-dbee688f3f46"
+    ],
+    "indexedAt": "2026-09-20T12:22:54.698Z"
+  },
+  {
+    "id": "Q34389",
+    "name": "Whitney Houston",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Whitney Houston",
+      "url": "https://en.wikipedia.org/wiki/Whitney_Houston",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Whitney%20Houston%20%28cropped3%29.JPEG?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Whitney%20Houston%20%28cropped3%29.JPEG?width=800"
+    ],
+    "faceId": "cd7fb562-e638-4adc-936f-757af6e66903",
+    "faceIds": [
+      "cd7fb562-e638-4adc-936f-757af6e66903"
+    ],
+    "indexedAt": "2026-09-20T12:23:44.942Z"
+  },
+  {
+    "id": "Q34460",
+    "name": "Gwyneth Paltrow",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Gwyneth Paltrow",
+      "url": "https://en.wikipedia.org/wiki/Gwyneth_Paltrow",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Gwyneth%20Paltrow%20avp%20Iron%20Man%203%20Paris.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Gwyneth%20Paltrow%20avp%20Iron%20Man%203%20Paris.jpg?width=800"
+    ],
+    "faceId": "8083ff50-b726-48fe-a634-47fd72235ed2",
+    "faceIds": [
+      "8083ff50-b726-48fe-a634-47fd72235ed2"
+    ],
+    "indexedAt": "2026-09-20T12:23:47.451Z"
+  },
+  {
+    "id": "Q34529",
+    "name": "Bela Lugosi",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Bela Lugosi",
+      "url": "https://en.wikipedia.org/wiki/Bela_Lugosi",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Lugosi%20B%C3%A9la%20fortepan%2014652%20%28cropped%29.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Lugosi%20B%C3%A9la%20fortepan%2014652%20%28cropped%29.jpg?width=800"
+    ],
+    "faceId": "c52fd841-64f3-4d4d-b071-5cb37b0f0e5f",
+    "faceIds": [
+      "c52fd841-64f3-4d4d-b071-5cb37b0f0e5f"
+    ],
+    "indexedAt": "2026-09-20T12:23:49.710Z"
+  },
+  {
+    "id": "Q34851",
+    "name": "Elizabeth Taylor",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Elizabeth Taylor",
+      "url": "https://en.wikipedia.org/wiki/Elizabeth_Taylor",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Elizabeth%20Taylor%20with%20Kennedy%20award.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Elizabeth%20Taylor%20with%20Kennedy%20award.jpg?width=800"
+    ],
+    "faceId": "698609ab-6b43-48d7-9064-461d0d213c8a",
+    "faceIds": [
+      "698609ab-6b43-48d7-9064-461d0d213c8a"
+    ],
+    "indexedAt": "2026-09-20T12:23:52.102Z"
+  },
+  {
+    "id": "Q40032",
+    "name": "T. R. Knight",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "T. R. Knight",
+      "url": "https://en.wikipedia.org/wiki/T._R._Knight",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/TRKnight-byPhilipRomano.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/TRKnight-byPhilipRomano.jpg?width=800"
+    ],
+    "faceId": "15978536-7796-4717-9d9d-dc0f9d6d216e",
+    "faceIds": [
+      "15978536-7796-4717-9d9d-dc0f9d6d216e"
+    ],
+    "indexedAt": "2026-09-20T12:24:46.860Z"
+  },
+  {
+    "id": "Q925604",
+    "name": "Marshall Herskovitz",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Marshall Herskovitz",
+      "url": "https://en.wikipedia.org/wiki/Marshall_Herskovitz",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/MarshallHerskovitz.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/MarshallHerskovitz.jpg?width=800"
+    ],
+    "faceId": "194783b0-2354-42b7-83c8-a19a23ec6445",
+    "faceIds": [
+      "194783b0-2354-42b7-83c8-a19a23ec6445"
+    ],
+    "indexedAt": "2026-09-20T12:30:27.426Z"
+  },
+  {
+    "id": "Q925872",
+    "name": "William Alland",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "William Alland",
+      "url": "https://en.wikipedia.org/wiki/William_Alland",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Citizen-Kane-Alland.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Citizen-Kane-Alland.jpg?width=800"
+    ],
+    "faceId": "fd2cdf22-783b-45f7-81dc-7ce121810871",
+    "faceIds": [
+      "fd2cdf22-783b-45f7-81dc-7ce121810871"
+    ],
+    "indexedAt": "2026-09-20T12:30:30.266Z"
+  },
+  {
+    "id": "Q925886",
+    "name": "Allen Hoskins",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Allen Hoskins",
+      "url": "https://en.wikipedia.org/wiki/Allen_Hoskins",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Farinacolor.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Farinacolor.jpg?width=800"
+    ],
+    "faceId": "593a798a-173f-4179-8a77-017e5ea430cd",
+    "faceIds": [
+      "593a798a-173f-4179-8a77-017e5ea430cd"
+    ],
+    "indexedAt": "2026-09-20T12:30:33.414Z"
+  },
+  {
+    "id": "Q925911",
+    "name": "Kenneth Tobey",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Kenneth Tobey",
+      "url": "https://en.wikipedia.org/wiki/Kenneth_Tobey",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/It%20Came%20from%20Beneath%20the%20Sea%20%281955%29%20trailer%201.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/It%20Came%20from%20Beneath%20the%20Sea%20%281955%29%20trailer%201.jpg?width=800"
+    ],
+    "faceId": "275a587a-49c4-44b4-a4c8-2729ac023d66",
+    "faceIds": [
+      "275a587a-49c4-44b4-a4c8-2729ac023d66"
+    ],
+    "indexedAt": "2026-09-20T12:30:37.834Z"
+  },
+  {
+    "id": "Q958227",
+    "name": "Seth Gabel",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Seth Gabel",
+      "url": "https://en.wikipedia.org/wiki/Seth_Gabel",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Seth%20Gabel%20by%20Gage%20Skidmore.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Seth%20Gabel%20by%20Gage%20Skidmore.jpg?width=800"
+    ],
+    "faceId": "ffa6ade0-26e7-4db8-a06e-ec469aa4808c",
+    "faceIds": [
+      "ffa6ade0-26e7-4db8-a06e-ec469aa4808c"
+    ],
+    "indexedAt": "2026-09-20T12:40:52.213Z"
+  },
+  {
+    "id": "Q958290",
+    "name": "Shane Harper",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Shane Harper",
+      "url": "https://en.wikipedia.org/wiki/Shane_Harper",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Shane%20Harper%202011.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Shane%20Harper%202011.jpg?width=800"
+    ],
+    "faceId": "2ffdba13-9280-4b1f-a9fd-0e4e35229b45",
+    "faceIds": [
+      "2ffdba13-9280-4b1f-a9fd-0e4e35229b45"
+    ],
+    "indexedAt": "2026-09-20T12:43:10.605Z"
+  },
+  {
+    "id": "Q958353",
+    "name": "Russell Wong",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Russell Wong",
+      "url": "https://en.wikipedia.org/wiki/Russell_Wong",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Russell%20Wong%2C%20AFI%20Film%20Festival%20Los%20Angeles%202009.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Russell%20Wong%2C%20AFI%20Film%20Festival%20Los%20Angeles%202009.jpg?width=800"
+    ],
+    "faceId": "ab4f250d-4a14-4d52-85f0-de2ac73d1626",
+    "faceIds": [
+      "ab4f250d-4a14-4d52-85f0-de2ac73d1626"
+    ],
+    "indexedAt": "2026-09-20T12:43:12.666Z"
+  },
+  {
+    "id": "Q958489",
+    "name": "Justin Guarini",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Justin Guarini",
+      "url": "https://en.wikipedia.org/wiki/Justin_Guarini",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Justin%20Guarini.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Justin%20Guarini.jpg?width=800"
+    ],
+    "faceId": "0ec8cf3a-a6b6-4a57-9093-914f4fd05ee1",
+    "faceIds": [
+      "0ec8cf3a-a6b6-4a57-9093-914f4fd05ee1"
+    ],
+    "indexedAt": "2026-09-20T12:43:14.587Z"
+  },
+  {
+    "id": "Q966018",
+    "name": "Frank Loesser",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Frank Loesser",
+      "url": "https://en.wikipedia.org/wiki/Frank_Loesser",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Frank%20Loesser%20studio%20photo%2C%201936.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Frank%20Loesser%20studio%20photo%2C%201936.jpg?width=800"
+    ],
+    "faceId": "08ed849b-4cf7-4fac-ac1a-9c31697a770d",
+    "faceIds": [
+      "08ed849b-4cf7-4fac-ac1a-9c31697a770d"
+    ],
+    "indexedAt": "2026-09-20T12:45:49.740Z"
+  },
+  {
+    "id": "Q966420",
+    "name": "Gene Evans",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Gene Evans",
+      "url": "https://en.wikipedia.org/wiki/Gene_Evans",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Gene%20Evans%20in%20Bonanza%20%28The%20Fear%20Merchants%29.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Gene%20Evans%20in%20Bonanza%20%28The%20Fear%20Merchants%29.jpg?width=800"
+    ],
+    "faceId": "c8fd3d84-669b-4519-bf02-c608646d39a9",
+    "faceIds": [
+      "c8fd3d84-669b-4519-bf02-c608646d39a9"
+    ],
+    "indexedAt": "2026-09-20T12:45:51.228Z"
+  },
+  {
+    "id": "Q981418",
+    "name": "Preston Foster",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Preston Foster",
+      "url": "https://en.wikipedia.org/wiki/Preston_Foster",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Preston%20Foster%20in%20Twice%20Blessed%20trailer.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Preston%20Foster%20in%20Twice%20Blessed%20trailer.jpg?width=800"
+    ],
+    "faceId": "bbe0f3ee-ad88-4c1c-9511-d326adbb5955",
+    "faceIds": [
+      "bbe0f3ee-ad88-4c1c-9511-d326adbb5955"
+    ],
+    "indexedAt": "2026-09-20T12:47:35.134Z"
+  },
+  {
+    "id": "Q981647",
+    "name": "Richard Moll",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Richard Moll",
+      "url": "https://en.wikipedia.org/wiki/Richard_Moll",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Richard%20Moll%20on%20the%20red%20carpet%20at%20the%2039th%20Annual%20Emmy%20Awards.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Richard%20Moll%20on%20the%20red%20carpet%20at%20the%2039th%20Annual%20Emmy%20Awards.jpg?width=800"
+    ],
+    "faceId": "b767822f-9296-4887-a817-dcb4f6431b83",
+    "faceIds": [
+      "b767822f-9296-4887-a817-dcb4f6431b83"
+    ],
+    "indexedAt": "2026-09-20T12:47:37.588Z"
   }
 ]
