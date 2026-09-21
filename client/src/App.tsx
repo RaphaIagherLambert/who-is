@@ -230,7 +230,7 @@ export default function App() {
       setLastRejectReason(rejectReason);
       return;
     }
-    if (needsPick && results.length > 1) {
+    if (needsPick && results.length >= 1) {
       setPersonCandidates(results);
       setStatus(t.pickPersonTitle);
       return;
@@ -266,7 +266,7 @@ export default function App() {
         return;
       }
 
-      if (needsPick && results.length > 1) {
+      if (needsPick && results.length >= 1) {
         setPersonCandidates(results);
         setStatus(t.pickPersonTitle);
         return;
@@ -663,7 +663,7 @@ export default function App() {
         </button>
       )}
 
-      {personCandidates.length > 1 && phase === "idle" && !match && (
+      {personCandidates.length >= 1 && phase === "idle" && !match && (
         <div className="result-card result-card-rich">
           <div className="result-card-body">
             <p className="wiki-pick-title">{t.pickPersonTitle}</p>

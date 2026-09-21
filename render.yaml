@@ -19,7 +19,7 @@ services:
       - key: MIN_CONFIDENCE
         value: "80"
       - key: MIN_MATCH_MARGIN
-        value: "4"
+        value: "8"
       - key: REKOGNITION_COLLECTION_ID
         value: who-is-faces
       - key: MIN_FACE_SIMILARITY
@@ -27,7 +27,7 @@ services:
       - key: SOFT_CELEBRITY_MIN
         value: "50"
       - key: ENSEMBLE_ACCEPT_MIN
-        value: "50"
+        value: "70"
       - key: STRONG_COLLECTION_SIMILARITY
         value: "92"
       - key: MIN_FACE_SHARPNESS

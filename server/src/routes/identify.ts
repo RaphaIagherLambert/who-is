@@ -168,7 +168,8 @@ identifyRouter.post("/", async (req, res) => {
         : 0;
     const filterConfig = loadMatchFilterConfig();
     const providerName = process.env.RECOGNITION_PROVIDER ?? "mock";
-    const acceptMin = Number(process.env.ENSEMBLE_ACCEPT_MIN) || 50;
+    const soleMin = Number(process.env.ENSEMBLE_ACCEPT_MIN) || 70;
+    const pickMin = Number(process.env.SOFT_CELEBRITY_MIN) || 50;
 
     const quality = scoreImageQuality(parsed.base64);
     if (!quality.ok) {
@@ -291,12 +292,6 @@ identifyRouter.post("/", async (req, res) => {
 
     resolvedList.sort((a, b) => b.confidence - a.confidence);
 
-    const celebrityNames = new Set(
-      celebrityRaw.map((c) => c.name.trim().toLowerCase())
-    );
-    const collectionAccept =
-      Number(process.env.MIN_FACE_SIMILARITY) || 85;
-
     const decision = decideEnsemblePresentation(
       resolvedList.map((r) => ({
         name: r.name,
@@ -309,16 +304,9 @@ identifyRouter.post("/", async (req, res) => {
         source: r.source === "celebrity" ? "celebrity" : "ensemble",
       })),
       {
-        acceptMin,
-        // Collection-only: keep the strict bar; celebrity / dual-source: soft 50%.
-        acceptMinFor: (c) => {
-          const key = c.name.trim().toLowerCase();
-          if (c.sources.includes("celebrity") || celebrityNames.has(key)) {
-            return acceptMin;
-          }
-          return collectionAccept;
-        },
-        margin: filterConfig.minMargin,
+        soleMin,
+        pickMin,
+        margin: Math.max(filterConfig.minMargin, 8),
         topN: 3,
       }
     );
@@ -328,9 +316,13 @@ identifyRouter.post("/", async (req, res) => {
       .filter((r): r is ResolvedResult => Boolean(r));
 
     if (results.length === 0) {
+      const topRawConf =
+        resolvedList[0]?.confidence ?? celebrityRaw[0]?.confidence ?? null;
+      const topRawName =
+        resolvedList[0]?.name ?? celebrityRaw[0]?.name ?? null;
       const rejectReason = prepared.smallFaceOnly
         ? "small_face"
-        : celebrityRaw.length === 0
+        : celebrityRaw.length === 0 && resolvedList.length === 0
           ? "no_faces"
           : "low_confidence";
 
@@ -338,7 +330,7 @@ identifyRouter.post("/", async (req, res) => {
         results: [],
         rejectReason,
         allMatches: celebrityRaw,
-        minConfidence: filterConfig.minConfidence,
+        minConfidence: pickMin,
         lang,
         provider: `${providerName}+ensemble`,
         diagnostics: {
@@ -346,9 +338,11 @@ identifyRouter.post("/", async (req, res) => {
           cropped: prepared.cropped,
           smallFaceOnly: prepared.smallFaceOnly ?? false,
           fullFrameRetry: usedFullFrame,
-          stage: "ensemble_empty",
-          topConfidence: celebrityRaw[0]?.confidence ?? null,
-          topName: celebrityRaw[0]?.name ?? null,
+          stage: "ensemble_below_pick",
+          topConfidence: topRawConf,
+          topName: topRawName,
+          soleMin,
+          pickMin,
         },
       });
       return;
@@ -358,7 +352,7 @@ identifyRouter.post("/", async (req, res) => {
       results,
       rejectReason: null,
       allMatches: celebrityRaw,
-      minConfidence: filterConfig.minConfidence,
+      minConfidence: pickMin,
       lang,
       provider: `${providerName}+ensemble`,
       needsPick: decision.needsPick,
@@ -370,7 +364,8 @@ identifyRouter.post("/", async (req, res) => {
         stage: decision.acceptSingle ? "ensemble_accept" : "ensemble_pick",
         topConfidence: results[0]?.confidence ?? null,
         topName: results[0]?.name ?? null,
-        acceptMin,
+        soleMin,
+        pickMin,
       },
     });
   } catch (err) {

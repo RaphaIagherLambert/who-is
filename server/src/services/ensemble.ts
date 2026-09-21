@@ -62,7 +62,6 @@ export async function runEnsembleRecognition(options: {
 
   for (const list of collectionLists) {
     for (const hit of list) {
-      // Collection hits are resolved to names later; keep externalId as key until then.
       const key = `id:${hit.externalId}`;
       const prev = byKey.get(key);
       const agreed = Boolean(prev?.sources.includes("collection"));
@@ -99,8 +98,6 @@ export async function runEnsembleRecognition(options: {
     }
   }
 
-  // If celebrity name matches a collection id entry we can't merge by name yet —
-  // resolution happens in the route. Sort by confidence.
   const candidates = [...byKey.values()].sort(
     (a, b) => b.confidence - a.confidence
   );
@@ -117,13 +114,20 @@ export async function runEnsembleRecognition(options: {
   };
 }
 
-/** Auto-accept when best is clearly good; otherwise show top candidates. */
+/**
+ * Confidence bands:
+ * - > soleMin with clear lead → single answer
+ * - > soleMin but close race → top-N picker (scores may be above soleMin)
+ * - pickMin..soleMin → top-N picker (only candidates in that band)
+ * - < pickMin → empty (caller explains why)
+ */
 export function decideEnsemblePresentation(
   ranked: EnsembleCandidate[],
   opts?: {
-    acceptMin?: number;
-    /** Per-candidate accept floor (e.g. stricter for collection-only). */
-    acceptMinFor?: (c: EnsembleCandidate) => number;
+    /** Sole answer requires confidence strictly above this (default 70). */
+    soleMin?: number;
+    /** Soft picker floor inclusive (default 50). */
+    pickMin?: number;
     margin?: number;
     topN?: number;
   }
@@ -132,30 +136,41 @@ export function decideEnsemblePresentation(
   needsPick: boolean;
   acceptSingle: boolean;
 } {
-  const acceptMin = opts?.acceptMin ?? 50;
-  const margin = opts?.margin ?? 4;
+  const soleMin = opts?.soleMin ?? 70;
+  const pickMin = opts?.pickMin ?? 50;
+  const margin = opts?.margin ?? 8;
   const topN = opts?.topN ?? 3;
 
-  if (ranked.length === 0) {
+  const eligible = ranked.filter((c) => c.confidence >= pickMin);
+  if (eligible.length === 0) {
     return { results: [], needsPick: false, acceptSingle: false };
   }
 
-  const top = ranked.slice(0, topN);
-  const best = top[0];
-  const second = top[1];
-  const bestFloor = opts?.acceptMinFor?.(best) ?? acceptMin;
-  const clear =
-    best.confidence >= bestFloor &&
-    (!second || best.confidence - second.confidence >= margin);
+  const best = eligible[0];
+  const second = eligible[1];
 
-  if (clear) {
-    return { results: [best], needsPick: false, acceptSingle: true };
+  if (best.confidence > soleMin) {
+    const clearLead =
+      !second || best.confidence - second.confidence >= margin;
+    if (clearLead) {
+      return { results: [best], needsPick: false, acceptSingle: true };
+    }
+    // Close race above sole bar — still offer alternatives.
+    return {
+      results: eligible.slice(0, topN),
+      needsPick: true,
+      acceptSingle: false,
+    };
   }
 
-  // Below accept floor (or close race): never go silent — offer top 3.
+  // Soft band [pickMin, soleMin]: picker only, never sole lock.
+  const soft = eligible
+    .filter((c) => c.confidence <= soleMin)
+    .slice(0, topN);
+
   return {
-    results: top,
-    needsPick: top.length > 1,
+    results: soft,
+    needsPick: soft.length > 0,
     acceptSingle: false,
   };
 }

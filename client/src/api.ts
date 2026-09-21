@@ -120,7 +120,7 @@ export async function identifyBestFromFrames(
     const candidates = res.results ?? [];
     const candidate = candidates[0];
     if (candidate) {
-      // Prefer wiki-backed hits, but never discard named soft candidates (no silence).
+      // Prefer wiki-backed hits, but never discard named soft candidates.
       const hasWiki =
         Boolean(candidate.wikipedia) ||
         (candidate.wikipediaAlternatives?.length ?? 0) > 0 ||
@@ -128,16 +128,26 @@ export async function identifyBestFromFrames(
           (c) =>
             Boolean(c.wikipedia) || (c.wikipediaAlternatives?.length ?? 0) > 0
         );
-      const better =
-        !best ||
-        candidate.confidence > best.confidence ||
-        (hasWiki &&
-          !Boolean(best.wikipedia) &&
-          !(best.wikipediaAlternatives?.length ?? 0));
-      if (better) {
+      const frameNeedsPick = Boolean(res.needsPick) || candidates.length > 1;
+      // Prefer a clear sole accept over a soft picker from another frame.
+      const betterSole =
+        !frameNeedsPick &&
+        (needsPick ||
+          !best ||
+          candidate.confidence > best.confidence ||
+          (hasWiki &&
+            !Boolean(best.wikipedia) &&
+            !(best.wikipediaAlternatives?.length ?? 0)));
+      const betterSoft =
+        frameNeedsPick &&
+        needsPick &&
+        (!best || candidate.confidence > best.confidence);
+      const firstSoft =
+        frameNeedsPick && !best;
+      if (betterSole || betterSoft || firstSoft) {
         best = candidate;
         bestResults = candidates;
-        needsPick = Boolean(res.needsPick) || candidates.length > 1;
+        needsPick = frameNeedsPick;
       }
     } else {
       rejects.push(res.rejectReason);
