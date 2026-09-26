@@ -3,6 +3,7 @@ import { Router } from "express";
 import { adminVerifyRateLimit } from "../middleware/rateLimit.js";
 import { requireAdmin } from "../middleware/requireAdmin.js";
 import { indexTeachingFace } from "../services/customCollection.js";
+import { encodeTeachExternalId } from "../services/teachExternalId.js";
 import {
   countTeachings,
   isTeachingsEnabled,
@@ -77,7 +78,7 @@ teachRouter.post("/", requireAdmin, async (req, res) => {
       return;
     }
 
-    const id = randomUUID();
+    const id = encodeTeachExternalId(wikipedia) ?? randomUUID();
     const faceId = await indexTeachingFace(parsed.base64, id);
     if (!faceId) {
       res.status(422).json({

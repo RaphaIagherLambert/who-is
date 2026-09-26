@@ -145,6 +145,14 @@ async function fetchPageSummary(
   };
 }
 
+/** Page summary (thumbnail, description) for a known title; null if disambiguation. */
+export async function wikipediaPageByTitle(
+  title: string,
+  lang: string
+): Promise<WikipediaPage | null> {
+  return fetchPageSummary(title, lang);
+}
+
 function isLikelyNonPerson(page: WikipediaPage): boolean {
   const text = `${page.title} ${page.description ?? ""}`;
   return NON_PERSON_RE.test(text);

@@ -13,9 +13,11 @@ import { loadMatchFilterConfig } from "../services/matchFilter.js";
 import { createRecognitionProvider } from "../services/providerFactory.js";
 import { getWikidataPersonById } from "../services/wikidataStore.js";
 import { getTeachingById } from "../services/teachingsStore.js";
+import { decodeTeachExternalId } from "../services/teachExternalId.js";
 import {
   resolvePersonWikipedia,
   wikipediaForWikidataId,
+  wikipediaPageByTitle,
   type WikipediaPage,
 } from "../services/wikipedia.js";
 import { parseImagePayload } from "../utils/imagePayload.js";
@@ -77,6 +79,24 @@ async function resolveCollectionMatch(externalId: string, lang: string) {
     }
   }
 
+  const taught = decodeTeachExternalId(externalId);
+  if (taught) {
+    const page = (await wikipediaPageByTitle(taught.title, taught.lang)) ?? {
+      title: taught.title,
+      url: `https://${taught.lang}.wikipedia.org/wiki/${encodeURIComponent(
+        taught.title.replace(/ /g, "_")
+      )}`,
+      lang: taught.lang,
+    };
+    return {
+      name: page.title,
+      wikipedia: page,
+      wikipediaAlternatives: [page],
+      wikipediaAmbiguous: false,
+      source: "learned" as const,
+    };
+  }
+
   const teaching = await getTeachingById(externalId);
   if (teaching) {
     return {
@@ -103,6 +123,14 @@ function wikiPayload(wiki: {
     wikipediaAlternatives: alternatives,
     wikipediaAmbiguous: ambiguous,
   };
+}
+
+function looksLikeRawId(value: string): boolean {
+  return (
+    /^Q\d+(_\d+)?$/i.test(value) ||
+    /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(_\d+)?$/i.test(value) ||
+    value.startsWith("wp.")
+  );
 }
 
 type ResolvedResult = {
@@ -133,12 +161,13 @@ async function resolveEnsembleCandidate(
         urls: c.urls,
       };
     }
+    // Collection face whose person record is gone (e.g. teaching lost on restart).
+    return null;
   }
 
-  // Never drop a named hit — Wikipedia can fail; still show the candidate.
-  const displayName =
-    c.name && !/^Q\d+$/i.test(c.name.trim()) ? c.name.trim() : null;
-  if (!displayName) return null;
+  // Celebrity names can still show without Wikipedia; raw ids never can.
+  const displayName = c.name?.trim() ?? "";
+  if (!displayName || looksLikeRawId(displayName)) return null;
 
   const resolved = await resolvePersonWikipedia(displayName, lang);
 
