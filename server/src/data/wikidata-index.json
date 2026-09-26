@@ -8359,5 +8359,119 @@
       "f3f5fa0a-2d46-47b3-8aff-125e3cc9f564"
     ],
     "indexedAt": "2026-09-26T14:19:58.439Z"
+  },
+  {
+    "id": "Q958743",
+    "name": "Gene Gauntier",
+    "niche": "us-actor",
+    "wikipedia": {
+      "title": "Gene Gauntier",
+      "url": "https://en.wikipedia.org/wiki/Gene_Gauntier",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Gene%20Gauntier%2C%201912.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Gene%20Gauntier%2C%201912.jpg?width=800"
+    ],
+    "faceId": "a2ec3e4f-f034-478b-a737-9f0d25f069d5",
+    "faceIds": [
+      "a2ec3e4f-f034-478b-a737-9f0d25f069d5"
+    ],
+    "indexedAt": "2026-09-26T14:41:10.985Z"
+  },
+  {
+    "id": "Q34424",
+    "name": "Shakira",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Shakira",
+      "url": "https://en.wikipedia.org/wiki/Shakira",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/2023-11-16%20Gala%20de%20los%20Latin%20Grammy%2C%2003%20%28cropped%2901.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/2023-11-16%20Gala%20de%20los%20Latin%20Grammy%2C%2003%20%28cropped%2901.jpg?width=800"
+    ],
+    "faceId": "ee01ec4a-e434-45bf-a9cd-bcf110d8ec1c",
+    "faceIds": [
+      "ee01ec4a-e434-45bf-a9cd-bcf110d8ec1c"
+    ],
+    "indexedAt": "2026-09-26T14:44:33.871Z"
+  },
+  {
+    "id": "Q768077",
+    "name": "Grecia Colmenares",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Grecia Colmenares",
+      "url": "https://en.wikipedia.org/wiki/Grecia_Colmenares",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Grecia%20Colmenares%20%28cropped%29%20-%20Grecia%20Colmenares.JPG?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Grecia%20Colmenares%20%28cropped%29%20-%20Grecia%20Colmenares.JPG?width=800"
+    ],
+    "faceId": "907ce2e2-96e0-4e56-a77f-06747a937324",
+    "faceIds": [
+      "907ce2e2-96e0-4e56-a77f-06747a937324"
+    ],
+    "indexedAt": "2026-09-26T14:57:29.074Z"
+  },
+  {
+    "id": "Q774685",
+    "name": "Aracely Arámbula",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Aracely Arámbula",
+      "url": "https://en.wikipedia.org/wiki/Aracely_Ar%C3%A1mbula",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Aracely%20Ar%C3%A1mbula%202013%2002.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Aracely%20Ar%C3%A1mbula%202013%2002.jpg?width=800"
+    ],
+    "faceId": "ee6376b6-8d6b-4251-9e6d-c31f7c82f148",
+    "faceIds": [
+      "ee6376b6-8d6b-4251-9e6d-c31f7c82f148"
+    ],
+    "indexedAt": "2026-09-26T14:58:21.677Z"
+  },
+  {
+    "id": "Q781993",
+    "name": "Susana Dosamantes",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Susana Dosamantes",
+      "url": "https://en.wikipedia.org/wiki/Susana_Dosamantes",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Susana%20Dosamantes.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Susana%20Dosamantes.jpg?width=800"
+    ],
+    "faceId": "306e417d-9cb0-427e-964e-51a485fa334a",
+    "faceIds": [
+      "306e417d-9cb0-427e-964e-51a485fa334a"
+    ],
+    "indexedAt": "2026-09-26T14:58:23.009Z"
+  },
+  {
+    "id": "Q794104",
+    "name": "Angélica Celaya",
+    "niche": "latam-actor",
+    "wikipedia": {
+      "title": "Angélica Celaya",
+      "url": "https://en.wikipedia.org/wiki/Ang%C3%A9lica_Celaya",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Ang%C3%A9lica%20Celaya%20for%20Constantine%20%28cropped%29.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Ang%C3%A9lica%20Celaya%20for%20Constantine%20%28cropped%29.jpg?width=800"
+    ],
+    "faceId": "27a87db2-f626-4cfe-8158-2c6e99ef5965",
+    "faceIds": [
+      "27a87db2-f626-4cfe-8158-2c6e99ef5965"
+    ],
+    "indexedAt": "2026-09-26T14:59:30.019Z"
   }
 ]
