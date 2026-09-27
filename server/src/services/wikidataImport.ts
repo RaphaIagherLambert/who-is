@@ -193,10 +193,135 @@ LIMIT ${limit}
 }
 
 function buildInfluencerOccupationClause(): string {
+  // influencer, YouTuber, TikToker
   return `
-  VALUES ?occupation { wd:Q2906862 wd:Q512030 wd:Q2066131 }
+  VALUES ?occupation { wd:Q2906862 wd:Q17125263 wd:Q94791573 }
   ?person wdt:P106 ?occupation .`;
 }
+
+export type ImportRegion = "us" | "eu" | "br" | "latam";
+
+const REGION_CLAUSES: Record<ImportRegion, string> = {
+  us: `
+  ?person wdt:P27 wd:Q30 .`,
+  eu: buildEuropeanCitizenshipClause(),
+  br: buildBrCitizenshipClause(),
+  latam: buildLatamCitizenshipClause(),
+};
+
+const REGION_LABEL_LANGS: Record<ImportRegion, string> = {
+  us: "en",
+  eu: "en",
+  br: "en,pt",
+  latam: "en,es,pt",
+};
+
+// comedian, stand-up comedian
+const COMEDIAN_OCCUPATIONS = "wd:Q245068 wd:Q18545066";
+
+// athlete, football, basketball, American football, tennis, baseball, athletics,
+// swimming, volleyball, MMA, boxing, Formula One, racing driver
+const ATHLETE_OCCUPATIONS = [
+  "wd:Q2066131",
+  "wd:Q937857",
+  "wd:Q3665646",
+  "wd:Q19204627",
+  "wd:Q10833314",
+  "wd:Q10871364",
+  "wd:Q11513337",
+  "wd:Q10843402",
+  "wd:Q15117302",
+  "wd:Q11607585",
+  "wd:Q11338576",
+  "wd:Q10841764",
+  "wd:Q378622",
+].join(" ");
+
+// Wikidata has hundreds of thousands of athletes; high sitelink floors keep imports
+// to recognizable names. Comedian floors stay low so smaller TV comedians qualify.
+const COMEDIAN_MIN_SITELINKS: Record<ImportRegion, number> = {
+  us: 8,
+  eu: 8,
+  br: 3,
+  latam: 4,
+};
+
+const ATHLETE_MIN_SITELINKS: Record<ImportRegion, number> = {
+  us: 25,
+  eu: 30,
+  br: 15,
+  latam: 20,
+};
+
+function buildOccupationRegionQuery(
+  occupations: string,
+  region: ImportRegion,
+  minSitelinks: number,
+  afterQid: string | null,
+  limit: number
+): string {
+  const cursor = afterQid
+    ? `\n  FILTER(STR(?person) > "http://www.wikidata.org/entity/${afterQid}")`
+    : "";
+
+  return `
+SELECT ?person ?personLabel ?image WHERE {
+  VALUES ?occupation { ${occupations} }
+  ?person wdt:P106 ?occupation ;
+          wdt:P18 ?image ;
+          wikibase:sitelinks ?sitelinks .${REGION_CLAUSES[region]}
+  FILTER(?sitelinks >= ${minSitelinks})${cursor}
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "${REGION_LABEL_LANGS[region]}". }
+}
+LIMIT ${limit}
+`;
+}
+
+type BatchFetcher = (
+  limit: number,
+  offset: number,
+  afterQid?: string | null
+) => Promise<WikidataImportRow[]>;
+
+function occupationRegionFetcher(
+  occupations: string,
+  region: ImportRegion,
+  minSitelinks: number
+): BatchFetcher {
+  return async (limit, _offset, afterQid = null) => {
+    const safeLimit = Math.max(1, Math.min(limit, 5));
+    return parseSparqlBindings(
+      await fetchSparqlJson(
+        buildOccupationRegionQuery(occupations, region, minSitelinks, afterQid, safeLimit)
+      )
+    );
+  };
+}
+
+export const fetchUsComediansBatch = occupationRegionFetcher(
+  COMEDIAN_OCCUPATIONS, "us", COMEDIAN_MIN_SITELINKS.us
+);
+export const fetchEuComediansBatch = occupationRegionFetcher(
+  COMEDIAN_OCCUPATIONS, "eu", COMEDIAN_MIN_SITELINKS.eu
+);
+export const fetchBrComediansBatch = occupationRegionFetcher(
+  COMEDIAN_OCCUPATIONS, "br", COMEDIAN_MIN_SITELINKS.br
+);
+export const fetchLatamComediansBatch = occupationRegionFetcher(
+  COMEDIAN_OCCUPATIONS, "latam", COMEDIAN_MIN_SITELINKS.latam
+);
+export const fetchUsAthletesBatch = occupationRegionFetcher(
+  ATHLETE_OCCUPATIONS, "us", ATHLETE_MIN_SITELINKS.us
+);
+export const fetchEuAthletesBatch = occupationRegionFetcher(
+  ATHLETE_OCCUPATIONS, "eu", ATHLETE_MIN_SITELINKS.eu
+);
+export const fetchBrAthletesBatch = occupationRegionFetcher(
+  ATHLETE_OCCUPATIONS, "br", ATHLETE_MIN_SITELINKS.br
+);
+export const fetchLatamAthletesBatch = occupationRegionFetcher(
+  ATHLETE_OCCUPATIONS, "latam", ATHLETE_MIN_SITELINKS.latam
+);
 
 function buildUsInfluencersQuery(afterQid: string | null, limit: number): string {
   const cursor = afterQid

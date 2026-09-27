@@ -17,7 +17,15 @@ export type WikidataNiche =
   | "asia-musician"
   | "us-influencer"
   | "eu-influencer"
-  | "br-influencer";
+  | "br-influencer"
+  | "us-comedian"
+  | "eu-comedian"
+  | "br-comedian"
+  | "latam-comedian"
+  | "us-athlete"
+  | "eu-athlete"
+  | "br-athlete"
+  | "latam-athlete";
 
 export interface WikidataPersonRecord {
   id: string;

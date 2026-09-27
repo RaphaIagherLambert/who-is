@@ -82,7 +82,7 @@ function runNiche(niche: string, opts: ReturnType<typeof parseArgs>): Promise<nu
 }
 
 const opts = parseArgs(process.argv.slice(2));
-console.log("Who is? — scale actor index");
+console.log("Who is? — scale face index");
 console.log(JSON.stringify(opts, null, 2));
 
 let failed = 0;

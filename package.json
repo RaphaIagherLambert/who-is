@@ -51,6 +51,8 @@
     "import:asia-musicians:dry-run": "npm run import:asia-musicians --prefix server -- --dry-run --limit 5",
     "import:asia-musicians:sparql": "npm run import:asia-musicians:sparql --prefix server",
     "import:scale-actors": "npm run import:scale-actors --prefix server --",
+    "import:comedians": "npm run import:comedians --prefix server --",
+    "import:athletes": "npm run import:athletes --prefix server --",
     "measure": "npm run measure --prefix server --",
     "security:check": "npm run security:check --prefix server"
   },

@@ -81,6 +81,14 @@ function wikidataBadgeForNiche(
     "latam-musician": t.wikidataLatamMusicianBadge,
     "asia-actor": t.wikidataAsiaActorBadge,
     "asia-musician": t.wikidataAsiaMusicianBadge,
+    "us-comedian": t.wikidataUsComedianBadge,
+    "eu-comedian": t.wikidataEuComedianBadge,
+    "br-comedian": t.wikidataBrComedianBadge,
+    "latam-comedian": t.wikidataLatamComedianBadge,
+    "us-athlete": t.wikidataUsAthleteBadge,
+    "eu-athlete": t.wikidataEuAthleteBadge,
+    "br-athlete": t.wikidataBrAthleteBadge,
+    "latam-athlete": t.wikidataLatamAthleteBadge,
   };
 
   return badges[niche];
@@ -123,6 +131,8 @@ export default function App() {
 
   useEffect(() => {
     if (!match?.name || phase !== "idle") return;
+    // TMDB is searched by name only; for athletes that often finds a different person.
+    if (resultNiche?.endsWith("-athlete")) return;
     let cancelled = false;
     void fetchTmdbPerson(match.name, toApiLanguage(lang))
       .then((enrichment) => {
@@ -134,7 +144,7 @@ export default function App() {
     return () => {
       cancelled = true;
     };
-  }, [lang, match?.name, phase]);
+  }, [lang, match?.name, phase, resultNiche]);
 
   const {
     isAdmin,

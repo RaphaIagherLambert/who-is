@@ -29,6 +29,14 @@ import {
   fetchEuMusiciansBatch,
   fetchUsActorsBatch,
   fetchUsMusiciansBatch,
+  fetchUsComediansBatch,
+  fetchEuComediansBatch,
+  fetchBrComediansBatch,
+  fetchLatamComediansBatch,
+  fetchUsAthletesBatch,
+  fetchEuAthletesBatch,
+  fetchBrAthletesBatch,
+  fetchLatamAthletesBatch,
   fetchWikidataEntityMetadata,
   fetchWikidataPersonForImport,
   pickLatestQid,
@@ -140,6 +148,54 @@ const NICHE_CONFIG = {
     fetchBatch: fetchAsiaMusiciansBatch,
     sparqlHint: "npm.cmd run import:asia-musicians -- --mode sparql --limit 5 --batch-size 3",
   },
+  "us-comedian": {
+    label: "US comedians",
+    seedIds: [],
+    fetchBatch: fetchUsComediansBatch,
+    sparqlHint: "npm.cmd run import:comedians -- --niches us-comedian --limit 5",
+  },
+  "eu-comedian": {
+    label: "European comedians",
+    seedIds: [],
+    fetchBatch: fetchEuComediansBatch,
+    sparqlHint: "npm.cmd run import:comedians -- --niches eu-comedian --limit 5",
+  },
+  "br-comedian": {
+    label: "Brazilian comedians",
+    seedIds: [],
+    fetchBatch: fetchBrComediansBatch,
+    sparqlHint: "npm.cmd run import:comedians -- --niches br-comedian --limit 5",
+  },
+  "latam-comedian": {
+    label: "Latin American comedians (South America + Mexico)",
+    seedIds: [],
+    fetchBatch: fetchLatamComediansBatch,
+    sparqlHint: "npm.cmd run import:comedians -- --niches latam-comedian --limit 5",
+  },
+  "us-athlete": {
+    label: "US athletes",
+    seedIds: [],
+    fetchBatch: fetchUsAthletesBatch,
+    sparqlHint: "npm.cmd run import:athletes -- --niches us-athlete --limit 5",
+  },
+  "eu-athlete": {
+    label: "European athletes",
+    seedIds: [],
+    fetchBatch: fetchEuAthletesBatch,
+    sparqlHint: "npm.cmd run import:athletes -- --niches eu-athlete --limit 5",
+  },
+  "br-athlete": {
+    label: "Brazilian athletes",
+    seedIds: [],
+    fetchBatch: fetchBrAthletesBatch,
+    sparqlHint: "npm.cmd run import:athletes -- --niches br-athlete --limit 5",
+  },
+  "latam-athlete": {
+    label: "Latin American athletes (South America + Mexico)",
+    seedIds: [],
+    fetchBatch: fetchLatamAthletesBatch,
+    sparqlHint: "npm.cmd run import:athletes -- --niches latam-athlete --limit 5",
+  },
 } as const;
 
 function parseNiche(value: string | undefined): WikidataNiche {
@@ -192,6 +248,30 @@ function parseNiche(value: string | undefined): WikidataNiche {
     case "asia-musician":
     case "asian-musicians":
       return "asia-musician";
+    case "us-comedians":
+    case "us-comedian":
+      return "us-comedian";
+    case "eu-comedians":
+    case "eu-comedian":
+      return "eu-comedian";
+    case "br-comedians":
+    case "br-comedian":
+      return "br-comedian";
+    case "latam-comedians":
+    case "latam-comedian":
+      return "latam-comedian";
+    case "us-athletes":
+    case "us-athlete":
+      return "us-athlete";
+    case "eu-athletes":
+    case "eu-athlete":
+      return "eu-athlete";
+    case "br-athletes":
+    case "br-athlete":
+      return "br-athlete";
+    case "latam-athletes":
+    case "latam-athlete":
+      return "latam-athlete";
     case "actors":
     case "us-actor":
     default:
@@ -444,6 +524,7 @@ async function runSparqlImport(opts: ImportOptions) {
 async function main() {
   const opts = parseArgs(process.argv.slice(2));
   const config = NICHE_CONFIG[opts.niche];
+  if (config.seedIds.length === 0) opts.mode = "sparql";
 
   console.log(`Who is? — ${config.label} import`);
   console.log(opts);

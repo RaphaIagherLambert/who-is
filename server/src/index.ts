@@ -80,6 +80,8 @@ import {
 
   countWikidataUsInfluencers,
 
+  countWikidataByNiche,
+
   wikidataStoreFileExists,
 
 } from "./services/wikidataStore.js";
@@ -195,6 +197,22 @@ app.get("/api/health", async (_req, res) => {
         asiaActorsIndexed: await countWikidataAsiaActors(),
 
         asiaMusiciansIndexed: await countWikidataAsiaMusicians(),
+
+        usComediansIndexed: await countWikidataByNiche("us-comedian"),
+
+        euComediansIndexed: await countWikidataByNiche("eu-comedian"),
+
+        brComediansIndexed: await countWikidataByNiche("br-comedian"),
+
+        latamComediansIndexed: await countWikidataByNiche("latam-comedian"),
+
+        usAthletesIndexed: await countWikidataByNiche("us-athlete"),
+
+        euAthletesIndexed: await countWikidataByNiche("eu-athlete"),
+
+        brAthletesIndexed: await countWikidataByNiche("br-athlete"),
+
+        latamAthletesIndexed: await countWikidataByNiche("latam-athlete"),
 
         storeFileFound: await wikidataStoreFileExists(),
 

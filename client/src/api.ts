@@ -23,7 +23,14 @@ export interface IdentifyResult extends CelebrityMatch {
   wikipediaAlternatives?: WikipediaPage[];
   wikipediaAmbiguous?: boolean;
   source?: "celebrity" | "learned" | "wikidata";
-  niche?: "us-actor" | "us-musician" | "us-influencer" | "eu-actor" | "eu-musician" | "eu-influencer" | "br-actor" | "br-musician" | "br-influencer" | "latam-actor" | "latam-musician" | "asia-actor" | "asia-musician";
+  niche?:
+    | "us-actor" | "us-musician" | "us-influencer"
+    | "eu-actor" | "eu-musician" | "eu-influencer"
+    | "br-actor" | "br-musician" | "br-influencer"
+    | "latam-actor" | "latam-musician"
+    | "asia-actor" | "asia-musician"
+    | "us-comedian" | "eu-comedian" | "br-comedian" | "latam-comedian"
+    | "us-athlete" | "eu-athlete" | "br-athlete" | "latam-athlete";
 }
 
 export interface IdentifyDiagnostics {
