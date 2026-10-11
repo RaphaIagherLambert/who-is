@@ -280,7 +280,8 @@ export async function teachPerson(
   name: string,
   lang: string,
   adminSecret: string,
-  wikipediaUrl?: string
+  wikipediaUrl?: string,
+  faceIndex = 0
 ): Promise<{ ok: boolean; teaching: { name: string; wikipedia: WikipediaPage } }> {
   const res = await fetch("/api/teach", {
     method: "POST",
@@ -293,6 +294,7 @@ export async function teachPerson(
       name,
       lang,
       wikipediaUrl,
+      faceIndex,
     }),
   });
 

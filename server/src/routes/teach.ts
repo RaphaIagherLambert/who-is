@@ -3,6 +3,7 @@ import { Router } from "express";
 import { adminVerifyRateLimit } from "../middleware/rateLimit.js";
 import { requireAdmin } from "../middleware/requireAdmin.js";
 import { indexTeachingFace } from "../services/customCollection.js";
+import { prepareFaceImage } from "../services/faceCrop.js";
 import { encodeTeachExternalId } from "../services/teachExternalId.js";
 import {
   countTeachings,
@@ -78,8 +79,18 @@ teachRouter.post("/", requireAdmin, async (req, res) => {
       return;
     }
 
+    const faceIndex =
+      typeof req.body?.faceIndex === "number" && Number.isFinite(req.body.faceIndex)
+        ? Math.max(0, Math.floor(req.body.faceIndex))
+        : 0;
+    // IndexFaces keeps only the largest face, so crop when another face was picked.
+    const faceImage =
+      faceIndex > 0
+        ? (await prepareFaceImage(parsed.base64, faceIndex)).imageBase64
+        : parsed.base64;
+
     const id = encodeTeachExternalId(wikipedia) ?? randomUUID();
-    const faceId = await indexTeachingFace(parsed.base64, id);
+    const faceId = await indexTeachingFace(faceImage, id);
     if (!faceId) {
       res.status(422).json({
         error: "No clear face found in the image. Try again with the face centered and well lit.",

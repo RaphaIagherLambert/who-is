@@ -111,7 +111,8 @@ export default function App() {
   const [snapshot, setSnapshot] = useState<string | null>(null);
   const [flash, setFlash] = useState(false);
   const [teachOpen, setTeachOpen] = useState(false);
-  const [lastFailedFrame, setLastFailedFrame] = useState<string | null>(null);
+  const [teachFrame, setTeachFrame] = useState<string | null>(null);
+  const [teachFaceIndex, setTeachFaceIndex] = useState(0);
   const [lastRejectReason, setLastRejectReason] = useState<RejectReason>(null);
   const [showOnboarding, setShowOnboarding] = useState(shouldShowOnboarding);
   const [legalDoc, setLegalDoc] = useState<LegalDoc | null>(null);
@@ -184,7 +185,8 @@ export default function App() {
     setResultSource(null);
     setResultNiche(null);
     setTmdb(null);
-    setLastFailedFrame(null);
+    setTeachFrame(null);
+    setTeachFaceIndex(0);
     setLastRejectReason(null);
     setTeachOpen(false);
     setPickFaces([]);
@@ -232,11 +234,11 @@ export default function App() {
     results: IdentifyResult[],
     needsPick: boolean | undefined,
     rejectReason: RejectReason,
-    failedFrame: string | null
+    frame: string | null
   ) => {
+    setTeachFrame(frame);
     const best = results[0] ?? null;
     if (!best) {
-      setLastFailedFrame(failedFrame);
       setLastRejectReason(rejectReason);
       return;
     }
@@ -268,7 +270,7 @@ export default function App() {
       if (signal.aborted) throw new DOMException("Aborted", "AbortError");
 
       if (!best) {
-        setLastFailedFrame(frames[frames.length - 1] ?? frames[0]);
+        setTeachFrame(frames[frames.length - 1] ?? frames[0]);
         setLastRejectReason(rejectReason);
         if (diagnostics) {
           console.info("[who-is] identify failed", diagnostics);
@@ -276,6 +278,7 @@ export default function App() {
         return;
       }
 
+      setTeachFrame(frames[0]);
       if (needsPick && results.length >= 1) {
         setPersonCandidates(results);
         setStatus(t.pickPersonTitle);
@@ -341,7 +344,7 @@ export default function App() {
         setStatus(t.cancelled);
         return;
       }
-      if (capturedFrame) setLastFailedFrame(capturedFrame);
+      if (capturedFrame) setTeachFrame(capturedFrame);
       setError(err instanceof Error ? err.message : t.errorGeneric);
     } finally {
       if (!holdForPick) finishSession();
@@ -394,7 +397,7 @@ export default function App() {
           setStatus(t.cancelled);
           return;
         }
-        setLastFailedFrame(dataUrl);
+        setTeachFrame(dataUrl);
         setError(err instanceof Error ? err.message : t.errorGeneric);
       } finally {
         if (!holdForPick) finishSession();
@@ -409,6 +412,7 @@ export default function App() {
       if (frames.length === 0 || !abortRef.current) return;
 
       const signal = abortRef.current.signal;
+      setTeachFaceIndex(faceIndex);
       try {
         setStatus(t.scanning);
         if (frames.length === 1) {
@@ -433,7 +437,7 @@ export default function App() {
           setStatus(t.cancelled);
           return;
         }
-        setLastFailedFrame(frames[0] ?? null);
+        setTeachFrame(frames[0] ?? null);
         setError(err instanceof Error ? err.message : t.errorGeneric);
       } finally {
         finishSession();
@@ -474,8 +478,10 @@ export default function App() {
 
   const handleTeachSuccess = (name: string, page: WikipediaPage) => {
     setTeachOpen(false);
-    setLastFailedFrame(null);
+    setTeachFrame(null);
     setLastRejectReason(null);
+    setPersonCandidates([]);
+    setTmdb(null);
     setMatch({ name, confidence: 100 });
     setWiki(page);
     setWikiAlternatives([page]);
@@ -500,8 +506,8 @@ export default function App() {
     phase === "shutter" ||
     phase === "processing" ||
     phase === "picking";
-  const showTeachButton =
-    isAdmin && phase === "idle" && !match && Boolean(lastFailedFrame);
+  const showTeachButton = isAdmin && phase === "idle" && Boolean(teachFrame);
+  const wrongName = match?.name ?? personCandidates[0]?.name;
 
   return (
     <div className="app">
@@ -663,16 +669,6 @@ export default function App() {
         <div className="error-banner">{error ?? mediaError}</div>
       )}
 
-      {showTeachButton && (
-        <button
-          type="button"
-          className="teach-button"
-          onClick={() => setTeachOpen(true)}
-        >
-          {t.teachButton}
-        </button>
-      )}
-
       {personCandidates.length >= 1 && phase === "idle" && !match && (
         <div className="result-card result-card-rich">
           <div className="result-card-body">
@@ -772,6 +768,16 @@ export default function App() {
         </div>
       )}
 
+      {showTeachButton && (
+        <button
+          type="button"
+          className="teach-button"
+          onClick={() => setTeachOpen(true)}
+        >
+          {wrongName ? t.correctButton : t.teachButton}
+        </button>
+      )}
+
       {phase === "picking" && pickImage && pickFaces.length > 1 && (
         <FacePicker
           lang={lang}
@@ -790,10 +796,12 @@ export default function App() {
         />
       )}
 
-      {teachOpen && lastFailedFrame && (
+      {teachOpen && teachFrame && (
         <TeachPanel
           lang={lang}
-          frame={lastFailedFrame}
+          frame={teachFrame}
+          faceIndex={teachFaceIndex}
+          wrongName={wrongName}
           onClose={() => setTeachOpen(false)}
           onSuccess={handleTeachSuccess}
         />

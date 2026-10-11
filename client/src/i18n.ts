@@ -63,6 +63,10 @@ export const translations = {
     teachClose: "Fechar",
     teachSuccess: (name: string) => `${name} aprendido! Na próxima vez o sistema deve reconhecer.`,
     teachError: "Não foi possível salvar",
+    correctButton: "Pessoa errada? Corrigir",
+    correctTitle: "Corrigir reconhecimento",
+    correctHint: (name: string) =>
+      `O app reconheceu ${name}. Digite quem é de verdade — a foto desta tentativa será salva para a pessoa correta.`,
     adminUnlockTitle: "Modo admin",
     adminUnlockHint: "Toque 5× no título para abrir. Digite a senha de administrador.",
     adminSecretPlaceholder: "Senha admin",
@@ -182,6 +186,10 @@ export const translations = {
     teachClose: "Close",
     teachSuccess: (name: string) => `${name} learned! The system should recognize them next time.`,
     teachError: "Could not save",
+    correctButton: "Wrong person? Correct it",
+    correctTitle: "Correct recognition",
+    correctHint: (name: string) =>
+      `The app recognized ${name}. Type who it really is — this scan's photo will be saved for the correct person.`,
     adminUnlockTitle: "Admin mode",
     adminUnlockHint: "Tap the title 5× to open. Enter the admin password.",
     adminSecretPlaceholder: "Admin password",

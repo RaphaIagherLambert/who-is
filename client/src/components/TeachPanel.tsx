@@ -12,11 +12,21 @@ import { getAdminSecret } from "../hooks/adminAuth";
 interface TeachPanelProps {
   lang: AppLanguage;
   frame: string;
+  faceIndex?: number;
+  /** Name the app showed; set when the admin is correcting a wrong recognition. */
+  wrongName?: string;
   onClose: () => void;
   onSuccess: (name: string, wiki: WikipediaPage) => void;
 }
 
-export function TeachPanel({ lang, frame, onClose, onSuccess }: TeachPanelProps) {
+export function TeachPanel({
+  lang,
+  frame,
+  faceIndex = 0,
+  wrongName,
+  onClose,
+  onSuccess,
+}: TeachPanelProps) {
   const t = translations[lang];
   const apiLang = lang === "pt" ? "pt" : "en";
   const [name, setName] = useState("");
@@ -88,7 +98,7 @@ export function TeachPanel({ lang, frame, onClose, onSuccess }: TeachPanelProps)
     setBusy(true);
     setError(null);
     try {
-      await teachPerson(frame, preview.title, apiLang, secret, preview.url);
+      await teachPerson(frame, preview.title, apiLang, secret, preview.url, faceIndex);
       onSuccess(preview.title, preview);
     } catch (err) {
       setError(err instanceof Error ? err.message : t.teachError);
@@ -101,13 +111,13 @@ export function TeachPanel({ lang, frame, onClose, onSuccess }: TeachPanelProps)
     <div className="teach-overlay" role="dialog" aria-modal="true" aria-label={t.teachTitle}>
       <div className="teach-panel">
         <div className="teach-panel-header">
-          <h3>{t.teachTitle}</h3>
+          <h3>{wrongName ? t.correctTitle : t.teachTitle}</h3>
           <button type="button" className="teach-close" onClick={onClose} aria-label={t.teachClose}>
             ×
           </button>
         </div>
 
-        <p className="teach-hint">{t.teachHint}</p>
+        <p className="teach-hint">{wrongName ? t.correctHint(wrongName) : t.teachHint}</p>
 
         <label className="teach-label" htmlFor="teach-name">
           {t.teachNameLabel}
