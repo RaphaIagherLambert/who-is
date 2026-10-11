@@ -298,6 +298,7 @@ async function searchWikidataHumans(
     const label =
       entity.labels?.[preferredLang]?.value ??
       entity.labels?.en?.value ??
+      entity.labels?.mul?.value ??
       hit.label ??
       "";
     if (label && !namesMatch(name, label) && !namesMatch(name, hit.label ?? "")) {
@@ -447,6 +448,7 @@ export async function wikipediaForWikidataId(
   const name =
     entity.labels?.[lang]?.value ??
     entity.labels?.en?.value ??
+    entity.labels?.mul?.value ??
     page.title;
 
   return { page, name };

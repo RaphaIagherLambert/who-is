@@ -16,6 +16,7 @@ interface SparqlBinding {
   person?: { value: string };
   personLabel?: { value: string };
   image?: { value: string };
+  sitelinks?: { value: string };
 }
 
 function extractQid(uri: string): string {
@@ -201,19 +202,16 @@ function buildInfluencerOccupationClause(): string {
 
 export type ImportRegion = "us" | "eu" | "br" | "latam";
 
+// Kept minimal for QLever: its planner returned empty results for the EU clause
+// when combined with FILTER(?country != wd:Q30), which is redundant anyway.
 const REGION_CLAUSES: Record<ImportRegion, string> = {
   us: `
   ?person wdt:P27 wd:Q30 .`,
-  eu: buildEuropeanCitizenshipClause(),
+  eu: `
+  ?person wdt:P27 ?country .
+  ?country wdt:P30 wd:Q46 .`,
   br: buildBrCitizenshipClause(),
   latam: buildLatamCitizenshipClause(),
-};
-
-const REGION_LABEL_LANGS: Record<ImportRegion, string> = {
-  us: "en",
-  eu: "en",
-  br: "en,pt",
-  latam: "en,es,pt",
 };
 
 // comedian, stand-up comedian
@@ -221,21 +219,23 @@ const COMEDIAN_OCCUPATIONS = "wd:Q245068 wd:Q18545066";
 
 // athlete, football, basketball, American football, tennis, baseball, athletics,
 // swimming, volleyball, MMA, boxing, Formula One, racing driver
-const ATHLETE_OCCUPATIONS = [
-  "wd:Q2066131",
-  "wd:Q937857",
-  "wd:Q3665646",
-  "wd:Q19204627",
-  "wd:Q10833314",
-  "wd:Q10871364",
-  "wd:Q11513337",
-  "wd:Q10843402",
-  "wd:Q15117302",
-  "wd:Q11607585",
-  "wd:Q11338576",
-  "wd:Q10841764",
-  "wd:Q378622",
-].join(" ");
+export const ATHLETE_OCCUPATION_IDS = [
+  "Q2066131",
+  "Q937857",
+  "Q3665646",
+  "Q19204627",
+  "Q10833314",
+  "Q10871364",
+  "Q11513337",
+  "Q10843402",
+  "Q15117302",
+  "Q11607585",
+  "Q11338576",
+  "Q10841764",
+  "Q378622",
+] as const;
+
+const ATHLETE_OCCUPATIONS = ATHLETE_OCCUPATION_IDS.map((id) => `wd:${id}`).join(" ");
 
 // Wikidata has hundreds of thousands of athletes; high sitelink floors keep imports
 // to recognizable names. Comedian floors stay low so smaller TV comedians qualify.
@@ -253,73 +253,98 @@ const ATHLETE_MIN_SITELINKS: Record<ImportRegion, number> = {
   latam: 20,
 };
 
-function buildOccupationRegionQuery(
+// Multi-country occupation queries time out on query.wikidata.org (60 s limit).
+// QLever serves the same Wikidata data and answers these in about a second.
+const QLEVER_ENDPOINT = "https://qlever.cs.uni-freiburg.de/api/wikidata";
+
+const QLEVER_PREFIXES = `PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+`;
+
+function buildRankedOccupationQuery(
   occupations: string,
   region: ImportRegion,
-  minSitelinks: number,
-  afterQid: string | null,
-  limit: number
+  offset: number,
+  pageSize: number
 ): string {
-  const cursor = afterQid
-    ? `\n  FILTER(STR(?person) > "http://www.wikidata.org/entity/${afterQid}")`
-    : "";
-
-  return `
-SELECT ?person ?personLabel ?image WHERE {
+  // QLever has no label service; names come from fetchWikidataEntityMetadata.
+  // No FILTER on ?sitelinks: QLever intermittently returned zero rows with it, so the
+  // minimum is applied in code while walking the descending list.
+  return `${QLEVER_PREFIXES}
+SELECT ?person ?image ?sitelinks WHERE {
   VALUES ?occupation { ${occupations} }
   ?person wdt:P106 ?occupation ;
           wdt:P18 ?image ;
           wikibase:sitelinks ?sitelinks .${REGION_CLAUSES[region]}
-  FILTER(?sitelinks >= ${minSitelinks})${cursor}
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "${REGION_LABEL_LANGS[region]}". }
 }
-LIMIT ${limit}
+ORDER BY DESC(?sitelinks) ?person
+LIMIT ${pageSize}
+OFFSET ${offset}
 `;
 }
 
-type BatchFetcher = (
-  limit: number,
+/**
+ * One page of a popularity-ranked list. rawCount is the number of result rows consumed
+ * (before de-duplication); 0 means the list is exhausted or fell below the minimum.
+ */
+export type RankedPageFetcher = (
   offset: number,
-  afterQid?: string | null
-) => Promise<WikidataImportRow[]>;
+  pageSize: number
+) => Promise<{ rows: WikidataImportRow[]; rawCount: number }>;
 
-function occupationRegionFetcher(
+function rankedOccupationFetcher(
   occupations: string,
   region: ImportRegion,
   minSitelinks: number
-): BatchFetcher {
-  return async (limit, _offset, afterQid = null) => {
-    const safeLimit = Math.max(1, Math.min(limit, 5));
-    return parseSparqlBindings(
-      await fetchSparqlJson(
-        buildOccupationRegionQuery(occupations, region, minSitelinks, afterQid, safeLimit)
-      )
+): RankedPageFetcher {
+  return async (offset, pageSize) => {
+    const all = await fetchSparqlJson(
+      buildRankedOccupationQuery(occupations, region, offset, pageSize),
+      QLEVER_ENDPOINT
     );
+    const belowMin = all.findIndex(
+      (b) => Number(b.sitelinks?.value ?? 0) < minSitelinks
+    );
+    const bindings = belowMin === -1 ? all : all.slice(0, belowMin);
+    const seen = new Set<string>();
+    const rows: WikidataImportRow[] = [];
+    for (const binding of bindings) {
+      const personUri = binding.person?.value;
+      const imageUrl = binding.image?.value;
+      if (!personUri || !imageUrl) continue;
+      const id = extractQid(personUri);
+      if (seen.has(id)) continue;
+      seen.add(id);
+      const url = normalizeCommonsImageUrl(imageUrl);
+      rows.push({ id, name: id, imageUrl: url, imageUrls: [url] });
+    }
+    return { rows, rawCount: bindings.length };
   };
 }
 
-export const fetchUsComediansBatch = occupationRegionFetcher(
+export const fetchUsComediansRanked = rankedOccupationFetcher(
   COMEDIAN_OCCUPATIONS, "us", COMEDIAN_MIN_SITELINKS.us
 );
-export const fetchEuComediansBatch = occupationRegionFetcher(
+export const fetchEuComediansRanked = rankedOccupationFetcher(
   COMEDIAN_OCCUPATIONS, "eu", COMEDIAN_MIN_SITELINKS.eu
 );
-export const fetchBrComediansBatch = occupationRegionFetcher(
+export const fetchBrComediansRanked = rankedOccupationFetcher(
   COMEDIAN_OCCUPATIONS, "br", COMEDIAN_MIN_SITELINKS.br
 );
-export const fetchLatamComediansBatch = occupationRegionFetcher(
+export const fetchLatamComediansRanked = rankedOccupationFetcher(
   COMEDIAN_OCCUPATIONS, "latam", COMEDIAN_MIN_SITELINKS.latam
 );
-export const fetchUsAthletesBatch = occupationRegionFetcher(
+export const fetchUsAthletesRanked = rankedOccupationFetcher(
   ATHLETE_OCCUPATIONS, "us", ATHLETE_MIN_SITELINKS.us
 );
-export const fetchEuAthletesBatch = occupationRegionFetcher(
+export const fetchEuAthletesRanked = rankedOccupationFetcher(
   ATHLETE_OCCUPATIONS, "eu", ATHLETE_MIN_SITELINKS.eu
 );
-export const fetchBrAthletesBatch = occupationRegionFetcher(
+export const fetchBrAthletesRanked = rankedOccupationFetcher(
   ATHLETE_OCCUPATIONS, "br", ATHLETE_MIN_SITELINKS.br
 );
-export const fetchLatamAthletesBatch = occupationRegionFetcher(
+export const fetchLatamAthletesRanked = rankedOccupationFetcher(
   ATHLETE_OCCUPATIONS, "latam", ATHLETE_MIN_SITELINKS.latam
 );
 
@@ -414,7 +439,10 @@ function parseSparqlBindings(bindings: SparqlBinding[]): WikidataImportRow[] {
   return rows;
 }
 
-async function fetchSparqlJson(query: string): Promise<SparqlBinding[]> {
+async function fetchSparqlJson(
+  query: string,
+  endpoint: string = SPARQL_ENDPOINT
+): Promise<SparqlBinding[]> {
   let lastError: Error | null = null;
 
   for (let attempt = 0; attempt < SPARQL_MAX_RETRIES; attempt++) {
@@ -425,7 +453,7 @@ async function fetchSparqlJson(query: string): Promise<SparqlBinding[]> {
     }
 
     try {
-      const res = await fetch(SPARQL_ENDPOINT, {
+      const res = await fetch(endpoint, {
         method: "POST",
         headers: {
           Accept: "application/sparql-results+json",
@@ -640,6 +668,12 @@ type EntityJson = {
             datavalue?: { value?: string };
           };
         }>;
+        P106?: Array<{
+          rank?: "preferred" | "normal" | "deprecated";
+          mainsnak?: {
+            datavalue?: { value?: { id?: string } };
+          };
+        }>;
       };
     }
   >;
@@ -655,7 +689,8 @@ const WIKI_SITE_PRIORITY: Array<{ site: string; lang: string }> = [
   { site: "ptwiki", lang: "pt" },
 ];
 
-const LABEL_LANG_PRIORITY = ["en", "ja", "zh", "ko", "hi", "es", "pt"];
+// "mul" is Wikidata's language-neutral default label; many items no longer repeat it under "en".
+const LABEL_LANG_PRIORITY = ["en", "mul", "pt", "es", "ja", "zh", "ko", "hi"];
 
 /** Reliable single-person fetch — use for seed import mode. */
 export async function fetchWikidataPersonForImport(
@@ -697,9 +732,12 @@ export async function fetchWikidataPersonForImport(
   };
 }
 
-export async function fetchWikidataEntityMetadata(
-  id: string
-): Promise<{ name: string; wikipedia: { title: string; url: string; lang: string } } | null> {
+export async function fetchWikidataEntityMetadata(id: string): Promise<{
+  name: string;
+  wikipedia: { title: string; url: string; lang: string };
+  /** P106 occupation QIDs, preferred rank first, then in listed order. */
+  occupations: string[];
+} | null> {
   const res = await fetch(`https://www.wikidata.org/wiki/Special:EntityData/${id}.json`, {
     headers: { "User-Agent": USER_AGENT },
     signal: AbortSignal.timeout(30_000),
@@ -731,8 +769,19 @@ export async function fetchWikidataEntityMetadata(
   name ??= wiki?.title;
   if (!name || !wiki?.title) return null;
 
+  const occupationClaims = (entity?.claims?.P106 ?? []).filter(
+    (c) => c.rank !== "deprecated"
+  );
+  const occupations = [
+    ...occupationClaims.filter((c) => c.rank === "preferred"),
+    ...occupationClaims.filter((c) => c.rank !== "preferred"),
+  ]
+    .map((c) => c.mainsnak?.datavalue?.value?.id)
+    .filter((qid): qid is string => Boolean(qid));
+
   return {
     name,
+    occupations,
     wikipedia: {
       title: wiki.title,
       url:

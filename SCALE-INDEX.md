@@ -49,6 +49,8 @@ npm.cmd run import:comedians -- --niches br-comedian --limit 300
 
 Athletes only include people with many Wikipedia language pages (15+ for Brazil, 30+ for Europe), so imports stay on recognizable names. Brazilian comedians need only 3+, so smaller TV comedians qualify.
 
+These two categories query [QLever](https://qlever.cs.uni-freiburg.de) (same Wikidata data) instead of query.wikidata.org, which times out on multi-country searches. They import the most popular people first and skip anyone already indexed, so re-running continues where the last run stopped. Athletes whose main occupation is not a sport (e.g. Albert Camus, George H. W. Bush) are skipped.
+
 Then build so the index ships with the server:
 
 ```powershell

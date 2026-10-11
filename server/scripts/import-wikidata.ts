@@ -29,15 +29,18 @@ import {
   fetchEuMusiciansBatch,
   fetchUsActorsBatch,
   fetchUsMusiciansBatch,
-  fetchUsComediansBatch,
-  fetchEuComediansBatch,
-  fetchBrComediansBatch,
-  fetchLatamComediansBatch,
-  fetchUsAthletesBatch,
-  fetchEuAthletesBatch,
-  fetchBrAthletesBatch,
-  fetchLatamAthletesBatch,
+  fetchUsComediansRanked,
+  fetchEuComediansRanked,
+  fetchBrComediansRanked,
+  fetchLatamComediansRanked,
+  fetchUsAthletesRanked,
+  fetchEuAthletesRanked,
+  fetchBrAthletesRanked,
+  fetchLatamAthletesRanked,
   fetchWikidataEntityMetadata,
+  ATHLETE_OCCUPATION_IDS,
+  type RankedPageFetcher,
+  type WikidataImportRow,
   fetchWikidataPersonForImport,
   pickLatestQid,
   sleep,
@@ -69,7 +72,26 @@ interface ImportOptions {
   facesPerPerson: number;
 }
 
-const NICHE_CONFIG = {
+interface NicheConfig {
+  label: string;
+  seedIds: readonly string[];
+  sparqlHint: string;
+  /** Cursor-paged by QID on query.wikidata.org. */
+  fetchBatch?: (
+    limit: number,
+    offset: number,
+    afterQid?: string | null
+  ) => Promise<WikidataImportRow[]>;
+  /** Popularity-ranked pages (most Wikipedia sitelinks first). */
+  fetchRanked?: RankedPageFetcher;
+  /**
+   * Skip people whose main occupation is not in this list (e.g. Albert Camus played
+   * football, but is primarily a philosopher).
+   */
+  primaryOccupations?: readonly string[];
+}
+
+const NICHE_CONFIG: Record<WikidataNiche, NicheConfig> = {
   "us-actor": {
     label: "US actors",
     seedIds: US_ACTOR_SEED_UNIQUE,
@@ -151,52 +173,56 @@ const NICHE_CONFIG = {
   "us-comedian": {
     label: "US comedians",
     seedIds: [],
-    fetchBatch: fetchUsComediansBatch,
+    fetchRanked: fetchUsComediansRanked,
     sparqlHint: "npm.cmd run import:comedians -- --niches us-comedian --limit 5",
   },
   "eu-comedian": {
     label: "European comedians",
     seedIds: [],
-    fetchBatch: fetchEuComediansBatch,
+    fetchRanked: fetchEuComediansRanked,
     sparqlHint: "npm.cmd run import:comedians -- --niches eu-comedian --limit 5",
   },
   "br-comedian": {
     label: "Brazilian comedians",
     seedIds: [],
-    fetchBatch: fetchBrComediansBatch,
+    fetchRanked: fetchBrComediansRanked,
     sparqlHint: "npm.cmd run import:comedians -- --niches br-comedian --limit 5",
   },
   "latam-comedian": {
     label: "Latin American comedians (South America + Mexico)",
     seedIds: [],
-    fetchBatch: fetchLatamComediansBatch,
+    fetchRanked: fetchLatamComediansRanked,
     sparqlHint: "npm.cmd run import:comedians -- --niches latam-comedian --limit 5",
   },
   "us-athlete": {
     label: "US athletes",
     seedIds: [],
-    fetchBatch: fetchUsAthletesBatch,
+    fetchRanked: fetchUsAthletesRanked,
+    primaryOccupations: ATHLETE_OCCUPATION_IDS,
     sparqlHint: "npm.cmd run import:athletes -- --niches us-athlete --limit 5",
   },
   "eu-athlete": {
     label: "European athletes",
     seedIds: [],
-    fetchBatch: fetchEuAthletesBatch,
+    fetchRanked: fetchEuAthletesRanked,
+    primaryOccupations: ATHLETE_OCCUPATION_IDS,
     sparqlHint: "npm.cmd run import:athletes -- --niches eu-athlete --limit 5",
   },
   "br-athlete": {
     label: "Brazilian athletes",
     seedIds: [],
-    fetchBatch: fetchBrAthletesBatch,
+    fetchRanked: fetchBrAthletesRanked,
+    primaryOccupations: ATHLETE_OCCUPATION_IDS,
     sparqlHint: "npm.cmd run import:athletes -- --niches br-athlete --limit 5",
   },
   "latam-athlete": {
     label: "Latin American athletes (South America + Mexico)",
     seedIds: [],
-    fetchBatch: fetchLatamAthletesBatch,
+    fetchRanked: fetchLatamAthletesRanked,
+    primaryOccupations: ATHLETE_OCCUPATION_IDS,
     sparqlHint: "npm.cmd run import:athletes -- --niches latam-athlete --limit 5",
   },
-} as const;
+};
 
 function parseNiche(value: string | undefined): WikidataNiche {
   switch (value) {
@@ -465,8 +491,77 @@ async function runSeedImport(opts: ImportOptions) {
   console.log({ imported, skipped, failed });
 }
 
+const RANKED_PAGE_SIZE = 50;
+
+/** Walk the popularity-ranked list from the top; already-indexed people are skipped, so re-runs resume. */
+async function runRankedImport(opts: ImportOptions, fetchRanked: RankedPageFetcher) {
+  const config = NICHE_CONFIG[opts.niche];
+  let imported = 0;
+  let skipped = 0;
+  let failed = 0;
+  let notPrimary = 0;
+  let offset = 0;
+
+  while (imported < opts.limit) {
+    const { rows, rawCount } = await fetchRanked(offset, RANKED_PAGE_SIZE);
+    if (rawCount === 0) {
+      console.log("No more ranked rows.");
+      break;
+    }
+    offset += rawCount;
+
+    for (const row of rows) {
+      if (imported >= opts.limit) break;
+      if (await hasWikidataPerson(row.id)) {
+        skipped++;
+        continue;
+      }
+
+      const meta = await fetchWikidataEntityMetadata(row.id);
+      if (!meta) {
+        failed++;
+        continue;
+      }
+
+      const primary = config.primaryOccupations;
+      if (primary && !primary.includes(meta.occupations[0] ?? "")) {
+        notPrimary++;
+        console.log(`Skip (main occupation is not a sport): ${meta.name} (${row.id})`);
+        continue;
+      }
+
+      const result = await indexRow(
+        { ...row, name: meta.name },
+        meta.wikipedia,
+        opts.niche,
+        opts
+      );
+
+      if (result === "imported") {
+        imported++;
+        console.log(`Indexed ${imported}/${opts.limit}: ${meta.name} (${row.id})`);
+        await sleep(opts.delayMs);
+      } else if (result === "skipped") skipped++;
+      else failed++;
+    }
+
+    invalidateWikidataCache();
+  }
+
+  console.log(`\nDone (ranked — ${config.label}).`);
+  console.log({ imported, skipped, failed, notPrimary });
+}
+
 async function runSparqlImport(opts: ImportOptions) {
   const config = NICHE_CONFIG[opts.niche];
+  if (config.fetchRanked) {
+    await runRankedImport(opts, config.fetchRanked);
+    return;
+  }
+  if (!config.fetchBatch) {
+    throw new Error(`No SPARQL fetcher configured for ${opts.niche}`);
+  }
+  const fetchBatch = config.fetchBatch;
   let imported = 0;
   let skipped = 0;
   let failed = 0;
@@ -478,7 +573,7 @@ async function runSparqlImport(opts: ImportOptions) {
   while (imported < opts.limit) {
     const remaining = opts.limit - imported;
     const batchLimit = Math.min(opts.batchSize, remaining, 5);
-    const rows = await config.fetchBatch(batchLimit, 0, afterQid);
+    const rows = await fetchBatch(batchLimit, 0, afterQid);
 
     if (rows.length === 0) {
       console.log("No more rows from Wikidata SPARQL.");
