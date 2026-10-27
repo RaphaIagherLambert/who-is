@@ -41,12 +41,9 @@ type CapturePhase =
 
 type WikidataNiche = NonNullable<IdentifyResult["niche"]>;
 
-/** Short burst per live attempt — camera stays open until a sole match. */
-const LIVE_BURST_COUNT = 3;
-const LIVE_BURST_INTERVAL_MS = 180;
-const LIVE_MAX_ATTEMPTS = 15;
-const LIVE_PAUSE_BETWEEN_MS = 450;
-const LIVE_FOCUS_MS = 400;
+/** Capture right on tap, then freeze — later TV shots must not enter the scan. */
+const BURST_COUNT = 6;
+const BURST_INTERVAL_MS = 180;
 
 function isAbortError(err: unknown): boolean {
   return (
@@ -112,6 +109,7 @@ export default function App() {
   const [tmdb, setTmdb] = useState<TmdbPersonEnrichment | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [snapshot, setSnapshot] = useState<string | null>(null);
+  const [flash, setFlash] = useState(false);
   const [teachOpen, setTeachOpen] = useState(false);
   const [teachFrame, setTeachFrame] = useState<string | null>(null);
   const [teachFaceIndex, setTeachFaceIndex] = useState(0);
@@ -298,92 +296,57 @@ export default function App() {
     busyRef.current = true;
     resetResultState();
     const signal = beginAbortable();
-    let lastFrame: string | null = null;
-    let bestSoft: { results: IdentifyResult[]; frame: string } | null = null;
-    let lastReject: RejectReason = null;
+    let holdForPick = false;
+    let capturedFrame: string | null = null;
 
     try {
-      // Keep live video (no freeze-frame / shutter). Scan until sole accept or limit.
+      // Capture immediately on tap, then freeze that moment for analysis.
       setPhase("viewfinder");
-      setSnapshot(null);
-      setStatus(t.focusing);
-      await wait(LIVE_FOCUS_MS);
+      setStatus(t.bursting);
+      const frames = await captureBurst(BURST_COUNT, BURST_INTERVAL_MS);
       if (signal.aborted) throw new DOMException("Aborted", "AbortError");
-
-      for (let attempt = 1; attempt <= LIVE_MAX_ATTEMPTS; attempt++) {
-        if (signal.aborted) throw new DOMException("Aborted", "AbortError");
-
-        setStatus(t.continuousScanning(attempt, LIVE_MAX_ATTEMPTS));
-        const frames = await captureBurst(LIVE_BURST_COUNT, LIVE_BURST_INTERVAL_MS);
-        if (signal.aborted) throw new DOMException("Aborted", "AbortError");
-        if (frames.length === 0) {
-          lastReject = "no_faces";
-          await wait(LIVE_PAUSE_BETWEEN_MS);
-          continue;
-        }
-
-        lastFrame = frames[0];
-        setTeachFrame(frames[0]);
-
-        const { result, results, needsPick, rejectReason, diagnostics } =
-          await identifyBestFromFrames(
-            frames,
-            toApiLanguage(lang),
-            undefined,
-            { signal, faceIndex: 0 }
-          );
-
-        if (signal.aborted) throw new DOMException("Aborted", "AbortError");
-
-        if (result && !needsPick) {
-          applySuccess(result);
-          return;
-        }
-
-        if (result && needsPick && results.length >= 1) {
-          const better =
-            !bestSoft ||
-            (results[0]?.confidence ?? 0) >
-              (bestSoft.results[0]?.confidence ?? 0);
-          if (better) bestSoft = { results, frame: frames[0] };
-          setStatus(t.keepAiming);
-        } else {
-          lastReject = rejectReason;
-          if (diagnostics) {
-            console.info("[who-is] live attempt failed", {
-              attempt,
-              diagnostics,
-            });
-          }
-        }
-
-        if (attempt < LIVE_MAX_ATTEMPTS) {
-          await wait(LIVE_PAUSE_BETWEEN_MS);
-        }
-      }
-
-      // No sole accept — offer the best soft picker, or explain failure.
-      if (bestSoft) {
-        setTeachFrame(bestSoft.frame);
-        setPersonCandidates(bestSoft.results);
-        setStatus(t.pickPersonTitle);
+      if (frames.length === 0) {
+        setStatus(t.errorGeneric);
         return;
       }
 
-      setTeachFrame(lastFrame);
-      setLastRejectReason(lastReject);
-      setStatus(t.notConfident);
+      capturedFrame = frames[0];
+      setPhase("shutter");
+      setSnapshot(frames[0]);
+      setFlash(true);
+      await wait(120);
+      setFlash(false);
+      await wait(180);
+      if (signal.aborted) throw new DOMException("Aborted", "AbortError");
+
+      setPhase("processing");
+      setStatus(t.detectingFaces);
+      const faces = await detectFacesInImage(frames[0], signal);
+      if (signal.aborted) throw new DOMException("Aborted", "AbortError");
+
+      if (faces.length > 1) {
+        pendingFramesRef.current = frames;
+        setPickImage(frames[0]);
+        setPickFaces(faces);
+        setSnapshot(frames[0]);
+        setPhase("picking");
+        setStatus(t.pickFaceHint);
+        holdForPick = true;
+        return;
+      }
+
+      await identifyFrames(frames, 0, signal);
     } catch (err) {
       if (isAbortError(err)) {
         setStatus(t.cancelled);
         return;
       }
-      if (lastFrame) setTeachFrame(lastFrame);
+      if (capturedFrame) setTeachFrame(capturedFrame);
       setError(err instanceof Error ? err.message : t.errorGeneric);
     } finally {
-      finishSession();
+      if (!holdForPick) finishSession();
     }
-  }, [captureBurst, finishSession, lang, ready, t]);
+  }, [captureBurst, finishSession, identifyFrames, ready, t]);
 
   const runIdentifyFromUpload = useCallback(
     async (dataUrl: string) => {
@@ -639,6 +602,7 @@ export default function App() {
           )}
         </button>
 
+        {flash && <div className="shutter-flash" aria-hidden="true" />}
       </div>
 
       <canvas ref={canvasRef} hidden />
