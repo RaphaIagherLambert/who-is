@@ -6,6 +6,8 @@ const VIDEO_CONSTRAINTS: MediaStreamConstraints[] = [
       facingMode: { ideal: "environment" },
       width: { ideal: 1920 },
       height: { ideal: 1080 },
+      // Higher FPS helps catch a sharp frame while the on-screen face moves.
+      frameRate: { ideal: 30, min: 15 },
     },
     audio: false,
   },
@@ -14,6 +16,7 @@ const VIDEO_CONSTRAINTS: MediaStreamConstraints[] = [
       facingMode: { ideal: "environment" },
       width: { ideal: 1280 },
       height: { ideal: 720 },
+      frameRate: { ideal: 30 },
     },
     audio: false,
   },
@@ -22,6 +25,7 @@ const VIDEO_CONSTRAINTS: MediaStreamConstraints[] = [
       facingMode: "user",
       width: { ideal: 1280 },
       height: { ideal: 720 },
+      frameRate: { ideal: 30 },
     },
     audio: false,
   },
@@ -144,21 +148,39 @@ export function useCamera() {
     return encodeFrame("full");
   }, [encodeFrame]);
 
+  /** Wait for the next camera frame when the browser supports it. */
+  const waitNextFrame = useCallback(async (fallbackMs: number) => {
+    const video = videoRef.current as
+      | (HTMLVideoElement & {
+          requestVideoFrameCallback?: (cb: () => void) => number;
+        })
+      | null;
+    if (video?.requestVideoFrameCallback) {
+      await new Promise<void>((resolve) => {
+        video.requestVideoFrameCallback!(() => resolve());
+      });
+      if (fallbackMs > 0) await wait(fallbackMs);
+      return;
+    }
+    await wait(Math.max(fallbackMs, 16));
+  }, []);
+
   /**
-   * Burst alternates full-frame and zoomed center crops for multi-scale ensemble.
+   * Dense burst: alternate full / zoom crops, synced to camera frames when possible.
+   * Caller should pick the sharpest subset before calling AWS.
    */
   const captureBurst = useCallback(
-    async (count = 6, intervalMs = 220): Promise<string[]> => {
+    async (count = 10, intervalMs = 70): Promise<string[]> => {
       const frames: string[] = [];
       for (let i = 0; i < count; i++) {
         const mode = i % 2 === 0 ? "full" : "zoom";
         const frame = encodeFrame(mode);
         if (frame) frames.push(frame);
-        if (i < count - 1) await wait(intervalMs);
+        if (i < count - 1) await waitNextFrame(intervalMs);
       }
       return frames;
     },
-    [encodeFrame]
+    [encodeFrame, waitNextFrame]
   );
 
   return {

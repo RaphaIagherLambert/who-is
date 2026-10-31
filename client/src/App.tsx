@@ -28,6 +28,7 @@ import {
   translations,
 } from "./i18n";
 import { messageForRejectReason, readImageFile, type RejectReason } from "./identifyHelpers";
+import { pickSharpestFrames } from "./frameSharpness";
 import { useCamera, wait } from "./hooks/useCamera";
 import { useAdminMode } from "./hooks/useAdminMode";
 import type { LegalDoc } from "./legal";
@@ -41,9 +42,13 @@ type CapturePhase =
 
 type WikidataNiche = NonNullable<IdentifyResult["niche"]>;
 
-/** Capture right on tap, then freeze — later TV shots must not enter the scan. */
-const BURST_COUNT = 6;
-const BURST_INTERVAL_MS = 180;
+/**
+ * Dense short burst while video plays, then keep only the sharpest frames.
+ * ~0.7s window — long enough for a sharp frame, short enough to stay on one person.
+ */
+const BURST_COUNT = 10;
+const BURST_INTERVAL_MS = 70;
+const KEEP_SHARPEST = 4;
 
 function isAbortError(err: unknown): boolean {
   return (
@@ -300,19 +305,21 @@ export default function App() {
     let capturedFrame: string | null = null;
 
     try {
-      // Capture immediately on tap, then freeze that moment for analysis.
+      // Capture immediately on tap; keep sharpest frames only (helps moving TV faces).
       setPhase("viewfinder");
       setStatus(t.bursting);
-      const frames = await captureBurst(BURST_COUNT, BURST_INTERVAL_MS);
+      const rawFrames = await captureBurst(BURST_COUNT, BURST_INTERVAL_MS);
       if (signal.aborted) throw new DOMException("Aborted", "AbortError");
-      if (frames.length === 0) {
+      if (rawFrames.length === 0) {
         setStatus(t.errorGeneric);
         return;
       }
 
-      capturedFrame = frames[0];
+      const frames = await pickSharpestFrames(rawFrames, KEEP_SHARPEST);
+      const bestFrame = frames[0];
+      capturedFrame = bestFrame;
       setPhase("shutter");
-      setSnapshot(frames[0]);
+      setSnapshot(bestFrame);
       setFlash(true);
       await wait(120);
       setFlash(false);
@@ -321,14 +328,14 @@ export default function App() {
 
       setPhase("processing");
       setStatus(t.detectingFaces);
-      const faces = await detectFacesInImage(frames[0], signal);
+      const faces = await detectFacesInImage(bestFrame, signal);
       if (signal.aborted) throw new DOMException("Aborted", "AbortError");
 
       if (faces.length > 1) {
         pendingFramesRef.current = frames;
-        setPickImage(frames[0]);
+        setPickImage(bestFrame);
         setPickFaces(faces);
-        setSnapshot(frames[0]);
+        setSnapshot(bestFrame);
         setPhase("picking");
         setStatus(t.pickFaceHint);
         holdForPick = true;
