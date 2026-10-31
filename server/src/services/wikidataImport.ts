@@ -193,10 +193,21 @@ LIMIT ${limit}
 `;
 }
 
+// influencer, YouTuber, TikToker, Twitch streamer
+export const INFLUENCER_OCCUPATION_IDS = [
+  "Q2906862",
+  "Q17125263",
+  "Q94791573",
+  "Q50279140",
+] as const;
+
+const INFLUENCER_OCCUPATIONS = INFLUENCER_OCCUPATION_IDS.map(
+  (id) => `wd:${id}`
+).join(" ");
+
 function buildInfluencerOccupationClause(): string {
-  // influencer, YouTuber, TikToker
   return `
-  VALUES ?occupation { wd:Q2906862 wd:Q17125263 wd:Q94791573 }
+  VALUES ?occupation { ${INFLUENCER_OCCUPATIONS} }
   ?person wdt:P106 ?occupation .`;
 }
 
@@ -251,6 +262,14 @@ const ATHLETE_MIN_SITELINKS: Record<ImportRegion, number> = {
   eu: 30,
   br: 15,
   latam: 20,
+};
+
+// Influencers often have fewer language editions than actors; keep floors low.
+const INFLUENCER_MIN_SITELINKS: Record<ImportRegion, number> = {
+  us: 5,
+  eu: 5,
+  br: 2,
+  latam: 3,
 };
 
 // Multi-country occupation queries time out on query.wikidata.org (60 s limit).
@@ -346,6 +365,18 @@ export const fetchBrAthletesRanked = rankedOccupationFetcher(
 );
 export const fetchLatamAthletesRanked = rankedOccupationFetcher(
   ATHLETE_OCCUPATIONS, "latam", ATHLETE_MIN_SITELINKS.latam
+);
+export const fetchUsInfluencersRanked = rankedOccupationFetcher(
+  INFLUENCER_OCCUPATIONS, "us", INFLUENCER_MIN_SITELINKS.us
+);
+export const fetchEuInfluencersRanked = rankedOccupationFetcher(
+  INFLUENCER_OCCUPATIONS, "eu", INFLUENCER_MIN_SITELINKS.eu
+);
+export const fetchBrInfluencersRanked = rankedOccupationFetcher(
+  INFLUENCER_OCCUPATIONS, "br", INFLUENCER_MIN_SITELINKS.br
+);
+export const fetchLatamInfluencersRanked = rankedOccupationFetcher(
+  INFLUENCER_OCCUPATIONS, "latam", INFLUENCER_MIN_SITELINKS.latam
 );
 
 function buildUsInfluencersQuery(afterQid: string | null, limit: number): string {

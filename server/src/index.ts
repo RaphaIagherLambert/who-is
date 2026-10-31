@@ -74,6 +74,8 @@ import {
 
   countWikidataLatamActors,
 
+  countWikidataLatamInfluencers,
+
   countWikidataLatamMusicians,
 
   countWikidataMusicians,
@@ -189,6 +191,8 @@ app.get("/api/health", async (_req, res) => {
         brMusiciansIndexed: await countWikidataBrMusicians(),
 
         brInfluencersIndexed: await countWikidataBrInfluencers(),
+
+        latamInfluencersIndexed: await countWikidataLatamInfluencers(),
 
         latamActorsIndexed: await countWikidataLatamActors(),
 

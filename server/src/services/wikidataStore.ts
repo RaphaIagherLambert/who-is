@@ -18,6 +18,7 @@ export type WikidataNiche =
   | "us-influencer"
   | "eu-influencer"
   | "br-influencer"
+  | "latam-influencer"
   | "us-comedian"
   | "eu-comedian"
   | "br-comedian"
@@ -193,6 +194,10 @@ export async function countWikidataEuInfluencers(): Promise<number> {
 
 export async function countWikidataBrInfluencers(): Promise<number> {
   return countWikidataByNiche("br-influencer");
+}
+
+export async function countWikidataLatamInfluencers(): Promise<number> {
+  return countWikidataByNiche("latam-influencer");
 }
 
 export async function countWikidataIndexed(): Promise<number> {

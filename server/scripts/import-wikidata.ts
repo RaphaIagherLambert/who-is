@@ -9,16 +9,10 @@ import { BR_ACTOR_SEED_UNIQUE } from "../src/data/brActorSeed.js";
 import { BR_MUSICIAN_SEED_UNIQUE } from "../src/data/brMusicianSeed.js";
 import { EU_ACTOR_SEED_UNIQUE } from "../src/data/euActorSeed.js";
 import { EU_MUSICIAN_SEED_UNIQUE } from "../src/data/euMusicianSeed.js";
-import { US_INFLUENCER_SEED_UNIQUE } from "../src/data/usInfluencerSeed.js";
-import { EU_INFLUENCER_SEED_UNIQUE } from "../src/data/euInfluencerSeed.js";
-import { BR_INFLUENCER_SEED_UNIQUE } from "../src/data/brInfluencerSeed.js";
 import { US_ACTOR_SEED_UNIQUE } from "../src/data/usActorSeed.js";
 import { US_MUSICIAN_SEED_UNIQUE } from "../src/data/usMusicianSeed.js";
 import { ensureFaceCollection, faceExternalId, indexFaceBytes } from "../src/services/faceCollection.js";
 import {
-  fetchBrInfluencersBatch,
-  fetchEuInfluencersBatch,
-  fetchUsInfluencersBatch,
   fetchAsiaActorsBatch,
   fetchAsiaMusiciansBatch,
   fetchLatamActorsBatch,
@@ -37,8 +31,13 @@ import {
   fetchEuAthletesRanked,
   fetchBrAthletesRanked,
   fetchLatamAthletesRanked,
+  fetchUsInfluencersRanked,
+  fetchEuInfluencersRanked,
+  fetchBrInfluencersRanked,
+  fetchLatamInfluencersRanked,
   fetchWikidataEntityMetadata,
   ATHLETE_OCCUPATION_IDS,
+  INFLUENCER_OCCUPATION_IDS,
   type RankedPageFetcher,
   type WikidataImportRow,
   fetchWikidataPersonForImport,
@@ -106,9 +105,10 @@ const NICHE_CONFIG: Record<WikidataNiche, NicheConfig> = {
   },
   "us-influencer": {
     label: "US digital influencers",
-    seedIds: US_INFLUENCER_SEED_UNIQUE,
-    fetchBatch: fetchUsInfluencersBatch,
-    sparqlHint: "npm.cmd run import:us-influencers -- --mode sparql --limit 5 --batch-size 3",
+    seedIds: [],
+    fetchRanked: fetchUsInfluencersRanked,
+    primaryOccupations: INFLUENCER_OCCUPATION_IDS,
+    sparqlHint: "npm.cmd run import:influencers -- --niches us-influencer --limit 5",
   },
   "eu-actor": {
     label: "European actors",
@@ -124,9 +124,10 @@ const NICHE_CONFIG: Record<WikidataNiche, NicheConfig> = {
   },
   "eu-influencer": {
     label: "European digital influencers",
-    seedIds: EU_INFLUENCER_SEED_UNIQUE,
-    fetchBatch: fetchEuInfluencersBatch,
-    sparqlHint: "npm.cmd run import:eu-influencers -- --mode sparql --limit 5 --batch-size 3",
+    seedIds: [],
+    fetchRanked: fetchEuInfluencersRanked,
+    primaryOccupations: INFLUENCER_OCCUPATION_IDS,
+    sparqlHint: "npm.cmd run import:influencers -- --niches eu-influencer --limit 5",
   },
   "br-actor": {
     label: "Brazilian actors",
@@ -142,9 +143,17 @@ const NICHE_CONFIG: Record<WikidataNiche, NicheConfig> = {
   },
   "br-influencer": {
     label: "Brazilian digital influencers",
-    seedIds: BR_INFLUENCER_SEED_UNIQUE,
-    fetchBatch: fetchBrInfluencersBatch,
-    sparqlHint: "npm.cmd run import:br-influencers -- --mode sparql --limit 5 --batch-size 3",
+    seedIds: [],
+    fetchRanked: fetchBrInfluencersRanked,
+    primaryOccupations: INFLUENCER_OCCUPATION_IDS,
+    sparqlHint: "npm.cmd run import:influencers -- --niches br-influencer --limit 5",
+  },
+  "latam-influencer": {
+    label: "Latin American digital influencers (South America + Mexico)",
+    seedIds: [],
+    fetchRanked: fetchLatamInfluencersRanked,
+    primaryOccupations: INFLUENCER_OCCUPATION_IDS,
+    sparqlHint: "npm.cmd run import:influencers -- --niches latam-influencer --limit 5",
   },
   "latam-actor": {
     label: "Latin American actors (South America + Mexico)",
@@ -256,6 +265,9 @@ function parseNiche(value: string | undefined): WikidataNiche {
     case "br-influencer":
     case "brazilian-influencers":
       return "br-influencer";
+    case "latam-influencers":
+    case "latam-influencer":
+      return "latam-influencer";
     case "latam-actors":
     case "latam-actor":
     case "south-america-actors":
@@ -526,7 +538,9 @@ async function runRankedImport(opts: ImportOptions, fetchRanked: RankedPageFetch
       const primary = config.primaryOccupations;
       if (primary && !primary.includes(meta.occupations[0] ?? "")) {
         notPrimary++;
-        console.log(`Skip (main occupation is not a sport): ${meta.name} (${row.id})`);
+        console.log(
+          `Skip (main occupation outside niche): ${meta.name} (${row.id})`
+        );
         continue;
       }
 

@@ -35,21 +35,23 @@ npm.cmd run import:scale-actors -- --niches br-actor,latam-actor --limit 300
 
 Repeat until `/api/health` shows `wikidata.totalIndexed` in the thousands.
 
-### Comedians and athletes
+### Comedians, athletes and digital influencers
 
 Same flags; each runs Brazil, US, Europe and Latin America:
 
 ```powershell
 npm.cmd run import:comedians -- --limit 200 --batch-size 8 --faces-per-person 3
 npm.cmd run import:athletes -- --limit 200 --batch-size 8 --faces-per-person 3
+npm.cmd run import:influencers -- --limit 200 --batch-size 8 --faces-per-person 3
 
 # One region only (later --niches overrides the default list)
 npm.cmd run import:comedians -- --niches br-comedian --limit 300
+npm.cmd run import:influencers -- --niches br-influencer --limit 300
 ```
 
-Athletes only include people with many Wikipedia language pages (15+ for Brazil, 30+ for Europe), so imports stay on recognizable names. Brazilian comedians need only 3+, so smaller TV comedians qualify.
+Athletes only include people with many Wikipedia language pages (15+ for Brazil, 30+ for Europe), so imports stay on recognizable names. Brazilian comedians need only 3+, so smaller TV comedians qualify. Influencers (YouTubers, TikTokers, streamers) use low floors (2+ for Brazil) because many have short Wikipedia coverage.
 
-These two categories query [QLever](https://qlever.cs.uni-freiburg.de) (same Wikidata data) instead of query.wikidata.org, which times out on multi-country searches. They import the most popular people first and skip anyone already indexed, so re-running continues where the last run stopped. Athletes whose main occupation is not a sport (e.g. Albert Camus, George H. W. Bush) are skipped.
+These categories query [QLever](https://qlever.cs.uni-freiburg.de) (same Wikidata data) instead of query.wikidata.org, which times out on multi-country searches. They import the most popular people first and skip anyone already indexed, so re-running continues where the last run stopped. People whose main occupation is outside the niche (e.g. Albert Camus tagged as athlete, or an actor tagged as YouTuber) are skipped.
 
 Then build so the index ships with the server:
 

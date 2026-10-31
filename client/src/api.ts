@@ -27,7 +27,7 @@ export interface IdentifyResult extends CelebrityMatch {
     | "us-actor" | "us-musician" | "us-influencer"
     | "eu-actor" | "eu-musician" | "eu-influencer"
     | "br-actor" | "br-musician" | "br-influencer"
-    | "latam-actor" | "latam-musician"
+    | "latam-actor" | "latam-musician" | "latam-influencer"
     | "asia-actor" | "asia-musician"
     | "us-comedian" | "eu-comedian" | "br-comedian" | "latam-comedian"
     | "us-athlete" | "eu-athlete" | "br-athlete" | "latam-athlete";

@@ -138,33 +138,20 @@ npm.cmd run import:asia-musicians:sparql
 
 ---
 
-## Digital influencers (US, Europe, Brazil)
+## Digital influencers (US, Europe, Brazil, Latin America)
 
-Occupations: **YouTuber**, **blogger**, **video blogger** (Wikidata).
-
-### US influencers
+Occupations: **influencer**, **YouTuber**, **TikToker**, **Twitch streamer** (Wikidata). Ranked by popularity via QLever (same path as comedians/athletes).
 
 ```powershell
-npm.cmd run import:us-influencers -- --limit 10
-npm.cmd run import:us-influencers:dry-run
-npm.cmd run import:us-influencers:sparql
+# All regions (Brazil, US, Europe, LatAm)
+npm.cmd run import:influencers -- --dry-run --limit 5
+npm.cmd run import:influencers -- --limit 200 --batch-size 8 --faces-per-person 3
+
+# One region
+npm.cmd run import:influencers -- --niches br-influencer --limit 100
 ```
 
-### European influencers
-
-```powershell
-npm.cmd run import:eu-influencers -- --limit 10
-npm.cmd run import:eu-influencers:dry-run
-npm.cmd run import:eu-influencers:sparql
-```
-
-### Brazilian influencers
-
-```powershell
-npm.cmd run import:br-influencers -- --limit 10
-npm.cmd run import:br-influencers:dry-run
-npm.cmd run import:br-influencers:sparql
-```
+Per-region wrappers (`import:us-influencers`, `import:eu-influencers`, `import:br-influencers`) still work and now use the same ranked path.
 
 ---
 

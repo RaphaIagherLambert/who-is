@@ -37,6 +37,7 @@
     "import:scale-actors": "tsx scripts/import-scale-actors.ts",
     "import:comedians": "tsx scripts/import-scale-actors.ts --niches br-comedian,us-comedian,eu-comedian,latam-comedian",
     "import:athletes": "tsx scripts/import-scale-actors.ts --niches br-athlete,us-athlete,eu-athlete,latam-athlete",
+    "import:influencers": "tsx scripts/import-scale-actors.ts --niches br-influencer,us-influencer,eu-influencer,latam-influencer",
     "measure": "tsx scripts/measure-recognition.ts",
     "security:check": "node scripts/check-secrets.mjs"
   },

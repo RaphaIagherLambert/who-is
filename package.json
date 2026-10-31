@@ -53,6 +53,7 @@
     "import:scale-actors": "npm run import:scale-actors --prefix server --",
     "import:comedians": "npm run import:comedians --prefix server --",
     "import:athletes": "npm run import:athletes --prefix server --",
+    "import:influencers": "npm run import:influencers --prefix server --",
     "measure": "npm run measure --prefix server --",
     "security:check": "npm run security:check --prefix server"
   },
