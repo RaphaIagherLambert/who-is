@@ -201,10 +201,15 @@ a {
   background: #000;
 }
 
+.target-stage.camera-live {
+  touch-action: none;
+}
+
 .viewfinder-screen {
   position: absolute;
   inset: 0;
   background: #111;
+  overflow: hidden;
 }
 
 .viewfinder-placeholder {
@@ -231,6 +236,7 @@ a {
 
 .target-stage.camera-live .target-video {
   opacity: 1;
+  will-change: transform;
 }
 
 .freeze-frame {
@@ -315,6 +321,47 @@ a {
   font-size: 0.62rem;
   font-weight: 600;
   letter-spacing: 0.16em;
+}
+
+.vf-zoom {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 3.1rem;
+  z-index: 8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  pointer-events: auto;
+}
+
+.vf-zoom-btn {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 999px;
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.vf-zoom-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.vf-zoom-value {
+  min-width: 2.4rem;
+  text-align: center;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85);
 }
 
 .viewfinder-frame {

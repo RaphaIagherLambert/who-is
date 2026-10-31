@@ -35,14 +35,45 @@ const VIDEO_CONSTRAINTS: MediaStreamConstraints[] = [
 /** Higher JPEG quality helps AWS on phone→screen photos. */
 const JPEG_QUALITY = 0.97;
 
+/** In-app digital zoom (sofa → TV). Preview and capture share this crop. */
+export const DIGITAL_ZOOM_MIN = 1;
+export const DIGITAL_ZOOM_MAX = 4;
+export const DIGITAL_ZOOM_STEP = 0.25;
+
+function clampZoom(value: number): number {
+  return Math.min(DIGITAL_ZOOM_MAX, Math.max(DIGITAL_ZOOM_MIN, value));
+}
+
+function snapZoom(value: number): number {
+  return clampZoom(
+    Math.round(value / DIGITAL_ZOOM_STEP) * DIGITAL_ZOOM_STEP
+  );
+}
+
 export function useCamera() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const streamRef = useRef<MediaStream | null>(null);
+  const zoomRef = useRef(DIGITAL_ZOOM_MIN);
   const [error, setError] = useState<string | null>(null);
   const [ready, setReady] = useState(false);
   const [starting, setStarting] = useState(false);
   const [active, setActive] = useState(false);
+  const [zoom, setZoomState] = useState(DIGITAL_ZOOM_MIN);
+
+  const setZoom = useCallback((value: number) => {
+    const next = clampZoom(value);
+    zoomRef.current = next;
+    setZoomState(next);
+  }, []);
+
+  const zoomIn = useCallback(() => {
+    setZoom(snapZoom(zoomRef.current + DIGITAL_ZOOM_STEP));
+  }, [setZoom]);
+
+  const zoomOut = useCallback(() => {
+    setZoom(snapZoom(zoomRef.current - DIGITAL_ZOOM_STEP));
+  }, [setZoom]);
 
   const stopCamera = useCallback(() => {
     streamRef.current?.getTracks().forEach((t) => t.stop());
@@ -53,6 +84,8 @@ export function useCamera() {
       video.srcObject = null;
     }
 
+    zoomRef.current = DIGITAL_ZOOM_MIN;
+    setZoomState(DIGITAL_ZOOM_MIN);
     setReady(false);
     setActive(false);
   }, []);
@@ -119,25 +152,22 @@ export function useCamera() {
       const ctx = canvas.getContext("2d");
       if (!ctx) return null;
 
-      if (mode === "zoom") {
-        // ~1.35× center crop — helps small faces on TV without losing too much.
-        const zoom = 1.35;
-        const sw = vw / zoom;
-        const sh = vh / zoom;
-        const sx = (vw - sw) / 2;
-        const sy = (vh - sh) / 2;
-        canvas.width = Math.round(sw);
-        canvas.height = Math.round(sh);
-        ctx.filter = "contrast(1.06) saturate(1.05)";
-        ctx.drawImage(video, sx, sy, sw, sh, 0, 0, canvas.width, canvas.height);
-        ctx.filter = "none";
-      } else {
-        canvas.width = vw;
-        canvas.height = vh;
-        ctx.filter = "contrast(1.04)";
-        ctx.drawImage(video, 0, 0);
-        ctx.filter = "none";
-      }
+      // User digital zoom (what they see in the viewfinder). Alternate frames
+      // add a little extra crop for multi-scale matching.
+      const userZoom = Math.max(DIGITAL_ZOOM_MIN, zoomRef.current);
+      const factor = mode === "zoom" ? userZoom * 1.25 : userZoom;
+      const sw = vw / factor;
+      const sh = vh / factor;
+      const sx = (vw - sw) / 2;
+      const sy = (vh - sh) / 2;
+      canvas.width = Math.max(1, Math.round(sw));
+      canvas.height = Math.max(1, Math.round(sh));
+      ctx.filter =
+        mode === "zoom"
+          ? "contrast(1.06) saturate(1.05)"
+          : "contrast(1.04)";
+      ctx.drawImage(video, sx, sy, sw, sh, 0, 0, canvas.width, canvas.height);
+      ctx.filter = "none";
 
       return canvas.toDataURL("image/jpeg", JPEG_QUALITY);
     },
@@ -190,6 +220,10 @@ export function useCamera() {
     ready,
     starting,
     active,
+    zoom,
+    setZoom,
+    zoomIn,
+    zoomOut,
     startCamera,
     stopCamera,
     captureFrame,

@@ -29,9 +29,23 @@ import {
 } from "./i18n";
 import { messageForRejectReason, readImageFile, type RejectReason } from "./identifyHelpers";
 import { pickSharpestFrames } from "./frameSharpness";
-import { useCamera, wait } from "./hooks/useCamera";
+import {
+  DIGITAL_ZOOM_MAX,
+  DIGITAL_ZOOM_MIN,
+  useCamera,
+  wait,
+} from "./hooks/useCamera";
 import { useAdminMode } from "./hooks/useAdminMode";
 import type { LegalDoc } from "./legal";
+
+function pinchDistance(a: { clientX: number; clientY: number }, b: {
+  clientX: number;
+  clientY: number;
+}): number {
+  const dx = a.clientX - b.clientX;
+  const dy = a.clientY - b.clientY;
+  return Math.hypot(dx, dy);
+}
 
 type CapturePhase =
   | "idle"
@@ -168,10 +182,22 @@ export default function App() {
     ready,
     starting,
     active,
+    zoom,
+    setZoom,
+    zoomIn,
+    zoomOut,
     startCamera,
     stopCamera,
     captureBurst,
   } = useCamera();
+  const stageRef = useRef<HTMLDivElement>(null);
+  const pinchRef = useRef<{ startDist: number; startZoom: number } | null>(
+    null
+  );
+  const zoomLiveRef = useRef(zoom);
+  zoomLiveRef.current = zoom;
+  const cameraActiveRef = useRef(active);
+  cameraActiveRef.current = active;
 
   const switchLanguage = (next: AppLanguage) => {
     setLang(next);
@@ -480,6 +506,43 @@ export default function App() {
     await runIdentify();
   }, [active, ready, runIdentify, startCamera, starting, t]);
 
+  // Native listeners so preventDefault works (React touchmove is often passive).
+  useEffect(() => {
+    const el = stageRef.current;
+    if (!el) return;
+
+    const onStart = (e: TouchEvent) => {
+      if (!cameraActiveRef.current || e.touches.length !== 2) return;
+      pinchRef.current = {
+        startDist: pinchDistance(e.touches[0], e.touches[1]),
+        startZoom: zoomLiveRef.current,
+      };
+    };
+    const onMove = (e: TouchEvent) => {
+      if (!cameraActiveRef.current || e.touches.length !== 2 || !pinchRef.current) {
+        return;
+      }
+      e.preventDefault();
+      const dist = pinchDistance(e.touches[0], e.touches[1]);
+      if (pinchRef.current.startDist < 8) return;
+      setZoom(pinchRef.current.startZoom * (dist / pinchRef.current.startDist));
+    };
+    const onEnd = () => {
+      pinchRef.current = null;
+    };
+
+    el.addEventListener("touchstart", onStart, { passive: true });
+    el.addEventListener("touchmove", onMove, { passive: false });
+    el.addEventListener("touchend", onEnd);
+    el.addEventListener("touchcancel", onEnd);
+    return () => {
+      el.removeEventListener("touchstart", onStart);
+      el.removeEventListener("touchmove", onMove);
+      el.removeEventListener("touchend", onEnd);
+      el.removeEventListener("touchcancel", onEnd);
+    };
+  }, [setZoom]);
+
   const handleTeachSuccess = (name: string, page: WikipediaPage) => {
     setTeachOpen(false);
     setTeachFrame(null);
@@ -553,10 +616,21 @@ export default function App() {
       </header>
 
       <div
+        ref={stageRef}
         className={`target-stage ${isActive ? "active" : ""} ${active ? "camera-live" : ""}`}
       >
         <div className="viewfinder-screen">
-          <video ref={videoRef} playsInline muted className="target-video" />
+          <video
+            ref={videoRef}
+            playsInline
+            muted
+            className="target-video"
+            style={
+              active
+                ? { transform: `scale(${zoom})`, transformOrigin: "center center" }
+                : undefined
+            }
+          />
 
           {snapshot && (
             <img src={snapshot} alt="" className="freeze-frame" aria-hidden="true" />
@@ -608,6 +682,38 @@ export default function App() {
             </span>
           )}
         </button>
+
+        {active && (
+          <div className="vf-zoom" role="group" aria-label={t.zoomControls}>
+            <button
+              type="button"
+              className="vf-zoom-btn"
+              onClick={(e) => {
+                e.stopPropagation();
+                zoomOut();
+              }}
+              disabled={zoom <= DIGITAL_ZOOM_MIN || busy}
+              aria-label={t.zoomOut}
+            >
+              −
+            </button>
+            <span className="vf-zoom-value" aria-live="polite">
+              {zoom.toFixed(1).replace(/\.0$/, "")}×
+            </span>
+            <button
+              type="button"
+              className="vf-zoom-btn"
+              onClick={(e) => {
+                e.stopPropagation();
+                zoomIn();
+              }}
+              disabled={zoom >= DIGITAL_ZOOM_MAX || busy}
+              aria-label={t.zoomIn}
+            >
+              +
+            </button>
+          </div>
+        )}
 
         {flash && <div className="shutter-flash" aria-hidden="true" />}
       </div>
