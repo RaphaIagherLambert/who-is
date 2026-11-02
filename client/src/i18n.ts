@@ -62,6 +62,14 @@ export const translations = {
     teachNameLabel: "Nome da pessoa",
     teachNamePlaceholder: "Ex.: Nome do ator",
     teachSearchWiki: "Buscar",
+    teachWikiUrlLabel: "Ou cole o link da Wikipedia",
+    teachWikiUrlHint:
+      "Se a busca pelo nome não achar a página certa, cole o link completo (ex.: https://pt.wikipedia.org/wiki/…).",
+    teachWikiUrlPlaceholder: "https://pt.wikipedia.org/wiki/…",
+    teachUseWikiUrl: "Usar link",
+    teachInvalidWikiUrl:
+      "Link inválido. Use um endereço https://…wikipedia.org/wiki/…",
+    teachTryPasteLink: "Se preferir, cole o link da Wikipedia abaixo.",
     teachSave: "Salvar para o futuro",
     teachSaving: "Salvando…",
     teachClose: "Fechar",
@@ -189,6 +197,14 @@ export const translations = {
     teachNameLabel: "Person's name",
     teachNamePlaceholder: "e.g. Actor name",
     teachSearchWiki: "Search",
+    teachWikiUrlLabel: "Or paste the Wikipedia link",
+    teachWikiUrlHint:
+      "If name search misses the right page, paste the full link (e.g. https://en.wikipedia.org/wiki/…).",
+    teachWikiUrlPlaceholder: "https://en.wikipedia.org/wiki/…",
+    teachUseWikiUrl: "Use link",
+    teachInvalidWikiUrl:
+      "Invalid link. Use an https://…wikipedia.org/wiki/… URL.",
+    teachTryPasteLink: "Or paste the Wikipedia link below.",
     teachSave: "Save for future scans",
     teachSaving: "Saving…",
     teachClose: "Close",

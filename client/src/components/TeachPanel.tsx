@@ -9,6 +9,31 @@ import {
 import { AppLanguage, translations } from "../i18n";
 import { getAdminSecret } from "../hooks/adminAuth";
 
+/** Parse https://*.wikipedia.org/wiki/... (incl. mobile *.m.wikipedia.org). */
+function parseWikipediaLink(
+  raw: string
+): { title: string; lang: string } | null {
+  try {
+    const parsed = new URL(raw.trim());
+    if (parsed.protocol !== "https:") return null;
+    let host = parsed.hostname.toLowerCase();
+    host = host.replace(/^([a-z]{2,3})\.m\.wikipedia\.org$/, "$1.wikipedia.org");
+    let wikiLang = "en";
+    if (host === "wikipedia.org") wikiLang = "en";
+    else if (host.endsWith(".wikipedia.org")) {
+      wikiLang = host.slice(0, -".wikipedia.org".length);
+      if (!/^[a-z]{2,3}$/.test(wikiLang)) return null;
+    } else return null;
+    if (!parsed.pathname.startsWith("/wiki/")) return null;
+    const slug = parsed.pathname.slice("/wiki/".length);
+    if (!slug) return null;
+    const title = decodeURIComponent(slug.replace(/_/g, " ")).trim();
+    return title ? { title, lang: wikiLang } : null;
+  } catch {
+    return null;
+  }
+}
+
 interface TeachPanelProps {
   lang: AppLanguage;
   frame: string;
@@ -30,6 +55,7 @@ export function TeachPanel({
   const t = translations[lang];
   const apiLang = lang === "pt" ? "pt" : "en";
   const [name, setName] = useState("");
+  const [wikiUrl, setWikiUrl] = useState("");
   const [preview, setPreview] = useState<WikipediaPage | null>(null);
   const [suggestions, setSuggestions] = useState<WikipediaSuggestion[]>([]);
   const [suggestLoading, setSuggestLoading] = useState(false);
@@ -64,15 +90,20 @@ export function TeachPanel({
     return () => window.clearTimeout(timer);
   }, [name, apiLang]);
 
-  const loadPreview = async (title: string) => {
+  const loadPreview = async (title: string, pageLang = apiLang) => {
     setBusy(true);
     setError(null);
     setPreview(null);
     try {
-      const page = await lookupWikipedia(title, apiLang);
+      const page = await lookupWikipedia(title, pageLang);
       setPreview(page);
+      setWikiUrl(page.url);
     } catch (err) {
-      setError(err instanceof Error ? err.message : t.teachError);
+      setError(
+        err instanceof Error
+          ? `${err.message} ${t.teachTryPasteLink}`
+          : t.teachError
+      );
     } finally {
       setBusy(false);
     }
@@ -88,7 +119,20 @@ export function TeachPanel({
     skipSuggestRef.current = true;
     setName(suggestion.title);
     setSuggestions([]);
-    await loadPreview(suggestion.title);
+    await loadPreview(suggestion.title, suggestion.lang || apiLang);
+  };
+
+  const loadFromUrl = async () => {
+    const parsed = parseWikipediaLink(wikiUrl);
+    if (!parsed) {
+      setError(t.teachInvalidWikiUrl);
+      setPreview(null);
+      return;
+    }
+    skipSuggestRef.current = true;
+    setName(parsed.title);
+    setSuggestions([]);
+    await loadPreview(parsed.title, parsed.lang);
   };
 
   const saveTeaching = async () => {
@@ -98,7 +142,14 @@ export function TeachPanel({
     setBusy(true);
     setError(null);
     try {
-      await teachPerson(frame, preview.title, apiLang, secret, preview.url, faceIndex);
+      await teachPerson(
+        frame,
+        preview.title,
+        preview.lang || apiLang,
+        secret,
+        preview.url,
+        faceIndex
+      );
       onSuccess(preview.title, preview);
     } catch (err) {
       setError(err instanceof Error ? err.message : t.teachError);
@@ -164,12 +215,48 @@ export function TeachPanel({
           )}
         </div>
 
+        <label className="teach-label" htmlFor="teach-wiki-url">
+          {t.teachWikiUrlLabel}
+        </label>
+        <p className="teach-url-hint">{t.teachWikiUrlHint}</p>
+        <div className="teach-row">
+          <input
+            id="teach-wiki-url"
+            type="url"
+            inputMode="url"
+            value={wikiUrl}
+            onChange={(e) => {
+              setPreview(null);
+              setError(null);
+              setWikiUrl(e.target.value);
+            }}
+            placeholder={t.teachWikiUrlPlaceholder}
+            disabled={busy}
+            autoComplete="off"
+          />
+          <button
+            type="button"
+            onClick={loadFromUrl}
+            disabled={busy || wikiUrl.trim().length < 12}
+          >
+            {t.teachUseWikiUrl}
+          </button>
+        </div>
+
         {preview && (
           <div className="teach-preview">
             {preview.thumbnail && <img src={preview.thumbnail} alt="" />}
             <div>
               <strong>{preview.title}</strong>
               {preview.description && <p>{preview.description}</p>}
+              <a
+                className="teach-preview-link"
+                href={preview.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {preview.url}
+              </a>
             </div>
           </div>
         )}

@@ -10,9 +10,15 @@ import {
   isTeachingsEnabled,
   saveTeaching,
 } from "../services/teachingsStore.js";
-import { findWikipediaPage } from "../services/wikipedia.js";
+import {
+  findWikipediaPage,
+  wikipediaPageByTitle,
+} from "../services/wikipedia.js";
 import { parseImagePayload } from "../utils/imagePayload.js";
-import { isAllowedWikipediaUrl } from "../utils/wikipediaUrl.js";
+import {
+  isAllowedWikipediaUrl,
+  parseWikipediaArticleUrl,
+} from "../utils/wikipediaUrl.js";
 
 export const teachRouter = Router();
 
@@ -46,11 +52,6 @@ teachRouter.post("/", requireAdmin, async (req, res) => {
 
     const name =
       typeof req.body?.name === "string" ? req.body.name.trim() : "";
-    if (name.length < 2) {
-      res.status(400).json({ error: "Name is required" });
-      return;
-    }
-
     const lang = typeof req.body?.lang === "string" ? req.body.lang : "en";
     const wikiUrl =
       typeof req.body?.wikipediaUrl === "string"
@@ -64,17 +65,36 @@ teachRouter.post("/", requireAdmin, async (req, res) => {
       return;
     }
 
-    let wikipedia = wikiUrl
-      ? {
-          title: name,
-          url: wikiUrl,
-          lang: lang.split("-")[0].toLowerCase(),
-        }
-      : await findWikipediaPage(name, lang);
+    if (!wikiUrl && name.length < 2) {
+      res.status(400).json({
+        error: "Name is required (or paste a Wikipedia page link).",
+      });
+      return;
+    }
+
+    let wikipedia = null;
+    if (wikiUrl) {
+      const parsedUrl = parseWikipediaArticleUrl(wikiUrl);
+      if (!parsedUrl) {
+        res.status(400).json({
+          error: "Wikipedia URL must be an https://*.wikipedia.org/wiki/... link.",
+        });
+        return;
+      }
+      wikipedia =
+        (await wikipediaPageByTitle(parsedUrl.title, parsedUrl.lang)) ?? {
+          title: name.length >= 2 ? name : parsedUrl.title,
+          url: parsedUrl.canonicalUrl,
+          lang: parsedUrl.lang,
+        };
+    } else {
+      wikipedia = await findWikipediaPage(name, lang);
+    }
 
     if (!wikipedia) {
       res.status(404).json({
-        error: "Wikipedia page not found. Provide a name that exists on Wikipedia.",
+        error:
+          "Wikipedia page not found. Paste the full Wikipedia link if search misses it.",
       });
       return;
     }
