@@ -55042,5 +55042,1297 @@
       "0b78d29b-57a5-4c23-bdee-f2689b586724"
     ],
     "indexedAt": "2026-10-31T19:31:47.725Z"
+  },
+  {
+    "id": "Q1304952",
+    "name": "Tim Conway",
+    "niche": "us-comedian",
+    "wikipedia": {
+      "title": "Tim Conway",
+      "url": "https://en.wikipedia.org/wiki/Tim_Conway",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Tim%20Conway%20cropped.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Tim%20Conway%20cropped.jpg?width=800"
+    ],
+    "faceId": "c4bedf81-6a7a-4fbd-9e2c-4d132b77676c",
+    "faceIds": [
+      "c4bedf81-6a7a-4fbd-9e2c-4d132b77676c"
+    ],
+    "indexedAt": "2026-11-07T11:22:11.718Z"
+  },
+  {
+    "id": "Q329744",
+    "name": "Martin Short",
+    "niche": "us-comedian",
+    "wikipedia": {
+      "title": "Martin Short",
+      "url": "https://en.wikipedia.org/wiki/Martin_Short",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Martin%20Short%202021.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Martin%20Short%202021.jpg?width=800"
+    ],
+    "faceId": "3fc8a571-8794-4094-8cb8-c972f5a8138f",
+    "faceIds": [
+      "3fc8a571-8794-4094-8cb8-c972f5a8138f"
+    ],
+    "indexedAt": "2026-11-07T11:22:16.002Z"
+  },
+  {
+    "id": "Q107933",
+    "name": "Jim Belushi",
+    "niche": "us-comedian",
+    "wikipedia": {
+      "title": "Jim Belushi",
+      "url": "https://en.wikipedia.org/wiki/Jim_Belushi",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Jim%20Belushi%20Unveils%20Belushi%20Performance%20Hall%20at%20MAC%20Motown%202015.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Jim%20Belushi%20Unveils%20Belushi%20Performance%20Hall%20at%20MAC%20Motown%202015.jpg?width=800"
+    ],
+    "faceId": "f2b4831d-59cf-4eaf-9584-172fcf4e367d",
+    "faceIds": [
+      "f2b4831d-59cf-4eaf-9584-172fcf4e367d"
+    ],
+    "indexedAt": "2026-11-07T11:22:18.575Z"
+  },
+  {
+    "id": "Q311754",
+    "name": "Jason Alexander",
+    "niche": "us-comedian",
+    "wikipedia": {
+      "title": "Jason Alexander",
+      "url": "https://en.wikipedia.org/wiki/Jason_Alexander",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Jason%20Alexander%20-%202009%20%28cropped%29.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Jason%20Alexander%20-%202009%20%28cropped%29.jpg?width=800"
+    ],
+    "faceId": "d536b522-467c-475c-b437-da66bdb99405",
+    "faceIds": [
+      "d536b522-467c-475c-b437-da66bdb99405"
+    ],
+    "indexedAt": "2026-11-07T11:22:20.210Z"
+  },
+  {
+    "id": "Q454200",
+    "name": "Jackie Gleason",
+    "niche": "us-comedian",
+    "wikipedia": {
+      "title": "Jackie Gleason",
+      "url": "https://en.wikipedia.org/wiki/Jackie_Gleason",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Publicity%20photo%20young%20Jackie%20Gleason.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Publicity%20photo%20young%20Jackie%20Gleason.jpg?width=800"
+    ],
+    "faceId": "248a100e-2ae5-43a1-a929-8f933d61b862",
+    "faceIds": [
+      "248a100e-2ae5-43a1-a929-8f933d61b862"
+    ],
+    "indexedAt": "2026-11-07T11:22:23.478Z"
+  },
+  {
+    "id": "Q298658",
+    "name": "David Spade",
+    "niche": "us-comedian",
+    "wikipedia": {
+      "title": "David Spade",
+      "url": "https://en.wikipedia.org/wiki/David_Spade",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/David%20Spade%201%20%28cropped%29.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/David%20Spade%201%20%28cropped%29.jpg?width=800"
+    ],
+    "faceId": "bec2a6d0-8803-4f79-8525-887763d114a4",
+    "faceIds": [
+      "bec2a6d0-8803-4f79-8525-887763d114a4"
+    ],
+    "indexedAt": "2026-11-07T11:22:26.202Z"
+  },
+  {
+    "id": "Q294912",
+    "name": "Richard Pryor",
+    "niche": "us-comedian",
+    "wikipedia": {
+      "title": "Richard Pryor",
+      "url": "https://en.wikipedia.org/wiki/Richard_Pryor",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Richard%20Pryor%201969.JPG?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Richard%20Pryor%201969.JPG?width=800"
+    ],
+    "faceId": "8c78c231-bcc7-48fc-af33-c1a2e4da51fc",
+    "faceIds": [
+      "8c78c231-bcc7-48fc-af33-c1a2e4da51fc"
+    ],
+    "indexedAt": "2026-11-07T11:22:29.007Z"
+  },
+  {
+    "id": "Q3178896",
+    "name": "Jim Meskimen",
+    "niche": "us-comedian",
+    "wikipedia": {
+      "title": "Jim Meskimen",
+      "url": "https://en.wikipedia.org/wiki/Jim_Meskimen",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/41st%20Annie%20Awards%2C%20Jim%20Meskimen.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/41st%20Annie%20Awards%2C%20Jim%20Meskimen.jpg?width=800"
+    ],
+    "faceId": "2c06c3e6-192a-4fa1-8269-0182a5df7aac",
+    "faceIds": [
+      "2c06c3e6-192a-4fa1-8269-0182a5df7aac"
+    ],
+    "indexedAt": "2026-11-07T11:22:30.748Z"
+  },
+  {
+    "id": "Q2059493",
+    "name": "Paul F. Tompkins",
+    "niche": "us-comedian",
+    "wikipedia": {
+      "title": "Paul F. Tompkins",
+      "url": "https://en.wikipedia.org/wiki/Paul_F._Tompkins",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Paul%20F.%20Tompkins%20%28cropped%29.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Paul%20F.%20Tompkins%20%28cropped%29.jpg?width=800"
+    ],
+    "faceId": "652e73a6-e415-4635-bc2d-5870cac2fb1d",
+    "faceIds": [
+      "652e73a6-e415-4635-bc2d-5870cac2fb1d"
+    ],
+    "indexedAt": "2026-11-07T11:22:47.005Z"
+  },
+  {
+    "id": "Q232827",
+    "name": "Estelle Getty",
+    "niche": "us-comedian",
+    "wikipedia": {
+      "title": "Estelle Getty",
+      "url": "https://en.wikipedia.org/wiki/Estelle_Getty",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/EstelleGetty2.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/EstelleGetty2.jpg?width=800"
+    ],
+    "faceId": "098f7d69-a814-4712-b8d9-901a4fcea54d",
+    "faceIds": [
+      "098f7d69-a814-4712-b8d9-901a4fcea54d"
+    ],
+    "indexedAt": "2026-11-07T11:23:03.693Z"
+  },
+  {
+    "id": "Q286738",
+    "name": "Jack Klugman",
+    "niche": "us-comedian",
+    "wikipedia": {
+      "title": "Jack Klugman",
+      "url": "https://en.wikipedia.org/wiki/Jack_Klugman",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/JackKlugmanNov09.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/JackKlugmanNov09.jpg?width=800"
+    ],
+    "faceId": "c318faf5-7d8a-44b5-aa4b-9114d0bb1ee2",
+    "faceIds": [
+      "c318faf5-7d8a-44b5-aa4b-9114d0bb1ee2"
+    ],
+    "indexedAt": "2026-11-07T11:23:05.788Z"
+  },
+  {
+    "id": "Q747824",
+    "name": "Eddie Deezen",
+    "niche": "us-comedian",
+    "wikipedia": {
+      "title": "Eddie Deezen",
+      "url": "https://en.wikipedia.org/wiki/Eddie_Deezen",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/EddieDeezen2012.JPG?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/EddieDeezen2012.JPG?width=800"
+    ],
+    "faceId": "04e4ef2c-9b48-4d71-bf7a-1c54e052080f",
+    "faceIds": [
+      "04e4ef2c-9b48-4d71-bf7a-1c54e052080f"
+    ],
+    "indexedAt": "2026-11-07T11:23:15.890Z"
+  },
+  {
+    "id": "Q454156",
+    "name": "Elaine May",
+    "niche": "us-comedian",
+    "wikipedia": {
+      "title": "Elaine May",
+      "url": "https://en.wikipedia.org/wiki/Elaine_May",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Elaine%20May%20-%20publicity1.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Elaine%20May%20-%20publicity1.jpg?width=800"
+    ],
+    "faceId": "a9066078-6cc1-4d71-ad29-23a6ed7172b2",
+    "faceIds": [
+      "a9066078-6cc1-4d71-ad29-23a6ed7172b2"
+    ],
+    "indexedAt": "2026-11-07T11:23:19.901Z"
+  },
+  {
+    "id": "Q155449",
+    "name": "Faizon Love",
+    "niche": "us-comedian",
+    "wikipedia": {
+      "title": "Faizon Love",
+      "url": "https://en.wikipedia.org/wiki/Faizon_Love",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Faizon%20Love%202025.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Faizon%20Love%202025.jpg?width=800"
+    ],
+    "faceId": "a19852e3-5f58-48c8-9c1f-e54fdbd4d3b6",
+    "faceIds": [
+      "a19852e3-5f58-48c8-9c1f-e54fdbd4d3b6"
+    ],
+    "indexedAt": "2026-11-07T11:23:22.003Z"
+  },
+  {
+    "id": "Q310322",
+    "name": "Will Sasso",
+    "niche": "us-comedian",
+    "wikipedia": {
+      "title": "Will Sasso",
+      "url": "https://en.wikipedia.org/wiki/Will_Sasso",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Will%20Sasso%20by%20Gage%20Skidmore.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Will%20Sasso%20by%20Gage%20Skidmore.jpg?width=800"
+    ],
+    "faceId": "62931c29-7368-4a9e-9dc5-8f06560f3df2",
+    "faceIds": [
+      "62931c29-7368-4a9e-9dc5-8f06560f3df2"
+    ],
+    "indexedAt": "2026-11-07T11:23:25.533Z"
+  },
+  {
+    "id": "Q349928",
+    "name": "Jerry Trainor",
+    "niche": "us-comedian",
+    "wikipedia": {
+      "title": "Jerry Trainor",
+      "url": "https://en.wikipedia.org/wiki/Jerry_Trainor",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Jerry%20Trainor%20Photo%20Op%20GalaxyCon%20Columbus%202025.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Jerry%20Trainor%20Photo%20Op%20GalaxyCon%20Columbus%202025.jpg?width=800"
+    ],
+    "faceId": "597df26f-f9fb-4a00-8cfa-cabb8b25b1c8",
+    "faceIds": [
+      "597df26f-f9fb-4a00-8cfa-cabb8b25b1c8"
+    ],
+    "indexedAt": "2026-11-07T11:23:27.660Z"
+  },
+  {
+    "id": "Q355116",
+    "name": "Will Arnett",
+    "niche": "us-comedian",
+    "wikipedia": {
+      "title": "Will Arnett",
+      "url": "https://en.wikipedia.org/wiki/Will_Arnett",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Will%20Arnett%20Is%20This%20Thing%20On-11%20%28cropped%29.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Will%20Arnett%20Is%20This%20Thing%20On-11%20%28cropped%29.jpg?width=800"
+    ],
+    "faceId": "6614d3fe-ca1c-423f-bbd4-b086a45a237e",
+    "faceIds": [
+      "6614d3fe-ca1c-423f-bbd4-b086a45a237e"
+    ],
+    "indexedAt": "2026-11-07T11:23:29.868Z"
+  },
+  {
+    "id": "Q40220",
+    "name": "Susie Essman",
+    "niche": "us-comedian",
+    "wikipedia": {
+      "title": "Susie Essman",
+      "url": "https://en.wikipedia.org/wiki/Susie_Essman",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Susie%20Essman%20Blue%20Moon-06%20%28cropped%29.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Susie%20Essman%20Blue%20Moon-06%20%28cropped%29.jpg?width=800"
+    ],
+    "faceId": "cc5b3e84-6d45-49d4-b228-09a86f9430c7",
+    "faceIds": [
+      "cc5b3e84-6d45-49d4-b228-09a86f9430c7"
+    ],
+    "indexedAt": "2026-11-07T11:23:32.415Z"
+  },
+  {
+    "id": "Q432437",
+    "name": "Kathy Griffin",
+    "niche": "us-comedian",
+    "wikipedia": {
+      "title": "Kathy Griffin",
+      "url": "https://en.wikipedia.org/wiki/Kathy_Griffin",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Kathy%20Griffin%20%40%20SXSW%202019%20%2840387773813%29.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Kathy%20Griffin%20%40%20SXSW%202019%20%2840387773813%29.jpg?width=800"
+    ],
+    "faceId": "e3401f92-1afa-4b76-8662-acad45e93812",
+    "faceIds": [
+      "e3401f92-1afa-4b76-8662-acad45e93812"
+    ],
+    "indexedAt": "2026-11-07T11:23:34.805Z"
+  },
+  {
+    "id": "Q514066",
+    "name": "Daniel Tosh",
+    "niche": "us-comedian",
+    "wikipedia": {
+      "title": "Daniel Tosh",
+      "url": "https://en.wikipedia.org/wiki/Daniel_Tosh",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Daniel%20Tosh.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Daniel%20Tosh.jpg?width=800"
+    ],
+    "faceId": "5e545f5e-9d8d-4ceb-bd3e-0ef729fafe7f",
+    "faceIds": [
+      "5e545f5e-9d8d-4ceb-bd3e-0ef729fafe7f"
+    ],
+    "indexedAt": "2026-11-07T11:23:37.205Z"
+  },
+  {
+    "id": "Q555246",
+    "name": "Alan Young",
+    "niche": "us-comedian",
+    "wikipedia": {
+      "title": "Alan Young",
+      "url": "https://en.wikipedia.org/wiki/Alan_Young",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Alan%20Young%20circa%201944.JPG?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Alan%20Young%20circa%201944.JPG?width=800"
+    ],
+    "faceId": "a753742c-4f80-440f-b74d-b4e86668050f",
+    "faceIds": [
+      "a753742c-4f80-440f-b74d-b4e86668050f"
+    ],
+    "indexedAt": "2026-11-07T11:23:39.339Z"
+  },
+  {
+    "id": "Q739062",
+    "name": "Ike Barinholtz",
+    "niche": "us-comedian",
+    "wikipedia": {
+      "title": "Ike Barinholtz",
+      "url": "https://en.wikipedia.org/wiki/Ike_Barinholtz",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Ike%20Barinholtz%20at%20the%202026%20New%20York%20Film%20Festival-32%20%28cropped%29.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Ike%20Barinholtz%20at%20the%202026%20New%20York%20Film%20Festival-32%20%28cropped%29.jpg?width=800"
+    ],
+    "faceId": "e1060f59-cf6e-455a-a2c8-5719d1bc2903",
+    "faceIds": [
+      "e1060f59-cf6e-455a-a2c8-5719d1bc2903"
+    ],
+    "indexedAt": "2026-11-07T11:23:42.479Z"
+  },
+  {
+    "id": "Q355361",
+    "name": "Sam Huntington",
+    "niche": "us-comedian",
+    "wikipedia": {
+      "title": "Sam Huntington",
+      "url": "https://en.wikipedia.org/wiki/Sam_Huntington",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/2013%20Syfy%20Press%20Day%20%2810173914304%29.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/2013%20Syfy%20Press%20Day%20%2810173914304%29.jpg?width=800"
+    ],
+    "faceId": "b931919d-2a53-4931-8fa4-0b0d61807c7d",
+    "faceIds": [
+      "b931919d-2a53-4931-8fa4-0b0d61807c7d"
+    ],
+    "indexedAt": "2026-11-07T11:23:58.412Z"
+  },
+  {
+    "id": "Q1176577",
+    "name": "David Sedaris",
+    "niche": "us-comedian",
+    "wikipedia": {
+      "title": "David Sedaris",
+      "url": "https://en.wikipedia.org/wiki/David_Sedaris",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/David%20Sedaris-4724.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/David%20Sedaris-4724.jpg?width=800"
+    ],
+    "faceId": "32a43800-74ba-499a-a0cf-19fa171254fe",
+    "faceIds": [
+      "32a43800-74ba-499a-a0cf-19fa171254fe"
+    ],
+    "indexedAt": "2026-11-07T11:24:07.920Z"
+  },
+  {
+    "id": "Q1384822",
+    "name": "Pauly Shore",
+    "niche": "us-comedian",
+    "wikipedia": {
+      "title": "Pauly Shore",
+      "url": "https://en.wikipedia.org/wiki/Pauly_Shore",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Pauly%20Shore%20%2854006965946%29.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Pauly%20Shore%20%2854006965946%29.jpg?width=800"
+    ],
+    "faceId": "8a40941a-fc3b-4485-8836-ce8b3a401dab",
+    "faceIds": [
+      "8a40941a-fc3b-4485-8836-ce8b3a401dab"
+    ],
+    "indexedAt": "2026-11-07T11:24:29.867Z"
+  },
+  {
+    "id": "Q15613720",
+    "name": "Sasheer Zamata",
+    "niche": "us-comedian",
+    "wikipedia": {
+      "title": "Sasheer Zamata",
+      "url": "https://en.wikipedia.org/wiki/Sasheer_Zamata",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Sasheer%20Zamata%20%2881960%29b%20%28cropped%29.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Sasheer%20Zamata%20%2881960%29b%20%28cropped%29.jpg?width=800"
+    ],
+    "faceId": "16058a55-fb3a-4272-b2c3-6481bb1c30ed",
+    "faceIds": [
+      "16058a55-fb3a-4272-b2c3-6481bb1c30ed"
+    ],
+    "indexedAt": "2026-11-07T11:24:52.383Z"
+  },
+  {
+    "id": "Q16223299",
+    "name": "Kyle Mooney",
+    "niche": "us-comedian",
+    "wikipedia": {
+      "title": "Kyle Mooney",
+      "url": "https://en.wikipedia.org/wiki/Kyle_Mooney",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Kyle%20Mooney%20by%20Gage%20Skidmore.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Kyle%20Mooney%20by%20Gage%20Skidmore.jpg?width=800"
+    ],
+    "faceId": "41ce9919-d4f9-4c2d-9ea5-e208257e86b9",
+    "faceIds": [
+      "41ce9919-d4f9-4c2d-9ea5-e208257e86b9"
+    ],
+    "indexedAt": "2026-11-07T11:24:55.236Z"
+  },
+  {
+    "id": "Q16897820",
+    "name": "Cristela Alonzo",
+    "niche": "us-comedian",
+    "wikipedia": {
+      "title": "Cristela Alonzo",
+      "url": "https://en.wikipedia.org/wiki/Cristela_Alonzo",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Cristela%20Alonzo.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Cristela%20Alonzo.jpg?width=800"
+    ],
+    "faceId": "d786b958-dbbc-43bd-9ad2-5614ac14c01b",
+    "faceIds": [
+      "d786b958-dbbc-43bd-9ad2-5614ac14c01b"
+    ],
+    "indexedAt": "2026-11-07T11:24:59.448Z"
+  },
+  {
+    "id": "Q2397929",
+    "name": "Bert Williams",
+    "niche": "us-comedian",
+    "wikipedia": {
+      "title": "Bert Williams",
+      "url": "https://en.wikipedia.org/wiki/Bert_Williams",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Bert%20Williams%2C%20stage%20actor%20%28SAYRE%2011054%29.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Bert%20Williams%2C%20stage%20actor%20%28SAYRE%2011054%29.jpg?width=800"
+    ],
+    "faceId": "1b7c58c6-fc7c-4ca0-a8e9-e9bed72b5a0f",
+    "faceIds": [
+      "1b7c58c6-fc7c-4ca0-a8e9-e9bed72b5a0f"
+    ],
+    "indexedAt": "2026-11-07T11:25:01.491Z"
+  },
+  {
+    "id": "Q2422570",
+    "name": "Emo Philips",
+    "niche": "us-comedian",
+    "wikipedia": {
+      "title": "Emo Philips",
+      "url": "https://en.wikipedia.org/wiki/Emo_Philips",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Emo%20Philips%20Opening%20for%20Weird%20Al%20Yankovic%20at%20the%20Apollo%20Theater%20%2840964853051%29.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Emo%20Philips%20Opening%20for%20Weird%20Al%20Yankovic%20at%20the%20Apollo%20Theater%20%2840964853051%29.jpg?width=800"
+    ],
+    "faceId": "4c67adf5-7e3d-4c22-8c03-7a1e1686019b",
+    "faceIds": [
+      "4c67adf5-7e3d-4c22-8c03-7a1e1686019b"
+    ],
+    "indexedAt": "2026-11-07T11:25:03.382Z"
+  },
+  {
+    "id": "Q2698123",
+    "name": "Otis Harlan",
+    "niche": "us-comedian",
+    "wikipedia": {
+      "title": "Otis Harlan",
+      "url": "https://en.wikipedia.org/wiki/Otis_Harlan",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Otis-Harlan.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Otis-Harlan.jpg?width=800"
+    ],
+    "faceId": "498e2f58-467d-471a-8363-c565dfcc3447",
+    "faceIds": [
+      "498e2f58-467d-471a-8363-c565dfcc3447"
+    ],
+    "indexedAt": "2026-11-07T11:25:09.197Z"
+  },
+  {
+    "id": "Q6969",
+    "name": "Stefan Raab",
+    "niche": "eu-comedian",
+    "wikipedia": {
+      "title": "Stefan Raab",
+      "url": "https://en.wikipedia.org/wiki/Stefan_Raab",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Stefan%20Raab-2%20%28cropped%29.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Stefan%20Raab-2%20%28cropped%29.jpg?width=800"
+    ],
+    "faceId": "a7d8d7e1-f6fd-44be-863b-14134f325641",
+    "faceIds": [
+      "a7d8d7e1-f6fd-44be-863b-14134f325641"
+    ],
+    "indexedAt": "2026-11-07T11:26:09.779Z"
+  },
+  {
+    "id": "Q816568",
+    "name": "Ben Miller",
+    "niche": "eu-comedian",
+    "wikipedia": {
+      "title": "Ben Miller",
+      "url": "https://en.wikipedia.org/wiki/Ben_Miller",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Ben%20Miller%2020191205.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Ben%20Miller%2020191205.jpg?width=800"
+    ],
+    "faceId": "03c9a583-c4ec-4930-9247-260a1da06830",
+    "faceIds": [
+      "03c9a583-c4ec-4930-9247-260a1da06830"
+    ],
+    "indexedAt": "2026-11-07T11:26:31.118Z"
+  },
+  {
+    "id": "Q2217295",
+    "name": "Miranda Hart",
+    "niche": "eu-comedian",
+    "wikipedia": {
+      "title": "Miranda Hart",
+      "url": "https://en.wikipedia.org/wiki/Miranda_Hart",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Miranda%20Hart%20in%202011.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Miranda%20Hart%20in%202011.jpg?width=800"
+    ],
+    "faceId": "9c9d1b0a-acad-4b59-b8c7-e835ed5f45ec",
+    "faceIds": [
+      "9c9d1b0a-acad-4b59-b8c7-e835ed5f45ec"
+    ],
+    "indexedAt": "2026-11-07T11:26:33.214Z"
+  },
+  {
+    "id": "Q124389",
+    "name": "Albert Dupontel",
+    "niche": "eu-comedian",
+    "wikipedia": {
+      "title": "Albert Dupontel",
+      "url": "https://en.wikipedia.org/wiki/Albert_Dupontel",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Albert%20Dupontel%20%28c%29%20Chistophe%20Brachet.JPG?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Albert%20Dupontel%20%28c%29%20Chistophe%20Brachet.JPG?width=800"
+    ],
+    "faceId": "4ff12541-a5ec-4016-b3b3-cda6842c7122",
+    "faceIds": [
+      "4ff12541-a5ec-4016-b3b3-cda6842c7122"
+    ],
+    "indexedAt": "2026-11-07T11:26:36.451Z"
+  },
+  {
+    "id": "Q299657",
+    "name": "Rémi Gaillard",
+    "niche": "eu-comedian",
+    "wikipedia": {
+      "title": "Rémi Gaillard",
+      "url": "https://en.wikipedia.org/wiki/R%C3%A9mi_Gaillard",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/R%C3%A9mi%20Gaillard%20-%20O%20Tour%20de%20la%20Bulle%20-%202011%20-%20P1250410%20-%202011-09-17.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/R%C3%A9mi%20Gaillard%20-%20O%20Tour%20de%20la%20Bulle%20-%202011%20-%20P1250410%20-%202011-09-17.jpg?width=800"
+    ],
+    "faceId": "92af369e-ad80-4c51-b639-db6d6e14d874",
+    "faceIds": [
+      "92af369e-ad80-4c51-b639-db6d6e14d874"
+    ],
+    "indexedAt": "2026-11-07T11:26:38.424Z"
+  },
+  {
+    "id": "Q2960837",
+    "name": "Charlie Brooker",
+    "niche": "eu-comedian",
+    "wikipedia": {
+      "title": "Charlie Brooker",
+      "url": "https://en.wikipedia.org/wiki/Charlie_Brooker",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Charlie%20Brooker.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Charlie%20Brooker.jpg?width=800"
+    ],
+    "faceId": "a81c3a20-e46b-46b6-9592-0706525a5aa5",
+    "faceIds": [
+      "a81c3a20-e46b-46b6-9592-0706525a5aa5"
+    ],
+    "indexedAt": "2026-11-07T11:26:53.854Z"
+  },
+  {
+    "id": "Q457134",
+    "name": "David Mitchell",
+    "niche": "eu-comedian",
+    "wikipedia": {
+      "title": "David Mitchell (comedian)",
+      "url": "https://en.wikipedia.org/wiki/David_Mitchell_(comedian)",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/David%20mitchell.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/David%20mitchell.jpg?width=800"
+    ],
+    "faceId": "8530d845-c309-4e20-8bfd-d305bda03064",
+    "faceIds": [
+      "8530d845-c309-4e20-8bfd-d305bda03064"
+    ],
+    "indexedAt": "2026-11-07T11:26:55.371Z"
+  },
+  {
+    "id": "Q656035",
+    "name": "Michael Crawford",
+    "niche": "eu-comedian",
+    "wikipedia": {
+      "title": "Michael Crawford",
+      "url": "https://en.wikipedia.org/wiki/Michael_Crawford",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Michael%20Crawford.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Michael%20Crawford.jpg?width=800"
+    ],
+    "faceId": "8f74098e-d8e6-4215-8c4b-682c5b3e0beb",
+    "faceIds": [
+      "8f74098e-d8e6-4215-8c4b-682c5b3e0beb"
+    ],
+    "indexedAt": "2026-11-07T11:26:58.038Z"
+  },
+  {
+    "id": "Q711129",
+    "name": "Terry-Thomas",
+    "niche": "eu-comedian",
+    "wikipedia": {
+      "title": "Terry-Thomas",
+      "url": "https://en.wikipedia.org/wiki/Terry-Thomas",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Terry-Thomas%2C%20May%201951.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Terry-Thomas%2C%20May%201951.jpg?width=800"
+    ],
+    "faceId": "0fdf5a0b-ce26-4240-90f5-b1e91c299f86",
+    "faceIds": [
+      "0fdf5a0b-ce26-4240-90f5-b1e91c299f86"
+    ],
+    "indexedAt": "2026-11-07T11:27:00.219Z"
+  },
+  {
+    "id": "Q1046038",
+    "name": "Enzo Jannacci",
+    "niche": "eu-comedian",
+    "wikipedia": {
+      "title": "Enzo Jannacci",
+      "url": "https://en.wikipedia.org/wiki/Enzo_Jannacci",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Enzo%20Jannacci.JPG?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Enzo%20Jannacci.JPG?width=800"
+    ],
+    "faceId": "194b0c0e-8138-4496-99c8-e65ada441e6b",
+    "faceIds": [
+      "194b0c0e-8138-4496-99c8-e65ada441e6b"
+    ],
+    "indexedAt": "2026-11-07T11:27:02.074Z"
+  },
+  {
+    "id": "Q238012",
+    "name": "Carol Cleveland",
+    "niche": "eu-comedian",
+    "wikipedia": {
+      "title": "Carol Cleveland",
+      "url": "https://en.wikipedia.org/wiki/Carol_Cleveland",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/10.18.09CarolClevelandByLuigiNovi.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/10.18.09CarolClevelandByLuigiNovi.jpg?width=800"
+    ],
+    "faceId": "5a08588b-528c-4482-ac40-28067f299d08",
+    "faceIds": [
+      "5a08588b-528c-4482-ac40-28067f299d08"
+    ],
+    "indexedAt": "2026-11-07T11:27:05.772Z"
+  },
+  {
+    "id": "Q2593718",
+    "name": "Tony Robinson",
+    "niche": "eu-comedian",
+    "wikipedia": {
+      "title": "Tony Robinson",
+      "url": "https://en.wikipedia.org/wiki/Tony_Robinson",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Tony%20Robinson.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Tony%20Robinson.jpg?width=800"
+    ],
+    "faceId": "bc00b127-9b8a-4e9a-ac45-1ed53efa53cb",
+    "faceIds": [
+      "bc00b127-9b8a-4e9a-ac45-1ed53efa53cb"
+    ],
+    "indexedAt": "2026-11-07T11:27:08.099Z"
+  },
+  {
+    "id": "Q437455",
+    "name": "Ambra Angiolini",
+    "niche": "eu-comedian",
+    "wikipedia": {
+      "title": "Ambra Angiolini",
+      "url": "https://en.wikipedia.org/wiki/Ambra_Angiolini",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Ambra%20Angiolini%202%20%28cropped%29.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Ambra%20Angiolini%202%20%28cropped%29.jpg?width=800"
+    ],
+    "faceId": "b22907fb-d3f8-4bf6-bd67-99fc36964862",
+    "faceIds": [
+      "b22907fb-d3f8-4bf6-bd67-99fc36964862"
+    ],
+    "indexedAt": "2026-11-07T11:27:20.233Z"
+  },
+  {
+    "id": "Q1337855",
+    "name": "Nicholas Parsons",
+    "niche": "eu-comedian",
+    "wikipedia": {
+      "title": "Nicholas Parsons",
+      "url": "https://en.wikipedia.org/wiki/Nicholas_Parsons",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Nicholas%20Parsons%202007.png?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Nicholas%20Parsons%202007.png?width=800"
+    ],
+    "faceId": "23f9ce37-c52e-499d-a497-e577013ddd98",
+    "faceIds": [
+      "23f9ce37-c52e-499d-a497-e577013ddd98"
+    ],
+    "indexedAt": "2026-11-07T11:27:31.643Z"
+  },
+  {
+    "id": "Q2646765",
+    "name": "Franck Dubosc",
+    "niche": "eu-comedian",
+    "wikipedia": {
+      "title": "Franck Dubosc",
+      "url": "https://en.wikipedia.org/wiki/Franck_Dubosc",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Franck%20Dubosc%202012.JPG?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Franck%20Dubosc%202012.JPG?width=800"
+    ],
+    "faceId": "d9ed103b-436b-47a0-9109-82565d0ce473",
+    "faceIds": [
+      "d9ed103b-436b-47a0-9109-82565d0ce473"
+    ],
+    "indexedAt": "2026-11-07T11:27:42.819Z"
+  },
+  {
+    "id": "Q110924260",
+    "name": "Ambika Mod",
+    "niche": "eu-comedian",
+    "wikipedia": {
+      "title": "Ambika Mod",
+      "url": "https://en.wikipedia.org/wiki/Ambika_Mod",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Ambika%20Mod%20at%20Oliver%21%20press%20night%20%28cropped%29.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Ambika%20Mod%20at%20Oliver%21%20press%20night%20%28cropped%29.jpg?width=800"
+    ],
+    "faceId": "be65a91f-7fc5-41e7-80e8-2c039793b042",
+    "faceIds": [
+      "be65a91f-7fc5-41e7-80e8-2c039793b042"
+    ],
+    "indexedAt": "2026-11-07T11:27:52.038Z"
+  },
+  {
+    "id": "Q1557495",
+    "name": "Guy Grosso",
+    "niche": "eu-comedian",
+    "wikipedia": {
+      "title": "Guy Grosso",
+      "url": "https://en.wikipedia.org/wiki/Guy_Grosso",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Guy-Grosso-1965-Crayon%20%282%29.png?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Guy-Grosso-1965-Crayon%20%282%29.png?width=800"
+    ],
+    "faceId": "b700b549-9a8c-4c0d-9676-72ba55654d0c",
+    "faceIds": [
+      "b700b549-9a8c-4c0d-9676-72ba55654d0c"
+    ],
+    "indexedAt": "2026-11-07T11:28:04.527Z"
+  },
+  {
+    "id": "Q16222401",
+    "name": "Richard Rankin",
+    "niche": "eu-comedian",
+    "wikipedia": {
+      "title": "Richard Rankin",
+      "url": "https://en.wikipedia.org/wiki/Richard_Rankin",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Richard%20Rankin%20by%20Gage%20Skidmore.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Richard%20Rankin%20by%20Gage%20Skidmore.jpg?width=800"
+    ],
+    "faceId": "1ea4628a-4c84-4b04-9a5d-7431c3fcf05e",
+    "faceIds": [
+      "1ea4628a-4c84-4b04-9a5d-7431c3fcf05e"
+    ],
+    "indexedAt": "2026-11-07T11:28:13.338Z"
+  },
+  {
+    "id": "Q175333",
+    "name": "Joaquín Reyes Cano",
+    "niche": "eu-comedian",
+    "wikipedia": {
+      "title": "Joaquín Reyes (comedian)",
+      "url": "https://en.wikipedia.org/wiki/Joaqu%C3%ADn_Reyes_(comedian)",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Joaqu%C3%ADn%20Reyes%20%28gonzalomerat%29.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Joaqu%C3%ADn%20Reyes%20%28gonzalomerat%29.jpg?width=800"
+    ],
+    "faceId": "bfcf49a8-b82a-4589-8d87-ab13c491e40b",
+    "faceIds": [
+      "bfcf49a8-b82a-4589-8d87-ab13c491e40b"
+    ],
+    "indexedAt": "2026-11-07T11:28:14.691Z"
+  },
+  {
+    "id": "Q1987035",
+    "name": "Hugh Dennis",
+    "niche": "eu-comedian",
+    "wikipedia": {
+      "title": "Hugh Dennis",
+      "url": "https://en.wikipedia.org/wiki/Hugh_Dennis",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Hugh%20Dennis%20%2838166341085%29%20cropped.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Hugh%20Dennis%20%2838166341085%29%20cropped.jpg?width=800"
+    ],
+    "faceId": "c5205fcd-2ddf-45f5-8910-4e560a92b25e",
+    "faceIds": [
+      "c5205fcd-2ddf-45f5-8910-4e560a92b25e"
+    ],
+    "indexedAt": "2026-11-07T11:28:24.091Z"
+  },
+  {
+    "id": "Q2014206",
+    "name": "Marc Silk",
+    "niche": "eu-comedian",
+    "wikipedia": {
+      "title": "Marc Silk",
+      "url": "https://en.wikipedia.org/wiki/Marc_Silk",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Marc%20Silk%20-%20voice%20actor.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Marc%20Silk%20-%20voice%20actor.jpg?width=800"
+    ],
+    "faceId": "d474018f-5b14-423a-8d78-7ab91c93ac1e",
+    "faceIds": [
+      "d474018f-5b14-423a-8d78-7ab91c93ac1e"
+    ],
+    "indexedAt": "2026-11-07T11:28:26.387Z"
+  },
+  {
+    "id": "Q3929147",
+    "name": "Raffaele Pisu",
+    "niche": "eu-comedian",
+    "wikipedia": {
+      "title": "Raffaele Pisu",
+      "url": "https://en.wikipedia.org/wiki/Raffaele_Pisu",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Raffaele%20Pisu.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Raffaele%20Pisu.jpg?width=800"
+    ],
+    "faceId": "540c8fd3-13e6-46b6-afde-8833dcf51f65",
+    "faceIds": [
+      "540c8fd3-13e6-46b6-afde-8833dcf51f65"
+    ],
+    "indexedAt": "2026-11-07T11:29:02.255Z"
+  },
+  {
+    "id": "Q2666043",
+    "name": "Wim Kan",
+    "niche": "eu-comedian",
+    "wikipedia": {
+      "title": "Wim Kan",
+      "url": "https://en.wikipedia.org/wiki/Wim_Kan",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Wim%20Kan%20tijdens%20oudejaarsconference%20ge-interviewd%20als%20Den%20Uyl.%201976.%20-%20SFA002002718.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Wim%20Kan%20tijdens%20oudejaarsconference%20ge-interviewd%20als%20Den%20Uyl.%201976.%20-%20SFA002002718.jpg?width=800"
+    ],
+    "faceId": "e229f1d5-30c1-47c8-b7f8-3ce9c7c7b4d0",
+    "faceIds": [
+      "e229f1d5-30c1-47c8-b7f8-3ce9c7c7b4d0"
+    ],
+    "indexedAt": "2026-11-07T11:29:10.236Z"
+  },
+  {
+    "id": "Q7518079",
+    "name": "Simo Salminen",
+    "niche": "eu-comedian",
+    "wikipedia": {
+      "title": "Simo Salminen",
+      "url": "https://en.wikipedia.org/wiki/Simo_Salminen",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Simo%20Salminen.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Simo%20Salminen.jpg?width=800"
+    ],
+    "faceId": "28ba6283-8cf5-46ee-9f0a-a8e8bcc61282",
+    "faceIds": [
+      "28ba6283-8cf5-46ee-9f0a-a8e8bcc61282"
+    ],
+    "indexedAt": "2026-11-07T11:29:18.285Z"
+  },
+  {
+    "id": "Q4684604",
+    "name": "Herr Seele",
+    "niche": "eu-comedian",
+    "wikipedia": {
+      "title": "Herr Seele",
+      "url": "https://en.wikipedia.org/wiki/Herr_Seele",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Kamabushok675.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Kamabushok675.jpg?width=800"
+    ],
+    "faceId": "d4ab9383-c34b-40a6-8a79-0248ad374887",
+    "faceIds": [
+      "d4ab9383-c34b-40a6-8a79-0248ad374887"
+    ],
+    "indexedAt": "2026-11-07T11:29:31.225Z"
+  },
+  {
+    "id": "Q4753826",
+    "name": "Anders Jansson",
+    "niche": "eu-comedian",
+    "wikipedia": {
+      "title": "Anders Jansson",
+      "url": "https://en.wikipedia.org/wiki/Anders_Jansson",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Anders%20Jansson%20001.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Anders%20Jansson%20001.jpg?width=800"
+    ],
+    "faceId": "983fcf4f-efea-4a3f-a54a-9793b1346b0c",
+    "faceIds": [
+      "983fcf4f-efea-4a3f-a54a-9793b1346b0c"
+    ],
+    "indexedAt": "2026-11-07T11:29:33.025Z"
+  },
+  {
+    "id": "Q922213",
+    "name": "Carlos Balá",
+    "niche": "latam-comedian",
+    "wikipedia": {
+      "title": "Carlos Balá",
+      "url": "https://en.wikipedia.org/wiki/Carlos_Bal%C3%A1",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Carlitos%20bala%201960s.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Carlitos%20bala%201960s.jpg?width=800"
+    ],
+    "faceId": "d9f8fb83-80a0-48a5-a2bb-9974014f64b7",
+    "faceIds": [
+      "d9f8fb83-80a0-48a5-a2bb-9974014f64b7"
+    ],
+    "indexedAt": "2026-11-07T11:29:53.496Z"
+  },
+  {
+    "id": "Q6299323",
+    "name": "Juan Carlos Mesa",
+    "niche": "latam-comedian",
+    "wikipedia": {
+      "title": "Juan Carlos Mesa",
+      "url": "https://en.wikipedia.org/wiki/Juan_Carlos_Mesa",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Juan%20Carlos%20Mesa.png?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Juan%20Carlos%20Mesa.png?width=800"
+    ],
+    "faceId": "48c5b992-fa14-4e60-9a9a-3aa4e0931e8c",
+    "faceIds": [
+      "48c5b992-fa14-4e60-9a9a-3aa4e0931e8c"
+    ],
+    "indexedAt": "2026-11-07T11:30:04.359Z"
+  },
+  {
+    "id": "Q42840156",
+    "name": "Joseph Herscher",
+    "niche": "us-influencer",
+    "wikipedia": {
+      "title": "Joseph Herscher",
+      "url": "https://en.wikipedia.org/wiki/Joseph_Herscher",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Joseph%20Herscher.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Joseph%20Herscher.jpg?width=800"
+    ],
+    "faceId": "9d4fa04f-59bc-4884-b4af-694d7485c3cb",
+    "faceIds": [
+      "9d4fa04f-59bc-4884-b4af-694d7485c3cb"
+    ],
+    "indexedAt": "2026-11-07T11:35:45.923Z"
+  },
+  {
+    "id": "Q66360945",
+    "name": "Bretman Rock",
+    "niche": "us-influencer",
+    "wikipedia": {
+      "title": "Bretman Rock",
+      "url": "https://en.wikipedia.org/wiki/Bretman_Rock",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Bretman%20Rock%202019.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Bretman%20Rock%202019.jpg?width=800"
+    ],
+    "faceId": "b3f2f29f-fec9-4771-9fb5-0a48adf700d6",
+    "faceIds": [
+      "b3f2f29f-fec9-4771-9fb5-0a48adf700d6"
+    ],
+    "indexedAt": "2026-11-07T11:35:52.578Z"
+  },
+  {
+    "id": "Q67697080",
+    "name": "Eugenia Cooney",
+    "niche": "us-influencer",
+    "wikipedia": {
+      "title": "Eugenia Cooney",
+      "url": "https://en.wikipedia.org/wiki/Eugenia_Cooney",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Eugenia%20Cooney.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Eugenia%20Cooney.jpg?width=800"
+    ],
+    "faceId": "c0bfc3b0-c577-4f28-8e98-13563955f77e",
+    "faceIds": [
+      "c0bfc3b0-c577-4f28-8e98-13563955f77e"
+    ],
+    "indexedAt": "2026-11-07T11:35:55.122Z"
+  },
+  {
+    "id": "Q118837439",
+    "name": "Pearl Davis",
+    "niche": "us-influencer",
+    "wikipedia": {
+      "title": "Hannah Pearl Davis",
+      "url": "https://en.wikipedia.org/wiki/Hannah_Pearl_Davis",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Pearl%20Davis%20on%20James%20English.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Pearl%20Davis%20on%20James%20English.jpg?width=800"
+    ],
+    "faceId": "a2d158b6-e521-41d8-a31c-2073675b7dc5",
+    "faceIds": [
+      "a2d158b6-e521-41d8-a31c-2073675b7dc5"
+    ],
+    "indexedAt": "2026-11-07T11:36:01.417Z"
+  },
+  {
+    "id": "Q123030164",
+    "name": "Jack Doherty",
+    "niche": "us-influencer",
+    "wikipedia": {
+      "title": "Jack Doherty (YouTuber)",
+      "url": "https://en.wikipedia.org/wiki/Jack_Doherty_(YouTuber)",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Jack%20Doherty%27s%20second%20mugshot.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Jack%20Doherty%27s%20second%20mugshot.jpg?width=800"
+    ],
+    "faceId": "a6a217f9-9630-442d-b044-628f695ee86c",
+    "faceIds": [
+      "a6a217f9-9630-442d-b044-628f695ee86c"
+    ],
+    "indexedAt": "2026-11-07T11:36:02.785Z"
+  },
+  {
+    "id": "Q13423853",
+    "name": "PewDiePie",
+    "niche": "eu-influencer",
+    "wikipedia": {
+      "title": "PewDiePie",
+      "url": "https://en.wikipedia.org/wiki/PewDiePie",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Pewdiepie%20head%20shot.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Pewdiepie%20head%20shot.jpg?width=800"
+    ],
+    "faceId": "23bd8d10-7469-4cd8-b50b-1803ca984587",
+    "faceIds": [
+      "23bd8d10-7469-4cd8-b50b-1803ca984587"
+    ],
+    "indexedAt": "2026-11-07T11:36:15.871Z"
+  },
+  {
+    "id": "Q18148459",
+    "name": "Marzia Kjellberg",
+    "niche": "eu-influencer",
+    "wikipedia": {
+      "title": "Marzia Kjellberg",
+      "url": "https://en.wikipedia.org/wiki/Marzia_Kjellberg",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/Marzia%20Kjellberg%20on%20Instagram.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/Marzia%20Kjellberg%20on%20Instagram.jpg?width=800"
+    ],
+    "faceId": "fc32b103-8700-4374-b55c-76028f8fc18f",
+    "faceIds": [
+      "fc32b103-8700-4374-b55c-76028f8fc18f"
+    ],
+    "indexedAt": "2026-11-07T11:36:27.792Z"
+  },
+  {
+    "id": "Q105758249",
+    "name": "James Marriott",
+    "niche": "eu-influencer",
+    "wikipedia": {
+      "title": "James Marriott",
+      "url": "https://en.wikipedia.org/wiki/James_Marriott",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/James%20Marriott%20in%20November%202025%20%28cropped%29.jpg?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/James%20Marriott%20in%20November%202025%20%28cropped%29.jpg?width=800"
+    ],
+    "faceId": "49db99b0-8559-4286-9b3c-189fa18d28b5",
+    "faceIds": [
+      "49db99b0-8559-4286-9b3c-189fa18d28b5"
+    ],
+    "indexedAt": "2026-11-07T11:37:00.313Z"
+  },
+  {
+    "id": "Q63395208",
+    "name": "TheGrefg",
+    "niche": "eu-influencer",
+    "wikipedia": {
+      "title": "TheGrefg",
+      "url": "https://en.wikipedia.org/wiki/TheGrefg",
+      "lang": "en"
+    },
+    "imageUrl": "http://commons.wikimedia.org/wiki/Special:FilePath/TheGrefg%20en%20el%20torneo%20de%20p%C3%A1del%20de%20Ibai%20%282021%29.png?width=800",
+    "imageUrls": [
+      "http://commons.wikimedia.org/wiki/Special:FilePath/TheGrefg%20en%20el%20torneo%20de%20p%C3%A1del%20de%20Ibai%20%282021%29.png?width=800"
+    ],
+    "faceId": "b742a36e-1d17-4e0d-8dd8-f5700661992b",
+    "faceIds": [
+      "b742a36e-1d17-4e0d-8dd8-f5700661992b"
+    ],
+    "indexedAt": "2026-11-07T11:37:13.971Z"
   }
 ]
