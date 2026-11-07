@@ -1110,6 +1110,187 @@ a {
   font-size: 0.8rem;
 }
 
+.cast-lookup-open {
+  display: block;
+  width: calc(100% - 2.5rem);
+  margin: 0.75rem 1.25rem 0;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid #404040;
+  background: #171717;
+  color: #e5e5e5;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cast-lookup-panel {
+  margin: 0.75rem 1.25rem 0;
+  padding: 1rem;
+  border-radius: 0.85rem;
+  border: 1px solid #262626;
+  background: #0a0a0a;
+}
+
+.cast-lookup-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.cast-lookup-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.cast-lookup-close {
+  all: unset;
+  cursor: pointer;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: #737373;
+}
+
+.cast-lookup-hint {
+  margin: 0.55rem 0 0.85rem;
+  color: #737373;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.cast-title-list,
+.cast-people-list {
+  list-style: none;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  max-height: 280px;
+  overflow-y: auto;
+  border: 1px solid #262626;
+  border-radius: 0.65rem;
+  background: #111;
+}
+
+.cast-title-button,
+.cast-person-button {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border: none;
+  border-bottom: 1px solid #1f1f1f;
+  background: transparent;
+  color: #e5e5e5;
+  text-align: left;
+  cursor: pointer;
+}
+
+.cast-title-button:last-child,
+.cast-person-button:last-child,
+.cast-title-list li:last-child .cast-title-button,
+.cast-people-list li:last-child .cast-person-button {
+  border-bottom: none;
+}
+
+.cast-title-button:hover,
+.cast-person-button:hover {
+  background: #1a1a1a;
+}
+
+.cast-title-button img,
+.cast-person-button img {
+  width: 40px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 0.35rem;
+  flex-shrink: 0;
+  background: #262626;
+}
+
+.cast-person-button img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.cast-poster-fallback,
+.cast-avatar-fallback {
+  width: 40px;
+  height: 56px;
+  border-radius: 0.35rem;
+  background: #262626;
+  flex-shrink: 0;
+}
+
+.cast-avatar-fallback {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.cast-title-meta,
+.cast-person-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.cast-title-meta strong,
+.cast-person-meta strong {
+  font-size: 0.88rem;
+}
+
+.cast-title-meta span,
+.cast-person-meta span {
+  color: #737373;
+  font-size: 0.75rem;
+}
+
+.cast-selected-title {
+  margin: 0 0 0.65rem;
+  color: #e5e5e5;
+  font-size: 0.9rem;
+}
+
+.cast-filter-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.65rem 0.75rem;
+  border-radius: 0.55rem;
+  border: 1px solid #262626;
+  background: #111;
+  color: #fff;
+}
+
+.cast-lookup-panel .teach-row select {
+  flex: 1;
+  min-width: 0;
+  padding: 0.65rem 0.75rem;
+  border-radius: 0.55rem;
+  border: 1px solid #262626;
+  background: #111;
+  color: #fff;
+}
+
+.cast-back {
+  margin-top: 0.75rem;
+  padding: 0.45rem 0;
+  border: none;
+  background: transparent;
+  color: #93c5fd;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.cast-busy {
+  margin: 0.65rem 0 0;
+  color: #a3a3a3;
+  font-size: 0.8rem;
+}
+
 .upload-row {
   margin: 0 1.25rem 0.85rem;
   text-align: center;

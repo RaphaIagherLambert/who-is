@@ -275,3 +275,166 @@ export async function enrichActorFromTmdb(
   cache.set(cacheKey, { expiresAt: Date.now() + CACHE_TTL_MS, value });
   return value;
 }
+
+export interface TmdbTitleHit {
+  id: number;
+  mediaType: "movie" | "tv";
+  title: string;
+  year: string | null;
+  posterUrl: string | null;
+  overview: string | null;
+  seasonCount: number | null;
+}
+
+export interface TmdbCastMember {
+  id: number;
+  name: string;
+  character: string | null;
+  profileUrl: string | null;
+  order: number;
+  tmdbUrl: string;
+}
+
+function tmdbLanguage(lang: string): string {
+  return lang.toLowerCase().startsWith("pt") ? "pt-BR" : "en-US";
+}
+
+/** Search movies and TV by title (for cast fallback after failed face ID). */
+export async function searchTmdbTitles(
+  query: string,
+  lang: string,
+  limit = 8
+): Promise<TmdbTitleHit[]> {
+  const trimmed = query.trim();
+  if (!trimmed || !apiKey()) return [];
+
+  const language = tmdbLanguage(lang);
+  const data = await tmdbFetch<{
+    results?: Array<{
+      id: number;
+      media_type?: string;
+      title?: string;
+      name?: string;
+      release_date?: string;
+      first_air_date?: string;
+      poster_path?: string | null;
+      overview?: string;
+      popularity?: number;
+    }>;
+  }>("/search/multi", { query: trimmed, language, include_adult: "false" });
+
+  const hits = (data?.results ?? [])
+    .filter((r) => r.media_type === "movie" || r.media_type === "tv")
+    .sort((a, b) => (b.popularity ?? 0) - (a.popularity ?? 0))
+    .slice(0, limit);
+
+  const out: TmdbTitleHit[] = [];
+  for (const r of hits) {
+    const mediaType = r.media_type === "tv" ? "tv" : "movie";
+    let seasonCount: number | null = null;
+    if (mediaType === "tv") {
+      const detail = await tmdbFetch<{ number_of_seasons?: number }>(
+        `/tv/${r.id}`,
+        { language }
+      );
+      seasonCount =
+        typeof detail?.number_of_seasons === "number"
+          ? detail.number_of_seasons
+          : null;
+    }
+    out.push({
+      id: r.id,
+      mediaType,
+      title: (mediaType === "tv" ? r.name : r.title) ?? "Untitled",
+      year: yearFromDate(
+        mediaType === "tv" ? r.first_air_date : r.release_date
+      ),
+      posterUrl: r.poster_path ? `${IMAGE_BASE}/w92${r.poster_path}` : null,
+      overview: r.overview?.trim() ? r.overview.trim() : null,
+      seasonCount,
+    });
+  }
+  return out;
+}
+
+function mapCastMembers(
+  cast: Array<{
+    id: number;
+    name?: string;
+    character?: string;
+    profile_path?: string | null;
+    order?: number;
+  }>
+): TmdbCastMember[] {
+  return cast
+    .filter((c) => Boolean(c.name?.trim()))
+    .sort((a, b) => (a.order ?? 999) - (b.order ?? 999))
+    .slice(0, 60)
+    .map((c) => ({
+      id: c.id,
+      name: c.name!.trim(),
+      character: c.character?.trim() ? c.character.trim() : null,
+      profileUrl: c.profile_path
+        ? `${IMAGE_BASE}/w185${c.profile_path}`
+        : null,
+      order: typeof c.order === "number" ? c.order : 999,
+      tmdbUrl: `https://www.themoviedb.org/person/${c.id}`,
+    }));
+}
+
+/** Movie billed cast. */
+export async function fetchMovieCast(
+  movieId: number,
+  lang: string
+): Promise<TmdbCastMember[]> {
+  if (!apiKey() || !Number.isFinite(movieId) || movieId <= 0) return [];
+  const language = tmdbLanguage(lang);
+  const data = await tmdbFetch<{
+    cast?: Array<{
+      id: number;
+      name?: string;
+      character?: string;
+      profile_path?: string | null;
+      order?: number;
+    }>;
+  }>(`/movie/${movieId}/credits`, { language });
+  return mapCastMembers(data?.cast ?? []);
+}
+
+/**
+ * TV cast for a season (preferred for novelas / series).
+ * Falls back to series-level credits if season credits are empty.
+ */
+export async function fetchTvCast(
+  tvId: number,
+  season: number,
+  lang: string
+): Promise<TmdbCastMember[]> {
+  if (!apiKey() || !Number.isFinite(tvId) || tvId <= 0) return [];
+  const language = tmdbLanguage(lang);
+  const seasonNum = Math.max(1, Math.floor(season || 1));
+
+  const seasonCredits = await tmdbFetch<{
+    cast?: Array<{
+      id: number;
+      name?: string;
+      character?: string;
+      profile_path?: string | null;
+      order?: number;
+    }>;
+  }>(`/tv/${tvId}/season/${seasonNum}/credits`, { language });
+
+  const seasonCast = mapCastMembers(seasonCredits?.cast ?? []);
+  if (seasonCast.length > 0) return seasonCast;
+
+  const seriesCredits = await tmdbFetch<{
+    cast?: Array<{
+      id: number;
+      name?: string;
+      character?: string;
+      profile_path?: string | null;
+      order?: number;
+    }>;
+  }>(`/tv/${tvId}/credits`, { language });
+  return mapCastMembers(seriesCredits?.cast ?? []);
+}

@@ -348,3 +348,54 @@ export async function fetchTmdbPerson(
   };
   return data.enrichment ?? null;
 }
+
+export interface TmdbTitleHit {
+  id: number;
+  mediaType: "movie" | "tv";
+  title: string;
+  year: string | null;
+  posterUrl: string | null;
+  overview: string | null;
+  seasonCount: number | null;
+}
+
+export interface TmdbCastMember {
+  id: number;
+  name: string;
+  character: string | null;
+  profileUrl: string | null;
+  order: number;
+  tmdbUrl: string;
+}
+
+export async function searchTmdbTitles(
+  query: string,
+  lang: string,
+  signal?: AbortSignal
+): Promise<{ results: TmdbTitleHit[]; configured: boolean }> {
+  const res = await fetch(
+    `/api/tmdb/search?q=${encodeURIComponent(query)}&lang=${encodeURIComponent(lang)}`,
+    { signal }
+  );
+  if (!res.ok) return { results: [], configured: true };
+  return res.json();
+}
+
+export async function fetchTmdbCast(
+  mediaType: "movie" | "tv",
+  id: number,
+  lang: string,
+  season = 1,
+  signal?: AbortSignal
+): Promise<TmdbCastMember[]> {
+  const params = new URLSearchParams({
+    mediaType,
+    id: String(id),
+    lang,
+    season: String(season),
+  });
+  const res = await fetch(`/api/tmdb/cast?${params}`, { signal });
+  if (!res.ok) return [];
+  const data = (await res.json()) as { cast: TmdbCastMember[] };
+  return data.cast ?? [];
+}

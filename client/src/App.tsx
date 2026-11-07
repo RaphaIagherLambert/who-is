@@ -6,12 +6,15 @@ import {
   fetchTmdbPerson,
   identifyBestFromFrames,
   identifyImage,
+  lookupWikipedia,
   WikipediaPage,
   type FaceBox,
   type IdentifyResult,
+  type TmdbCastMember,
   type TmdbPersonEnrichment,
 } from "./api";
 import { AdminUnlock, TeachPanel } from "./components/TeachPanel";
+import { CastLookupPanel } from "./components/CastLookupPanel";
 import { ColdStartBanner } from "./components/ColdStartBanner";
 import { FacePicker } from "./components/FacePicker";
 import { FilmographySection } from "./components/FilmographySection";
@@ -558,6 +561,32 @@ export default function App() {
     setStatus(t.teachSuccess(name));
   };
 
+  const handleCastSelect = useCallback(
+    async (person: TmdbCastMember) => {
+      setPersonCandidates([]);
+      setLastRejectReason(null);
+      setTmdb(null);
+      setResultNiche(null);
+      setMatch({ name: person.name, confidence: 100 });
+      setResultSource("celebrity");
+      setStatus(t.castPicked(person.name));
+      setWiki(null);
+      setWikiAlternatives([]);
+      setWikiAmbiguous(false);
+      try {
+        const page = await lookupWikipedia(
+          person.name,
+          toApiLanguage(lang)
+        );
+        setWiki(page);
+        setWikiAlternatives([page]);
+      } catch {
+        // Cast pick still counts even without Wikipedia.
+      }
+    },
+    [lang, t]
+  );
+
   const isActive = phase !== "idle" && phase !== "picking";
   const rejectTip =
     lastRejectReason && phase === "idle" && !match
@@ -575,6 +604,10 @@ export default function App() {
     phase === "picking";
   const showTeachButton = isAdmin && phase === "idle" && Boolean(teachFrame);
   const wrongName = match?.name ?? personCandidates[0]?.name;
+  const showCastLookup =
+    phase === "idle" &&
+    !match &&
+    (Boolean(lastRejectReason) || personCandidates.length >= 1);
 
   return (
     <div className="app">
@@ -876,6 +909,10 @@ export default function App() {
             {tmdb && <FilmographySection enrichment={tmdb} lang={lang} />}
           </div>
         </div>
+      )}
+
+      {showCastLookup && (
+        <CastLookupPanel lang={lang} onSelect={handleCastSelect} />
       )}
 
       {showTeachButton && (
