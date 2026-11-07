@@ -199,6 +199,8 @@ identifyRouter.post("/", async (req, res) => {
     const providerName = process.env.RECOGNITION_PROVIDER ?? "mock";
     const soleMin = Number(process.env.ENSEMBLE_ACCEPT_MIN) || 70;
     const pickMin = Number(process.env.SOFT_CELEBRITY_MIN) || 50;
+    // Celebrity-only (not in our face index): high bar, no soft picker — fewer wrong foreigners.
+    const celebritySoleMin = Number(process.env.CELEBRITY_ACCEPT_MIN) || 85;
 
     const quality = scoreImageQuality(parsed.base64);
     if (!quality.ok) {
@@ -335,6 +337,7 @@ identifyRouter.post("/", async (req, res) => {
       {
         soleMin,
         pickMin,
+        celebritySoleMin,
         margin: Math.max(filterConfig.minMargin, 8),
         topN: 3,
       }
@@ -372,6 +375,7 @@ identifyRouter.post("/", async (req, res) => {
           topName: topRawName,
           soleMin,
           pickMin,
+          celebritySoleMin,
         },
       });
       return;
@@ -395,6 +399,7 @@ identifyRouter.post("/", async (req, res) => {
         topName: results[0]?.name ?? null,
         soleMin,
         pickMin,
+        celebritySoleMin,
       },
     });
   } catch (err) {

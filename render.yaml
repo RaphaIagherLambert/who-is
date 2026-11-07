@@ -28,6 +28,8 @@ services:
         value: "50"
       - key: ENSEMBLE_ACCEPT_MIN
         value: "70"
+      - key: CELEBRITY_ACCEPT_MIN
+        value: "85"
       - key: STRONG_COLLECTION_SIMILARITY
         value: "92"
       - key: MIN_FACE_SHARPNESS

@@ -114,20 +114,31 @@ export async function runEnsembleRecognition(options: {
   };
 }
 
+function isCelebrityOnly(c: EnsembleCandidate): boolean {
+  return (
+    c.source === "celebrity" ||
+    (c.sources.length === 1 && c.sources[0] === "celebrity")
+  );
+}
+
 /**
  * Confidence bands:
- * - > soleMin with clear lead → single answer
- * - > soleMin but close race → top-N picker (scores may be above soleMin)
- * - pickMin..soleMin → top-N picker (only candidates in that band)
- * - < pickMin → empty (caller explains why)
+ * - Collection / taught / index: > soleMin clear lead → single; soft pickMin..soleMin → picker
+ * - Celebrity-only (AWS, not in our index): must clear celebritySoleMin to appear at all;
+ *   never enter the soft picker (avoids wrong foreign names for obscure faces)
+ * - < floors → empty (caller explains why)
  */
 export function decideEnsemblePresentation(
   ranked: EnsembleCandidate[],
   opts?: {
     /** Sole answer requires confidence strictly above this (default 70). */
     soleMin?: number;
-    /** Soft picker floor inclusive (default 50). */
+    /** Soft picker floor inclusive for index-backed hits (default 50). */
     pickMin?: number;
+    /**
+     * Celebrity-only sole floor (default 85). Soft suggestions never use Celebrity alone.
+     */
+    celebritySoleMin?: number;
     margin?: number;
     topN?: number;
   }
@@ -138,10 +149,14 @@ export function decideEnsemblePresentation(
 } {
   const soleMin = opts?.soleMin ?? 70;
   const pickMin = opts?.pickMin ?? 50;
+  const celebritySoleMin = opts?.celebritySoleMin ?? 85;
   const margin = opts?.margin ?? 8;
   const topN = opts?.topN ?? 3;
 
-  const eligible = ranked.filter((c) => c.confidence >= pickMin);
+  const eligible = ranked.filter((c) => {
+    if (isCelebrityOnly(c)) return c.confidence > celebritySoleMin;
+    return c.confidence >= pickMin;
+  });
   if (eligible.length === 0) {
     return { results: [], needsPick: false, acceptSingle: false };
   }
@@ -155,7 +170,7 @@ export function decideEnsemblePresentation(
     if (clearLead) {
       return { results: [best], needsPick: false, acceptSingle: true };
     }
-    // Close race above sole bar — still offer alternatives.
+    // Close race above sole bar — still offer alternatives (index + strong celebrity).
     return {
       results: eligible.slice(0, topN),
       needsPick: true,
@@ -163,9 +178,9 @@ export function decideEnsemblePresentation(
     };
   }
 
-  // Soft band [pickMin, soleMin]: picker only, never sole lock.
+  // Soft band: index-backed only — never celebrity-only lookalike guesses.
   const soft = eligible
-    .filter((c) => c.confidence <= soleMin)
+    .filter((c) => !isCelebrityOnly(c) && c.confidence <= soleMin)
     .slice(0, topN);
 
   return {
