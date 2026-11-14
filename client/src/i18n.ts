@@ -137,7 +137,7 @@ export const translations = {
     watchRegion: (region: string) =>
       region === "BR" ? "Disponível no Brasil" : `Disponível (${region})`,
     tmdbAttribution: "Dados de filmes e streaming: TMDB",
-    castLookupOpen: "Não reconheceu? Buscar no elenco do filme/série",
+    castLookupOpen: "Preciso de ajuda! Pode me indicar o que está assistindo?",
     castLookupTitle: "Quem é pelo elenco",
     castLookupHint:
       "Digite o nome do filme ou série (e a temporada, se for série). Escolha a pessoa no elenco.",
@@ -291,7 +291,7 @@ export const translations = {
     watchRegion: (region: string) =>
       region === "US" ? "Available in the US" : `Available (${region})`,
     tmdbAttribution: "Movie & streaming data: TMDB",
-    castLookupOpen: "Not recognized? Search the movie/series cast",
+    castLookupOpen: "I need help! Can you tell me what you're watching?",
     castLookupTitle: "Find by cast",
     castLookupHint:
       "Type the movie or series title (and season for a series). Then pick the person from the cast.",
