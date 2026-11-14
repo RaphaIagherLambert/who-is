@@ -25,11 +25,11 @@ services:
       - key: MIN_FACE_SIMILARITY
         value: "85"
       - key: SOFT_CELEBRITY_MIN
-        value: "50"
+        value: "65"
       - key: ENSEMBLE_ACCEPT_MIN
-        value: "70"
+        value: "80"
       - key: CELEBRITY_ACCEPT_MIN
-        value: "85"
+        value: "95"
       - key: STRONG_COLLECTION_SIMILARITY
         value: "92"
       - key: MIN_FACE_SHARPNESS

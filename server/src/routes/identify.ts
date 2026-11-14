@@ -197,10 +197,12 @@ identifyRouter.post("/", async (req, res) => {
         : 0;
     const filterConfig = loadMatchFilterConfig();
     const providerName = process.env.RECOGNITION_PROVIDER ?? "mock";
-    const soleMin = Number(process.env.ENSEMBLE_ACCEPT_MIN) || 70;
-    const pickMin = Number(process.env.SOFT_CELEBRITY_MIN) || 50;
-    // Celebrity-only (not in our face index): high bar, no soft picker — fewer wrong foreigners.
-    const celebritySoleMin = Number(process.env.CELEBRITY_ACCEPT_MIN) || 85;
+    // Tuned for less-famous faces (novelas, supporting cast): prefer fail + cast lookup
+    // over a confident wrong name.
+    const soleMin = Number(process.env.ENSEMBLE_ACCEPT_MIN) || 80;
+    const pickMin = Number(process.env.SOFT_CELEBRITY_MIN) || 65;
+    // Celebrity-only (not in our index): near-certain only; no soft picker for those.
+    const celebritySoleMin = Number(process.env.CELEBRITY_ACCEPT_MIN) || 95;
 
     const quality = scoreImageQuality(parsed.base64);
     if (!quality.ok) {

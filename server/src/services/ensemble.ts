@@ -147,9 +147,9 @@ export function decideEnsemblePresentation(
   needsPick: boolean;
   acceptSingle: boolean;
 } {
-  const soleMin = opts?.soleMin ?? 70;
-  const pickMin = opts?.pickMin ?? 50;
-  const celebritySoleMin = opts?.celebritySoleMin ?? 85;
+  const soleMin = opts?.soleMin ?? 80;
+  const pickMin = opts?.pickMin ?? 65;
+  const celebritySoleMin = opts?.celebritySoleMin ?? 95;
   const margin = opts?.margin ?? 8;
   const topN = opts?.topN ?? 3;
 
